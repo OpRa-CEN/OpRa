@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 rel. 2 sp1 (x64) (http://www.altova.com) by Christophe Duquesne (Aurige) -->
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
+	<xsd:include schemaLocation="../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
+	<xsd:include schemaLocation="../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG6 Editor Nicholas Knowles.  mailto:schemer@netex.org.uk</Creator>
+				<Date>
+					<Created>2018-11-14</Created>
+				</Date>
+				<Description>
+					<p>NeTEx - Network Exchange. DRAFT OprA for first Opra TR</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>{http://www.netex.org.uk/schemas/1.0/xsd/netex_framework/netex_responsibility}netex_OpRa_version-v1.0.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Rights>Unclassified
+				</Rights>
+				<Source>
+					<ul>
+						<li>Created for NeTEx.</li>
+					</ul>
+				</Source>
+				<Status>Version alpha  Draft for info</Status>
+				<Subject>
+					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+Air transport, Airports,
+Ports and maritime transport, Ferries (marine),
+Public transport, Bus services, Coach services, Bus stops and stations,
+Rail transport, Railway stations and track, Train services, Underground trains,
+Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+Rail transport, Roads and Road transport
+</Category>
+					<Project>CEN TC278 WG3 SG9.</Project>
+				</Subject>
+				<Title>NeTEx Network Exchange</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>NeTEX: DELTA types for NeTEx.</xsd:documentation>
+	</xsd:annotation>
+	<!-- ======================================================================= -->
+	<!-- == NeTEX Entities for holding differences between versions of an ENTITY In VERSION=============================================================== -->
+	<xsd:simpleType name="LoggableObjectIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a TRACE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:complexType name="LoggableObjects_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of one or more TRACEs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="LoggableObject" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A way to record the context of the changes occurred in a given ENTITY instance, as regards the authors, the causes of the changes, etc., possibly accompanied by a descriptive text.he next one.  A TRACE contains pairs of attributes' old values - new values.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="LoggableObject" type="LoggableObjectStructure">
+		<xsd:annotation>
+			<xsd:documentation>An entity for which LOG ENTRies may be made.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="LoggableObjectStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a TYPE OF TRACE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:group ref="LoggableObjectGroup">
+			<xsd:annotation>
+				<xsd:documentation>Elements for a LOGGABLE OBJECT.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:group>
+		<xsd:attribute name="id" type="LoggableObjectIdType">
+			<xsd:annotation>
+				<xsd:documentation>Identifier of LOGGABLE OBJECT</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="created" type="xsd:dateTime" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Date at which the LOGGABLE OBJECT was created.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:group name="LoggableObjectGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for a TYPE OF TRACE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Description" type="xsd:normalizedString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Description of LOGGABLE OBJECT</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LogEntries" type="LogEntries_RelStructure"/>
+		</xsd:sequence>
+	</xsd:group>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="LogEntryIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a DELTA.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:complexType name="LogEntries_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of one or more DELTAs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="LogEntry" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A time-stamped record of an event or change of state.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="LogEntry" type="LogEntryStructure">
+		<xsd:annotation>
+			<xsd:documentation>A  record of the detailed changes of a given ENTITY IN VERSION from one VERSION to the next one.  A DELTA contains pairs of attributes' old values - new values.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="LogEntryStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a DELTA.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:group ref="LogEntryGroup">
+			<xsd:annotation>
+				<xsd:documentation>Elements for a LOG ENTRY</xsd:documentation>
+			</xsd:annotation>
+		</xsd:group>
+		<xsd:attribute name="id" type="LogEntryIdType">
+			<xsd:annotation>
+				<xsd:documentation>Identifier of LOG ENTRY</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="created" type="xsd:dateTime" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Date reference was first created.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:group name="LogEntryGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for a DELTA.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="SimpleObjectRef"/>
+			<xsd:element name="FromVersionRef" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Base version against which  LOG ENTRY is made.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:restriction base="SimpleObjectRefStructure">
+							<xsd:attribute name="ref" type="VersionIdType" use="required">
+								<xsd:annotation>
+									<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Description" type="xsd:normalizedString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Description of LOG ENTRY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Name" type="MultilingualString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Name of the LOG ENTRY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LoggedAtTime" type="xsd:dateTime">
+				<xsd:annotation>
+					<xsd:documentation>Date at which the LOG ENTRY was captured</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LogEntryValues" type="LogEntryValues_RelStructure">
+				<xsd:annotation>
+					<xsd:documentation>Values picked up from the ENTITY as input for the LOGGABLE OBJECT.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="LogEntryValueIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a DELTA VALUE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:complexType name="LogEntryValues_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of one or more DELTA VALUEs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="LogEntryValue" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Record of the values to be captured by a LOG ENTRY</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="LogEntryValue" type="LogEntryValueStructure">
+		<xsd:annotation>
+			<xsd:documentation>A  record of the detailed changes of a given ENTITY IN VERSION from one VERSION to the next one.  A DELTA contains pairs of attributes' old values - new values.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="LogEntryValueStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a DELTA VALUE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:group ref="LogEntryValueGroup">
+			<xsd:annotation>
+				<xsd:documentation>Elements for a DELTA VALUE.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:group>
+		<xsd:attribute name="id" type="LogEntryValueIdType">
+			<xsd:annotation>
+				<xsd:documentation>Identifier of DELTA.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:group name="LogEntryValueGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for a DELTA VALUE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="LogEntryRef" type="LogEntryIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Identifier of LOG ENTRY of which this is part.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ValueName" type="xsd:normalizedString">
+				<xsd:annotation>
+					<xsd:documentation>Name of VALUE captured by the LOG ENTRY.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Value" type="xsd:anyType">
+				<xsd:annotation>
+					<xsd:documentation>VALUE captured by the LOG ENTRY.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>
