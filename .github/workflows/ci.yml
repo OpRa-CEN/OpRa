@@ -11,7 +11,7 @@ jobs:
       - run: echo "Job was automatically triggered by a ${{ github.event_name }} event for branch ${{ github.ref }}"
 
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install xmllint and xsltproc
         run: |
