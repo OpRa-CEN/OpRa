@@ -1,3 +1,6 @@
 [submodule "NeTEx"]
 	path = NeTEx
 	url = https://github.com/NeTEx-CEN/NeTEx
+[submodule "SIRI"]
+	path = SIRI
+	url = https://github.com/SIRI-CEN/SIRI
