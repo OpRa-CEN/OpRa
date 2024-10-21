@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="../xsd/placeholder_schema.xsd">
-	<xs:element name="person">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="firstName" type="xs:string"/>
-				<xs:element name="lastName" type="xs:string"/>
-				<xs:element name="age" type="xs:int"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-</xs:schema>
+<person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/placeholder_schema.xsd">
+	<firstName>Ophelia</firstName>
+	<lastName>Ramirez</lastName>
+	<age>70</age>
+</person>
