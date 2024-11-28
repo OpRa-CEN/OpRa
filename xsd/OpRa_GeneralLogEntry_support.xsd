@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 rel. 2 sp1 (x64) (http://www.altova.com) by Christophe Duquesne (Aurige) -->
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
+	<xsd:include schemaLocation="../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
+	<xsd:include schemaLocation="../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
+	<xsd:include schemaLocation="../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG6 Editor Nicholas Knowles.  mailto:schemer@netex.org.uk</Creator>
+				<Date>
+					<Created>2018-11-14</Created>
+				</Date>
+				<Description>
+					<p>NeTEx - Network Exchange. DRAFT OprA for first Opra TR</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>{http://www.netex.org.uk/schemas/1.0/xsd/netex_framework/netex_responsibility}netex_OpRa_version-v1.0.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Rights>Unclassified
+				</Rights>
+				<Source>
+					<ul>
+						<li>Created for NeTEx.</li>
+					</ul>
+				</Source>
+				<Status>Version alpha  Draft for info</Status>
+				<Subject>
+					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+Air transport, Airports,
+Ports and maritime transport, Ferries (marine),
+Public transport, Bus services, Coach services, Bus stops and stations,
+Rail transport, Railway stations and track, Train services, Underground trains,
+Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+Rail transport, Roads and Road transport
+</Category>
+					<Project>CEN TC278 WG3 SG9.</Project>
+				</Subject>
+				<Title>NeTEx Network Exchange</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>NeTEX generic concrete LLOG ENTRY and LOGGABLE OBJECT identifier types</xsd:documentation>
+	</xsd:annotation>
+	<!-- ======================================================================= -->
+	<!-- == NeTEX Entities for holding differences between versions of an ENTITY In VERSION=============================================================== -->
+	<xsd:simpleType name="LoggableObjectIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a TRACE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="ObjectIdType"/>
+	</xsd:simpleType>
+		<xsd:element name="LoggableObjectRef" type="LoggableObjectRefStructure" abstract="false" substitutionGroup="VersionOfObjectRef"> 
+		<xsd:annotation>
+			<xsd:documentation>Reference to a LOG.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="LoggableObjectRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a reference to a LoggableObject.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="LoggableObjectIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="LogEntryValueIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a DELTA VALUE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="LogEntryValueRef" type="LogEntryValueRefStructure" abstract="false" substitutionGroup="VersionOfObjectRef">
+		<xsd:annotation>
+			<xsd:documentation>Reference to a LOG ENTRY Value.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="LogEntryValueRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a reference to a LOG ENTRY Value.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="LogEntryValueIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+</xsd:schema>

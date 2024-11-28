@@ -3,6 +3,8 @@
 <xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
 	<xsd:include schemaLocation="../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
 	<xsd:include schemaLocation="../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
+	<xsd:include schemaLocation="../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
+	<xsd:include schemaLocation="OpRa_GeneralLogEntry_support.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
@@ -46,16 +48,10 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>NeTEX: DELTA types for NeTEx.</xsd:documentation>
+		<xsd:documentation>NeTEX generic concrete LLOG ENTRY and LOGGABLE OBJECT</xsd:documentation>
 	</xsd:annotation>
 	<!-- ======================================================================= -->
 	<!-- == NeTEX Entities for holding differences between versions of an ENTITY In VERSION=============================================================== -->
-	<xsd:simpleType name="LoggableObjectIdType">
-		<xsd:annotation>
-			<xsd:documentation>Identifier of a TRACE.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="ObjectIdType"/>
-	</xsd:simpleType>
 	<xsd:complexType name="LoggableObjects_RelStructure">
 		<xsd:annotation>
 			<xsd:documentation>A collection of one or more TRACEs.</xsd:documentation>
@@ -103,38 +99,32 @@ Rail transport, Roads and Road transport
 					<xsd:documentation>Description of LOGGABLE OBJECT</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="LogEntries" type="LogEntries_RelStructure"/>
+			<xsd:element name="LogEntries" type="GeneralLogEntries_RelStructure"/>
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ======================================================================= -->
-	<xsd:simpleType name="LogEntryIdType">
+	<xsd:complexType name="GeneralLogEntries_RelStructure">
 		<xsd:annotation>
-			<xsd:documentation>Identifier of a DELTA.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="ObjectIdType"/>
-	</xsd:simpleType>
-	<xsd:complexType name="LogEntries_RelStructure">
-		<xsd:annotation>
-			<xsd:documentation>A collection of one or more DELTAs.</xsd:documentation>
+			<xsd:documentation>A generic LOGENTRY.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="LogEntry" maxOccurs="unbounded">
+			<xsd:element ref="GeneralLogEntry" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>A time-stamped record of an event or change of state.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:element name="LogEntry" type="LogEntryStructure">
+	<xsd:element name="GeneralLogEntry" type="GeneralLogEntryStructure">
 		<xsd:annotation>
 			<xsd:documentation>A  record of the detailed changes of a given ENTITY IN VERSION from one VERSION to the next one.  A DELTA contains pairs of attributes' old values - new values.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:complexType name="LogEntryStructure">
+	<xsd:complexType name="GeneralLogEntryStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for a DELTA.</xsd:documentation>
 		</xsd:annotation>
-		<xsd:group ref="LogEntryGroup">
+		<xsd:group ref="GeneralLogEntryGroup">
 			<xsd:annotation>
 				<xsd:documentation>Elements for a LOG ENTRY</xsd:documentation>
 			</xsd:annotation>
@@ -150,7 +140,7 @@ Rail transport, Roads and Road transport
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
-	<xsd:group name="LogEntryGroup">
+	<xsd:group name="GeneralLogEntryGroup">
 		<xsd:annotation>
 			<xsd:documentation>Elements for a DELTA.</xsd:documentation>
 		</xsd:annotation>
@@ -195,12 +185,6 @@ Rail transport, Roads and Road transport
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ======================================================================= -->
-	<xsd:simpleType name="LogEntryValueIdType">
-		<xsd:annotation>
-			<xsd:documentation>Identifier of a DELTA VALUE.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="ObjectIdType"/>
-	</xsd:simpleType>
 	<xsd:complexType name="LogEntryValues_RelStructure">
 		<xsd:annotation>
 			<xsd:documentation>A collection of one or more DELTA VALUEs.</xsd:documentation>
