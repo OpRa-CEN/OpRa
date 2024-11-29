@@ -650,7 +650,9 @@
 		<File FilePath="netex\xsd\netex_part_2\part2_frames\netex_vehicleScheduleFrame_version.xsd"/>
 	</Folder>
 	<Folder FolderName="OpRa">
-		<File FilePath="xsd\OpRa_initial-test_version.xsd" HomeFolder="Yes"/>
+		<File FilePath="xsd\OpRa_GeneralLogEntry_support.xsd" HomeFolder="Yes"/>
+		<File FilePath="xsd\OpRa_GeneralLogEntry_version.xsd" HomeFolder="Yes"/>
 	</Folder>
+	<File FilePath="xsd\OpRa_initial-test_version.xsd" HomeFolder="Yes"/>
 	<File FilePath="README.md" HomeFolder="Yes"/>
 </Project>
