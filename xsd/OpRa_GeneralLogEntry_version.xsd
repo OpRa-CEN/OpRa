@@ -103,75 +103,58 @@ Rail transport, Roads and Road transport
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ======================================================================= -->
-	<xsd:complexType name="GeneralLogEntries_RelStructure">
+	<xsd:element name="LogEntry_" type="DataManagedObjectStructure" abstract="true" substitutionGroup="DataManagedObject">
 		<xsd:annotation>
-			<xsd:documentation>A generic LOGENTRY.</xsd:documentation>
+			<xsd:documentation>Dummy Supertype for LOG ENTRY.</xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element ref="GeneralLogEntry" maxOccurs="unbounded">
-				<xsd:annotation>
-					<xsd:documentation>A time-stamped record of an event or change of state.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:element name="GeneralLogEntry" type="GeneralLogEntryStructure">
+	</xsd:element>
+	<xsd:element name="GeneralLogEntry" substitutionGroup="LogEntry_">
 		<xsd:annotation>
 			<xsd:documentation>A  record of the detailed changes of a given ENTITY IN VERSION from one VERSION to the next one.  A DELTA contains pairs of attributes' old values - new values.</xsd:documentation>
 		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="GeneralLogEntry_VersionStructure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="EntityInVersionGroup" minOccurs="0"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="DataManagedObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="LogEntryGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="GeneralLogEntryGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="GeneralLogEntryIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
 	</xsd:element>
-	<xsd:complexType name="GeneralLogEntryStructure">
+	<xsd:complexType name="GeneralLogEntry_VersionStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for a DELTA.</xsd:documentation>
+			<xsd:documentation>Type for a concrete generic LOG ENTRY</xsd:documentation>
 		</xsd:annotation>
-		<xsd:group ref="GeneralLogEntryGroup">
-			<xsd:annotation>
-				<xsd:documentation>Elements for a LOG ENTRY</xsd:documentation>
-			</xsd:annotation>
-		</xsd:group>
-		<xsd:attribute name="id" type="LogEntryIdType">
-			<xsd:annotation>
-				<xsd:documentation>Identifier of LOG ENTRY</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="created" type="xsd:dateTime" use="optional">
-			<xsd:annotation>
-				<xsd:documentation>Date reference was first created.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
+		<xsd:complexContent>
+			<xsd:extension base="LogEntry_VersionStructure">
+				<xsd:sequence>
+					<xsd:group ref="GeneralLogEntryGroup">
+						<xsd:annotation>
+							<xsd:documentation>Elements for a generic conrete LOG ENTRY</xsd:documentation>
+						</xsd:annotation>
+					</xsd:group>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:group name="GeneralLogEntryGroup">
 		<xsd:annotation>
-			<xsd:documentation>Elements for a DELTA.</xsd:documentation>
+			<xsd:documentation>Elements for a general LOG ENTRY.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="SimpleObjectRef"/>
-			<xsd:element name="FromVersionRef" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Base version against which  LOG ENTRY is made.</xsd:documentation>
-				</xsd:annotation>
-				<xsd:complexType>
-					<xsd:simpleContent>
-						<xsd:restriction base="SimpleObjectRefStructure">
-							<xsd:attribute name="ref" type="VersionIdType" use="required">
-								<xsd:annotation>
-									<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
-								</xsd:annotation>
-							</xsd:attribute>
-						</xsd:restriction>
-					</xsd:simpleContent>
-				</xsd:complexType>
-			</xsd:element>
-			<xsd:element name="Description" type="xsd:normalizedString" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Description of LOG ENTRY</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="Name" type="MultilingualString" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Name of the LOG ENTRY</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
 			<xsd:element name="LoggedAtTime" type="xsd:dateTime">
 				<xsd:annotation>
 					<xsd:documentation>Date at which the LOG ENTRY was captured</xsd:documentation>
@@ -184,10 +167,34 @@ Rail transport, Roads and Road transport
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
+	<xsd:complexType name="GeneralLogEntries_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A generic LOGENTRY.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="GeneralLogEntry" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A time-stamped record of an event or change of state.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LogEntriesInFrame_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for containment in frame of GeneralLogEntries.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="containmentAggregationStructure">
+				<xsd:sequence>
+					<xsd:element ref="GeneralLogEntry" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
 	<!-- ======================================================================= -->
 	<xsd:complexType name="LogEntryValues_RelStructure">
 		<xsd:annotation>
-			<xsd:documentation>A collection of one or more DELTA VALUEs.</xsd:documentation>
+			<xsd:documentation>A collection of one or more logged VALUEs.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element ref="LogEntryValue" maxOccurs="unbounded">
@@ -204,29 +211,24 @@ Rail transport, Roads and Road transport
 	</xsd:element>
 	<xsd:complexType name="LogEntryValueStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for a DELTA VALUE.</xsd:documentation>
+			<xsd:documentation>Type for a logged VALUE.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:group ref="LogEntryValueGroup">
 			<xsd:annotation>
-				<xsd:documentation>Elements for a DELTA VALUE.</xsd:documentation>
+				<xsd:documentation>Elements for a logged VALUE.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:group>
 		<xsd:attribute name="id" type="LogEntryValueIdType">
 			<xsd:annotation>
-				<xsd:documentation>Identifier of DELTA.</xsd:documentation>
+				<xsd:documentation>Identifier of logged VALUE.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
-	<xsd:group name="LogEntryValueGroup">
+	<xsd:complexType name="LogEntryUnitaryValueStructure">
 		<xsd:annotation>
-			<xsd:documentation>Elements for a DELTA VALUE.</xsd:documentation>
+			<xsd:documentation>Type for a logged unique VALUE.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="LogEntryRef" type="LogEntryIdType" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Identifier of LOG ENTRY of which this is part.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
 			<xsd:element name="ValueName" type="xsd:normalizedString">
 				<xsd:annotation>
 					<xsd:documentation>Name of VALUE captured by the LOG ENTRY.</xsd:documentation>
@@ -237,6 +239,15 @@ Rail transport, Roads and Road transport
 					<xsd:documentation>VALUE captured by the LOG ENTRY.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:group name="LogEntryValueGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for a logged VALUE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="VersionOfObjectRef"/>
+			<xsd:element name="UnitaryValue" type="LogEntryUnitaryValueStructure" minOccurs="1" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:group>
 </xsd:schema>
