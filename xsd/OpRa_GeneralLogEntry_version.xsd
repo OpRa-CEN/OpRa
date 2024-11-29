@@ -51,44 +51,66 @@ Rail transport, Roads and Road transport
 		<xsd:documentation>OpRa generic concrete LOG ENTRY and LOGGABLE OBJECT</xsd:documentation>
 	</xsd:annotation>
 	<!-- ======================================================================= -->
-	<!-- == NeTEX Entities for holding differences between versions of an ENTITY In VERSION=============================================================== -->
+	<xsd:element name="LoggableObject_" type="netex:DataManagedObjectStructure" abstract="true" substitutionGroup="netex:DataManagedObject">
+		<xsd:annotation>
+			<xsd:documentation>Dummy Supertype for LOGGABLE OBJECT.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
 	<xsd:complexType name="LoggableObjects_RelStructure">
 		<xsd:annotation>
-			<xsd:documentation>A collection of one or more TRACEs.</xsd:documentation>
+			<xsd:documentation>A collection of one or more LOGGABLE OBJECTs</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element ref="LoggableObject" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>A way to record the context of the changes occurred in a given ENTITY instance, as regards the authors, the causes of the changes, etc., possibly accompanied by a descriptive text.he next one.  A TRACE contains pairs of attributes' old values - new values.</xsd:documentation>
+					<xsd:documentation>An entity for which LOG ENTRies may be made.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:element name="LoggableObject" type="LoggableObjectStructure">
+	
+	<xsd:element name="LoggableObject">
 		<xsd:annotation>
 			<xsd:documentation>An entity for which LOG ENTRies may be made.</xsd:documentation>
 		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="LoggableObject_VersionStructure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:EntityInVersionGroup" minOccurs="0"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:DataManagedObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="LoggableObjectGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="LoggableObjectIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
 	</xsd:element>
-	<xsd:complexType name="LoggableObjectStructure">
+	
+	<xsd:complexType name="LoggableObject_VersionStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for a TYPE OF TRACE.</xsd:documentation>
+			<xsd:documentation>Type for a LOGGABLE OBJECT.</xsd:documentation>
 		</xsd:annotation>
-		<xsd:group ref="LoggableObjectGroup">
-			<xsd:annotation>
-				<xsd:documentation>Elements for a LOGGABLE OBJECT.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:group>
-		<xsd:attribute name="id" type="LoggableObjectIdType">
-			<xsd:annotation>
-				<xsd:documentation>Identifier of LOGGABLE OBJECT</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-		<xsd:attribute name="created" type="xsd:dateTime" use="optional">
-			<xsd:annotation>
-				<xsd:documentation>Date at which the LOGGABLE OBJECT was created.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
+		
+		<xsd:complexContent>
+			<xsd:extension base="netex:DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:group ref="LoggableObjectGroup">
+						<xsd:annotation>
+							<xsd:documentation>Elements for a generic conrete LOG ENTRY</xsd:documentation>
+						</xsd:annotation>
+					</xsd:group>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>		
 	</xsd:complexType>
+	
 	<xsd:group name="LoggableObjectGroup">
 		<xsd:annotation>
 			<xsd:documentation>Elements for a TYPE OF TRACE.</xsd:documentation>
@@ -110,7 +132,7 @@ Rail transport, Roads and Road transport
 	</xsd:element>
 	<xsd:element name="GeneralLogEntry" substitutionGroup="LogEntry_">
 		<xsd:annotation>
-			<xsd:documentation>A  record of the detailed changes of a given ENTITY IN VERSION from one VERSION to the next one.  A DELTA contains pairs of attributes' old values - new values.</xsd:documentation>
+			<xsd:documentation>A time-stamped record of an event or change of state.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:complexContent>
@@ -206,7 +228,7 @@ Rail transport, Roads and Road transport
 	</xsd:complexType>
 	<xsd:element name="LogEntryValue" type="LogEntryValueStructure">
 		<xsd:annotation>
-			<xsd:documentation>A  record of the detailed changes of a given ENTITY IN VERSION from one VERSION to the next one.  A DELTA contains pairs of attributes' old values - new values.</xsd:documentation>
+			<xsd:documentation>A time-stamped record of an event or change of state - new values/state.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="LogEntryValueStructure">
