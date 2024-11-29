@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2016 rel. 2 sp1 (x64) (http://www.altova.com) by Christophe Duquesne (Aurige) -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
-	<xsd:include schemaLocation="../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
-	<xsd:include schemaLocation="../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
-	<xsd:include schemaLocation="../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
+<xsd:schema xmlns="http://www.netex.org.uk/opra" xmlns:opra="http://www.netex.org.uk/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.netex.org.uk/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
 	<xsd:include schemaLocation="OpRa_GeneralLogEntry_support.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
@@ -103,7 +103,7 @@ Rail transport, Roads and Road transport
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ======================================================================= -->
-	<xsd:element name="LogEntry_" type="DataManagedObjectStructure" abstract="true" substitutionGroup="DataManagedObject">
+	<xsd:element name="LogEntry_" type="netex:DataManagedObjectStructure" abstract="true" substitutionGroup="netex:DataManagedObject">
 		<xsd:annotation>
 			<xsd:documentation>Dummy Supertype for LOG ENTRY.</xsd:documentation>
 		</xsd:annotation>
@@ -117,13 +117,13 @@ Rail transport, Roads and Road transport
 				<xsd:restriction base="GeneralLogEntry_VersionStructure">
 					<xsd:sequence>
 						<xsd:sequence>
-							<xsd:group ref="EntityInVersionGroup" minOccurs="0"/>
+							<xsd:group ref="netex:EntityInVersionGroup" minOccurs="0"/>
 						</xsd:sequence>
 						<xsd:sequence>
-							<xsd:group ref="DataManagedObjectGroup"/>
+							<xsd:group ref="netex:DataManagedObjectGroup"/>
 						</xsd:sequence>
 						<xsd:sequence>
-							<xsd:group ref="LogEntryGroup"/>
+							<xsd:group ref="netex:LogEntryGroup"/>
 						</xsd:sequence>
 						<xsd:sequence>
 							<xsd:group ref="GeneralLogEntryGroup"/>
@@ -139,7 +139,7 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>Type for a concrete generic LOG ENTRY</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:extension base="LogEntry_VersionStructure">
+			<xsd:extension base="netex:LogEntry_VersionStructure">
 				<xsd:sequence>
 					<xsd:group ref="GeneralLogEntryGroup">
 						<xsd:annotation>
@@ -184,7 +184,7 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>Type for containment in frame of GeneralLogEntries.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:extension base="containmentAggregationStructure">
+			<xsd:extension base="netex:containmentAggregationStructure">
 				<xsd:sequence>
 					<xsd:element ref="GeneralLogEntry" maxOccurs="unbounded"/>
 				</xsd:sequence>
@@ -246,7 +246,7 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>Elements for a logged VALUE.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="VersionOfObjectRef"/>
+			<xsd:element ref="netex:VersionOfObjectRef"/>
 			<xsd:element name="UnitaryValue" type="LogEntryUnitaryValueStructure" minOccurs="1" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:group>
