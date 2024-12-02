@@ -56,7 +56,7 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:restriction base="netex:ObjectIdType"/>
 	</xsd:simpleType>
-		<xsd:element name="LoggableObjectRef" type="LoggableObjectRefStructure" abstract="false" substitutionGroup="netex:VersionOfObjectRef"> 
+	<xsd:element name="LoggableObjectRef" type="LoggableObjectRefStructure" abstract="false" substitutionGroup="netex:VersionOfObjectRef">
 		<xsd:annotation>
 			<xsd:documentation>Reference to a LOG.</xsd:documentation>
 		</xsd:annotation>
@@ -82,7 +82,7 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:restriction base="netex:ObjectIdType"/>
 	</xsd:simpleType>
-		<xsd:element name="GeneralLogEntryRef" type="GeneralLogEntryRefStructure" abstract="false" substitutionGroup="netex:VersionOfObjectRef"> 
+	<xsd:element name="GeneralLogEntryRef" type="GeneralLogEntryRefStructure" abstract="false" substitutionGroup="netex:VersionOfObjectRef">
 		<xsd:annotation>
 			<xsd:documentation>Reference to a GeneralLogEntry.</xsd:documentation>
 		</xsd:annotation>
@@ -93,7 +93,7 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:simpleContent>
 			<xsd:restriction base="netex:VersionOfObjectRefStructure">
-				<xsd:attribute name="ref" type="LoggableObjectIdType" use="required">
+				<xsd:attribute name="ref" type="GeneralLogEntryIdType" use="required">
 					<xsd:annotation>
 						<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
 					</xsd:annotation>

@@ -4,10 +4,8 @@
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
-	
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_vehicleJourney_support.xsd"/>
-	
-	<xsd:include schemaLocation="OpRa_GeneralLogEntry_version.xsd"/>
+		
+	<xsd:include schemaLocation="OpRa_GeneralLogEntry_support.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
@@ -51,78 +49,60 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa generic concrete LOG ENTRY and LOGGABLE OBJECT</xsd:documentation>
+		<xsd:documentation>OpRa DatedJourneyInformationRecording</xsd:documentation>
 	</xsd:annotation>
 	<!-- ======================================================================= -->
-	<xsd:element name="DatedJourneyInformationRecording" substitutionGroup="LoggableObject_">
-		<xsd:annotation>
-			<xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:restriction base="DatedJourneyInformationRecording_VersionStructure">
-					<xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="netex:EntityInVersionGroup" minOccurs="0"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="netex:DataManagedObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="LoggableObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="DatedJourneyInformationRecordingGroup"/>
-						</xsd:sequence>
-					</xsd:sequence>
-					<xsd:attribute name="id" type="LoggableObjectIdType"/>
-				</xsd:restriction>
-			</xsd:complexContent>
-		</xsd:complexType>
-	</xsd:element>
-	
-	<xsd:complexType name="DatedJourneyInformationRecording_VersionStructure">
-		<xsd:annotation>
-			<xsd:documentation>Type for a LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexContent>
-			<xsd:extension base="LoggableObject_VersionStructure">
-				<xsd:sequence>
-					<xsd:group ref="DatedJourneyInformationRecordingGroup">
-						<xsd:annotation>
-							<xsd:documentation>Elements for a LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:group>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	
-	<xsd:group name="DatedJourneyInformationRecordingGroup">
-		<xsd:annotation>
-			<xsd:documentation>Elements for a general LOG ENTRY.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element name="DatedJourneyRef" type="netex:JourneyRefStructure" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Dated journey for which this is the  PASSING TIME. If given by context does not need to be restated.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:group>
-	
-	<xsd:complexType name="DatedJourneyInformationRecordings_RelStructure">
-		<xsd:annotation>
-			<xsd:documentation>A collection of one or more DatedJourneyInformationRecordings</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element ref="DatedJourneyInformationRecording" maxOccurs="unbounded">
-				<xsd:annotation>
-					<xsd:documentation>LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-	
 
+	<xsd:simpleType name="DatedJourneyInformationRecordingIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a DatedJourneyInformationRecording.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="netex:ObjectIdType"/>
+	</xsd:simpleType>
+		<xsd:element name="DatedJourneyInformationRecordingRef" type="DatedJourneyInformationRecordingRefStructure" abstract="false" substitutionGroup="netex:VersionOfObjectRef"> 
+		<xsd:annotation>
+			<xsd:documentation>Reference to a DatedJourneyInformationRecording.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="DatedJourneyInformationRecordingRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a reference to a DatedJourneyInformationRecording.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="netex:VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="DatedJourneyInformationRecordingIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="DatedJourneyLogEntryIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a LOG ENTRY related to a DatedJourney.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="netex:ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="DatedJourneyLogEntryRef" type="DatedJourneyLogEntryRefStructure" abstract="false" substitutionGroup="netex:VersionOfObjectRef">
+		<xsd:annotation>
+			<xsd:documentation>Reference to a GeneralLogEntry.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="DatedJourneyLogEntryRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a reference to a DatedJourneyLogEntry.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="netex:VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="DatedJourneyLogEntryIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
 </xsd:schema>

@@ -4,6 +4,7 @@
 [submodule "SIRI"]
 	path = SIRI
 	url = https://github.com/SIRI-CEN/SIRI
+	branch = ControlActions
 [submodule "OJP"]
 	path = OJP
 	url = https://github.com/VDVde/OJP
