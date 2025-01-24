@@ -759,6 +759,7 @@
 	<Folder FolderName="OpRa">
 		<Folder FolderName="OpRa_top_level_Schema">
 			<File FilePath="xsd\OpRa_top_level_Schema\OpRa_Frame_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\OpRa_top_level_Schema\OpRa_publication.xsd" HomeFolder="Yes"/>
 		</Folder>
 		<File FilePath="xsd\OpRa_DatedJourneyInformationRecording_support.xsd" HomeFolder="Yes"/>
 		<File FilePath="xsd\OpRa_DatedJourneyInformationRecording_version.xsd" HomeFolder="Yes"/>
