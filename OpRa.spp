@@ -655,9 +655,11 @@
 			<File FilePath="SIRI\xsd\siriSg.xsd" HomeFolder="Yes"/>
 		</Folder>
 		<Folder FolderName="SIRI services">
+			<File FilePath="xsd\OpRa_DatedJourneyInformationRecording_version.xsd" HomeFolder="Yes"/>
 			<File FilePath="SIRI\xsd\siri_all_functionalServices.xsd" HomeFolder="Yes"/>
 			<File FilePath="SIRI\xsd\siri_connectionMonitoring_service.xsd" HomeFolder="Yes"/>
 			<File FilePath="SIRI\xsd\siri_connectionTimetable_service.xsd" HomeFolder="Yes"/>
+			<File FilePath="SIRI\xsd\siri_controlAction_service.xsd" HomeFolder="Yes"/>
 			<File FilePath="SIRI\xsd\siri_discovery.xsd" HomeFolder="Yes"/>
 			<File FilePath="SIRI\xsd\siri_estimatedTimetable_service.xsd" HomeFolder="Yes"/>
 			<File FilePath="SIRI\xsd\siri_facilityMonitoring_service.xsd" HomeFolder="Yes"/>
@@ -762,7 +764,7 @@
 			<File FilePath="xsd\OpRa_top_level_Schema\OpRa_publication.xsd" HomeFolder="Yes"/>
 		</Folder>
 		<File FilePath="xsd\OpRa_DatedJourneyInformationRecording_support.xsd" HomeFolder="Yes"/>
-		<File FilePath="xsd\OpRa_DatedJourneyInformationRecording_version.xsd" HomeFolder="Yes"/>
+		<File FilePath="xsd\OpRa_DatedJourneyInformationRecording_version.xsd"/>
 		<File FilePath="xsd\OpRa_GeneralLogEntry_support.xsd" HomeFolder="Yes"/>
 		<File FilePath="xsd\OpRa_GeneralLogEntry_version.xsd" HomeFolder="Yes"/>
 	</Folder>

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
+<xsd:schema xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
+	<!-- NeTEX Imports-->
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
+	<!-- SIRI Imports-->
+	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../SIRI/xsd/siri_model/siri_situationClassifiers.xsd"/>
+	<!-- OpRa Include-->
 	<xsd:include schemaLocation="OpRa_GeneralLogEntry_support.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
@@ -147,6 +151,7 @@ Rail transport, Roads and Road transport
 							<xsd:group ref="netex:LogEntryGroup"/>
 						</xsd:sequence>
 						<xsd:sequence>
+							<xsd:group ref="LogEntryContextGroup"/>
 							<xsd:group ref="GeneralLogEntryGroup"/>
 						</xsd:sequence>
 					</xsd:sequence>
@@ -162,6 +167,7 @@ Rail transport, Roads and Road transport
 		<xsd:complexContent>
 			<xsd:extension base="netex:LogEntry_VersionStructure">
 				<xsd:sequence>
+					<xsd:group ref="LogEntryContextGroup"/>
 					<xsd:group ref="GeneralLogEntryGroup">
 						<xsd:annotation>
 							<xsd:documentation>Elements for a generic conrete LOG ENTRY</xsd:documentation>
@@ -176,11 +182,6 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>Elements for a general LOG ENTRY.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="LoggedAtTime" type="xsd:dateTime">
-				<xsd:annotation>
-					<xsd:documentation>Date at which the LOG ENTRY was captured</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
 			<xsd:element name="LogEntryValues" type="LogEntryValues_RelStructure">
 				<xsd:annotation>
 					<xsd:documentation>Values picked up from the ENTITY as input for the LOGGABLE OBJECT.</xsd:documentation>
@@ -193,7 +194,7 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>A generic LOGENTRY.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="GeneralLogEntry" maxOccurs="unbounded">
+			<xsd:element ref="LogEntry_" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>A time-stamped record of an event or change of state.</xsd:documentation>
 				</xsd:annotation>
@@ -207,7 +208,7 @@ Rail transport, Roads and Road transport
 		<xsd:complexContent>
 			<xsd:extension base="netex:containmentAggregationStructure">
 				<xsd:sequence>
-					<xsd:element ref="GeneralLogEntry" maxOccurs="unbounded"/>
+					<xsd:element ref="LogEntry_" maxOccurs="unbounded"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -269,6 +270,28 @@ Rail transport, Roads and Road transport
 		<xsd:sequence>
 			<xsd:element ref="netex:VersionOfObjectRef"/>
 			<xsd:element name="UnitaryValue" type="LogEntryUnitaryValueStructure" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:group name="LogEntryContextGroup">
+		<xsd:annotation>
+			<xsd:documentation>Context (related event, control action and consequences) for a logged VALUE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="AssociatedControlActionType" type="ControlActionTypeEnumeration">
+				<xsd:annotation>
+					<xsd:documentation>Type of the CONTROL ACTION assiciated with the LOG ENTRY (cf Transmodel)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AssociatedConsequencetype" type="siri:ServiceConditionEnumeration">
+				<xsd:annotation>
+					<xsd:documentation>Type of the Consequence assiciated with the LOG ENTRY (cf SIRI SX)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AssociatedEventType" type="EventTypeEnumeration">
+				<xsd:annotation>
+					<xsd:documentation>Type of the trigering EVENT assiciated with the LOG ENTRY (cf Transmodel)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
 </xsd:schema>

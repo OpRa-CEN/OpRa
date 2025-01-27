@@ -161,6 +161,7 @@ DEPRECATED from SIRI 2.0</xsd:documentation>
 							<xsd:group ref="netex:LogEntryGroup"/>
 						</xsd:sequence>
 						<xsd:sequence>
+							<xsd:group ref="LogEntryContextGroup"/>
 							<xsd:group ref="DatedJourneyLogEntryGroup"/>
 						</xsd:sequence>
 					</xsd:sequence>
@@ -176,6 +177,7 @@ DEPRECATED from SIRI 2.0</xsd:documentation>
 		<xsd:complexContent>
 			<xsd:extension base="netex:LogEntry_VersionStructure">
 				<xsd:sequence>
+					<xsd:group ref="LogEntryContextGroup"/>
 					<xsd:group ref="DatedJourneyLogEntryGroup">
 						<xsd:annotation>
 							<xsd:documentation>Elements for  a LOG ENTRY related to a DatedJourney.</xsd:documentation>
@@ -190,11 +192,6 @@ DEPRECATED from SIRI 2.0</xsd:documentation>
 			<xsd:documentation>Elements for LOG ENTRY related to a DatedJourney.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="LoggedAtTime" type="xsd:dateTime">
-				<xsd:annotation>
-					<xsd:documentation>Date at which the LOG ENTRY was captured</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
 			<xsd:element name="SituationRef" type="siri:SituationSimpleRefStructure" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>Reference to a SITUATION providing further information about the LOG ENTRY.</xsd:documentation>
