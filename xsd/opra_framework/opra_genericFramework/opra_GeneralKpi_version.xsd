@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
+	<!-- NeTEX Imports-->
+    <xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
+    <xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
+    <xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
+	<!-- SIRI Imports-->
+    <xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../../../SIRI/xsd/siri_model/siri_situationClassifiers.xsd"/>
+	<!-- OpRa Include-->
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata>
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
+				<Date>
+					<Created>2024-11-29</Created>
+				</Date>
+				<Description>
+					<p>OpRa - Operational Raw Data</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>{http://www.opra.org/schemas/xsd/OpRa_GeneralLogEntry_version.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Rights>Unclassified
+				</Rights>
+				<Source>
+					<ul>
+						<li>Created for OpRa</li>
+					</ul>
+				</Source>
+				<Status>Initial Version</Status>
+				<Subject>
+					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+Air transport, Airports,
+Ports and maritime transport, Ferries (marine),
+Public transport, Bus services, Coach services, Bus stops and stations,
+Rail transport, Railway stations and track, Train services, Underground trains,
+Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+Rail transport, Roads and Road transport
+</Category>
+					<Project>CEN TC278 WG3 SG10.</Project>
+				</Subject>
+				<Title>Opra Operation Raw Data Exchange</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>OpRa generic presentation of KEY PERFORMANCE INDICATORs</xsd:documentation>
+	</xsd:annotation>
+	<!-- ======================================================================= -->
+	<xsd:element name="Kpi_" type="netex:DataManagedObjectStructure" abstract="true" substitutionGroup="netex:DataManagedObject">
+		<xsd:annotation>
+			<xsd:documentation>Dummy Supertype for a KEY PERFORMANCE INDICATOR.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+    <xsd:complexType name="Kpis_RelStructure">
+        <xsd:annotation>
+            <xsd:documentation>A collection of one or more KEY PERFORMANCE INDICATORs</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="Kpi" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>An entity for which LOG ENTRies may be made.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
