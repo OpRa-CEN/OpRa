@@ -1,21 +1,31 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_payload_framework">
+<xsd:schema xmlns="http://www.opra.org/opra"
+            xmlns:netex="http://www.netex.org.uk/netex" 
+            xmlns:siri="http://www.siri.org.uk/siri" 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            targetNamespace="http://www.opra.org/opra" 
+            elementFormDefault="qualified" 
+            attributeFormDefault="unqualified" 
+            version="1.0" 
+            id="opra_payload_framework">
 	<!-- ===Payload ============================= -->
     <xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_frames/netex_compositeFrame_version.xsd"/>
+    <!-- xsd:include schemaLocation="opra_frames/opra_compositeFrame_version.xsd"/ -->
+    <xsd:include schemaLocation="opra_frames/opra_compositeFrame_version.xsd"/>
     <xsd:include schemaLocation="opra_frames/opra_plannedServiceFrame_version.xsd"/>
     <xsd:include schemaLocation="opra_frames/opra_actualServiceFrame_version.xsd"/>
-    <xsd:include schemaLocation="opra_frames/opra_opraDataFrame_version.xsd"/>
+    <xsd:include schemaLocation="opra_frames/opra_rawDataFrame_version.xsd"/>
     <xsd:include schemaLocation="opra_frames/opra_kpiFrame_version.xsd"/>
     <xsd:complexType name="dataObjects_RelStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for a list of objects.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice maxOccurs="unbounded">
-			<xsd:element ref="CompositeFrame"/>
-            <xsd:element ref="PlannedServiceFrame" maxOccurs="1"/>
-            <xsd:element ref="ActualServiceFrame" maxOccurs="1"/>
-            <xsd:element ref="OpRaFrame" maxOccurs="1"/>
-            <xsd:element ref="KpiFrame" maxOccurs="1"/>
+			<xsd:element ref="CompositeFrame" minOccurs="0"/>
+            <xsd:element ref="PlannedServiceFrame" minOccurs="0"/>
+            <xsd:element ref="ActualServiceFrame" minOccurs="0"/>
+            <xsd:element ref="RawDataFrame" minOccurs="0"/>
+            <xsd:element ref="KpiFrame" minOccurs="0"/>
         </xsd:choice>
 	</xsd:complexType>
 	<xsd:group name="PayloadGroup">

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.opra.org/opra"
+            xmlns:netex="http://www.netex.org.uk/netex"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            targetNamespace="http://www.opra.org/opra"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+            version="1.0"
+            id="opra_versionFrame_version">
+    <xsd:include schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_versionFrame_version.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG6 Editor Nicholas Knowles.</Creator>
+				<Date>
+					<Created>2010-09-04</Created>
+				</Date>
+				<Date>
+					<Modified>2014-03-31</Modified>
+				</Date>
+				<Date><Modified>2019-03-05</Modified>UK-96 Add  prerequisites to VersionFrame
+				</Date>
+				<Date><Modified>2019-03-10</Modified>UK-8 add LayerRef toVersionFrame and to TypeOfFrame.
+				</Date>
+				<Date><Modified>2019-03-11</Modified>UK-31 Change data type on ClassAttributeInFrame and ClassRelationshipnFrame  / Name attributes   from NCName to QNAME.
+				</Date>
+				<Date><Modified>2019-04-15</Modified>Fix Add missing typesO to enable type of Frame
+				</Date>
+				<Description>
+					<p>NeTEx - Network Exchange. This subschema defines VERSION FRAME types.</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>{http://www.netex.org.uk/schemas/1.0/xsd/netex_framework/netex_responsibility}netex_versionFrame_version.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Publisher>Kizoom Software Ltd, 16 High Holborn, London WC1V 6BX</Publisher>
+				<Rights>Unclassified
+					 <Copyright>CEN, Crown Copyright 2009-2019</Copyright>
+				</Rights>
+				<Source>
+					<ul>
+						<li>Created for NeTEx.</li>
+					</ul>
+				</Source>
+				<Status>Version 1.0</Status>
+				<Subject>
+					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+Air transport, Airports,
+Ports and maritime transport, Ferries (marine),
+Public transport, Bus services, Coach services, Bus stops and stations,
+Rail transport, Railway stations and track, Train services, Underground trains,
+Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+Rail transport, Roads and Road transport
+</Category>
+					<Project>CEN TC278 WG3 SG9.</Project>
+				</Subject>
+				<Title>NeTEx Network Exchange - ENTITY types.</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>NeTEX: VERSION FRAME types for NeTEx.</xsd:documentation>
+	</xsd:annotation>
+	<!-- ====VERSION FRAME TYPES ======================================= -->
+	<xsd:element name="VersionFrame" type="netex:VersionFrame_VersionStructure" abstract="true" substitutionGroup="DataManagedObject">
+		<xsd:annotation>
+			<xsd:documentation> A set of VERSIONS referring to a same DATA SYSTEM and belonging to the same TYPE OF FRAME.  A FRAME may be restricted by VALIDITY CONDITIONs.  Container for a coherent set of versions of objects.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="VersionFrame_VersionStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a VERSION FRAME.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="netex:DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:group ref="VersionFrameGroup"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="VersionFrameGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements of a VERSION FRAME.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Name" type="netex:MultilingualString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Name of VERSION FRAME.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Description" type="netex:MultilingualString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Description of VERSION FRAME.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="netex:TypeOfFrameRef" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Reference to a TYPE OF VERSION FRAME.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BaselineVersionFrameRef" type="netex:VersionRefStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Prerequisite Baseline VERSION FRAME  that all objects in this VERSION require.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="codespaces" type="netex:codespaces_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>CODE SPACES used in this frame. Normally there will be at least one.  A default may be specified in the Frame defaults.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FrameDefaults" type="netex:VersionFrameDefaultsStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Default values to use on elements in the frame  that do not explicitly state a value.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="versions" type="netex:versions_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Formal definitions of VERSIONs included in frame.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="prerequisites" type="netex:versionFrameRefs_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Prerequisite VERSION FRAMEs containing elements  that this frame depends on.  +v1.1</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="traces" type="netex:traces_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>TRACEs recording changes to ENTITIES in FRAME.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:group ref="VersionFrameValiditiesGroup">
+				<xsd:annotation>
+					<xsd:documentation>Content VALIDITY CONDITION elements of a VERSION FRAME.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
+			<xsd:element name="layers" type="netex:layerRefs_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>layers included in frame</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>
