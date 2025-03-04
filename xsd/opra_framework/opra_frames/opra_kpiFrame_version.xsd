@@ -1,16 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
-
-
-<!--	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd"/>
+	<!--	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd"/>
 	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../../NeTEx/xsd/gml/geometryBasic0d1d-extract-v3_2_1.xsd"/>-->
-	
-<!--	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
+	<!--	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>-->
-    <xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_frames/netex_commonFrame_version.xsd"/>
-
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_frames/netex_commonFrame_version.xsd"/>
 	<!-- OpRa includes-->
-
 	<!-- ======================================================================= -->
 	<xsd:annotation>
 		<xsd:appinfo>
@@ -55,7 +50,6 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-
 		<xsd:documentation>OpRa FRAME types.</xsd:documentation>
 	</xsd:annotation>
 	<!-- ======================================================================= -->
@@ -87,7 +81,7 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:complexContent>
-				<xsd:restriction base="OpRa_VersionFrameStructure">
+				<xsd:restriction base="OpRa_Kpi_VersionFrameStructure">
 					<xsd:sequence>
 						<xsd:sequence>
 							<xsd:group ref="netex:EntityInVersionGroup" minOccurs="0"/>
@@ -107,7 +101,7 @@ Rail transport, Roads and Road transport
 			</xsd:complexContent>
 		</xsd:complexType>
 	</xsd:element>
-	<xsd:complexType name="OpRa_VersionFrameStructure" abstract="false">
+	<xsd:complexType name="OpRa_Kpi_VersionFrameStructure" abstract="false">
 		<xsd:annotation>
 			<xsd:documentation>Type for a OpRa FRAME.</xsd:documentation>
 		</xsd:annotation>
@@ -125,7 +119,6 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="KpiInFrameGroup"/>
-	
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ======================================================================= -->
