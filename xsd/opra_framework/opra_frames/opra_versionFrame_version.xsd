@@ -1,13 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns="http://www.opra.org/opra"
-            xmlns:netex="http://www.netex.org.uk/netex"
-            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-            targetNamespace="http://www.opra.org/opra"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="1.0"
-            id="opra_versionFrame_version">
-    <xsd:include schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_versionFrame_version.xsd"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_versionFrame_version">
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_versionFrame_version.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
@@ -21,13 +14,17 @@
 				<Date>
 					<Modified>2014-03-31</Modified>
 				</Date>
-				<Date><Modified>2019-03-05</Modified>UK-96 Add  prerequisites to VersionFrame
+				<Date>
+					<Modified>2019-03-05</Modified>UK-96 Add  prerequisites to VersionFrame
 				</Date>
-				<Date><Modified>2019-03-10</Modified>UK-8 add LayerRef toVersionFrame and to TypeOfFrame.
+				<Date>
+					<Modified>2019-03-10</Modified>UK-8 add LayerRef toVersionFrame and to TypeOfFrame.
 				</Date>
-				<Date><Modified>2019-03-11</Modified>UK-31 Change data type on ClassAttributeInFrame and ClassRelationshipnFrame  / Name attributes   from NCName to QNAME.
+				<Date>
+					<Modified>2019-03-11</Modified>UK-31 Change data type on ClassAttributeInFrame and ClassRelationshipnFrame  / Name attributes   from NCName to QNAME.
 				</Date>
-				<Date><Modified>2019-04-15</Modified>Fix Add missing typesO to enable type of Frame
+				<Date>
+					<Modified>2019-04-15</Modified>Fix Add missing typesO to enable type of Frame
 				</Date>
 				<Description>
 					<p>NeTEx - Network Exchange. This subschema defines VERSION FRAME types.</p>
@@ -67,7 +64,7 @@ Rail transport, Roads and Road transport
 		<xsd:documentation>NeTEX: VERSION FRAME types for NeTEx.</xsd:documentation>
 	</xsd:annotation>
 	<!-- ====VERSION FRAME TYPES ======================================= -->
-	<xsd:element name="VersionFrame" type="netex:VersionFrame_VersionStructure" abstract="true" substitutionGroup="DataManagedObject">
+	<xsd:element name="VersionFrame" type="netex:VersionFrame_VersionStructure" abstract="true" substitutionGroup="netex:DataManagedObject">
 		<xsd:annotation>
 			<xsd:documentation> A set of VERSIONS referring to a same DATA SYSTEM and belonging to the same TYPE OF FRAME.  A FRAME may be restricted by VALIDITY CONDITIONs.  Container for a coherent set of versions of objects.</xsd:documentation>
 		</xsd:annotation>
@@ -134,7 +131,7 @@ Rail transport, Roads and Road transport
 					<xsd:documentation>TRACEs recording changes to ENTITIES in FRAME.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:group ref="VersionFrameValiditiesGroup">
+			<xsd:group ref="netex:VersionFrameValiditiesGroup">
 				<xsd:annotation>
 					<xsd:documentation>Content VALIDITY CONDITION elements of a VERSION FRAME.</xsd:documentation>
 				</xsd:annotation>

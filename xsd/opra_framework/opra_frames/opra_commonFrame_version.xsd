@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_commonFrame_version">
-    <xsd:include schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_versionFrame_version.xsd"/>
-    <xsd:include schemaLocation="../../../NeTEx/xsd/netex_framework/netex_reusableComponents/netex_availabilityCondition_version.xsd"/>
-    <xsd:include schemaLocation="opra_versionFrame_version.xsd"/>
-    <xsd:annotation>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_versionFrame_version.xsd"/>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_reusableComponents/netex_availabilityCondition_version.xsd"/>
+	<xsd:include schemaLocation="opra_versionFrame_version.xsd"/>
+	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
 				<Aggregation>main schema</Aggregation>
@@ -68,7 +68,7 @@ Rail transport, Roads and road transport
 			<xsd:documentation>Type for a COMMON FRAME.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-            <xsd:extension base="VersionFrame_VersionStructure"/>
+			<xsd:extension base="VersionFrame_VersionStructure"/>
 		</xsd:complexContent>
 	</xsd:complexType>
 </xsd:schema>
