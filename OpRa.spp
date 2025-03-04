@@ -771,7 +771,6 @@
 				<File FilePath="xsd\opra_framework\opra_frames\opra_opraDataFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_plannedServiceFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_rawDataFrame_version.xsd" HomeFolder="Yes"/>
-				<File FilePath="xsd\opra_framework\opra_frames\opra_versionFrame_version.xsd" HomeFolder="Yes"/>
 			</Folder>
 			<Folder FolderName="OpRa_genericFramework">
 				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralKpi_version.xsd" HomeFolder="Yes"/>

@@ -2,7 +2,6 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_commonFrame_version">
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_versionFrame_version.xsd"/>
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_reusableComponents/netex_availabilityCondition_version.xsd"/>
-	<xsd:include schemaLocation="opra_versionFrame_version.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
@@ -58,7 +57,7 @@ Rail transport, Roads and road transport
 	</xsd:annotation>
 	<!-- ======================================================================= -->
 	<!-- ======================================================================= -->
-	<xsd:element name="CommonFrame" type="Common_VersionFrameStructure" abstract="true" substitutionGroup="VersionFrame">
+	<xsd:element name="CommonFrame" type="Common_VersionFrameStructure" abstract="true" substitutionGroup="netex:VersionFrame">
 		<xsd:annotation>
 			<xsd:documentation>Abstract supertype for explicit VERSION FRAMEs.</xsd:documentation>
 		</xsd:annotation>
@@ -68,7 +67,7 @@ Rail transport, Roads and road transport
 			<xsd:documentation>Type for a COMMON FRAME.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:extension base="VersionFrame_VersionStructure"/>
+			<xsd:extension base="netex:VersionFrame_VersionStructure"/>
 		</xsd:complexContent>
 	</xsd:complexType>
 </xsd:schema>
