@@ -1,14 +1,16 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
-	<!-- NeTEX Imports-->
-    <xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
-    <xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
-    <xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
-	<!-- SIRI Imports-->
-    <xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../../../SIRI/xsd/siri_model/siri_situationClassifiers.xsd"/>
-	<!-- OpRa Include-->
-	<xsd:annotation>
-		<xsd:appinfo>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- NeTEX Imports-->
+    <xsd:import schemaLocation="../../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd" namespace="http://www.opengis.net/gml/3.2" />
+    <xsd:import schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd" namespace="http://www.netex.org.uk/netex" />
+    <xsd:import schemaLocation="../../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd" namespace="http://www.netex.org.uk/netex" />
+    <xsd:import schemaLocation="../../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd" namespace="http://www.netex.org.uk/netex" />
+    <!-- SIRI Imports-->
+    <xsd:import schemaLocation="../../../SIRI/xsd/siri_model/siri_situationClassifiers.xsd" namespace="http://www.siri.org.uk/siri" />
+    <!-- OpRa Include-->
+    <xsd:annotation>
+        <xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -50,24 +52,50 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa generic presentation of KEY PERFORMANCE INDICATORs</xsd:documentation>
-	</xsd:annotation>
-	<!-- ======================================================================= -->
-	<xsd:element name="Kpi_" type="netex:DataManagedObjectStructure" abstract="true" substitutionGroup="netex:DataManagedObject">
-		<xsd:annotation>
-			<xsd:documentation>Dummy Supertype for a KEY PERFORMANCE INDICATOR.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
+        <xsd:documentation>OpRa generic presentation of KEY PERFORMANCE INDICATORs</xsd:documentation>
+    </xsd:annotation>
+    <!-- ======================================================================= -->
+    <xsd:element name="Kpi_" substitutionGroup="netex:DataManagedObject" abstract="true">
+        <xsd:annotation>
+            <xsd:documentation>Dummy Supertype for a KEY PERFORMANCE INDICATOR.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="netex:DataManagedObjectStructure">
+                    <xsd:group ref="KpiSpecificationGroup" />
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
     <xsd:complexType name="Kpis_RelStructure">
         <xsd:annotation>
             <xsd:documentation>A collection of one or more KEY PERFORMANCE INDICATORs</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element ref="Kpi" maxOccurs="unbounded">
+            <xsd:element ref="Kpi_" maxOccurs="unbounded">
                 <xsd:annotation>
-                    <xsd:documentation>An entity for which LOG ENTRies may be made.</xsd:documentation>
+                    <xsd:documentation>A key performance INDICATOR.</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
+    <xsd:group name="KpiSpecificationGroup">
+        <xsd:annotation>
+            <xsd:documentation>Context definition, indicator value and unit of measure for a key performance INDICATOR.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="KpiIdentifier" type="xsd:normalizedString">
+                <xsd:annotation>
+                    <xsd:documentation>A recognizable identifier of the KPI within the context domain.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="keyList" type="netex:KeyListStructure" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>A list of key/value pairs recognizable within the context domain.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="KpiValue" type="xsd:anySimpleType" />
+            <xsd:element xmlns:q1="http://www.opengis.net/gml/3.2" name="KpiUnit" type="q1:MeasureType" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:group>
 </xsd:schema>
