@@ -83,3 +83,5 @@ The comprehensive versions history is available in [change_log.md](https://githu
 
 ## CI
 The workflow scripts in `.github/scripts` validate the code. The permission to read and write is required for Github Actions, and is set up in "Settings/Actions/General".
+
+While `validate-and-lint.sh` should find every file automatically, `validate-examples.sh` requires to add the new files to a list, as they are created (the files starting with `placeholder*` are starter dummy files).
