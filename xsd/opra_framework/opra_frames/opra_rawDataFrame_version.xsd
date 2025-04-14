@@ -1,17 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="http://www.opra.org/opra" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!--	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd"/>
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0">
+	<!--	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd"/>
 	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../../NeTEx/xsd/gml/geometryBasic0d1d-extract-v3_2_1.xsd"/>-->
-    <!--	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
+	<!--	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>-->
-    <xsd:import schemaLocation="../../../NeTEx/xsd/netex_framework/netex_frames/netex_commonFrame_version.xsd" namespace="http://www.netex.org.uk/netex" />
-    <!-- OpRa includes-->
-    <xsd:include schemaLocation="../opra_genericFramework/OpRa_GeneralLogEntry_version.xsd" />
-    <xsd:include schemaLocation="../../opra_rawdata/OpRa_DatedJourneyInformationRecording_version.xsd" />
-    <!-- ======================================================================= -->
-    <xsd:annotation>
-        <xsd:appinfo>
+	<xsd:import schemaLocation="../../../NeTEx/xsd/netex_framework/netex_frames/netex_commonFrame_version.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- OpRa includes-->
+	<xsd:include schemaLocation="../opra_genericFramework/OpRa_GeneralLogEntry_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_rawdata/OpRa_DatedJourneyInformationRecording_version.xsd"/>
+	<!-- ======================================================================= -->
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -53,95 +53,95 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa FRAME types.</xsd:documentation>
-    </xsd:annotation>
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="RawDataFrameIdType">
-        <xsd:annotation>
-            <xsd:documentation>Type for identifier of a OpRa FRAME.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="netex:VersionFrameIdType" />
-    </xsd:simpleType>
-    <xsd:element name="RawDataFrameRef" type="RawDataFrameRefStructure" substitutionGroup="netex:VersionFrameRef" abstract="false">
-        <xsd:annotation>
-            <xsd:documentation>Reference to an OpRa FRAME.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType abstract="false" name="RawDataFrameRefStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for a reference to a OpRa FRAME.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:simpleContent>
-            <xsd:restriction base="netex:VersionFrameRefStructure">
-                <xsd:attribute name="ref" type="RawDataFrameIdType" use="required" />
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <!-- ======================================================================= -->
-    <xsd:element name="RawDataFrame" substitutionGroup="netex:CommonFrame" abstract="false">
-        <xsd:annotation>
-            <xsd:documentation>A coherent set of OpRa data to which the same frame VALIDITY CONDITIONs have been assigned.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexType>
-            <xsd:complexContent>
-                <xsd:restriction base="RawDataVersionFrameStructure">
-                    <xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="netex:DataManagedObjectGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="netex:VersionFrameGroup" />
-                            <xsd:element name="preparedness"/>
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="RawDataFrameGroup" />
-                        </xsd:sequence>
-                    </xsd:sequence>
-                    <xsd:attribute name="id" type="RawDataFrameIdType" />
-                </xsd:restriction>
-            </xsd:complexContent>
-        </xsd:complexType>
-    </xsd:element>
-    <xsd:complexType abstract="false" name="RawDataVersionFrameStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for a OpRa VERSION FRAME.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="netex:Common_VersionFrameStructure">
-                <xsd:sequence>
-                    <xsd:group ref="RawDataFrameGroup" />
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="RawDataFrameGroup">
-        <xsd:annotation>
-            <xsd:documentation>Elements for a OpRa RAW DATA FRAME.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:group ref="RawDataInFrameGroup" />
-        </xsd:sequence>
-    </xsd:group>
-    <!-- ======================================================================= -->
-    <xsd:group name="RawDataInFrameGroup">
-        <xsd:annotation>
-            <xsd:documentation>OpRa related elements in frame.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="datedJourneyInformationRecordings" type="DatedJourneyInformationRecordings_RelStructure" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>DATED JOURNEY informations in frame.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="generalLogEntries" type="GeneralLogEntries_RelStructure" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>General LOG ENTRies in frame.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:group>
-    <!-- ======================================================================= -->
+		<xsd:documentation>OpRa FRAME types.</xsd:documentation>
+	</xsd:annotation>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="RawDataFrameIdType">
+		<xsd:annotation>
+			<xsd:documentation>Type for identifier of a OpRa FRAME.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="netex:VersionFrameIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="RawDataFrameRef" type="RawDataFrameRefStructure" substitutionGroup="netex:VersionFrameRef" abstract="false">
+		<xsd:annotation>
+			<xsd:documentation>Reference to an OpRa FRAME.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType abstract="false" name="RawDataFrameRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a reference to a OpRa FRAME.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="netex:VersionFrameRefStructure">
+				<xsd:attribute name="ref" type="RawDataFrameIdType" use="required"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:element name="RawDataFrame" substitutionGroup="netex:CommonFrame" abstract="false">
+		<xsd:annotation>
+			<xsd:documentation>A coherent set of OpRa data to which the same frame VALIDITY CONDITIONs have been assigned.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="RawDataVersionFrameStructure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:DataManagedObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:VersionFrameGroup"/>
+							<xsd:element name="preparedness"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="RawDataFrameGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="RawDataFrameIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType abstract="false" name="RawDataVersionFrameStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a OpRa VERSION FRAME.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="netex:Common_VersionFrameStructure">
+				<xsd:sequence>
+					<xsd:group ref="RawDataFrameGroup"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="RawDataFrameGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for a OpRa RAW DATA FRAME.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="RawDataInFrameGroup"/>
+		</xsd:sequence>
+	</xsd:group>
+	<!-- ======================================================================= -->
+	<xsd:group name="RawDataInFrameGroup">
+		<xsd:annotation>
+			<xsd:documentation>OpRa related elements in frame.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="datedJourneyInformationRecordings" type="DatedJourneyInformationRecordings_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>DATED JOURNEY informations in frame.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="generalLogEntries" type="GeneralLogEntries_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>General LOG ENTRies in frame.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	<!-- ======================================================================= -->
 </xsd:schema>

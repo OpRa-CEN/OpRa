@@ -8,9 +8,7 @@
 	<xsd:include schemaLocation="opra_frames/opra_actualServiceFrame_version.xsd"/>
 	<xsd:include schemaLocation="opra_frames/opra_rawDataFrame_version.xsd"/>
 	<xsd:include schemaLocation="opra_frames/opra_kpiFrame_version.xsd"/>
-	
-<!--TODO: NEEDS A PROPER HEADER	-->
-	
+	<!--TODO: NEEDS A PROPER HEADER	-->
 	<xsd:complexType name="dataObjects_RelStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for a list of objects.</xsd:documentation>

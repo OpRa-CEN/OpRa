@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
-    <xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
-    <xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
-    <xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata>
@@ -126,28 +126,23 @@ Rail transport, Roads and Road transport
 			</xsd:restriction>
 		</xsd:simpleContent>
 	</xsd:complexType>
-	
 	<!-- ======================================================================= -->
 	<xsd:simpleType name="ControlActionTypeEnumeration">
 		<xsd:annotation>
 			<xsd:documentation>Values for CONTROL ACTION (cf SIRI and TRANSMODEL)</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:NMTOKEN">
-		
 			<xsd:enumeration value="JourneyCreation"/>
 			<xsd:enumeration value="JourneyCancellation"/>
 			<xsd:enumeration value="PartialJourneyCancellation"/>
 			<xsd:enumeration value="FlexibleJourneyActivation"/>
 			<xsd:enumeration value="ChangeOfJourneyPattern"/>
 			<xsd:enumeration value="ChangeOfJourneyTiming"/>
-
 			<xsd:enumeration value="ChangeOfStopPointStatus"/>
-
 			<xsd:enumeration value="InterchangeCreation"/>
 			<xsd:enumeration value="InterchangeCancellation"/>
 			<xsd:enumeration value="InterchangeModification"/>
-
-			<xsd:enumeration value="VehicleWorkAssignment"/>			
+			<xsd:enumeration value="VehicleWorkAssignment"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<!-- ======================================================================= -->
@@ -156,166 +151,162 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>Values for RVENT types (cf TRANSMODEL)</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:NMTOKEN">
-
-    <!-- Event ................... -->
-        <xsd:enumeration value="LocatedEvent"/>
-        <!-- FareContractEvent ................... -->
-            <xsd:enumeration value="AccountProcessingEvent"/>	<!-- refined in ... -->
-                <xsd:enumeration value="AccountDetectNoCheckOutEvent"/>
-                <xsd:enumeration value="AccountDetectTripEvent"/>
-                <xsd:enumeration value="AccountDetectNoCheckInEvent"/>
-                <xsd:enumeration value="AccountDetectSuspiciousEvent"/>
-                <xsd:enumeration value="AccountDétectReentryEvent"/>
-                
-            <xsd:enumeration value="SalesEvent"/>	<!-- refined in ... -->
-                <xsd:enumeration value="CustomerSalesEvent"/>
-                     <xsd:enumeration value="CustomerProductPurchaseEvent"/>
-                     <xsd:enumeration value="CustomerExchangeEvent"/>
-                     <xsd:enumeration value="CustomerRefundEvent"/>
-                     
-                <xsd:enumeration value="AccountSalesEvent"/>	<!-- refined in ... -->
-                     <xsd:enumeration value="AccountAwardRefondEvent"/>
-                     <xsd:enumeration value="AccountAutoTopUpEvent"/>
-                     <xsd:enumeration value="AccountAutoRenewalEvent"/>
-                     
-                <xsd:enumeration value="CustomerReservationEvent"/>	<!-- refined in ... -->
-                     <xsd:enumeration value="CustomerRéservationCancellationEvent"/>
-                     <xsd:enumeration value="CustomerReservationCreationEvent"/>
-                     <xsd:enumeration value="CustomerSpotAvailabilityEvent"/>
-                     
-                <xsd:enumeration value="TravelPackageEvent"/>	<!-- refined in ... -->
-                     <xsd:enumeration value="TravelPackageCancellationEvent"/>
-                     <xsd:enumeration value="TravelPackageCréationEvent"/>
-                     
-            <xsd:enumeration value="AccountSecurityEvent"/>	<!-- refined in ... -->
-                <xsd:enumeration value="AllowAccountOnSecurityListEvent"/>
-                <xsd:enumeration value="AccountSuspendEvent"/>
-                <xsd:enumeration value="DenyAccountOnSecurityListEvent"/>
-                <xsd:enumeration value="AccountReviveEvent"/>
-                <xsd:enumeration value="AccountDetectEligibilityChangeEvent"/>
-                
-            <xsd:enumeration value="CustomerAccountEvent"/>	<!-- refined in ... -->
-                <xsd:enumeration value="RestoreCustomerAccountEvent"/>
-                <xsd:enumeration value="CustomerRegisterMediaEvent"/>
-                <xsd:enumeration value="CustomerModifyProfileEvent"/>
-                <xsd:enumeration value="RegisterEvent"/>
-                <xsd:enumeration value="CustomerDeregisterEvent"/>
-                
-            <xsd:enumeration value="CustomerFulfilmentEvent"/>	<!-- refined in ... -->
-                <xsd:enumeration value="CustomerCollectEvent"/>
-                <xsd:enumeration value="CustomerMediaApplicationRestoreEvent"/>
-                <xsd:enumeration value="CustomerProductActivationEvent"/>
-                <xsd:enumeration value="CustomerMediaRestoreEvent"/>
-                <xsd:enumeration value="CustomerMediaInstallEvent"/>
-                <xsd:enumeration value="CustomerRevokeFulfilmentEvent"/>
-                
-            <xsd:enumeration value="PassengerTravelControlEvent"/>	<!-- refined in ... -->
-                <xsd:enumeration value="PassencerSecurityListCheckEvent"/>
-                <xsd:enumeration value="PassengerCheckOutEvent"/>
-                <xsd:enumeration value="PassencerActivateTripEvent"/>
-                <xsd:enumeration value="PassengerWayPointEvent"/>
-                <xsd:enumeration value="PassengerCheckInEvent"/>
-                <xsd:enumeration value="ControlPassengerTripEvent"/>
-                <xsd:enumeration value="ControlRevertFareEvent"/>
-                
-            <xsd:enumeration value="VehicleServiceEvent"/>	<!-- refined in ... -->
-                <xsd:enumeration value="RideProvisionEvent"/>
-                     <xsd:enumeration value="BeginJourneyEvent"/>
-                     <xsd:enumeration value="PickUpRiderEvent"/>
-                     <xsd:enumeration value="CompleteJourneyEvent"/>
-                     <xsd:enumeration value="SetDownRiderEvent"/>
-                     <xsd:enumeration value="LogDriversFeedbackEvent"/>
-                     <xsd:enumeration value="RiderNoShowEvent"/>
-                     <xsd:enumeration value="AbortJourneyEvent"/>
-                     
-                <xsd:enumeration value="VehicleUseEvent"/>	<!-- refined in ... -->
-                     <xsd:enumeration value="BookVehicleEvent"/>
-                     <xsd:enumeration value="CollectVehicleEvent"/>
-                     <xsd:enumeration value="ReturnVehicleEvent"/>
-                     
-            <xsd:enumeration value="LateReturnVehicleEvent"/>	<!-- refined in ... -->
-                     <xsd:enumeration value="ReportTrafficOffenceEvent"/>
-                     <xsd:enumeration value="ReportDamageToVehicleEvent"/>
-                     
-                <xsd:enumeration value="VehicleProvisionEvent"/>	<!-- refined in ... -->
-                     <xsd:enumeration value="WithdrawVehicleEvent"/>
-                     <xsd:enumeration value="ReserveVehicleEvent"/>
-                     <xsd:enumeration value="RecisterVehicleCollectionEvent"/>
-                     <xsd:enumeration value="RegisterVehicleReturnEvent"/>
-                     <xsd:enumeration value="DetectNoReturnEvent"/>
-                     <xsd:enumeration value="DetectDamageToVehicleEvent"/>
-                     <xsd:enumeration value="ProvideVehicleEvent"/>
-                     
-                <xsd:enumeration value="VehicleWantedEvent"/>	<!-- refined in ... -->
-                     <xsd:enumeration value="HailVehicleEvent"/>
-                     <xsd:enumeration value="BookVehicleRideEvent"/>
-                     	<!-- refined in ... -->
-                <xsd:enumeration value="JourneyWantedEvent"/>
-                     <xsd:enumeration value="AcceptJourneyOfferEvent"/>
-                     <xsd:enumeration value="CancelJourneyOfferEvent"/>
-                     <xsd:enumeration value="PostJournevWantedEvent"/>
-                     
-                <xsd:enumeration value="TaxiMeterEvent"/>	<!-- refined in ... -->
-                     <xsd:enumeration value="StartMeterEvent"/>
-                     <xsd:enumeration value="PauseMeterEvent"/>
-                     <xsd:enumeration value="StopMeterEvent"/>
-                     
-                <xsd:enumeration value="JourneyOfferEvent"/>	<!-- refined in ... -->
-                     <xsd:enumeration value="PublishJourneyOfferEvent"/>
-                     <xsd:enumeration value="ModifyJourneyOfferEvent"/>
-                     <xsd:enumeration value="RetractJourneyOfferEvent"/>
-                     <xsd:enumeration value="CancelRiderBidEvent"/>
-                     <xsd:enumeration value="AcceptRiderBidEvent"/>
-                     
-                <xsd:enumeration value="RidingEvent"/>	<!-- refined in ... -->
-                     <xsd:enumeration value="LogPassengersFeedbackEvent"/>
-                     <xsd:enumeration value="BeginRideEvent"/>
-                     <xsd:enumeration value="CompleteRideEvent"/>
-                     <xsd:enumeration value="DriverNoShowEvent"/>
-                     <xsd:enumeration value="AbortRideEvent"/>
-                     
-            <xsd:enumeration value="CustomerRedressEvent"/>	<!-- refined in ... -->
-                <xsd:enumeration value="CustomerEligibleForRedressEvent"/>
-                <xsd:enumeration value="CustomerRedressOfferEvent"/>
-                <xsd:enumeration value="CustomerRedressRequestEvent"/>
-                <xsd:enumeration value="CustomerRedressAcceptedEvent"/>
-                
-    <xsd:enumeration value="TravelSpecificationEvent"/>
-    <xsd:enumeration value="OperationalEvent"/>	<!-- refined in ... -->
-        <xsd:enumeration value="Incident"/>
-            <xsd:enumeration value="DriverIncident"/>
-            <xsd:enumeration value="VehicleIncident"/>
-            
-        <xsd:enumeration value="Alarm"/>
-        <xsd:enumeration value="FacilityOperationalEvent"/>
-        <xsd:enumeration value="SiteOperationalEvent"/>
-    <xsd:enumeration value="GeneralEvent"/>
-    <!-- TravelEvent ................... -->
-        <xsd:enumeration value="TravelDisruptionEvent"/>	<!-- refined in ... -->
-            <xsd:enumeration value="DelayThresholdReachedEvent"/>
-            <xsd:enumeration value="MissedConnectionEvent"/>
-            <xsd:enumeration value="IncompleteJourneyEvent"/>
-            <xsd:enumeration value="ServiceCancellationEvent"/>
-            
-        <xsd:enumeration value="InadequateServiceQualityEvent"/>	<!-- refined in ... -->
-            <xsd:enumeration value="FacilitiesNotProvidedEvent"/>
-            <xsd:enumeration value="AssistanceNotProvidedEvent"/>
-            <xsd:enumeration value="PerformanceFailureThresholdReachedEvent"/>
-            <xsd:enumeration value="TravelControlFailureEvent"/>
-            
-        <xsd:enumeration value="PassengerHindranceEvent"/>	<!-- refined in ... -->
-            <xsd:enumeration value="PassengerDeniedBoardingEvent"/>
-            <xsd:enumeration value="PassengerMediaFailureEvent"/>
-            <xsd:enumeration value="PassengerStrandedEvent"/>
-            
-        <xsd:enumeration value="FaultyInformationEvent"/>	<!-- refined in ... -->        
-            <xsd:enumeration value="InsufficientInformationEvent"/>
-            <xsd:enumeration value="WrongInformationEvent"/>				
+			<!-- Event ................... -->
+			<xsd:enumeration value="LocatedEvent"/>
+			<!-- FareContractEvent ................... -->
+			<xsd:enumeration value="AccountProcessingEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="AccountDetectNoCheckOutEvent"/>
+			<xsd:enumeration value="AccountDetectTripEvent"/>
+			<xsd:enumeration value="AccountDetectNoCheckInEvent"/>
+			<xsd:enumeration value="AccountDetectSuspiciousEvent"/>
+			<xsd:enumeration value="AccountDétectReentryEvent"/>
+			<xsd:enumeration value="SalesEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="CustomerSalesEvent"/>
+			<xsd:enumeration value="CustomerProductPurchaseEvent"/>
+			<xsd:enumeration value="CustomerExchangeEvent"/>
+			<xsd:enumeration value="CustomerRefundEvent"/>
+			<xsd:enumeration value="AccountSalesEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="AccountAwardRefondEvent"/>
+			<xsd:enumeration value="AccountAutoTopUpEvent"/>
+			<xsd:enumeration value="AccountAutoRenewalEvent"/>
+			<xsd:enumeration value="CustomerReservationEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="CustomerRéservationCancellationEvent"/>
+			<xsd:enumeration value="CustomerReservationCreationEvent"/>
+			<xsd:enumeration value="CustomerSpotAvailabilityEvent"/>
+			<xsd:enumeration value="TravelPackageEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="TravelPackageCancellationEvent"/>
+			<xsd:enumeration value="TravelPackageCréationEvent"/>
+			<xsd:enumeration value="AccountSecurityEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="AllowAccountOnSecurityListEvent"/>
+			<xsd:enumeration value="AccountSuspendEvent"/>
+			<xsd:enumeration value="DenyAccountOnSecurityListEvent"/>
+			<xsd:enumeration value="AccountReviveEvent"/>
+			<xsd:enumeration value="AccountDetectEligibilityChangeEvent"/>
+			<xsd:enumeration value="CustomerAccountEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="RestoreCustomerAccountEvent"/>
+			<xsd:enumeration value="CustomerRegisterMediaEvent"/>
+			<xsd:enumeration value="CustomerModifyProfileEvent"/>
+			<xsd:enumeration value="RegisterEvent"/>
+			<xsd:enumeration value="CustomerDeregisterEvent"/>
+			<xsd:enumeration value="CustomerFulfilmentEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="CustomerCollectEvent"/>
+			<xsd:enumeration value="CustomerMediaApplicationRestoreEvent"/>
+			<xsd:enumeration value="CustomerProductActivationEvent"/>
+			<xsd:enumeration value="CustomerMediaRestoreEvent"/>
+			<xsd:enumeration value="CustomerMediaInstallEvent"/>
+			<xsd:enumeration value="CustomerRevokeFulfilmentEvent"/>
+			<xsd:enumeration value="PassengerTravelControlEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="PassencerSecurityListCheckEvent"/>
+			<xsd:enumeration value="PassengerCheckOutEvent"/>
+			<xsd:enumeration value="PassencerActivateTripEvent"/>
+			<xsd:enumeration value="PassengerWayPointEvent"/>
+			<xsd:enumeration value="PassengerCheckInEvent"/>
+			<xsd:enumeration value="ControlPassengerTripEvent"/>
+			<xsd:enumeration value="ControlRevertFareEvent"/>
+			<xsd:enumeration value="VehicleServiceEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="RideProvisionEvent"/>
+			<xsd:enumeration value="BeginJourneyEvent"/>
+			<xsd:enumeration value="PickUpRiderEvent"/>
+			<xsd:enumeration value="CompleteJourneyEvent"/>
+			<xsd:enumeration value="SetDownRiderEvent"/>
+			<xsd:enumeration value="LogDriversFeedbackEvent"/>
+			<xsd:enumeration value="RiderNoShowEvent"/>
+			<xsd:enumeration value="AbortJourneyEvent"/>
+			<xsd:enumeration value="VehicleUseEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="BookVehicleEvent"/>
+			<xsd:enumeration value="CollectVehicleEvent"/>
+			<xsd:enumeration value="ReturnVehicleEvent"/>
+			<xsd:enumeration value="LateReturnVehicleEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="ReportTrafficOffenceEvent"/>
+			<xsd:enumeration value="ReportDamageToVehicleEvent"/>
+			<xsd:enumeration value="VehicleProvisionEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="WithdrawVehicleEvent"/>
+			<xsd:enumeration value="ReserveVehicleEvent"/>
+			<xsd:enumeration value="RecisterVehicleCollectionEvent"/>
+			<xsd:enumeration value="RegisterVehicleReturnEvent"/>
+			<xsd:enumeration value="DetectNoReturnEvent"/>
+			<xsd:enumeration value="DetectDamageToVehicleEvent"/>
+			<xsd:enumeration value="ProvideVehicleEvent"/>
+			<xsd:enumeration value="VehicleWantedEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="HailVehicleEvent"/>
+			<xsd:enumeration value="BookVehicleRideEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="JourneyWantedEvent"/>
+			<xsd:enumeration value="AcceptJourneyOfferEvent"/>
+			<xsd:enumeration value="CancelJourneyOfferEvent"/>
+			<xsd:enumeration value="PostJournevWantedEvent"/>
+			<xsd:enumeration value="TaxiMeterEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="StartMeterEvent"/>
+			<xsd:enumeration value="PauseMeterEvent"/>
+			<xsd:enumeration value="StopMeterEvent"/>
+			<xsd:enumeration value="JourneyOfferEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="PublishJourneyOfferEvent"/>
+			<xsd:enumeration value="ModifyJourneyOfferEvent"/>
+			<xsd:enumeration value="RetractJourneyOfferEvent"/>
+			<xsd:enumeration value="CancelRiderBidEvent"/>
+			<xsd:enumeration value="AcceptRiderBidEvent"/>
+			<xsd:enumeration value="RidingEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="LogPassengersFeedbackEvent"/>
+			<xsd:enumeration value="BeginRideEvent"/>
+			<xsd:enumeration value="CompleteRideEvent"/>
+			<xsd:enumeration value="DriverNoShowEvent"/>
+			<xsd:enumeration value="AbortRideEvent"/>
+			<xsd:enumeration value="CustomerRedressEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="CustomerEligibleForRedressEvent"/>
+			<xsd:enumeration value="CustomerRedressOfferEvent"/>
+			<xsd:enumeration value="CustomerRedressRequestEvent"/>
+			<xsd:enumeration value="CustomerRedressAcceptedEvent"/>
+			<xsd:enumeration value="TravelSpecificationEvent"/>
+			<xsd:enumeration value="OperationalEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="Incident"/>
+			<xsd:enumeration value="DriverIncident"/>
+			<xsd:enumeration value="VehicleIncident"/>
+			<xsd:enumeration value="Alarm"/>
+			<xsd:enumeration value="FacilityOperationalEvent"/>
+			<xsd:enumeration value="SiteOperationalEvent"/>
+			<xsd:enumeration value="GeneralEvent"/>
+			<!-- TravelEvent ................... -->
+			<xsd:enumeration value="TravelDisruptionEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="DelayThresholdReachedEvent"/>
+			<xsd:enumeration value="MissedConnectionEvent"/>
+			<xsd:enumeration value="IncompleteJourneyEvent"/>
+			<xsd:enumeration value="ServiceCancellationEvent"/>
+			<xsd:enumeration value="InadequateServiceQualityEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="FacilitiesNotProvidedEvent"/>
+			<xsd:enumeration value="AssistanceNotProvidedEvent"/>
+			<xsd:enumeration value="PerformanceFailureThresholdReachedEvent"/>
+			<xsd:enumeration value="TravelControlFailureEvent"/>
+			<xsd:enumeration value="PassengerHindranceEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="PassengerDeniedBoardingEvent"/>
+			<xsd:enumeration value="PassengerMediaFailureEvent"/>
+			<xsd:enumeration value="PassengerStrandedEvent"/>
+			<xsd:enumeration value="FaultyInformationEvent"/>
+			<!-- refined in ... -->
+			<xsd:enumeration value="InsufficientInformationEvent"/>
+			<xsd:enumeration value="WrongInformationEvent"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<!-- ======================================================================= -->
-
 </xsd:schema>
-
-
-

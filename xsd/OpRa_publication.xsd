@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
-
 	<!-- ===SIRI system IDs for  request =========================================================== -->
-    <xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../SIRI/xsd/siri/siri_base.xsd"/>
-    <xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../SIRI/xsd/siri_utility/siri_participant.xsd"/>
-    <xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../SIRI/xsd/siri/siri_requests.xsd"/>
+	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../SIRI/xsd/siri/siri_base.xsd"/>
+	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../SIRI/xsd/siri_utility/siri_participant.xsd"/>
+	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../SIRI/xsd/siri/siri_requests.xsd"/>
 	<!-- ===Regular netex============================================================== -->
 	<!--<xsd:include schemaLocation="../../NeTEx/xsd/netex_service/netex_dataObjectRequest_service.xsd"/>-->
-    <xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_service/netex_all.xsd"/>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_service/netex_all.xsd"/>
 	<!-- ===Includes (OpRa)============================================================== -->
-    <xsd:include schemaLocation="opra_framework/opra_payload_framework.xsd"/>
-    <xsd:include schemaLocation="opra_framework/opra_frames/opra_opraDataFrame_version.xsd"/>
+	<xsd:include schemaLocation="opra_framework/opra_payload_framework.xsd"/>
+	<xsd:include schemaLocation="opra_framework/opra_frames/opra_opraDataFrame_version.xsd"/>
 	<!-- === Documentation ======================================= -->
-	
 	<!-- ========================================== 
 	THIS IS BASICALLY A COPY OF THE NETEX PUBLICATION STRUCTURE: IT CAN (SHOULD ?) BE SPECIALISED FOR OPRA
 	=== Documentation ======================================= -->
-
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata>
@@ -122,7 +119,6 @@ Rail transport, Roads and Road transport
 		<!-- =====FRAMEWORK Constraints=========================  -->
 		<!-- =====Codespace Key ========================== -->
 		<!-- ===== Codespace Unique===========================  -->
-
 		<!-- =====TypeOfFrame unique========================== -->
 		<xsd:unique name="TypeOfFrame_UniqueBy_Id_Version">
 			<xsd:annotation>
@@ -144,10 +140,7 @@ Rail transport, Roads and Road transport
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
 		</xsd:key>
-		
-	<!-- =====TO BE COMPLETED WITH OPRA SPECIFIC CONSTRAINTS================= -->
-
-		
+		<!-- =====TO BE COMPLETED WITH OPRA SPECIFIC CONSTRAINTS================= -->
 	</xsd:element>
 	<!-- =====END OF CONSTRAINTS================= -->
 	<xsd:complexType name="PublicationDeliveryStructure">
