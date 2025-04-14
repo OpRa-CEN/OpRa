@@ -78,4 +78,10 @@ The schema is systematically divided into small modular files. Generally, for ea
 | 1.0            | Month 2024    | Initial productive version | [Code](https://github.com/OpRa-CEN/OpRa/releases/tag/v1.0) | [Release Notes](https://github.com/OpRa-CEN/OpRa/blob/v1.0/README.md) |
 
 ## Full Version History 📚
+The comprehensive versions history is available in [change_log.md](https://github.com/ITxPT/NeTEx/blob/NeTEx/change_log.md)
 
+
+## CI
+The workflow scripts in `.github/scripts` validate the code. The permission to read and write is required for Github Actions, and is set up in "Settings/Actions/General".
+
+While `validate-and-lint.sh` should find every file automatically, `validate-examples.sh` requires to add the new files to a list, as they are created (the files starting with `placeholder*` are starter dummy files).
