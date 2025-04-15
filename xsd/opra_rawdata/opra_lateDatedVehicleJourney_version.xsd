@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- NeTEX Imports-->
+    <xsd:import schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd" namespace="http://www.netex.org.uk/netex" />
+    <xsd:import schemaLocation="../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd" namespace="http://www.netex.org.uk/netex" />
+    <xsd:import schemaLocation="../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd" namespace="http://www.netex.org.uk/netex" />
+    <xsd:import schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_vehicleJourney_support.xsd" namespace="http://www.netex.org.uk/netex" />
+    <!-- SIRI Imports-->
+    <xsd:import schemaLocation="../../SIRI/xsd/siri_model/siri_reference.xsd" namespace="http://www.siri.org.uk/siri" />
+    <xsd:import schemaLocation="../../SIRI/xsd/siri_model/siri_journey_support.xsd" namespace="http://www.siri.org.uk/siri" />
+    <!-- OpRa includes-->
+    <xsd:include schemaLocation="../opra_framework/opra_genericFramework/OpRa_GeneralLogEntry_version.xsd" />
+    <xsd:include schemaLocation="OpRa_DatedJourneyInformationRecording_version.xsd" />
+    <xsd:annotation>
+        <xsd:appinfo>
+			<Metadata>
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
+				<Date>
+					<Created>2024-11-29</Created>
+				</Date>
+				<Description>
+					<p>OpRa - Operational Raw Data</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>{http://www.opra.org/schemas/xsd/OpRa_DatedJourneyInformationRecording_version.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Rights>Unclassified
+				</Rights>
+				<Source>
+					<ul>
+						<li>Created for OpRa</li>
+					</ul>
+				</Source>
+				<Status>Initial Version</Status>
+				<Subject>
+					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+Air transport, Airports,
+Ports and maritime transport, Ferries (marine),
+Public transport, Bus services, Coach services, Bus stops and stations,
+Rail transport, Railway stations and track, Train services, Underground trains,
+Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+Rail transport, Roads and Road transport
+</Category>
+					<Project>CEN TC278 WG3 SG10.</Project>
+				</Subject>
+				<Title>Opra Operation Raw Data Exchange</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+        <xsd:documentation>OpRa DatedJourneyInformationRecording</xsd:documentation>
+    </xsd:annotation>
+    <!-- ======================================================================= -->
+    <xsd:element name="LateDatedVehicleJourney" substitutionGroup="LoggableObject_">
+        <xsd:annotation>
+            <xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:restriction base="LateDatedVehicleJourney_VersionStructure">
+                    <xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="netex:DataManagedObjectGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="LoggableObjectGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="DatedJourneyInformationRecordingGroup" />
+                        </xsd:sequence>
+                    </xsd:sequence>
+                    <xsd:attribute name="id" type="LoggableObjectIdType" />
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="LateDatedVehicleJourney_VersionStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for a LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="DatedJourneyInformationRecordings_RelStructure">
+                <xsd:sequence>
+                    <xsd:group ref="DatedJourneyInformationRecordingGroup">
+                        <xsd:annotation>
+                            <xsd:documentation>Elements for a LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:group>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="LateDatedVehicleJourneyGroup">
+        <xsd:annotation>
+            <xsd:documentation>Elements for a general LOG ENTRY.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:group ref="siri:LineIdentityGroup" />
+            <xsd:element name="OperatorRef" type="siri:OperatorRefStructure" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Reference to the OPERATOR of the DATED VEHICLE JOURNEY to cancel</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:choice>
+                <xsd:element name="FramedVehicleJourneyRef" type="siri:FramedVehicleJourneyRefStructure">
+                    <xsd:annotation>
+                        <xsd:documentation>Identifer of a VEHICLE JOURNEY within data Horizon of a service.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="DatedVehicleJourneyRef" type="siri:DatedVehicleJourneyRefStructure">
+                    <xsd:annotation>
+                        <xsd:documentation>Reference to a dated VEHICLE JOURNEY. This will be 'framed' i.e. be with the data context of the ESTIMATED Timetable.
+DEPRECATED from SIRI 2.0</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:choice>
+            <xsd:element name="DatedVehicleJourneyIndirectRef" type="siri:DatedVehicleJourneyIndirectRefStructure" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Additionally, identify the VEHICLE JOURNEY by origin and destination and the scheduled times at these stops.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="LateDatedVehicleJourneys_RelStructure">
+        <xsd:annotation>
+            <xsd:documentation>A collection of one or more DatedJourneyInformationRecordings</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="CancelledDatedVehicleJourney" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:group name="LateDatedVehicleJourneyLogEntryGroup">
+        <xsd:annotation>
+            <xsd:documentation>Elements for LOG ENTRY related to a DatedJourney.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="SituationRef" type="siri:SituationSimpleRefStructure" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Reference to a SITUATION providing further information about the LOG ENTRY.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Delay" type="siri:DurationType" />
+        </xsd:sequence>
+    </xsd:group>
+</xsd:schema>

@@ -191,28 +191,6 @@ DEPRECATED from SIRI 2.0</xsd:documentation>
 		<xsd:annotation>
 			<xsd:documentation>Elements for LOG ENTRY related to a DatedJourney.</xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element name="SituationRef" type="siri:SituationSimpleRefStructure" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Reference to a SITUATION providing further information about the LOG ENTRY.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<!--			<xsd:element name="LogEntryValues" type="LogEntryValues_RelStructure">
-				<xsd:annotation>
-					<xsd:documentation>Values picked up from the ENTITY as input for the LOGGABLE OBJECT.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>-->
-			<xsd:element ref="siri:ControlActionRef" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Reference to a CONTROL ACTION providing further information about the LOG ENTRY.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="ReplacementJourneyCreated" type="xsd:boolean" default="false" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Whether a repalcement journey was created is an addition to the planning data sent. Default is 'false': i.e. not an additional journey.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
 	</xsd:group>
 	<xsd:complexType name="DatedJourneyLogEntries_RelStructure">
 		<xsd:annotation>

@@ -279,17 +279,17 @@ Rail transport, Roads and Road transport
 		<xsd:sequence>
 			<xsd:element name="AssociatedControlActionType" type="ControlActionTypeEnumeration">
 				<xsd:annotation>
-					<xsd:documentation>Type of the CONTROL ACTION assiciated with the LOG ENTRY (cf Transmodel)</xsd:documentation>
+					<xsd:documentation>Type of the CONTROL ACTION associated with the LOG ENTRY (cf Transmodel)</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="AssociatedConsequencetype" type="siri:ServiceConditionEnumeration">
 				<xsd:annotation>
-					<xsd:documentation>Type of the Consequence assiciated with the LOG ENTRY (cf SIRI SX)</xsd:documentation>
+					<xsd:documentation>Type of the Consequence associated with the LOG ENTRY (cf SIRI SX)</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="AssociatedEventType" type="EventTypeEnumeration">
 				<xsd:annotation>
-					<xsd:documentation>Type of the trigering EVENT assiciated with the LOG ENTRY (cf Transmodel)</xsd:documentation>
+					<xsd:documentation>Type of the triggering EVENT associated with the LOG ENTRY (cf Transmodel)</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
