@@ -760,13 +760,32 @@
 	</Folder>
 	<Folder FolderName="OpRa">
 		<Folder FolderName="OpRa_top_level_Schema">
-			<File FilePath="xsd\OpRa_top_level_Schema\OpRa_Frame_version.xsd" HomeFolder="Yes"/>
-			<File FilePath="xsd\OpRa_top_level_Schema\OpRa_publication.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\OpRa_publication.xsd" HomeFolder="Yes"/>
 		</Folder>
-		<File FilePath="xsd\OpRa_DatedJourneyInformationRecording_support.xsd" HomeFolder="Yes"/>
-		<File FilePath="xsd\OpRa_DatedJourneyInformationRecording_version.xsd"/>
-		<File FilePath="xsd\OpRa_GeneralLogEntry_support.xsd" HomeFolder="Yes"/>
-		<File FilePath="xsd\OpRa_GeneralLogEntry_version.xsd" HomeFolder="Yes"/>
+		<Folder FolderName="OpRa_framework">
+			<Folder FolderName="OpRa_frames">
+				<File FilePath="xsd\opra_framework\opra_frames\opra_actualServiceFrame_version.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_frames\opra_commonFrame_version.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_frames\opra_compositeFrame_version.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_frames\opra_kpiFrame_version.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_frames\opra_opraDataFrame_version.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_frames\opra_plannedServiceFrame_version.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_frames\opra_rawDataFrame_version.xsd" HomeFolder="Yes"/>
+			</Folder>
+			<Folder FolderName="OpRa_genericFramework">
+				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralKpi_version.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralLogEntry_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralLogEntry_version.xsd" HomeFolder="Yes"/>
+			</Folder>
+			<File FilePath="xsd\opra_framework\opra_payload_framework.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="OpRa_kpi">
+			<File FilePath="xsd\opra_kpi\opra_NumberOfJourneyCancellations_version.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="OpRa_rawdata">
+			<File FilePath="xsd\opra_rawdata\opra_DatedJourneyInformationRecording_support.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_rawdata\opra_DatedJourneyInformationRecording_version.xsd" HomeFolder="Yes"/>
+		</Folder>
 	</Folder>
 	<File FilePath="README.md" HomeFolder="Yes"/>
 </Project>
