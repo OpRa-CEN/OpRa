@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0">
-	<!--	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd"/>
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="http://www.opra.org/opra" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd"/>
 	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../../NeTEx/xsd/gml/geometryBasic0d1d-extract-v3_2_1.xsd"/>-->
-	<!--	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
+    <!--	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>-->
     <xsd:import schemaLocation="../../../NeTEx/xsd/netex_framework/netex_frames/netex_commonFrame_version.xsd" namespace="http://www.netex.org.uk/netex" />
     <!-- OpRa includes-->
     <xsd:include schemaLocation="../opra_genericFramework/OpRa_GeneralLogEntry_version.xsd" />
+    <xsd:include schemaLocation="../../opra_rawdata/opra_ticketingBasedPassengerCount_version.xsd" />
     <xsd:include schemaLocation="../../opra_rawdata/OpRa_CancelledDatedVehicleJourney_version.xsd" />
     <xsd:include schemaLocation="../../opra_rawdata/OpRa_LateDatedVehicleJourney_version.xsd" />
     <!-- ======================================================================= -->
@@ -132,17 +133,18 @@ Rail transport, Roads and Road transport
             <xsd:documentation>OpRa related elements in frame.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="cancelledDatedVehicleJourneys" type="CancelledDatedVehicleJourneys_RelStructure" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>DATED JOURNEY informations in frame.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
             <xsd:element name="generalLogEntries" type="GeneralLogEntries_RelStructure" minOccurs="0">
                 <xsd:annotation>
                     <xsd:documentation>General LOG ENTRies in frame.</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="lateDatedVehicleJourneys" minOccurs="0" />
+            <xsd:element name="ticketingBasedPassengerCounts" type="TicketingBasedPassengerCounts_RelStructure" minOccurs="0" />
+            <xsd:element name="cancelledDatedVehicleJourneys" type="CancelledDatedVehicleJourneys_RelStructure" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>DATED JOURNEY informations in frame.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="lateDatedVehicleJourneys" type="LateDatedVehicleJourneys_RelStructure" minOccurs="0" />
         </xsd:sequence>
     </xsd:group>
     <!-- ======================================================================= -->

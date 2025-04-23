@@ -30,7 +30,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/OpRa_DatedJourneyInformationRecording_version.xsd</Identifier>
+				<Identifier>{http://www.opra.org/schemas/xsd/opRa_lateDatedVehicleJourney_version.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -55,7 +55,7 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa DatedJourneyInformationRecording</xsd:documentation>
+        <xsd:documentation>OpRa LateDatedVehicleJourney</xsd:documentation>
     </xsd:annotation>
     <!-- ======================================================================= -->
     <xsd:element name="LateDatedVehicleJourney" substitutionGroup="LoggableObject_">
@@ -76,7 +76,7 @@ Rail transport, Roads and Road transport
                             <xsd:group ref="LoggableObjectGroup" />
                         </xsd:sequence>
                         <xsd:sequence>
-                            <xsd:group ref="DatedJourneyInformationRecordingGroup" />
+                            <xsd:group ref="LateDatedVehicleJourneyGroup" />
                         </xsd:sequence>
                     </xsd:sequence>
                     <xsd:attribute name="id" type="LoggableObjectIdType" />
@@ -129,6 +129,7 @@ DEPRECATED from SIRI 2.0</xsd:documentation>
                     <xsd:documentation>Additionally, identify the VEHICLE JOURNEY by origin and destination and the scheduled times at these stops.</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
+            <xsd:element name="logEntries" type="LateDatedVehicleJourneyLogEntries_RelStructure" />
         </xsd:sequence>
     </xsd:group>
     <xsd:complexType name="LateDatedVehicleJourneys_RelStructure">
@@ -136,12 +137,20 @@ DEPRECATED from SIRI 2.0</xsd:documentation>
             <xsd:documentation>A collection of one or more DatedJourneyInformationRecordings</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element ref="CancelledDatedVehicleJourney" maxOccurs="unbounded">
+            <xsd:element ref="LateDatedVehicleJourney" maxOccurs="unbounded">
                 <xsd:annotation>
                     <xsd:documentation>LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
         </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="LateDatedVehicleJourneyLogEntry" type="LateDatedVehicleJourneyLogEntry_Structure" />
+    <xsd:complexType name="LateDatedVehicleJourneyLogEntry_Structure">
+        <xsd:complexContent>
+            <xsd:extension base="netex:LogEntry_VersionStructure">
+                <xsd:group ref="LateDatedVehicleJourneyLogEntryGroup" />
+            </xsd:extension>
+        </xsd:complexContent>
     </xsd:complexType>
     <xsd:group name="LateDatedVehicleJourneyLogEntryGroup">
         <xsd:annotation>
@@ -156,4 +165,16 @@ DEPRECATED from SIRI 2.0</xsd:documentation>
             <xsd:element name="Delay" type="siri:DurationType" />
         </xsd:sequence>
     </xsd:group>
+    <xsd:complexType name="LateDatedVehicleJourneyLogEntries_RelStructure">
+        <xsd:annotation>
+            <xsd:documentation>A collection of one or more CancelledDatedVehicleJourneys.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="LogEntry" type="LateDatedVehicleJourneyLogEntry_Structure" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 </xsd:schema>
