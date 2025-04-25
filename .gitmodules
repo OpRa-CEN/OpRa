@@ -3,8 +3,8 @@
 	url = https://github.com/NeTEx-CEN/NeTEx
 [submodule "SIRI"]
 	path = SIRI
-	url = https://github.com/SIRI-CEN/SIRI
-	branch = ControlActions
+	url = https://github.com/Aurige/SIRI
+	branch = SIRI-for-OpRa
 [submodule "OJP"]
 	path = OJP
 	url = https://github.com/VDVde/OJP
