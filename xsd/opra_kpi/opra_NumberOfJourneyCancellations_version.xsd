@@ -9,7 +9,7 @@
 	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../../SIRI/xsd/siri_model/siri_reference.xsd"/>
 	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../../SIRI/xsd/siri_model/siri_journey_support.xsd"/>
 	<!-- OpRa includes-->
-	<xsd:import namespace="http://www.opra.org/opra" schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralKpi_version.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralKpi_version.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata>
