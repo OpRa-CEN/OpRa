@@ -86,6 +86,7 @@ Rail transport, Roads and Road transport
                         <xsd:group ref="MeasuredPassengerCountGroup" />
                     </xsd:sequence>
                     <xsd:attribute name="id" type="LoggableObjectIdType" />
+                    <xsd:attribute name="version" />
                 </xsd:restriction>
             </xsd:complexContent>
         </xsd:complexType>
@@ -109,7 +110,7 @@ Rail transport, Roads and Road transport
         <xsd:sequence>
             <xsd:group ref="PtScopeGroup" />
             <xsd:group ref="BoardingAndAlightingGroup" />
-            <xsd:element name="logEntries" type="AggregatedMeasuredPassengerCounts_RelStructure" />
+            <xsd:element name="history" type="AggregatedMeasuredPassengerCounts_RelStructure" />
         </xsd:sequence>
     </xsd:group>
     <xsd:complexType name="MeasuredPassengerCounts_RelStructure">
@@ -137,6 +138,7 @@ Rail transport, Roads and Road transport
             <xsd:documentation>Dynamic (may change in each state) elements for a MeasurePassengerCount. (as a LOG ENTRY)</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
+            <xsd:element name="TimebandRef" type="netex:TimebandRefStructure" minOccurs="0" />
             <xsd:group ref="BoardingAndAlightingGroup" />
         </xsd:sequence>
     </xsd:group>

@@ -5,7 +5,6 @@
     <xsd:import schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd" namespace="http://www.netex.org.uk/netex" />
     <xsd:import schemaLocation="../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd" namespace="http://www.netex.org.uk/netex" />
     <xsd:import schemaLocation="../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd" namespace="http://www.netex.org.uk/netex" />
-    <xsd:import schemaLocation="../../NeTEx/xsd/netex_part_1/part1_ifopt/netex_ifopt_site_version.xsd" namespace="http://www.netex.org.uk/netex" />
     <xsd:import schemaLocation="../../NeTEx/xsd/netex_part_1/part1_ifopt/netex_ifopt_equipmentTicketing_support.xsd" namespace="http://www.netex.org.uk/netex" />
     <xsd:import schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_vehicleJourney_support.xsd" namespace="http://www.netex.org.uk/netex" />
     <!-- SIRI Imports-->
@@ -62,7 +61,6 @@ Rail transport, Roads and Road transport
     </xsd:annotation>
     <xsd:group name="TicketingScopeGroup">
         <xsd:sequence>
-            <xsd:element name="SiteRef" type="netex:SiteRefStructure" minOccurs="0" />
             <xsd:element name="TicketValidatorEquipmentRef" type="netex:TicketValidatorEquipmentRefStructure" minOccurs="0" />
         </xsd:sequence>
     </xsd:group>
@@ -109,7 +107,7 @@ Rail transport, Roads and Road transport
             <xsd:group ref="TicketingScopeGroup" />
             <xsd:group ref="BoardingAndAlightingGroup" />
             <xsd:element name="validationEntries" type="ValidationEntries_RelStructure" minOccurs="0" />
-            <xsd:element name="logEntries" type="AggregatedTicketingBasedPassengerCounts_RelStructure" minOccurs="0" />
+            <xsd:element name="history" type="AggregatedTicketingBasedPassengerCounts_RelStructure" minOccurs="0" />
         </xsd:sequence>
     </xsd:group>
     <xsd:complexType name="TicketingBasedPassengerCounts_RelStructure">
@@ -137,6 +135,7 @@ Rail transport, Roads and Road transport
             <xsd:documentation>Dynamic (may change in each state) elements for a CancelledDatedVehicleJourney (as a LOG ENTRY)</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
+            <xsd:element name="TimebandRef" type="netex:TimebandRefStructure" minOccurs="0" />
             <xsd:group ref="BoardingAndAlightingGroup" />
         </xsd:sequence>
     </xsd:group>

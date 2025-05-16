@@ -3,6 +3,7 @@
 <xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <!-- NeTEX Imports-->
     <xsd:import schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_responsibility_support.xsd" namespace="http://www.netex.org.uk/netex" />
+    <xsd:import schemaLocation="../../../NeTEx/xsd/netex_part_1/part1_ifopt/netex_ifopt_site_version.xsd" namespace="http://www.netex.org.uk/netex" />
     <xsd:import schemaLocation="../../../NeTEx/xsd/netex_part_1/part1_tacticalPlanning/netex_servicePattern_version.xsd" namespace="http://www.netex.org.uk/netex" />
     <xsd:import schemaLocation="../../../NeTEx/xsd/netex_part_1/part1_networkDescription/netex_line_version.xsd" namespace="http://www.netex.org.uk/netex" />
     <xsd:import schemaLocation="../../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_vehicleJourney_version.xsd" namespace="http://www.netex.org.uk/netex" />
@@ -72,6 +73,7 @@ Rail transport, Roads and Road transport
                     <xsd:documentation>Organisation scope (optional).</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
+            <xsd:element name="SiteRef" type="netex:SiteRefStructure" minOccurs="0" />
             <xsd:element name="NetworkRef" type="netex:NetworkRefStructure" minOccurs="0" />
             <xsd:element name="LineRef" type="netex:LineRefStructure" minOccurs="0" />
             <xsd:element name="ScheduledStopPointRef" type="netex:ScheduledStopPointRefStructure" minOccurs="0" />
