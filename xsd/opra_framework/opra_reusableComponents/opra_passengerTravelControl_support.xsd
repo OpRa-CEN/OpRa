@@ -63,21 +63,4 @@ Rail transport, Roads and Road transport
             <xsd:enumeration value="ControlFareReversion" />
         </xsd:restriction>
     </xsd:simpleType>
-    <xsd:complexType name="PassengerTravelEntryType_RelStructure">
-        <xsd:annotation>
-            <xsd:documentation>A collection of one or more PASSENGER TRAVEL ENTRY types.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="PassengerTravelEntryType" type="PassengerTravelEntryTypeEnumeration" maxOccurs="unbounded" />
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:element name="PassengerTravelEntrySet" type="PassengerTravelEntryType_RelStructure">
-        <xsd:annotation>
-            <xsd:documentation>A set of one or more PASSENGER TRAVEL ENTRY types.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:unique name="uniqueType">
-            <xsd:selector xpath="PassengerTravelEntryType" />
-            <xsd:field xpath="@value" />
-        </xsd:unique>
-    </xsd:element>
 </xsd:schema>

@@ -167,7 +167,7 @@ DEPRECATED from SIRI 2.0</xsd:documentation>
             </xsd:group>
             <xsd:element name="ReplacementJourneyCreated" type="xsd:boolean" minOccurs="0" default="false">
                 <xsd:annotation>
-                    <xsd:documentation>Whether a repalcement journey was created is an addition to the planning data sent. Default is 'false': i.e. not an additional journey.</xsd:documentation>
+                    <xsd:documentation>Whether a replacement journey was created is an addition to the planning data sent. Default is 'false': i.e. not an additional journey.</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
         </xsd:sequence>

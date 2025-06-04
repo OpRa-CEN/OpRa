@@ -4,6 +4,7 @@
     <!-- NeTEX Imports-->
     <xsd:import schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd" namespace="http://www.netex.org.uk/netex" />
     <xsd:import schemaLocation="../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd" namespace="http://www.netex.org.uk/netex" />
+    <xsd:import schemaLocation="../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_support.xsd" namespace="http://www.netex.org.uk/netex" />
     <xsd:import schemaLocation="../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd" namespace="http://www.netex.org.uk/netex" />
     <xsd:import schemaLocation="../../NeTEx/xsd/netex_part_1/part1_ifopt/netex_ifopt_site_version.xsd" namespace="http://www.netex.org.uk/netex" />
     <xsd:import schemaLocation="../../NeTEx/xsd/netex_part_1/part1_ifopt/netex_ifopt_equipmentTicketing_support.xsd" namespace="http://www.netex.org.uk/netex" />
@@ -58,6 +59,25 @@ Rail transport, Roads and Road transport
         </xsd:appinfo>
         <xsd:documentation>OpRa TicketingBasedPassengerCount</xsd:documentation>
     </xsd:annotation>
+    <xsd:simpleType name="ValidatonEntryIdType">
+        <xsd:restriction base="netex:LogEntryIdType" />
+    </xsd:simpleType>
+    <xsd:complexType name="ValidationEntryRefStructure">
+        <xsd:simpleContent>
+            <xsd:restriction base="netex:LogEntryRefStructure">
+                <xsd:attribute name="ref" type="ValidatonEntryIdType" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation>Identifier of referenced VALIDATION ENTRY.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ValidationEntryRefs_RelStructure">
+        <xsd:sequence>
+            <xsd:element name="ValidationEntryRef" type="ValidationEntryRefStructure" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
     <xsd:element name="ValidationEntry" type="ValidationEntry_Structure" />
     <xsd:complexType name="ValidationEntry_Structure">
         <xsd:complexContent>

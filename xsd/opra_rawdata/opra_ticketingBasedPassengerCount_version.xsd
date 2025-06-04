@@ -63,7 +63,7 @@ Rail transport, Roads and Road transport
     </xsd:annotation>
     <xsd:group name="TicketingScopeGroup">
         <xsd:sequence>
-            <xsd:element ref="PassengerTravelEntrySet" />
+            <xsd:element name="PassengerTravelEntryType" type="PassengerTravelEntryTypeEnumeration" minOccurs="0" />
             <xsd:element name="TicketValidatorEquipmentRef" type="netex:TicketValidatorEquipmentRefStructure" minOccurs="0" />
             <xsd:element name="FareProductRef" type="netex:FareProductRefStructure" minOccurs="0" />
         </xsd:sequence>
@@ -110,7 +110,7 @@ Rail transport, Roads and Road transport
             <xsd:group ref="PtScopeGroup" />
             <xsd:group ref="TicketingScopeGroup" />
             <xsd:group ref="BoardingAndAlightingGroup" />
-            <xsd:element name="validationEntries" type="ValidationEntries_RelStructure" minOccurs="0" />
+            <xsd:element name="validationEntryRefs" type="ValidationEntryRefs_RelStructure" minOccurs="0" />
             <xsd:element name="history" type="AggregatedTicketingBasedPassengerCounts_RelStructure" minOccurs="0" />
         </xsd:sequence>
     </xsd:group>
@@ -141,6 +141,7 @@ Rail transport, Roads and Road transport
         <xsd:sequence>
             <xsd:element name="TimebandRef" type="netex:TimebandRefStructure" minOccurs="0" />
             <xsd:group ref="BoardingAndAlightingGroup" />
+            <xsd:element name="validationEntryRefs" type="ValidationEntryRefs_RelStructure" minOccurs="0" />
         </xsd:sequence>
     </xsd:group>
     <xsd:complexType name="AggregatedTicketingBasedPassengerCounts_RelStructure">
