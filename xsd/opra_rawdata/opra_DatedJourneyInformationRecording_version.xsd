@@ -79,7 +79,7 @@ Rail transport, Roads and Road transport
                             <xsd:group ref="DatedJourneyInformationRecordingGroup" />
                         </xsd:sequence>
                     </xsd:sequence>
-                    <xsd:attribute name="id" type="LoggableObjectIdType" />
+                    <xsd:attribute name="id" type="DatedJourneyInformationRecordingIdType" />
                 </xsd:restriction>
             </xsd:complexContent>
         </xsd:complexType>
@@ -89,7 +89,7 @@ Rail transport, Roads and Road transport
             <xsd:documentation>Type for a LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
-            <xsd:extension base="netex:DataManagedObjectStructure">
+            <xsd:extension base="LoggableObject_VersionStructure">
                 <xsd:sequence>
                     <xsd:group ref="DatedJourneyInformationRecordingGroup">
                         <xsd:annotation>
@@ -192,6 +192,24 @@ DEPRECATED from SIRI 2.0</xsd:documentation>
         <xsd:annotation>
             <xsd:documentation>Elements for LOG ENTRY related to a DatedJourney.</xsd:documentation>
         </xsd:annotation>
+   		<!-- I DON'T KNOW WHY THE CONTENT OF THIS GROUP WAS LOST ... A GROUP CANNOT BE EMPTY SO I ADDED IT BACK-->
+		<xsd:sequence>
+			<xsd:element name="SituationRef" type="siri:SituationSimpleRefStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Reference to a SITUATION providing further information about the LOG ENTRY.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="siri:ControlActionRef" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Reference to a CONTROL ACTION providing further information about the LOG ENTRY.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ReplacementJourneyCreated" type="xsd:boolean" default="false" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Whether a repalcement journey was created is an addition to the planning data sent. Default is 'false': i.e. not an additional journey.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
     </xsd:group>
     <xsd:complexType name="DatedJourneyLogEntries_RelStructure">
         <xsd:annotation>
