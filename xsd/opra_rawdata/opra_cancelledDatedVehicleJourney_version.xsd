@@ -74,9 +74,17 @@ Rail transport, Roads and Road transport
                         <xsd:sequence>
                             <xsd:group ref="netex:DataManagedObjectGroup" />
                         </xsd:sequence>
-                        <xsd:group ref="CancelledDatedVehicleJourneyGroup" />
+						<xsd:sequence>
+                            <xsd:group ref="LoggableObjectGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="DatedJourneyInformationRecordingGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+							<xsd:group ref="CancelledDatedVehicleJourneyGroup"/>
+                        </xsd:sequence>                        
                     </xsd:sequence>
-                    <xsd:attribute name="id" type="LoggableObjectIdType" />
+                    <xsd:attribute name="id" type="LoggableObjectIdType" /> <!--SHOULE BE CancelledDatedVehicleJourneyIdType-->
                 </xsd:restriction>
             </xsd:complexContent>
         </xsd:complexType>
@@ -88,7 +96,7 @@ Rail transport, Roads and Road transport
         <xsd:complexContent>
             <xsd:extension base="DatedJourneyInformationRecording_VersionStructure">
                 <xsd:sequence>
-                    <xsd:group ref="CancelledDatedVehicleJourneyLogEntryGroup" />
+                    <xsd:group ref="CancelledDatedVehicleJourneyGroup" />
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
@@ -122,7 +130,7 @@ DEPRECATED from SIRI 2.0</xsd:documentation>
                     <xsd:documentation>Additionally, identify the VEHICLE JOURNEY by origin and destination and the scheduled times at these stops.</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="logEntries" type="CancelledDatedVehicleJourneyLogEntries_RelStructure" />
+            <xsd:element name="CancelledDatedVehicleJourneyLogEntries" type="CancelledDatedVehicleJourneyLogEntries_RelStructure" />
         </xsd:sequence>
     </xsd:group>
     <xsd:complexType name="CancelledDatedVehicleJourneys_RelStructure">
