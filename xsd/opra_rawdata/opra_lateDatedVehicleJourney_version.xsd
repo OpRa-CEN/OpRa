@@ -79,7 +79,7 @@ Rail transport, Roads and Road transport
                             <xsd:group ref="LateDatedVehicleJourneyGroup" />
                         </xsd:sequence>
                     </xsd:sequence>
-                    <xsd:attribute name="id" type="LoggableObjectIdType" />
+                    <xsd:attribute name="id" type="LoggableObjectIdType" /> <!--SHOULD BE LateDatedVehicleJourneyIdType-->
                 </xsd:restriction>
             </xsd:complexContent>
         </xsd:complexType>
@@ -89,9 +89,9 @@ Rail transport, Roads and Road transport
             <xsd:documentation>Type for a LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
-            <xsd:extension base="DatedJourneyInformationRecordings_RelStructure">
+            <xsd:extension base="LoggableObject_VersionStructure"> <!-- OR IS IT DatedJourneyInformationRecording_VersionStructure ??-->
                 <xsd:sequence>
-                    <xsd:group ref="DatedJourneyInformationRecordingGroup">
+                    <xsd:group ref="LateDatedVehicleJourneyGroup">
                         <xsd:annotation>
                             <xsd:documentation>Elements for a LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
                         </xsd:annotation>
@@ -129,7 +129,7 @@ DEPRECATED from SIRI 2.0</xsd:documentation>
                     <xsd:documentation>Additionally, identify the VEHICLE JOURNEY by origin and destination and the scheduled times at these stops.</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="logEntries" type="LateDatedVehicleJourneyLogEntries_RelStructure" />
+            <xsd:element name="LateDatedVehicleJourneyLogEntries" type="LateDatedVehicleJourneyLogEntries_RelStructure" />
         </xsd:sequence>
     </xsd:group>
     <xsd:complexType name="LateDatedVehicleJourneys_RelStructure">
