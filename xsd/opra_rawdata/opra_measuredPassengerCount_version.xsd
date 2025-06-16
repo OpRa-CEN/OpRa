@@ -83,10 +83,14 @@ Rail transport, Roads and Road transport
                         <xsd:sequence>
                             <xsd:group ref="netex:DataManagedObjectGroup" />
                         </xsd:sequence>
-                        <xsd:group ref="MeasuredPassengerCountGroup" />
+                        <xsd:sequence>
+							<xsd:group ref="LoggableObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="MeasuredPassengerCountGroup" />
+						</xsd:sequence>
                     </xsd:sequence>
-                    <xsd:attribute name="id" type="LoggableObjectIdType" />
-                    <xsd:attribute name="version" />
+                    <xsd:attribute name="id" type="LoggableObjectIdType" /> <!--SHOULD BE MeasuredPassengerCountIdType-->
                 </xsd:restriction>
             </xsd:complexContent>
         </xsd:complexType>
@@ -96,9 +100,9 @@ Rail transport, Roads and Road transport
             <xsd:documentation>Type for a LOGGABLE OBJECT designed for recording MEASURED PASSENGER COUNT information.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
-            <xsd:extension base="netex:DataManagedObjectStructure">
+            <xsd:extension base="LoggableObject_VersionStructure">
                 <xsd:sequence>
-                    <xsd:group ref="AggregatedMeasuredPassengerCountGroup" />
+                    <xsd:group ref="MeasuredPassengerCountGroup" />
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
