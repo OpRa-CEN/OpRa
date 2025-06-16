@@ -83,9 +83,14 @@ Rail transport, Roads and Road transport
                         <xsd:sequence>
                             <xsd:group ref="netex:DataManagedObjectGroup" />
                         </xsd:sequence>
-                        <xsd:group ref="TicketingBasedPassengerCountGroup" />
+						<xsd:sequence>
+							<xsd:group ref="LoggableObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>                        
+							<xsd:group ref="TicketingBasedPassengerCountGroup" />
+						</xsd:sequence>
                     </xsd:sequence>
-                    <xsd:attribute name="id" type="LoggableObjectIdType" />
+                    <xsd:attribute name="id" type="LoggableObjectIdType" /> <!--SHOULD BE TicketingBasedPassengerCount-->
                 </xsd:restriction>
             </xsd:complexContent>
         </xsd:complexType>
@@ -95,9 +100,9 @@ Rail transport, Roads and Road transport
             <xsd:documentation>Type for a LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
-            <xsd:extension base="netex:DataManagedObjectStructure">
+            <xsd:extension base="LoggableObject_VersionStructure">
                 <xsd:sequence>
-                    <xsd:group ref="AggregatedTicketingBasedPassengerCountGroup" />
+                    <xsd:group ref="TicketingBasedPassengerCountGroup" />
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
