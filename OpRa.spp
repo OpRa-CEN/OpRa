@@ -758,6 +758,10 @@
 			<File FilePath="SIRI\xsd\xml\2008\09\xsd.xsl" HomeFolder="Yes"/>
 		</Folder>
 	</Folder>
+	<Folder FolderName="Examples">
+		<File FilePath="examples\placeholder.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\TicketingBasedPassengerCount.xml" HomeFolder="Yes"/>
+	</Folder>
 	<Folder FolderName="OpRa">
 		<Folder FolderName="OpRa_top_level_Schema">
 			<File FilePath="xsd\OpRa_publication.xsd" HomeFolder="Yes"/>
