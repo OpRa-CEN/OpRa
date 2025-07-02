@@ -3,9 +3,7 @@
 <xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0">
 	<!-- NeTEX Imports-->
 	<xsd:import schemaLocation="../../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd" namespace="http://www.opengis.net/gml/3.2"/>
-	<xsd:import schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd" namespace="http://www.netex.org.uk/netex"/>
-	<xsd:import schemaLocation="../../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd" namespace="http://www.netex.org.uk/netex"/>
-	<xsd:import schemaLocation="../../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd" namespace="http://www.netex.org.uk/netex"/>
+    <xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
 	<!-- SIRI Imports-->
 	<xsd:import schemaLocation="../../../SIRI/xsd/siri_model/siri_situationClassifiers.xsd" namespace="http://www.siri.org.uk/siri"/>
 	<!-- OpRa Include-->
@@ -27,7 +25,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/OpRa_GeneralLogEntry_version.xsd</Identifier>
+				<Identifier>{http://www.opra.org/schemas/xsd/opra_framework/opra_genericFramework/opra_generalKpi_version.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>

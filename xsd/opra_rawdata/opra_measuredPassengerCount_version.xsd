@@ -11,11 +11,11 @@
     <xsd:import schemaLocation="../../SIRI/xsd/siri_model/siri_reference.xsd" namespace="http://www.siri.org.uk/siri" />
     <xsd:import schemaLocation="../../SIRI/xsd/siri_model/siri_journey_support.xsd" namespace="http://www.siri.org.uk/siri" />
     <!-- OpRa includes-->
-    <xsd:include schemaLocation="../opra_framework/opra_genericFramework/OpRa_GeneralLogEntry_version.xsd" />
+    <xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_generalLogEntry_version.xsd" />
     <xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_controlActionReference_support.xsd" />
     <xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_eventReference_support.xsd" />
     <xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_ptScope_support.xsd" />
-    <xsd:include schemaLocation="OpRa_DatedJourneyInformationRecording_version.xsd" />
+    <xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd" />
     <xsd:annotation>
         <xsd:appinfo>
             <Metadata xmlns="http://www.opra.org/opra">
@@ -61,13 +61,6 @@ Rail transport, Roads and Road transport
         </xsd:appinfo>
         <xsd:documentation>OpRa TicketingBasedPassengerCount</xsd:documentation>
     </xsd:annotation>
-    <xsd:group name="BoardingAndAlightingGroup">
-        <xsd:sequence>
-            <xsd:element name="NumberOfAlighters" type="netex:NumberOfPassengers" minOccurs="0" />
-            <xsd:element name="NumberOfBoarders" type="netex:NumberOfPassengers" minOccurs="0" />
-            <xsd:element name="Occupancy" type="netex:NumberOfPassengers" minOccurs="0" />
-        </xsd:sequence>
-    </xsd:group>
     <!-- ======================================================================= -->
     <xsd:element name="MeasuredPassengerCount" substitutionGroup="LoggableObject_">
         <xsd:annotation>
@@ -84,13 +77,14 @@ Rail transport, Roads and Road transport
                             <xsd:group ref="netex:DataManagedObjectGroup" />
                         </xsd:sequence>
                         <xsd:sequence>
-							<xsd:group ref="LoggableObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="MeasuredPassengerCountGroup" />
-						</xsd:sequence>
+                            <xsd:group ref="LoggableObjectGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="MeasuredPassengerCountGroup" />
+                        </xsd:sequence>
                     </xsd:sequence>
-                    <xsd:attribute name="id" type="LoggableObjectIdType" /> <!--SHOULD BE MeasuredPassengerCountIdType-->
+                    <xsd:attribute name="id" type="LoggableObjectIdType" />
+                    <!--SHOULD BE MeasuredPassengerCountIdType-->
                 </xsd:restriction>
             </xsd:complexContent>
         </xsd:complexType>
@@ -113,8 +107,8 @@ Rail transport, Roads and Road transport
         </xsd:annotation>
         <xsd:sequence>
             <xsd:group ref="PtScopeGroup" />
-            <xsd:group ref="BoardingAndAlightingGroup" />
-            <xsd:element name="history" type="AggregatedMeasuredPassengerCounts_RelStructure" />
+            <xsd:group ref="VehicleLoadEntryGroup" />
+            <xsd:element name="history" type="VehicleLoadEntries_RelStructure" />
         </xsd:sequence>
     </xsd:group>
     <xsd:complexType name="MeasuredPassengerCounts_RelStructure">
@@ -127,28 +121,6 @@ Rail transport, Roads and Road transport
                     <xsd:documentation>LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:element name="AggregatedMeasuredPassengerCount" type="AggregatedMeasuredPassengerCount_Structure" />
-    <xsd:complexType name="AggregatedMeasuredPassengerCount_Structure">
-        <xsd:complexContent>
-            <xsd:extension base="netex:LogEntry_VersionStructure">
-                <xsd:group ref="AggregatedMeasuredPassengerCountGroup" />
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="AggregatedMeasuredPassengerCountGroup">
-        <xsd:annotation>
-            <xsd:documentation>Dynamic (may change in each state) elements for a MeasurePassengerCount. (as a LOG ENTRY)</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="TimebandRef" type="netex:TimebandRefStructure" minOccurs="0" />
-            <xsd:group ref="BoardingAndAlightingGroup" />
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:complexType name="AggregatedMeasuredPassengerCounts_RelStructure">
-        <xsd:sequence>
-            <xsd:element name="LogEntry" type="AggregatedMeasuredPassengerCount_Structure" maxOccurs="unbounded" />
         </xsd:sequence>
     </xsd:complexType>
 </xsd:schema>

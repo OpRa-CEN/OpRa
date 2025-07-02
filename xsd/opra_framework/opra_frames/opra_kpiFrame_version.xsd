@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0">
-	<xsd:import schemaLocation="../../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd" namespace="http://www.opengis.net/gml/3.2"/>
-	<xsd:import schemaLocation="../../../NeTEx/xsd/gml/geometryBasic0d1d-extract-v3_2_1.xsd" namespace="http://www.opengis.net/gml/3.2"/>
-	<!--	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>-->
-	<xsd:import schemaLocation="../../../NeTEx/xsd/netex_framework/netex_frames/netex_commonFrame_version.xsd" namespace="http://www.netex.org.uk/netex"/>
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0">
+    <xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
 	<!-- OpRa includes-->
-	<xsd:include schemaLocation="../opra_genericFramework/opra_GeneralKpi_version.xsd"/>
+	<xsd:include schemaLocation="../opra_genericFramework/opra_generalKpi_version.xsd"/>
 	<!-- ======================================================================= -->
 	<xsd:annotation>
 		<xsd:appinfo>

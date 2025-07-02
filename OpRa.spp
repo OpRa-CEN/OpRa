@@ -792,6 +792,7 @@
 			<File FilePath="xsd\opra_rawdata\opra_DatedJourneyInformationRecording_version.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_rawdata\opra_lateDatedVehicleJourney_version.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_rawdata\opra_measuredPassengerCount_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_rawdata\opra_onboardDeviceBasedPassengerCount_version.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_rawdata\opra_ticketingBasedPassengerCount_version.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_rawdata\opra_validationEntry_version.xsd" HomeFolder="Yes"/>
 		</Folder>
