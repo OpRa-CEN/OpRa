@@ -23,7 +23,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/OpRa_DatedJourneyInformationRecording_version.xsd</Identifier>
+				<Identifier>{http://www.opra.org/schemas/xsd/opra_DatedJourneyInformationRecording_version.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -79,7 +79,7 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:complexContent>
-				<xsd:restriction base="OpRa_Kpi_VersionFrameStructure">
+				<xsd:restriction base="opra_Kpi_VersionFrameStructure">
 					<xsd:sequence>
 						<xsd:sequence>
 							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
@@ -102,7 +102,7 @@ Rail transport, Roads and Road transport
 			</xsd:complexContent>
 		</xsd:complexType>
 	</xsd:element>
-	<xsd:complexType abstract="false" name="OpRa_Kpi_VersionFrameStructure">
+	<xsd:complexType abstract="false" name="opra_Kpi_VersionFrameStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for a OpRa FRAME.</xsd:documentation>
 		</xsd:annotation>
