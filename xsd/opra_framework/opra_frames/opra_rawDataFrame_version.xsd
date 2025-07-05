@@ -142,7 +142,7 @@ Rail transport, Roads and Road transport
 					<xsd:documentation>DATED JOURNEY informations in frame.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="lateDatedVehicleJourneys" type="LateDatedVehicleJourneys_RelStructure" minOccurs="0"/>
+			<xsd:element name="lateDatedVehicleJourneyCounts" type="LateDatedVehicleJourneyCounts_RelStructure" minOccurs="0"/>
 			<xsd:element name="validationEntries" type="ValidationEntries_RelStructure" minOccurs="0"/>
 			<xsd:element name="ticketingBasedPassengerCounts" type="TicketingBasedPassengerCounts_RelStructure" minOccurs="0"/>
 			<xsd:element name="onboardDeviceBasedPassengerCounts" type="OnboardDeviceBasedPassengerCounts_RelStructure" minOccurs="0"/>

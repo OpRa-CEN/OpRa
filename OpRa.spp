@@ -772,14 +772,21 @@
 				<File FilePath="xsd\opra_framework\opra_frames\opra_commonFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_compositeFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_kpiFrame_version.xsd" HomeFolder="Yes"/>
-				<File FilePath="xsd\opra_framework\opra_frames\opra_opraDataFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_plannedServiceFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_rawDataFrame_version.xsd" HomeFolder="Yes"/>
 			</Folder>
 			<Folder FolderName="OpRa_genericFramework">
 				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralKpi_version.xsd" HomeFolder="Yes"/>
-				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralLogEntry_support.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralLogEntry_version.xsd" HomeFolder="Yes"/>
+			</Folder>
+			<Folder FolderName="opra_reusableComponents" ExtStr="csd">
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_controlActionReference_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_durationDistribution_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_eventReference_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_passengerTravelControl_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_ptScope_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_statistics_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_vehicleOccupancy_version.xsd" HomeFolder="Yes"/>
 			</Folder>
 			<File FilePath="xsd\opra_framework\opra_payload_framework.xsd" HomeFolder="Yes"/>
 		</Folder>
