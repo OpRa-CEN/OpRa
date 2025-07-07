@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- NeTEX Imports-->
-    <xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
-    <!-- SIRI Imports-->
-    <!-- OpRa Include-->
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0">
+	<!-- NeTEX Imports-->
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- SIRI Imports-->
+	<!-- OpRa Include-->
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -48,55 +48,55 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa: definitions of loose reference to CONTROL ACTIONs.</xsd:documentation>
-    </xsd:annotation>
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="ControlActionIdType">
-        <xsd:annotation>
-            <xsd:documentation>Identifier of a CONTROL ACTION.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="netex:ObjectIdType" />
-    </xsd:simpleType>
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="ControlActionTypeEnumeration">
-        <xsd:annotation>
-            <xsd:documentation>Values for CONTROL ACTION (cf SIRI and TRANSMODEL)</xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="xsd:NMTOKEN">
-            <xsd:enumeration value="JourneyCreation" />
-            <xsd:enumeration value="JourneyCancellation" />
-            <xsd:enumeration value="PartialJourneyCancellation" />
-            <xsd:enumeration value="FlexibleJourneyActivation" />
-            <xsd:enumeration value="ChangeOfJourneyPattern" />
-            <xsd:enumeration value="ChangeOfJourneyTiming" />
-            <xsd:enumeration value="ChangeOfStopPointStatus" />
-            <xsd:enumeration value="InterchangeCreation" />
-            <xsd:enumeration value="InterchangeCancellation" />
-            <xsd:enumeration value="InterchangeModification" />
-            <xsd:enumeration value="VehicleWorkAssignment" />
-        </xsd:restriction>
-    </xsd:simpleType>
-    <!-- ======================================================================= -->
-    <xsd:group name="SimpleControlActionRefGroup">
-        <xsd:annotation>
-            <xsd:documentation>Context definition, indicator value and unit of measure for a key performance INDICATOR.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="ControlActionType" type="ControlActionTypeEnumeration">
-                <xsd:annotation>
-                    <xsd:documentation>Type of CONTROL ACTION.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="ControlActionId" type="ControlActionIdType" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>ID of the CONTROL ACTION in a linked system or module.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="ControlActionSummary" type="xsd:normalizedString" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>Summary placeholder for the CONTROL ACTION.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:group>
+		<xsd:documentation>OpRa: definitions of loose reference to CONTROL ACTIONs.</xsd:documentation>
+	</xsd:annotation>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="ControlActionIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a CONTROL ACTION.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="netex:ObjectIdType"/>
+	</xsd:simpleType>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="ControlActionTypeEnumeration">
+		<xsd:annotation>
+			<xsd:documentation>Values for CONTROL ACTION (cf SIRI and TRANSMODEL)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="JourneyCreation"/>
+			<xsd:enumeration value="JourneyCancellation"/>
+			<xsd:enumeration value="PartialJourneyCancellation"/>
+			<xsd:enumeration value="FlexibleJourneyActivation"/>
+			<xsd:enumeration value="ChangeOfJourneyPattern"/>
+			<xsd:enumeration value="ChangeOfJourneyTiming"/>
+			<xsd:enumeration value="ChangeOfStopPointStatus"/>
+			<xsd:enumeration value="InterchangeCreation"/>
+			<xsd:enumeration value="InterchangeCancellation"/>
+			<xsd:enumeration value="InterchangeModification"/>
+			<xsd:enumeration value="VehicleWorkAssignment"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- ======================================================================= -->
+	<xsd:group name="SimpleControlActionRefGroup">
+		<xsd:annotation>
+			<xsd:documentation>Context definition, indicator value and unit of measure for a key performance INDICATOR.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ControlActionType" type="ControlActionTypeEnumeration">
+				<xsd:annotation>
+					<xsd:documentation>Type of CONTROL ACTION.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ControlActionId" type="ControlActionIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>ID of the CONTROL ACTION in a linked system or module.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ControlActionSummary" type="xsd:normalizedString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Summary placeholder for the CONTROL ACTION.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
 </xsd:schema>

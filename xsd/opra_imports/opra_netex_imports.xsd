@@ -1,52 +1,52 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" targetNamespace="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_netex_imports" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- NeTEX Imports-->
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_versionFrame_support.xsd"/>
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_entity_support.xsd"/>
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_responsibility_version.xsd"/>
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd" />
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_reusableComponents/netex_transportOrganisation_support.xsd" />
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_frames/netex_commonFrame_version.xsd"/>
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_payload_framework.xsd" />
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_service/netex_filter_frame.xsd" />
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_part_1/part1_ifopt/netex_ifopt_equipmentTicketing_support.xsd" />
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_part_1/part1_ifopt/netex_ifopt_site_support.xsd" />
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_vehicleJourney_support.xsd" />
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_datedVehicleJourney_support.xsd" />
-    <xsd:include schemaLocation="../../NeTEx/xsd/netex_part_3/part3_fares/netex_fareProduct_version.xsd" />
-    <xsd:annotation>
-        <xsd:appinfo>
-            <Metadata xmlns="http://www.opra.org/opra">
-                <Aggregation>main schema</Aggregation>
-                <Audience>e-service developers</Audience>
-                <Coverage>Europe</Coverage>
-                <Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
-                <Date>
-                    <Created>2024-11-29</Created>
-                </Date>
-                <Description>
-                    <p>OpRa - Operational Raw Data</p>
-                </Description>
-                <Format>
-                    <MediaType>text/xml</MediaType>
-                    <Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
-                    <Description>XML schema, W3C Recommendation 2001</Description>
-                </Format>
-                <Identifier>{http://www.opra.org/schemas/xsd/opra_imports/opra_netex_imports.xsd</Identifier>
-                <Language>[ISO 639-2/B] ENG</Language>
-                <Rights>Unclassified
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_netex_imports" version="1.0">
+	<!-- NeTEX Imports-->
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_versionFrame_support.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_entity_support.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_responsibility_version.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_reusableComponents/netex_transportOrganisation_support.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_frames/netex_commonFrame_version.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_payload_framework.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_service/netex_filter_frame.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_1/part1_ifopt/netex_ifopt_equipmentTicketing_support.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_1/part1_ifopt/netex_ifopt_site_support.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_vehicleJourney_support.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_datedVehicleJourney_support.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_3/part3_fares/netex_fareProduct_version.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata xmlns="http://www.opra.org/opra">
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
+				<Date>
+					<Created>2024-11-29</Created>
+				</Date>
+				<Description>
+					<p>OpRa - Operational Raw Data</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>{http://www.opra.org/schemas/xsd/opra_imports/opra_netex_imports.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Rights>Unclassified
 				</Rights>
-                <Source>
-                    <ul>
-                        <li>Created for OpRa</li>
-                    </ul>
-                </Source>
-                <Status>Initial Version</Status>
-                <Subject>
-                    <Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+				<Source>
+					<ul>
+						<li>Created for OpRa</li>
+					</ul>
+				</Source>
+				<Status>Initial Version</Status>
+				<Subject>
+					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
 Air transport, Airports,
 Ports and maritime transport, Ferries (marine),
 Public transport, Bus services, Coach services, Bus stops and stations,
@@ -54,13 +54,12 @@ Rail transport, Railway stations and track, Train services, Underground trains,
 Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
 Rail transport, Roads and Road transport
 </Category>
-                    <Project>CEN TC278 WG3 SG10.</Project>
-                </Subject>
-                <Title>Opra Operation Raw Data Exchange</Title>
-                <Type>Standard</Type>
-            </Metadata>
-        </xsd:appinfo>
-        <xsd:documentation>Common NeTEx import node for OpRa schema</xsd:documentation>
-    </xsd:annotation>
-
+					<Project>CEN TC278 WG3 SG10.</Project>
+				</Subject>
+				<Title>Opra Operation Raw Data Exchange</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>Common NeTEx import node for OpRa schema</xsd:documentation>
+	</xsd:annotation>
 </xsd:schema>

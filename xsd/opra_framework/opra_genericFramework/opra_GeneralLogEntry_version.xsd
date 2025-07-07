@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_generalLogEntry_version" targetNamespace="http://www.opra.org/opra" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- NeTEX Imports-->
-    <!-- xsd:include schemaLocation="../../opra_imports/opra_netex_imports.xsd" / -->
-    <xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
-    <!-- SIRI Imports-->
-    <!-- xsd:include schemaLocation="../../opra_imports/opra_siri_imports.xsd" /-->
-    <xsd:import schemaLocation="../../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
-    <!-- OpRa Include-->
-    <xsd:include schemaLocation="../opra_reusableComponents/opra_controlActionReference_support.xsd" />
-    <xsd:include schemaLocation="../opra_reusableComponents/opra_eventReference_support.xsd" />
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_generalLogEntry_version" targetNamespace="http://www.opra.org/opra" version="1.0">
+	<!-- NeTEX Imports-->
+	<!-- xsd:include schemaLocation="../../opra_imports/opra_netex_imports.xsd" / -->
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- SIRI Imports-->
+	<!-- xsd:include schemaLocation="../../opra_imports/opra_siri_imports.xsd" /-->
+	<xsd:import schemaLocation="../../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
+	<!-- OpRa Include-->
+	<xsd:include schemaLocation="../opra_reusableComponents/opra_controlActionReference_support.xsd"/>
+	<xsd:include schemaLocation="../opra_reusableComponents/opra_eventReference_support.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -53,325 +53,325 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa generic concrete LOG ENTRY and LOGGABLE OBJECT</xsd:documentation>
-    </xsd:annotation>
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="LoggableObjectIdType">
-        <xsd:annotation>
-            <xsd:documentation>Identifier of a LOGGABLE OBJECT.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="netex:ObjectIdType" />
-    </xsd:simpleType>
-    <xsd:element name="LoggableObjectRef" type="LoggableObjectRefStructure" substitutionGroup="netex:VersionOfObjectRef" abstract="false">
-        <xsd:annotation>
-            <xsd:documentation>Reference to a LOG.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="LoggableObjectRefStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for a reference to a LoggableObject.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:simpleContent>
-            <xsd:restriction base="netex:VersionOfObjectRefStructure">
-                <xsd:attribute name="ref" type="LoggableObjectIdType" use="required">
-                    <xsd:annotation>
-                        <xsd:documentation>Identifier of referenced entity.</xsd:documentation>
-                    </xsd:annotation>
-                </xsd:attribute>
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="GeneralLogEntryIdType">
-        <xsd:annotation>
-            <xsd:documentation>Identifier of a concreat generic LOG ENTRY.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="netex:ObjectIdType" />
-    </xsd:simpleType>
-    <xsd:element name="GeneralLogEntryRef" type="GeneralLogEntryRefStructure" substitutionGroup="netex:VersionOfObjectRef" abstract="false">
-        <xsd:annotation>
-            <xsd:documentation>Reference to a GeneralLogEntry.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="GeneralLogEntryRefStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for a reference to a GeneralLogEntry.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:simpleContent>
-            <xsd:restriction base="netex:VersionOfObjectRefStructure">
-                <xsd:attribute name="ref" type="GeneralLogEntryIdType" use="required">
-                    <xsd:annotation>
-                        <xsd:documentation>Identifier of referenced entity.</xsd:documentation>
-                    </xsd:annotation>
-                </xsd:attribute>
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="LogEntryValueIdType">
-        <xsd:annotation>
-            <xsd:documentation>Identifier of a LOG ENTRY VALUE.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="netex:ObjectIdType" />
-    </xsd:simpleType>
-    <xsd:element name="LogEntryValueRef" type="LogEntryValueRefStructure" substitutionGroup="netex:VersionOfObjectRef" abstract="false">
-        <xsd:annotation>
-            <xsd:documentation>Reference to a LOG ENTRY Value.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="LogEntryValueRefStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for a reference to a LOG ENTRY Value.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:simpleContent>
-            <xsd:restriction base="netex:VersionOfObjectRefStructure">
-                <xsd:attribute name="ref" type="LogEntryValueIdType" use="required">
-                    <xsd:annotation>
-                        <xsd:documentation>Identifier of referenced entity.</xsd:documentation>
-                    </xsd:annotation>
-                </xsd:attribute>
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <!-- ======================================================================= -->
-    <xsd:element name="LoggableObject_" type="netex:DataManagedObjectStructure" substitutionGroup="netex:DataManagedObject" abstract="true">
-        <xsd:annotation>
-            <xsd:documentation>Dummy Supertype for LOGGABLE OBJECT.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="LoggableObjects_RelStructure">
-        <xsd:annotation>
-            <xsd:documentation>A collection of one or more LOGGABLE OBJECTs</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element ref="LoggableObject" maxOccurs="unbounded">
-                <xsd:annotation>
-                    <xsd:documentation>An entity for which LOG ENTRies may be made.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:element name="LoggableObject" substitutionGroup="LoggableObject_">
-        <xsd:annotation>
-            <xsd:documentation>An entity for which LOG ENTRies may be made.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexType>
-            <xsd:complexContent>
-                <xsd:restriction base="LoggableObject_VersionStructure">
-                    <xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="netex:DataManagedObjectGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="LoggableObjectGroup" />
-                        </xsd:sequence>
-                    </xsd:sequence>
-                    <xsd:attribute name="id" type="LoggableObjectIdType" />
-                </xsd:restriction>
-            </xsd:complexContent>
-        </xsd:complexType>
-    </xsd:element>
-    <xsd:complexType name="LoggableObject_VersionStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for a LOGGABLE OBJECT.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="netex:DataManagedObjectStructure">
-                <xsd:sequence>
-                    <xsd:group ref="LoggableObjectGroup">
-                        <xsd:annotation>
-                            <xsd:documentation>Elements for a generic conrete LOG ENTRY</xsd:documentation>
-                        </xsd:annotation>
-                    </xsd:group>
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="LoggableObjectGroup">
-        <xsd:annotation>
-            <xsd:documentation>Elements for a TYPE OF TRACE.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="Description" type="xsd:normalizedString" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>Description of LOGGABLE OBJECT</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="logEntries" type="GeneralLogEntries_RelStructure" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>LOG ENTRIES attached to the LOGGABLE OBJECT</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:group>
-    <!-- ======================================================================= -->
-    <xsd:element name="LogEntry_" type="netex:DataManagedObjectStructure" substitutionGroup="netex:DataManagedObject" abstract="true">
-        <xsd:annotation>
-            <xsd:documentation>Dummy Supertype for LOG ENTRY.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="GeneralLogEntry" substitutionGroup="LogEntry_">
-        <xsd:annotation>
-            <xsd:documentation>A time-stamped record of an event or change of state.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexType>
-            <xsd:complexContent>
-                <xsd:restriction base="GeneralLogEntry_VersionStructure">
-                    <xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="netex:DataManagedObjectGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="netex:LogEntryGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="LogEntryContextGroup" />
-                            <xsd:group ref="GeneralLogEntryGroup" />
-                        </xsd:sequence>
-                    </xsd:sequence>
-                    <xsd:attribute name="id" type="GeneralLogEntryIdType" />
-                </xsd:restriction>
-            </xsd:complexContent>
-        </xsd:complexType>
-    </xsd:element>
-    <xsd:complexType name="GeneralLogEntry_VersionStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for a concrete generic LOG ENTRY</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="netex:LogEntry_VersionStructure">
-                <xsd:sequence>
-                    <xsd:group ref="LogEntryContextGroup" />
-                    <xsd:group ref="GeneralLogEntryGroup">
-                        <xsd:annotation>
-                            <xsd:documentation>Elements for a generic concrete LOG ENTRY.</xsd:documentation>
-                        </xsd:annotation>
-                    </xsd:group>
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="GeneralLogEntryGroup">
-        <xsd:annotation>
-            <xsd:documentation>Elements for a general LOG ENTRY.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="logEntryValues" type="LogEntryValues_RelStructure">
-                <xsd:annotation>
-                    <xsd:documentation>Values picked up from the ENTITY as input for the LOGGABLE OBJECT.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:complexType name="GeneralLogEntries_RelStructure">
-        <xsd:annotation>
-            <xsd:documentation>A collection of generic LOG ENTRies.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element ref="LogEntry_" maxOccurs="unbounded">
-                <xsd:annotation>
-                    <xsd:documentation>A time-stamped record of an event or change of state.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:complexType name="LogEntriesInFrame_RelStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for containment in frame of GeneralLogEntries.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="netex:containmentAggregationStructure">
-                <xsd:sequence>
-                    <xsd:element ref="LogEntry_" maxOccurs="unbounded" />
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <!-- ======================================================================= -->
-    <xsd:complexType name="LogEntryValues_RelStructure">
-        <xsd:annotation>
-            <xsd:documentation>A collection of one or more logged VALUEs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element ref="LogEntryValue" maxOccurs="unbounded">
-                <xsd:annotation>
-                    <xsd:documentation>Record of the values to be captured by a LOG ENTRY.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:element name="LogEntryValue" type="LogEntryValueStructure">
-        <xsd:annotation>
-            <xsd:documentation>A time-stamped record of an event or change of state - new values/state.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="LogEntryValueStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for a logged VALUE.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:group ref="LogEntryValueGroup">
-            <xsd:annotation>
-                <xsd:documentation>Elements for a logged VALUE.</xsd:documentation>
-            </xsd:annotation>
-        </xsd:group>
-        <xsd:attribute name="id" type="LogEntryValueIdType">
-            <xsd:annotation>
-                <xsd:documentation>Identifier of logged VALUE.</xsd:documentation>
-            </xsd:annotation>
-        </xsd:attribute>
-    </xsd:complexType>
-    <xsd:complexType name="LogEntryUnitaryValueStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for a logged unique VALUE.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="ValueName" type="xsd:normalizedString">
-                <xsd:annotation>
-                    <xsd:documentation>Name of VALUE captured by the LOG ENTRY.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="Value" type="xsd:anyType">
-                <xsd:annotation>
-                    <xsd:documentation>VALUE captured by the LOG ENTRY.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:group name="LogEntryValueGroup">
-        <xsd:annotation>
-            <xsd:documentation>Elements for a logged VALUE.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element ref="netex:VersionOfObjectRef" />
-            <xsd:element name="UnitaryValue" type="LogEntryUnitaryValueStructure" minOccurs="1" maxOccurs="unbounded" />
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:group name="LogEntryContextGroup">
-        <xsd:annotation>
-            <xsd:documentation>Context (related event, control action and consequences) for a logged VALUE.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="AssociatedControlActionType" type="ControlActionTypeEnumeration" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>Type of the CONTROL ACTION associated with the LOG ENTRY (cf Transmodel)</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="AssociatedConsequenceType" type="siri:ServiceConditionEnumeration" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>Type of the Consequence associated with the LOG ENTRY (cf SIRI SX)</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="AssociatedEventType" type="EventTypeEnumeration" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>Type of the triggering EVENT associated with the LOG ENTRY (cf Transmodel)</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:group>
+		<xsd:documentation>OpRa generic concrete LOG ENTRY and LOGGABLE OBJECT</xsd:documentation>
+	</xsd:annotation>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="LoggableObjectIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a LOGGABLE OBJECT.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="netex:ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="LoggableObjectRef" type="LoggableObjectRefStructure" substitutionGroup="netex:VersionOfObjectRef" abstract="false">
+		<xsd:annotation>
+			<xsd:documentation>Reference to a LOG.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="LoggableObjectRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a reference to a LoggableObject.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="netex:VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="LoggableObjectIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="GeneralLogEntryIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a concreat generic LOG ENTRY.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="netex:ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="GeneralLogEntryRef" type="GeneralLogEntryRefStructure" substitutionGroup="netex:VersionOfObjectRef" abstract="false">
+		<xsd:annotation>
+			<xsd:documentation>Reference to a GeneralLogEntry.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="GeneralLogEntryRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a reference to a GeneralLogEntry.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="netex:VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="GeneralLogEntryIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="LogEntryValueIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a LOG ENTRY VALUE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="netex:ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="LogEntryValueRef" type="LogEntryValueRefStructure" substitutionGroup="netex:VersionOfObjectRef" abstract="false">
+		<xsd:annotation>
+			<xsd:documentation>Reference to a LOG ENTRY Value.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="LogEntryValueRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a reference to a LOG ENTRY Value.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="netex:VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="LogEntryValueIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:element name="LoggableObject_" type="netex:DataManagedObjectStructure" substitutionGroup="netex:DataManagedObject" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Dummy Supertype for LOGGABLE OBJECT.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="LoggableObjects_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of one or more LOGGABLE OBJECTs</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="LoggableObject" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>An entity for which LOG ENTRies may be made.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="LoggableObject" substitutionGroup="LoggableObject_">
+		<xsd:annotation>
+			<xsd:documentation>An entity for which LOG ENTRies may be made.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="LoggableObject_VersionStructure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:DataManagedObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="LoggableObjectGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="LoggableObjectIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="LoggableObject_VersionStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a LOGGABLE OBJECT.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="netex:DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:group ref="LoggableObjectGroup">
+						<xsd:annotation>
+							<xsd:documentation>Elements for a generic conrete LOG ENTRY</xsd:documentation>
+						</xsd:annotation>
+					</xsd:group>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="LoggableObjectGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for a TYPE OF TRACE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Description" type="xsd:normalizedString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Description of LOGGABLE OBJECT</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="logEntries" type="GeneralLogEntries_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>LOG ENTRIES attached to the LOGGABLE OBJECT</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	<!-- ======================================================================= -->
+	<xsd:element name="LogEntry_" type="netex:DataManagedObjectStructure" substitutionGroup="netex:DataManagedObject" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Dummy Supertype for LOG ENTRY.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GeneralLogEntry" substitutionGroup="LogEntry_">
+		<xsd:annotation>
+			<xsd:documentation>A time-stamped record of an event or change of state.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="GeneralLogEntry_VersionStructure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:DataManagedObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:LogEntryGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="LogEntryContextGroup"/>
+							<xsd:group ref="GeneralLogEntryGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="GeneralLogEntryIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="GeneralLogEntry_VersionStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a concrete generic LOG ENTRY</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="netex:LogEntry_VersionStructure">
+				<xsd:sequence>
+					<xsd:group ref="LogEntryContextGroup"/>
+					<xsd:group ref="GeneralLogEntryGroup">
+						<xsd:annotation>
+							<xsd:documentation>Elements for a generic concrete LOG ENTRY.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:group>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="GeneralLogEntryGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for a general LOG ENTRY.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="logEntryValues" type="LogEntryValues_RelStructure">
+				<xsd:annotation>
+					<xsd:documentation>Values picked up from the ENTITY as input for the LOGGABLE OBJECT.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="GeneralLogEntries_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of generic LOG ENTRies.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="LogEntry_" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A time-stamped record of an event or change of state.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LogEntriesInFrame_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for containment in frame of GeneralLogEntries.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="netex:containmentAggregationStructure">
+				<xsd:sequence>
+					<xsd:element ref="LogEntry_" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:complexType name="LogEntryValues_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of one or more logged VALUEs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="LogEntryValue" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Record of the values to be captured by a LOG ENTRY.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="LogEntryValue" type="LogEntryValueStructure">
+		<xsd:annotation>
+			<xsd:documentation>A time-stamped record of an event or change of state - new values/state.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="LogEntryValueStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a logged VALUE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:group ref="LogEntryValueGroup">
+			<xsd:annotation>
+				<xsd:documentation>Elements for a logged VALUE.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:group>
+		<xsd:attribute name="id" type="LogEntryValueIdType">
+			<xsd:annotation>
+				<xsd:documentation>Identifier of logged VALUE.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="LogEntryUnitaryValueStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a logged unique VALUE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ValueName" type="xsd:normalizedString">
+				<xsd:annotation>
+					<xsd:documentation>Name of VALUE captured by the LOG ENTRY.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Value" type="xsd:anyType">
+				<xsd:annotation>
+					<xsd:documentation>VALUE captured by the LOG ENTRY.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:group name="LogEntryValueGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for a logged VALUE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="netex:VersionOfObjectRef"/>
+			<xsd:element name="UnitaryValue" type="LogEntryUnitaryValueStructure" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:group name="LogEntryContextGroup">
+		<xsd:annotation>
+			<xsd:documentation>Context (related event, control action and consequences) for a logged VALUE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="AssociatedControlActionType" type="ControlActionTypeEnumeration" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Type of the CONTROL ACTION associated with the LOG ENTRY (cf Transmodel)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AssociatedConsequenceType" type="siri:ServiceConditionEnumeration" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Type of the Consequence associated with the LOG ENTRY (cf SIRI SX)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AssociatedEventType" type="EventTypeEnumeration" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Type of the triggering EVENT associated with the LOG ENTRY (cf Transmodel)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
 </xsd:schema>

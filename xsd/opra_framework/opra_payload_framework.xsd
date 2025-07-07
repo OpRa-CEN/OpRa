@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2025 rel. 2 (x64) (https://www.altova.com) by Gergely Nitsch (One Planet Engineering Ltd.) -->
 <xsd:schema xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_payload_framework">
 	<!-- ===Payload ============================= -->
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_imports.xsd"/>

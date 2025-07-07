@@ -6,8 +6,8 @@
 	<Description>Example Publication Delivery</Description>
 	<dataObjects>
 		<RawDataFrame>
-		<!--DATA-->
-		<preparedness>SOMETHING</preparedness>
+			<!--DATA-->
+			<preparedness>SOMETHING</preparedness>
 		</RawDataFrame>
 	</dataObjects>
 </PublicationDelivery>

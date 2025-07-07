@@ -1,39 +1,39 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="http://www.opra.org/opra" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- NeTEX Imports-->
-    <!-- SIRI Imports-->
-    <!-- OpRa includes-->
-    <xsd:annotation>
-        <xsd:appinfo>
-            <Metadata xmlns="http://www.opra.org/opra">
-                <Aggregation>main schema</Aggregation>
-                <Audience>e-service developers</Audience>
-                <Coverage>Europe</Coverage>
-                <Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
-                <Date>
-                    <Created>2024-11-29</Created>
-                </Date>
-                <Description>
-                    <p>OpRa - Operational Raw Data</p>
-                </Description>
-                <Format>
-                    <MediaType>text/xml</MediaType>
-                    <Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
-                    <Description>XML schema, W3C Recommendation 2001</Description>
-                </Format>
-                <Identifier>{http://www.opra.org/schemas/xsd/opra_DatedJourneyInformationRecording_version.xsd</Identifier>
-                <Language>[ISO 639-2/B] ENG</Language>
-                <Rights>Unclassified
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="http://www.opra.org/opra" version="1.0">
+	<!-- NeTEX Imports-->
+	<!-- SIRI Imports-->
+	<!-- OpRa includes-->
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata xmlns="http://www.opra.org/opra">
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
+				<Date>
+					<Created>2024-11-29</Created>
+				</Date>
+				<Description>
+					<p>OpRa - Operational Raw Data</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>{http://www.opra.org/schemas/xsd/opra_DatedJourneyInformationRecording_version.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Rights>Unclassified
 				</Rights>
-                <Source>
-                    <ul>
-                        <li>Created for OpRa</li>
-                    </ul>
-                </Source>
-                <Status>Initial Version</Status>
-                <Subject>
-                    <Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+				<Source>
+					<ul>
+						<li>Created for OpRa</li>
+					</ul>
+				</Source>
+				<Status>Initial Version</Status>
+				<Subject>
+					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
 Air transport, Airports,
 Ports and maritime transport, Ferries (marine),
 Public transport, Bus services, Coach services, Bus stops and stations,
@@ -41,26 +41,26 @@ Rail transport, Railway stations and track, Train services, Underground trains,
 Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
 Rail transport, Roads and Road transport
 </Category>
-                    <Project>CEN TC278 WG3 SG10.</Project>
-                </Subject>
-                <Title>Opra Operation Raw Data Exchange</Title>
-                <Type>Standard</Type>
-            </Metadata>
-        </xsd:appinfo>
-        <xsd:documentation>OpRa Passenger Travel Entry related definitions.</xsd:documentation>
-    </xsd:annotation>
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="PassengerTravelEntryTypeEnumeration">
-        <xsd:annotation>
-            <xsd:documentation>Possible types for PASSENGER TRAVEL ENTRY (cf TRANSMODEL)</xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="xsd:NMTOKEN">
-            <xsd:enumeration value="PassengerCheckIn" />
-            <xsd:enumeration value="PassengerCheckOut" />
-            <xsd:enumeration value="PassengerWaypoint" />
-            <xsd:enumeration value="ControlPassengerTrip" />
-            <xsd:enumeration value="FareTripActivation" />
-            <xsd:enumeration value="ControlFareReversion" />
-        </xsd:restriction>
-    </xsd:simpleType>
+					<Project>CEN TC278 WG3 SG10.</Project>
+				</Subject>
+				<Title>Opra Operation Raw Data Exchange</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>OpRa Passenger Travel Entry related definitions.</xsd:documentation>
+	</xsd:annotation>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="PassengerTravelEntryTypeEnumeration">
+		<xsd:annotation>
+			<xsd:documentation>Possible types for PASSENGER TRAVEL ENTRY (cf TRANSMODEL)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="PassengerCheckIn"/>
+			<xsd:enumeration value="PassengerCheckOut"/>
+			<xsd:enumeration value="PassengerWaypoint"/>
+			<xsd:enumeration value="ControlPassengerTrip"/>
+			<xsd:enumeration value="FareTripActivation"/>
+			<xsd:enumeration value="ControlFareReversion"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 </xsd:schema>

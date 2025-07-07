@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
-    <xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<!-- OpRa includes-->
-	<xsd:include schemaLocation="../opra_genericFramework/opra_generalLogEntry_version.xsd"/>
-	<xsd:include schemaLocation="../../opra_rawdata/opra_datedJourneyInformationRecording_version.xsd"/>
+	<xsd:include schemaLocation="../opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_rawdata/opra_DatedJourneyInformationRecording_version.xsd"/>
 	<!-- ======================================================================= -->
 	<xsd:annotation>
 		<xsd:appinfo>

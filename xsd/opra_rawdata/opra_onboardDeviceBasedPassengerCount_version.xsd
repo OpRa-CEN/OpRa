@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- edited with XMLSpy v2025 rel. 2 (x64) (https://www.altova.com) by Gergely Nitsch (One Planet Engineering Ltd.) -->
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
 	<!-- NeTEX Imports-->
@@ -7,7 +6,7 @@
 	<!-- SIRI Imports-->
 	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../opra_imports/opra_siri_imports.xsd"/>
 	<!-- OpRa includes-->
-	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_generalLogEntry_version.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
 	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd"/>
 	<xsd:include schemaLocation="opra_measuredPassengerCount_version.xsd"/>
 	<xsd:annotation>

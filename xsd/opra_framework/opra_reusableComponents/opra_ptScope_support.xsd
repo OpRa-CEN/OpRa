@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_ptScope_support" targetNamespace="http://www.opra.org/opra" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- NeTEX Imports-->
-    <xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
-    <!-- SIRI Imports-->
-    <!-- OpRa Include-->
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_ptScope_support" targetNamespace="http://www.opra.org/opra" version="1.0">
+	<!-- NeTEX Imports-->
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- SIRI Imports-->
+	<!-- OpRa Include-->
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -48,32 +48,32 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa: PT SCOPE related definitions.</xsd:documentation>
-    </xsd:annotation>
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="PtScopeIdType">
-        <xsd:annotation>
-            <xsd:documentation>Identifier of a PT SCOPE.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="netex:ObjectIdType" />
-    </xsd:simpleType>
-    <!-- ======================================================================= -->
-    <xsd:group name="PtScopeGroup">
-        <xsd:annotation>
-            <xsd:documentation>PT SCOPE structure.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="OrganisationRef" type="netex:TransportOrganisationRefStructure" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>Organisation scope (optional).</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="SiteRef" type="netex:SiteRefStructure" minOccurs="0" />
-            <xsd:element name="NetworkRef" type="netex:NetworkRefStructure" minOccurs="0" />
-            <xsd:element name="LineRef" type="netex:LineRefStructure" minOccurs="0" />
-            <xsd:element name="ScheduledStopPointRef" type="netex:ScheduledStopPointRefStructure" minOccurs="0" />
-            <xsd:element name="VehicleJourneyRef" type="netex:VehicleJourneyRefStructure" minOccurs="0" />
-            <xsd:element name="DatedVehicleJourneyRef" type="netex:DatedVehicleJourneyRefStructure" minOccurs="0" />
-        </xsd:sequence>
-    </xsd:group>
+		<xsd:documentation>OpRa: PT SCOPE related definitions.</xsd:documentation>
+	</xsd:annotation>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="PtScopeIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a PT SCOPE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="netex:ObjectIdType"/>
+	</xsd:simpleType>
+	<!-- ======================================================================= -->
+	<xsd:group name="PtScopeGroup">
+		<xsd:annotation>
+			<xsd:documentation>PT SCOPE structure.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="OrganisationRef" type="netex:TransportOrganisationRefStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Organisation scope (optional).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SiteRef" type="netex:SiteRefStructure" minOccurs="0"/>
+			<xsd:element name="NetworkRef" type="netex:NetworkRefStructure" minOccurs="0"/>
+			<xsd:element name="LineRef" type="netex:LineRefStructure" minOccurs="0"/>
+			<xsd:element name="ScheduledStopPointRef" type="netex:ScheduledStopPointRefStructure" minOccurs="0"/>
+			<xsd:element name="VehicleJourneyRef" type="netex:VehicleJourneyRefStructure" minOccurs="0"/>
+			<xsd:element name="DatedVehicleJourneyRef" type="netex:DatedVehicleJourneyRefStructure" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
 </xsd:schema>

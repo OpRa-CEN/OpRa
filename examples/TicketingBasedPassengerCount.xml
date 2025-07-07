@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PublicationDelivery xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opra.org/opra ../xsd/OpRa_publication.xsd">
 	<PublicationTimestamp>2001-12-17T09:30:47Z</PublicationTimestamp>
 	<ParticipantRef>NMTOKEN</ParticipantRef>
