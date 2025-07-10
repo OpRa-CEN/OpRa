@@ -631,7 +631,9 @@
 		</Folder>
 		<Folder FolderName="gml">
 			<File FilePath="netex\xsd\gml\basicTypes.xsd" HomeFolder="Yes"/>
+			<File FilePath="NeTEx\xsd\gml\geometryAggregates-extract-v3_2_1.xsd" HomeFolder="Yes"/>
 			<File FilePath="netex\xsd\gml\geometryBasic0d1d-extract-v3_2_1.xsd" HomeFolder="Yes"/>
+			<File FilePath="NeTEx\xsd\gml\geometryPrimitives-extract-v3_2_1.xsd" HomeFolder="Yes"/>
 			<File FilePath="netex\xsd\gml\gml_extract_all_objects_v_3_2_1.xsd" HomeFolder="Yes"/>
 			<File FilePath="netex\xsd\gml\gmlBase-extract-v3_2_1.xsd" HomeFolder="Yes"/>
 			<File FilePath="netex\xsd\gml\gmlBasic2d-extract-v3_2_1-.xsd" HomeFolder="Yes"/>
