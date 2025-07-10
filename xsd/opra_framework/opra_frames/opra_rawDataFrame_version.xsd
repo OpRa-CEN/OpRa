@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0">
-	<!--	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd"/>
-	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../../NeTEx/xsd/gml/geometryBasic0d1d-extract-v3_2_1.xsd"/>-->
-	<!--	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>-->
-	<xsd:import schemaLocation="../../../NeTEx/xsd/netex_framework/netex_frames/netex_commonFrame_version.xsd" namespace="http://www.netex.org.uk/netex"/>
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../opra_imports/opra_netex_imports.xsd"/>
 	<!-- OpRa includes-->
-	<xsd:include schemaLocation="../opra_genericFramework/OpRa_GeneralLogEntry_version.xsd"/>
-	<xsd:include schemaLocation="../../opra_rawdata/OpRa_DatedJourneyInformationRecording_version.xsd"/>
+	<xsd:include schemaLocation="../opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_rawdata/opra_onboardDeviceBasedPassengerCount_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_rawdata/opra_ticketingBasedPassengerCount_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_rawdata/opra_cancelledDatedVehicleJourney_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_rawdata/opra_lateDatedVehicleJourney_version.xsd"/>
 	<!-- ======================================================================= -->
 	<xsd:annotation>
 		<xsd:appinfo>
@@ -28,7 +27,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/OpRa_DatedJourneyInformationRecording_version.xsd</Identifier>
+				<Identifier>{http://www.opra.org/schemas/xsd/opra_DatedJourneyInformationRecording_version.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -62,12 +61,12 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:restriction base="netex:VersionFrameIdType"/>
 	</xsd:simpleType>
-	<xsd:element name="RawDataFrameRef" type="RawDataFrameRefStructure" substitutionGroup="netex:VersionFrameRef" abstract="false">
+	<xsd:element name="RawDataFrameRef" type="RawDataFrameRefStructure" abstract="false" substitutionGroup="netex:VersionFrameRef">
 		<xsd:annotation>
 			<xsd:documentation>Reference to an OpRa FRAME.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:complexType abstract="false" name="RawDataFrameRefStructure">
+	<xsd:complexType name="RawDataFrameRefStructure" abstract="false">
 		<xsd:annotation>
 			<xsd:documentation>Type for a reference to a OpRa FRAME.</xsd:documentation>
 		</xsd:annotation>
@@ -78,7 +77,7 @@ Rail transport, Roads and Road transport
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<!-- ======================================================================= -->
-	<xsd:element name="RawDataFrame" substitutionGroup="netex:CommonFrame" abstract="false">
+	<xsd:element name="RawDataFrame" abstract="false" substitutionGroup="netex:CommonFrame">
 		<xsd:annotation>
 			<xsd:documentation>A coherent set of OpRa data to which the same frame VALIDITY CONDITIONs have been assigned.</xsd:documentation>
 		</xsd:annotation>
@@ -87,7 +86,7 @@ Rail transport, Roads and Road transport
 				<xsd:restriction base="RawDataVersionFrameStructure">
 					<xsd:sequence>
 						<xsd:sequence>
-							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
+							<xsd:group ref="netex:EntityInVersionGroup" minOccurs="0"/>
 						</xsd:sequence>
 						<xsd:sequence>
 							<xsd:group ref="netex:DataManagedObjectGroup"/>
@@ -105,7 +104,7 @@ Rail transport, Roads and Road transport
 			</xsd:complexContent>
 		</xsd:complexType>
 	</xsd:element>
-	<xsd:complexType abstract="false" name="RawDataVersionFrameStructure">
+	<xsd:complexType name="RawDataVersionFrameStructure" abstract="false">
 		<xsd:annotation>
 			<xsd:documentation>Type for a OpRa VERSION FRAME.</xsd:documentation>
 		</xsd:annotation>
@@ -132,16 +131,20 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>OpRa related elements in frame.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="datedJourneyInformationRecordings" type="DatedJourneyInformationRecordings_RelStructure" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>DATED JOURNEY informations in frame.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
 			<xsd:element name="generalLogEntries" type="GeneralLogEntries_RelStructure" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>General LOG ENTRies in frame.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:element name="cancelledDatedVehicleJourneys" type="CancelledDatedVehicleJourneys_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>DATED JOURNEY informations in frame.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="lateDatedVehicleJourneyCounts" type="LateDatedVehicleJourneyCounts_RelStructure" minOccurs="0"/>
+			<xsd:element name="validationEntries" type="ValidationEntries_RelStructure" minOccurs="0"/>
+			<xsd:element name="ticketingBasedPassengerCounts" type="TicketingBasedPassengerCounts_RelStructure" minOccurs="0"/>
+			<xsd:element name="onboardDeviceBasedPassengerCounts" type="OnboardDeviceBasedPassengerCounts_RelStructure" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ======================================================================= -->

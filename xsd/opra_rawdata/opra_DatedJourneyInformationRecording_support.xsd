@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
-	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/OpRa_GeneralLogEntry_support.xsd"/>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_imports.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata>
@@ -22,7 +20,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/OpRa_DatedJourneyInformationRecording_version.xsd</Identifier>
+				<Identifier>{http://www.opra.org/schemas/xsd/opra_rawdata/opra_datedJourneyInformationRecording_support.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>

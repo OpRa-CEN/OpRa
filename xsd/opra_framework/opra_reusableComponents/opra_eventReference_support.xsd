@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="http://www.opra.org/opra" version="1.0">
+	<!-- NeTEX Imports-->
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- SIRI Imports-->
+	<!-- OpRa Include-->
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata>
@@ -21,7 +23,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/OpRa_GeneralLogEntry_support.xsd</Identifier>
+				<Identifier>{http://www.opra.org/schemas/xsd/opra_GeneralLogEntry_version.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -46,109 +48,19 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa generic concrete LOG ENTRY and LOGGABLE OBJECT</xsd:documentation>
+		<xsd:documentation>OpRa: definitions of loose reference to CONTROL ACTIONs.</xsd:documentation>
 	</xsd:annotation>
 	<!-- ======================================================================= -->
-	<xsd:simpleType name="LoggableObjectIdType">
+	<xsd:simpleType name="EventIdType">
 		<xsd:annotation>
-			<xsd:documentation>Identifier of a LOGGABLE OBJECT.</xsd:documentation>
+			<xsd:documentation>Identifier of an EVENT.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="netex:ObjectIdType"/>
-	</xsd:simpleType>
-	<xsd:element name="LoggableObjectRef" type="LoggableObjectRefStructure" abstract="false" substitutionGroup="netex:VersionOfObjectRef">
-		<xsd:annotation>
-			<xsd:documentation>Reference to a LOG.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:complexType name="LoggableObjectRefStructure">
-		<xsd:annotation>
-			<xsd:documentation>Type for a reference to a LoggableObject.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:simpleContent>
-			<xsd:restriction base="netex:VersionOfObjectRefStructure">
-				<xsd:attribute name="ref" type="LoggableObjectIdType" use="required">
-					<xsd:annotation>
-						<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
-			</xsd:restriction>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<!-- ======================================================================= -->
-	<xsd:simpleType name="GeneralLogEntryIdType">
-		<xsd:annotation>
-			<xsd:documentation>Identifier of a concreat generic LOG ENTRY.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="netex:ObjectIdType"/>
-	</xsd:simpleType>
-	<xsd:element name="GeneralLogEntryRef" type="GeneralLogEntryRefStructure" abstract="false" substitutionGroup="netex:VersionOfObjectRef">
-		<xsd:annotation>
-			<xsd:documentation>Reference to a GeneralLogEntry.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:complexType name="GeneralLogEntryRefStructure">
-		<xsd:annotation>
-			<xsd:documentation>Type for a reference to a GeneralLogEntry.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:simpleContent>
-			<xsd:restriction base="netex:VersionOfObjectRefStructure">
-				<xsd:attribute name="ref" type="GeneralLogEntryIdType" use="required">
-					<xsd:annotation>
-						<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
-			</xsd:restriction>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<!-- ======================================================================= -->
-	<xsd:simpleType name="LogEntryValueIdType">
-		<xsd:annotation>
-			<xsd:documentation>Identifier of a LOG ENTRY VALUE.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="netex:ObjectIdType"/>
-	</xsd:simpleType>
-	<xsd:element name="LogEntryValueRef" type="LogEntryValueRefStructure" abstract="false" substitutionGroup="netex:VersionOfObjectRef">
-		<xsd:annotation>
-			<xsd:documentation>Reference to a LOG ENTRY Value.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:complexType name="LogEntryValueRefStructure">
-		<xsd:annotation>
-			<xsd:documentation>Type for a reference to a LOG ENTRY Value.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:simpleContent>
-			<xsd:restriction base="netex:VersionOfObjectRefStructure">
-				<xsd:attribute name="ref" type="LogEntryValueIdType" use="required">
-					<xsd:annotation>
-						<xsd:documentation>Identifier of referenced entity.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
-			</xsd:restriction>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<!-- ======================================================================= -->
-	<xsd:simpleType name="ControlActionTypeEnumeration">
-		<xsd:annotation>
-			<xsd:documentation>Values for CONTROL ACTION (cf SIRI and TRANSMODEL)</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:NMTOKEN">
-			<xsd:enumeration value="JourneyCreation"/>
-			<xsd:enumeration value="JourneyCancellation"/>
-			<xsd:enumeration value="PartialJourneyCancellation"/>
-			<xsd:enumeration value="FlexibleJourneyActivation"/>
-			<xsd:enumeration value="ChangeOfJourneyPattern"/>
-			<xsd:enumeration value="ChangeOfJourneyTiming"/>
-			<xsd:enumeration value="ChangeOfStopPointStatus"/>
-			<xsd:enumeration value="InterchangeCreation"/>
-			<xsd:enumeration value="InterchangeCancellation"/>
-			<xsd:enumeration value="InterchangeModification"/>
-			<xsd:enumeration value="VehicleWorkAssignment"/>
-		</xsd:restriction>
 	</xsd:simpleType>
 	<!-- ======================================================================= -->
 	<xsd:simpleType name="EventTypeEnumeration">
 		<xsd:annotation>
-			<xsd:documentation>Values for RVENT types (cf TRANSMODEL)</xsd:documentation>
+			<xsd:documentation>Values for EVENT types (cf TRANSMODEL)</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:NMTOKEN">
 			<!-- Event ................... -->
@@ -308,5 +220,42 @@ Rail transport, Roads and Road transport
 			<xsd:enumeration value="WrongInformationEvent"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	<xsd:complexType name="SimpleEventRefStructure">
+		<xsd:group ref="SimpleEventRefGroup"/>
+	</xsd:complexType>
 	<!-- ======================================================================= -->
+	<xsd:group name="SimpleEventRefGroup">
+		<xsd:annotation>
+			<xsd:documentation>Context definition, indicator value and unit of measure for a key performance INDICATOR.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="EventType" type="EventTypeEnumeration">
+				<xsd:annotation>
+					<xsd:documentation>Type of EVENT.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="EventId" type="EventIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>ID of the EVENT in a linked system or module.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="EventSummary" type="xsd:normalizedString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Summary placeholder for the EVENT.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="SimpleEventRefs_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of one or more simplified EVENT references.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="SimpleEventRef" type="SimpleEventRefStructure" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A simplified EVENT reference within the collection.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 </xsd:schema>

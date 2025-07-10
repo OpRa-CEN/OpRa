@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_ptScope_support" targetNamespace="http://www.opra.org/opra" version="1.0">
+	<!-- NeTEX Imports-->
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- SIRI Imports-->
+	<!-- OpRa Include-->
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata>
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
+				<Date>
+					<Created>2024-11-29</Created>
+				</Date>
+				<Description>
+					<p>OpRa - Operational Raw Data</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>{http://www.opra.org/schemas/xsd/opra_GeneralLogEntry_version.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Rights>Unclassified
+				</Rights>
+				<Source>
+					<ul>
+						<li>Created for OpRa</li>
+					</ul>
+				</Source>
+				<Status>Initial Version</Status>
+				<Subject>
+					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+Air transport, Airports,
+Ports and maritime transport, Ferries (marine),
+Public transport, Bus services, Coach services, Bus stops and stations,
+Rail transport, Railway stations and track, Train services, Underground trains,
+Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+Rail transport, Roads and Road transport
+</Category>
+					<Project>CEN TC278 WG3 SG10.</Project>
+				</Subject>
+				<Title>Opra Operation Raw Data Exchange</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>OpRa: PT SCOPE related definitions.</xsd:documentation>
+	</xsd:annotation>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="PtScopeIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a PT SCOPE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="netex:ObjectIdType"/>
+	</xsd:simpleType>
+	<!-- ======================================================================= -->
+	<xsd:group name="PtScopeGroup">
+		<xsd:annotation>
+			<xsd:documentation>PT SCOPE structure.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="OrganisationRef" type="netex:TransportOrganisationRefStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Organisation scope (optional).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SiteRef" type="netex:SiteRefStructure" minOccurs="0"/>
+			<xsd:element name="NetworkRef" type="netex:NetworkRefStructure" minOccurs="0"/>
+			<xsd:element name="LineRef" type="netex:LineRefStructure" minOccurs="0"/>
+			<xsd:element name="ScheduledStopPointRef" type="netex:ScheduledStopPointRefStructure" minOccurs="0"/>
+			<xsd:element name="VehicleJourneyRef" type="netex:VehicleJourneyRefStructure" minOccurs="0"/>
+			<xsd:element name="DatedVehicleJourneyRef" type="netex:DatedVehicleJourneyRefStructure" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0">
 	<!-- NeTEX Imports-->
 	<xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
-	<xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
 	<!-- SIRI Imports-->
+	<xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
 	<!-- OpRa includes-->
-	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
-	<xsd:include schemaLocation="opra_DatedJourneyInformationRecording_support.xsd"/>
+	<xsd:include schemaLocation="opra_DatedJourneyInformationRecording_version.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata>
@@ -26,7 +25,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/opra_rawData/opra_datedJourneyInformationRecording_version.xsd</Identifier>
+				<Identifier>http://www.opra.org/schemas/xsd/opra_rawdata/opra_cancelledDatedVehicleJourney_version.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -51,16 +50,26 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa DatedJourneyInformationRecording</xsd:documentation>
+		<xsd:documentation>OpRa CancelledDatedVehicleJourney</xsd:documentation>
 	</xsd:annotation>
+	<xsd:simpleType name="CancelledDatedVehicleJourneyIdType">
+		<xsd:restriction base="LoggableObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:complexType name="CancelledDatedVehicleJourneyRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="LoggableObjectRefStructure">
+				<xsd:attribute name="ref" type="CancelledDatedVehicleJourneyIdType" use="required"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
 	<!-- ======================================================================= -->
-	<xsd:element name="DatedJourneyInformationRecording" substitutionGroup="LoggableObject_">
+	<xsd:element name="CancelledDatedVehicleJourney" substitutionGroup="LoggableObject_">
 		<xsd:annotation>
-			<xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
+			<xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording CANCELLED DATED VEHICLE JOURNEY information.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:complexContent>
-				<xsd:restriction base="DatedJourneyInformationRecording_VersionStructure">
+				<xsd:restriction base="CancelledDatedVehicleJourney_VersionStructure">
 					<xsd:sequence>
 						<xsd:sequence>
 							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
@@ -74,31 +83,30 @@ Rail transport, Roads and Road transport
 						<xsd:sequence>
 							<xsd:group ref="DatedJourneyInformationRecordingGroup"/>
 						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="CancelledDatedVehicleJourneyGroup"/>
+						</xsd:sequence>
 					</xsd:sequence>
-					<xsd:attribute name="id" type="DatedJourneyInformationRecordingIdType"/>
+					<xsd:attribute name="id" type="CancelledDatedVehicleJourneyIdType"/>
 				</xsd:restriction>
 			</xsd:complexContent>
 		</xsd:complexType>
 	</xsd:element>
-	<xsd:complexType name="DatedJourneyInformationRecording_VersionStructure">
+	<xsd:complexType name="CancelledDatedVehicleJourney_VersionStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for a LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:extension base="LoggableObject_VersionStructure">
+			<xsd:extension base="DatedJourneyInformationRecording_VersionStructure">
 				<xsd:sequence>
-					<xsd:group ref="DatedJourneyInformationRecordingGroup">
-						<xsd:annotation>
-							<xsd:documentation>Elements for a LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:group>
+					<xsd:group ref="CancelledDatedVehicleJourneyGroup"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:group name="DatedJourneyInformationRecordingGroup">
+	<xsd:group name="CancelledDatedVehicleJourneyGroup">
 		<xsd:annotation>
-			<xsd:documentation>Elements for a general LOG ENTRY.</xsd:documentation>
+			<xsd:documentation>Static (same in each state) elements for a CancelledDatedVehicleJourney (as a LOGGABLE OBJECT)</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="siri:LineIdentityGroup"/>
@@ -125,99 +133,66 @@ DEPRECATED from SIRI 2.0</xsd:documentation>
 					<xsd:documentation>Additionally, identify the VEHICLE JOURNEY by origin and destination and the scheduled times at these stops.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:element name="CancelledDatedVehicleJourneyLogEntries" type="CancelledDatedVehicleJourneyLogEntries_RelStructure"/>
 		</xsd:sequence>
 	</xsd:group>
-	<xsd:complexType name="DatedJourneyInformationRecordings_RelStructure">
+	<xsd:complexType name="CancelledDatedVehicleJourneys_RelStructure">
 		<xsd:annotation>
-			<xsd:documentation>A collection of one or more DatedJourneyInformationRecordings</xsd:documentation>
+			<xsd:documentation>A collection of one or more CancelledDatedVehicleJourneys.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="DatedJourneyInformationRecording" maxOccurs="unbounded">
+			<xsd:element ref="CancelledDatedVehicleJourney" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<!-- ======================================================================= -->
-	<xsd:element name="DatedJourneyLogEntry" substitutionGroup="LogEntry_">
-		<xsd:annotation>
-			<xsd:documentation>A time-stamped record of an event or change of state of a DatedJourney.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:restriction base="DatedJourneyLogEntry_VersionStructure">
-					<xsd:sequence>
-						<xsd:sequence>
-							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="netex:DataManagedObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="netex:LogEntryGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="LogEntryContextGroup"/>
-							<xsd:group ref="DatedJourneyLogEntryGroup"/>
-						</xsd:sequence>
-					</xsd:sequence>
-					<xsd:attribute name="id" type="DatedJourneyLogEntryIdType"/>
-				</xsd:restriction>
-			</xsd:complexContent>
-		</xsd:complexType>
-	</xsd:element>
-	<xsd:complexType name="DatedJourneyLogEntry_VersionStructure">
-		<xsd:annotation>
-			<xsd:documentation>Type for a LOG ENTRY related to a DatedJourney.</xsd:documentation>
-		</xsd:annotation>
+	<xsd:element name="CancelledDatedVehicleJourneyLogEntry" type="CancelledDatedVehicleJourneyLogEntry_Structure"/>
+	<xsd:complexType name="CancelledDatedVehicleJourneyLogEntry_Structure">
 		<xsd:complexContent>
 			<xsd:extension base="netex:LogEntry_VersionStructure">
-				<xsd:sequence>
-					<xsd:group ref="LogEntryContextGroup"/>
-					<xsd:group ref="DatedJourneyLogEntryGroup">
-						<xsd:annotation>
-							<xsd:documentation>Elements for  a LOG ENTRY related to a DatedJourney.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:group>
-				</xsd:sequence>
+				<xsd:group ref="CancelledDatedVehicleJourneyLogEntryGroup"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:group name="DatedJourneyLogEntryGroup">
+	<xsd:group name="CancelledDatedVehicleJourneyLogEntryGroup">
 		<xsd:annotation>
-			<xsd:documentation>Elements for LOG ENTRY related to a DatedJourney.</xsd:documentation>
+			<xsd:documentation>Dynamic (may change between states) elements for a CancelledDatedVehicleJourney (as a LOG ENTRY)</xsd:documentation>
 		</xsd:annotation>
-		<!-- I DON'T KNOW WHY THE CONTENT OF THIS GROUP WAS LOST ... A GROUP CANNOT BE EMPTY SO I ADDED IT BACK-->
 		<xsd:sequence>
-			<xsd:element name="SituationRef" type="siri:SituationSimpleRefStructure" minOccurs="0">
+			<xsd:element name="SituationRef" type="siri:SituationSimpleRefStructure" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Reference to a SITUATION providing further information about the LOG ENTRY.</xsd:documentation>
+					<xsd:documentation>Reference to a SITUATION providing further information about the CANCELLED DATED VEHICLE JOURNEY.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element ref="siri:ControlActionRef" minOccurs="0">
+			<xsd:element name="operationalEvents" type="SimpleEventRefs_RelStructure" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>Reference to a CONTROL ACTION providing further information about the LOG ENTRY.</xsd:documentation>
+					<xsd:documentation>The collection of EVENTs that led to the cancellation.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="ReplacementJourneyCreated" type="xsd:boolean" default="false" minOccurs="0">
+			<xsd:group minOccurs="0" ref="SimpleControlActionRefGroup">
 				<xsd:annotation>
-					<xsd:documentation>Whether a repalcement journey was created is an addition to the planning data sent. Default is 'false': i.e. not an additional journey.</xsd:documentation>
+					<xsd:documentation>A loose reference (not defined in the data exchange) to the CONTROL ACTION that cancelled the journey.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
+			<xsd:element name="ReplacementJourneyCreated" type="xsd:boolean" minOccurs="0" default="false">
+				<xsd:annotation>
+					<xsd:documentation>Whether a replacement journey was created is an addition to the planning data sent. Default is 'false': i.e. not an additional journey.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
-	<xsd:complexType name="DatedJourneyLogEntries_RelStructure">
+	<xsd:complexType name="CancelledDatedVehicleJourneyLogEntries_RelStructure">
 		<xsd:annotation>
-			<xsd:documentation>A LOGENTRY  related to a DatedJourney.</xsd:documentation>
+			<xsd:documentation>A collection of one or more CancelledDatedVehicleJourneys.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="DatedJourneyLogEntry" maxOccurs="unbounded">
+			<xsd:element name="LogEntry" type="CancelledDatedVehicleJourneyLogEntry_Structure" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>A time-stamped record of an event or change of state.</xsd:documentation>
+					<xsd:documentation>LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<!-- ======================================================================= -->
 </xsd:schema>

@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_opra_version">
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="http://www.opra.org/opra" version="1.0">
 	<!-- NeTEX Imports-->
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_relationship_support.xsd"/>
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_vehicleJourney_support.xsd"/>
 	<!-- SIRI Imports-->
-	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../../SIRI/xsd/siri_model/siri_reference.xsd"/>
-	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../../SIRI/xsd/siri_model/siri_journey_support.xsd"/>
 	<!-- OpRa includes-->
-	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralKpi_version.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
-			<Metadata>
+			<Metadata xmlns="http://www.opra.org/opra">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
 				<Coverage>Europe</Coverage>
@@ -53,13 +47,20 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa DatedJourneyInformationRecording</xsd:documentation>
+		<xsd:documentation>OpRa Passenger Travel Entry related definitions.</xsd:documentation>
 	</xsd:annotation>
 	<!-- ======================================================================= -->
-	<xsd:element name="NumberOfCancelledJourneys" substitutionGroup="Kpi_">
+	<xsd:simpleType name="PassengerTravelEntryTypeEnumeration">
 		<xsd:annotation>
-			<xsd:documentation>Implementation of a KPI designed for exchanging number of cancelled journeys.</xsd:documentation>
+			<xsd:documentation>Possible types for PASSENGER TRAVEL ENTRY (cf TRANSMODEL)</xsd:documentation>
 		</xsd:annotation>
-	</xsd:element>
-	<!-- ======================================================================= -->
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="PassengerCheckIn"/>
+			<xsd:enumeration value="PassengerCheckOut"/>
+			<xsd:enumeration value="PassengerWaypoint"/>
+			<xsd:enumeration value="ControlPassengerTrip"/>
+			<xsd:enumeration value="FareTripActivation"/>
+			<xsd:enumeration value="ControlFareReversion"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 </xsd:schema>

@@ -631,7 +631,9 @@
 		</Folder>
 		<Folder FolderName="gml">
 			<File FilePath="netex\xsd\gml\basicTypes.xsd" HomeFolder="Yes"/>
+			<File FilePath="NeTEx\xsd\gml\geometryAggregates-extract-v3_2_1.xsd" HomeFolder="Yes"/>
 			<File FilePath="netex\xsd\gml\geometryBasic0d1d-extract-v3_2_1.xsd" HomeFolder="Yes"/>
+			<File FilePath="NeTEx\xsd\gml\geometryPrimitives-extract-v3_2_1.xsd" HomeFolder="Yes"/>
 			<File FilePath="netex\xsd\gml\gml_extract_all_objects_v_3_2_1.xsd" HomeFolder="Yes"/>
 			<File FilePath="netex\xsd\gml\gmlBase-extract-v3_2_1.xsd" HomeFolder="Yes"/>
 			<File FilePath="netex\xsd\gml\gmlBasic2d-extract-v3_2_1-.xsd" HomeFolder="Yes"/>
@@ -758,6 +760,10 @@
 			<File FilePath="SIRI\xsd\xml\2008\09\xsd.xsl" HomeFolder="Yes"/>
 		</Folder>
 	</Folder>
+	<Folder FolderName="Examples">
+		<File FilePath="examples\placeholder.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\TicketingBasedPassengerCount.xml" HomeFolder="Yes"/>
+	</Folder>
 	<Folder FolderName="OpRa">
 		<Folder FolderName="OpRa_top_level_Schema">
 			<File FilePath="xsd\OpRa_publication.xsd" HomeFolder="Yes"/>
@@ -768,14 +774,21 @@
 				<File FilePath="xsd\opra_framework\opra_frames\opra_commonFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_compositeFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_kpiFrame_version.xsd" HomeFolder="Yes"/>
-				<File FilePath="xsd\opra_framework\opra_frames\opra_opraDataFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_plannedServiceFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_rawDataFrame_version.xsd" HomeFolder="Yes"/>
 			</Folder>
 			<Folder FolderName="OpRa_genericFramework">
 				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralKpi_version.xsd" HomeFolder="Yes"/>
-				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralLogEntry_support.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralLogEntry_version.xsd" HomeFolder="Yes"/>
+			</Folder>
+			<Folder FolderName="opra_reusableComponents" ExtStr="csd">
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_controlActionReference_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_durationDistribution_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_eventReference_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_passengerTravelControl_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_ptScope_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_statistics_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_vehicleOccupancy_version.xsd" HomeFolder="Yes"/>
 			</Folder>
 			<File FilePath="xsd\opra_framework\opra_payload_framework.xsd" HomeFolder="Yes"/>
 		</Folder>
@@ -783,8 +796,18 @@
 			<File FilePath="xsd\opra_kpi\opra_NumberOfJourneyCancellations_version.xsd" HomeFolder="Yes"/>
 		</Folder>
 		<Folder FolderName="OpRa_rawdata">
+			<File FilePath="xsd\opra_rawdata\opra_cancelledDatedVehicleJourney_version.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_rawdata\opra_DatedJourneyInformationRecording_support.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_rawdata\opra_DatedJourneyInformationRecording_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_rawdata\opra_lateDatedVehicleJourney_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_rawdata\opra_measuredPassengerCount_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_rawdata\opra_onboardDeviceBasedPassengerCount_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_rawdata\opra_ticketingBasedPassengerCount_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_rawdata\opra_validationEntry_version.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="opra_imports">
+			<File FilePath="xsd\opra_imports\opra_netex_imports.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_imports\opra_siri_imports.xsd" HomeFolder="Yes"/>
 		</Folder>
 	</Folder>
 	<File FilePath="README.md" HomeFolder="Yes"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_payload_framework">
 	<!-- ===Payload ============================= -->
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../NeTEx/xsd/netex_framework/netex_frames/netex_compositeFrame_version.xsd"/>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_imports.xsd"/>
 	<!-- xsd:include schemaLocation="opra_frames/opra_compositeFrame_version.xsd"/ -->
 	<xsd:include schemaLocation="opra_frames/opra_compositeFrame_version.xsd"/>
 	<xsd:include schemaLocation="opra_frames/opra_plannedServiceFrame_version.xsd"/>
