@@ -10,8 +10,25 @@ set -e
 echo "Validating OpRa XML examples ..."
 
 # if xmllint --noout --schema xsd/OpRa_publication.xsd examples/standards/tap_tsi/*xml examples/standards/tap_tsi/*/*xml && xmllint --noout --schema xsd/OpRa_publication.xsd examples/standards/epiap/*xml && xmllint --noout --schema xsd/OpRa_publication.xsd examples/functions/deprecation/*.xml examples/functions/calendar/*xml examples/functions/fares/*xml examples/functions/grouping/*xml examples/functions/newModes/*xml examples/functions/patterns/*xml examples/functions/pointOfInterest/*xml examples/functions/simpleNetwork/*xml examples/functions/site/*xml examples/functions/stopPlace/*xml examples/functions/timetable/*xml examples/functions/validityCondition/*xml examples/functions/variant/*xml examples/functions/vehicleSchedule/*xml examples/functions/versioning/*xml examples/standards/epip/*xml examples/standards/era_uic/*xml examples/standards/fxc/*xml examples/standards/gbfs/*xml examples/standards/gtfs/*xml examples/standards/neptune/*xml  examples/standards/noptis/*xml examples/standards/tap_tsi/*xml examples/standards/txc/*xml examples/standards/vdv452/*/*xml examples/standards/vdv452/*/*/*xml; then  echo -e '\033[0;32mValidating OpRa XML examples succeeded\033[0m'
-if xmllint --noout --schema xsd/OpRa_publication.xsd examples/placeholder.xml; then echo -e '\033[0;32mValidating OpRa XML examples succeeded\033[0m'
-else
-  echo -e '\033[0;31mValidating OpRa XML examples failed\033[0m'
-  exit 1
-fi
+# if xmllint --noout --schema xsd/OpRa_publication.xsd examples/*.xml; then echo -e '\033[0;32mValidating OpRa XML examples succeeded\033[0m'
+# else
+#   echo -e '\033[0;31mValidating OpRa XML examples failed\033[0m'
+#   exit 1
+# fi
+
+
+find examples -name "*.xml" -print0 | while IFS= read -r -d '' file
+do 
+  echo "$file"
+  if
+    xmllint --noout --schema xsd/OpRa_publication.xsd "$file";
+  then 
+    echo -e '\033[0;32mValidating' "$file" 'succeeded\033[0m'
+  else
+    echo -e '\033[0;31mValidating' "$file" 'failed\033[0m'
+    exit 1
+  fi
+done
+
+echo -e '\033[0;32mValidating OpRa XML examples succeeded\033[0m'
+
