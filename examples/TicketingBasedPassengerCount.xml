@@ -8,17 +8,17 @@
 			<preparedness>Cleansed</preparedness>
 			<validationEntries>
 				<ValidationEntry id="Test:VE:1_in">
-					<LineRef ref="Test:Line:10" />
-					<ScheduledStopPointRef ref="Test:SSP:T1" />
+					<LineRef ref="Test:Line:10"/>
+					<ScheduledStopPointRef ref="Test:SSP:T1"/>
 					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 				</ValidationEntry>
 				<ValidationEntry id="Test:VE:1_out">
-					<LineRef ref="Test:Line:10" />
+					<LineRef ref="Test:Line:10"/>
 					<ScheduledStopPointRef ref="Test:SSP:3"/>
 					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
 				</ValidationEntry>
 				<ValidationEntry id="Test:VE:2_in">
-					<LineRef ref="Test:Line:20" />
+					<LineRef ref="Test:Line:20"/>
 					<ScheduledStopPointRef ref="Test:SSP:T2"/>
 					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 				</ValidationEntry>
