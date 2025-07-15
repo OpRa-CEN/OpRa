@@ -7,7 +7,7 @@
 	<dataObjects>
 		<RawDataFrame>
 			<!--DATA-->
-			<preparedness>SOMETHING</preparedness>
+			<preparedness>Raw</preparedness>
 		</RawDataFrame>
 	</dataObjects>
 </PublicationDelivery>
