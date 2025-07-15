@@ -1,82 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PublicationDelivery xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opra.org/opra ../xsd/OpRa_publication.xsd">
 	<PublicationTimestamp>2001-12-17T09:30:47Z</PublicationTimestamp>
-	<ParticipantRef>NMTOKEN</ParticipantRef>
-	<Description>normalizedString</Description>
+	<ParticipantRef>OpraExamples</ParticipantRef>
+	<Description>Ticketing based passenger count examples on the sample network.</Description>
 	<dataObjects>
 		<RawDataFrame>
+			<preparedness>Cleansed</preparedness>
 			<validationEntries>
-				<ValidationEntry>
-					<LineRef>10</LineRef>
-					<ScheduledStopPointRef>T1</ScheduledStopPointRef>
-					<PassengerTravelEntry>PassengerCheckIn</PassengerTravelEntry>
+				<ValidationEntry id="Test:VE:1_in">
+					<LineRef ref="Test:Line:10" />
+					<ScheduledStopPointRef ref="Test:SSP:T1" />
+					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 				</ValidationEntry>
-				<ValidationEntry>
-					<LineRef>10</LineRef>
-					<ScheduledStopPointRef>3</ScheduledStopPointRef>
-					<PassengerTravelEntry>PassengerCheckOut</PassengerTravelEntry>
+				<ValidationEntry id="Test:VE:1_out">
+					<LineRef ref="Test:Line:10" />
+					<ScheduledStopPointRef ref="Test:SSP:3"/>
+					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
 				</ValidationEntry>
-				<ValidationEntry>
-					<LineRef>20</LineRef>
-					<ScheduledStopPointRef>T2</ScheduledStopPointRef>
-					<PassengerTravelEntry>PassengerCheckIn</PassengerTravelEntry>
+				<ValidationEntry id="Test:VE:2_in">
+					<LineRef ref="Test:Line:20" />
+					<ScheduledStopPointRef ref="Test:SSP:T2"/>
+					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 				</ValidationEntry>
-				<ValidationEntry>
-					<SiteRef>SiteA</SiteRef>
-					<LineRef>20</LineRef>
-					<ScheduledStopPointRef>T3b</ScheduledStopPointRef>
-					<PassengerTravelEntry>PassengerCheckOut</PassengerTravelEntry>
+				<ValidationEntry id="Test:VE:2_out">
+					<SiteRef ref="Test:Site:SiteB"/>
+					<LineRef ref="Test:Line:20"/>
+					<ScheduledStopPointRef ref="Test:SSP:T3b"/>
+					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
 				</ValidationEntry>
-				<ValidationEntry>
-					<SiteRef>SiteB</SiteRef>
-					<PassengerTravelEntry>PassengerCheckIn</PassengerTravelEntry>
+				<ValidationEntry id="Test:VE:3_in">
+					<SiteRef ref="Test:Site:SiteB"/>
+					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 				</ValidationEntry>
-				<ValidationEntry>
-					<SiteRef>SiteA</SiteRef>
-					<PassengerTravelEntry>PassengerCheckOut</PassengerTravelEntry>
+				<ValidationEntry id="Test:VE:3_out">
+					<SiteRef ref="Test:Site:SiteA"/>
+					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
 				</ValidationEntry>
-				<ValidationEntry>
-					<LineRef>10</LineRef>
-					<ScheduledStopPointRef>T1</ScheduledStopPointRef>
-					<PassengerTravelEntry>PassengerCheckIn</PassengerTravelEntry>
+				<ValidationEntry id="Test:VE:4_in">
+					<LineRef ref="Test:Line:10"/>
+					<ScheduledStopPointRef ref="Test:SSP:T1"/>
+					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 				</ValidationEntry>
-				<ValidationEntry>
-					<LineRef>20</LineRef>
-					<ScheduledStopPointRef>6</ScheduledStopPointRef>
-					<PassengerTravelEntry>PassengerCheckOut</PassengerTravelEntry>
+				<ValidationEntry id="Test:VE:4_out">
+					<LineRef ref="Test:Line:20"/>
+					<ScheduledStopPointRef ref="Test:SSP:6"/>
+					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
 				</ValidationEntry>
-				<ValidationEntry>
-					<LineRef>10</LineRef>
-					<ScheduledStopPointRef>2</ScheduledStopPointRef>
-					<PassengerTravelEntry>PassengerCheckIn</PassengerTravelEntry>
+				<ValidationEntry id="Test:VE:5_in">
+					<LineRef ref="Test:Line:10"/>
+					<ScheduledStopPointRef ref="Test:SSP:2"/>
+					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 				</ValidationEntry>
-				<ValidationEntry>
-					<LineRef>10</LineRef>
-					<ScheduledStopPointRef>4</ScheduledStopPointRef>
-					<PassengerTravelEntry>PassengerCheckOut</PassengerTravelEntry>
+				<ValidationEntry id="Test:VE:5_out">
+					<LineRef ref="Test:Line:10"/>
+					<ScheduledStopPointRef ref="Test:SSP:4"/>
+					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
 				</ValidationEntry>
 			</validationEntries>
 			<ticketingBasedPassengerCounts>
 				<TicketingBasedPassengerCount>
-					<LineRef>10</LineRef>
+					<LineRef ref="Test:Line:10"/>
+					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
+					<NumberOfAlighters>3</NumberOfAlighters>
+					<NumberOfBoarders>3</NumberOfBoarders>
 					<validationEntryRefs>
-						<ValidationEntryRef>
-                    </ValidationEntryRef>
-						<ValidationEntryRef>
-                    </ValidationEntryRef>
+						<ValidationEntryRef ref="Test:VE:1_in"/>
+						<ValidationEntryRef ref="Test:VE:1_out"/>
+						<ValidationEntryRef ref="Test:VE:4_in"/>
+						<ValidationEntryRef ref="Test:VE:4_out"/>
+						<ValidationEntryRef ref="Test:VE:5_in"/>
+						<ValidationEntryRef ref="Test:VE:5_out"/>
 					</validationEntryRefs>
 				</TicketingBasedPassengerCount>
 				<TicketingBasedPassengerCount>
-					<LineRef>20</LineRef>
-				</TicketingBasedPassengerCount>
-				<TicketingBasedPassengerCount>
-					<SiteRef>SiteA</SiteRef>
-				</TicketingBasedPassengerCount>
-				<TicketingBasedPassengerCount>
-					<SiteRef>SiteB</SiteRef>
-				</TicketingBasedPassengerCount>
-				<TicketingBasedPassengerCount>
-					<ScheduledStopPlaceRef>T1</ScheduledStopPlaceRef>
+					<SiteRef ref="Test:Site:SiteB"/>
+					<NumberOfAlighters>1</NumberOfAlighters>
+					<NumberOfBoarders>1</NumberOfBoarders>
+					<validationEntryRefs>
+						<ValidationEntryRef ref="Test:VE:2_out"/>
+						<ValidationEntryRef ref="Test:VE:3_in"/>
+					</validationEntryRefs>
 				</TicketingBasedPassengerCount>
 			</ticketingBasedPassengerCounts>
 		</RawDataFrame>
