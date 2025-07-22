@@ -147,11 +147,8 @@ Rail transport, Roads and Road transport
 					<xsd:documentation>General LOG ENTRies in frame.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="cancelledDatedVehicleJourneys" type="CancelledDatedVehicleJourneys_RelStructure" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>DATED JOURNEY informations in frame.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
+			<xsd:element name="cancelledDatedVehicleJourneyEntries" type="CancelledDatedVehicleJourneyEntries_RelStructure" minOccurs="0"/>
+			<xsd:element name="cancelledDatedVehicleJourneyCounts" type="CancelledDatedVehicleJourneyCounts_RelStructure" minOccurs="0"/>
 			<xsd:element name="lateDatedVehicleJourneyEntries" type="LateDatedVehicleJourneyEntries_RelStructure" minOccurs="0"/>
 			<xsd:element name="lateDatedVehicleJourneyCounts" type="LateDatedVehicleJourneyCounts_RelStructure" minOccurs="0"/>
 			<xsd:element name="validationEntries" type="ValidationEntries_RelStructure" minOccurs="0"/>

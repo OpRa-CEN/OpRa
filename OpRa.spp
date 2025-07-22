@@ -797,8 +797,6 @@
 		</Folder>
 		<Folder FolderName="OpRa_rawdata">
 			<File FilePath="xsd\opra_rawdata\opra_cancelledDatedVehicleJourney_version.xsd" HomeFolder="Yes"/>
-			<File FilePath="xsd\opra_rawdata\opra_DatedJourneyInformationRecording_support.xsd" HomeFolder="Yes"/>
-			<File FilePath="xsd\opra_rawdata\opra_DatedJourneyInformationRecording_version.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_rawdata\opra_lateDatedVehicleJourney_version.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_rawdata\opra_measuredPassengerCount_version.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_rawdata\opra_onboardDeviceBasedPassengerCount_version.xsd" HomeFolder="Yes"/>
@@ -806,9 +804,11 @@
 			<File FilePath="xsd\opra_rawdata\opra_validationEntry_version.xsd" HomeFolder="Yes"/>
 		</Folder>
 		<Folder FolderName="opra_imports">
+			<File FilePath="xsd\opra_imports\opra_netex_facade.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_imports\opra_netex_imports.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_imports\opra_siri_imports.xsd" HomeFolder="Yes"/>
 		</Folder>
+		<File FilePath="xsd\OpRa_publication.xsd"/>
 	</Folder>
 	<File FilePath="README.md" HomeFolder="Yes"/>
 </Project>

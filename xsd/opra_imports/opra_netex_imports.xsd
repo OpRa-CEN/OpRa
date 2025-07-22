@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_netex_imports" version="1.0">
 	<!-- NeTEX Imports-->
@@ -17,6 +17,8 @@
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_vehicleJourney_support.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_datedVehicleJourney_support.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_3/part3_fares/netex_fareProduct_version.xsd"/>
+    <!-- Remove from final version, after synchronizing with current NeTEx developments -->
+    <xsd:include schemaLocation="opra_netex_facade.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="http://www.opra.org/opra">

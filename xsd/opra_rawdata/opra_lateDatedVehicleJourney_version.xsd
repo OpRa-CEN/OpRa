@@ -55,6 +55,12 @@ Rail transport, Roads and Road transport
 		</xsd:appinfo>
         <xsd:documentation>OpRa LateDatedVehicleJourney</xsd:documentation>
     </xsd:annotation>
+    <xsd:group name="LateDatedVehicleJourneyScopeGroup">
+        <xsd:sequence>
+            <xsd:element name="SituationRef" type="siri:SituationSimpleRefStructure" minOccurs="0" />
+            <xsd:element name="TypeOfDelayRef" type="netex:TypeOfDelayRefStructure" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:group>
     <xsd:simpleType name="LateDatedVehicleJourneyCountIdType">
         <xsd:annotation>
             <xsd:documentation>Identifier type for LATE DATED VEHICLE JOURNEY COUNT.</xsd:documentation>
@@ -103,22 +109,18 @@ Rail transport, Roads and Road transport
             <xsd:extension base="LoggableObject_VersionStructure">
                 <xsd:sequence>
                     <xsd:group ref="LateDatedVehicleJourneyCountGroup" />
-                    <xsd:group ref="DurationDistributionGroup" />
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
     <xsd:group name="LateDatedVehicleJourneyCountGroup">
         <xsd:annotation>
-            <xsd:documentation>Elements for the LATE DATED VEHICLE JOURNEY COUNT defined by PT SCOPE context.</xsd:documentation>
+            <xsd:documentation>Elements for the LATE DATED VEHICLE JOURNEY COUNT defined by generic PT SCOPE context and additional specific context.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:group ref="PtScopeGroup" />
-            <xsd:element name="entries" type="LateDatedVehicleJourneyEntryRefs_RelStructure" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>References to all the LATE DATED VEHICLE JOURNEY ENTRIes that aggregate into the LATE DATED VEHICLE JOURNEY COUNT.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
+            <xsd:group ref="LateDatedVehicleJourneyScopeGroup" />
+            <xsd:group ref="DurationDistributionGroup" />
         </xsd:sequence>
     </xsd:group>
     <xsd:complexType name="LateDatedVehicleJourneyCounts_RelStructure">
@@ -194,11 +196,7 @@ Rail transport, Roads and Road transport
         </xsd:annotation>
         <xsd:sequence>
             <xsd:group ref="PtScopeGroup" />
-            <xsd:element name="SituationRef" type="siri:SituationSimpleRefStructure" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>Reference to a SITUATION providing further information about the LOG ENTRY.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
+            <xsd:group ref="LateDatedVehicleJourneyScopeGroup" />
             <xsd:element name="Delay" type="siri:DurationType">
                 <xsd:annotation>
                     <xsd:documentation>The actual delay of the DATED VEHICLE JOURNEY.</xsd:documentation>
