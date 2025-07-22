@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
 	<!-- NeTEX Imports-->
@@ -64,46 +64,46 @@ Rail transport, Roads and Road transport
 			</xsd:restriction>
 		</xsd:simpleContent>
 	</xsd:complexType>
-    <xsd:simpleType name="PassengerEntranceIdType">
-        <xsd:restriction base="netex:ObjectIdType"/>
-    </xsd:simpleType>
-    <xsd:complexType name="PassengerEntranceRefStructure">
-        <xsd:simpleContent>
-            <xsd:restriction base="netex:VersionOfObjectRefStructure">
-                <xsd:attribute name="ref" type="PassengerEntranceIdType" use="required">
-                    <xsd:annotation>
-                        <xsd:documentation>Identifier of referenced PASSENGER ENTRANCE.</xsd:documentation>
-                    </xsd:annotation>
-                </xsd:attribute>
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:simpleType name="EntranceSensorIdType">
-        <xsd:restriction base="netex:ObjectIdType"/>
-    </xsd:simpleType>
-    <xsd:complexType name="EntranceSensorRefStructure">
-        <xsd:simpleContent>
-            <xsd:restriction base="netex:VersionOfObjectRefStructure">
-                <xsd:attribute name="ref" type="EntranceSensorIdType" use="required">
-                    <xsd:annotation>
-                        <xsd:documentation>Identifier of referenced ENTRANCE SENSOR.</xsd:documentation>
-                    </xsd:annotation>
-                </xsd:attribute>
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:simpleType name="TypeOfDelayIdType">
-        <xsd:restriction base="netex:ObjectIdType"/>
-    </xsd:simpleType>
-    <xsd:complexType name="TypeOfDelayRefStructure">
-        <xsd:simpleContent>
-            <xsd:restriction base="netex:VersionOfObjectRefStructure">
-                <xsd:attribute name="ref" type="TypeOfDelayIdType" use="required">
-                    <xsd:annotation>
-                        <xsd:documentation>Identifier of referenced TYPE OF DELAY.</xsd:documentation>
-                    </xsd:annotation>
-                </xsd:attribute>
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
+	<xsd:simpleType name="PassengerEntranceIdType">
+		<xsd:restriction base="netex:ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:complexType name="PassengerEntranceRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="netex:VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="PassengerEntranceIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced PASSENGER ENTRANCE.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="EntranceSensorIdType">
+		<xsd:restriction base="netex:ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:complexType name="EntranceSensorRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="netex:VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="EntranceSensorIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced ENTRANCE SENSOR.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="TypeOfDelayIdType">
+		<xsd:restriction base="netex:ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:complexType name="TypeOfDelayRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="netex:VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="TypeOfDelayIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced TYPE OF DELAY.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
 </xsd:schema>
