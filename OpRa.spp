@@ -797,6 +797,8 @@
 		</Folder>
 		<Folder FolderName="OpRa_rawdata">
 			<File FilePath="xsd\opra_rawdata\opra_cancelledDatedVehicleJourney_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_rawdata\opra_expectedPassengerCount_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_rawdata\opra_externalPassengerCount_version.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_rawdata\opra_lateDatedVehicleJourney_version.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_rawdata\opra_measuredPassengerCount_version.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_rawdata\opra_onboardDeviceBasedPassengerCount_version.xsd" HomeFolder="Yes"/>
