@@ -26,7 +26,7 @@
 					<TimebandRef ref="Test:TimeBand:0-6"/>
 					<NumberOfAlighters>20</NumberOfAlighters>					
 				</ExpectedPassengerCount>
-				<!-- A total row for TIME BAND 0-6 in the JOURNEY PATTERN -->
+				<!-- A total row for TIME BAND 0-6 in the JOURNEY PATTERN - no SSP tag is present -->
 				<ExpectedPassengerCount>
 					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 					<TimebandRef ref="Test:TimeBand:0-6"/>
