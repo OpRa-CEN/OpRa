@@ -65,7 +65,7 @@ Rail transport, Roads and Road transport
 			</xsd:restriction>
 		</xsd:simpleContent>
 	</xsd:complexType>
-	<xsd:group name="ExpectedPassangerCountScopeGroup">
+	<xsd:group name="ExpectedPassengerCountScopeGroup">
 		<xsd:sequence>
 			<xsd:element name="DayTypeRef" type="netex:DayTypeRefStructure" minOccurs="0"/>
 			<xsd:element name="OperatingDayRef" type="netex:OperatingDayRefStructure" minOccurs="0"/>
@@ -124,7 +124,7 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="PtScopeGroup"/>
-			<xsd:group ref="ExpectedPassangerCountScopeGroup"/>
+			<xsd:group ref="ExpectedPassengerCountScopeGroup"/>
 			<xsd:group ref="VehicleLoadEntryGroup"/>
 			<xsd:group ref="ExpectedPassengerCountSourceGroup"/>
 		</xsd:sequence>
