@@ -12,75 +12,75 @@
 					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 					<ScheduledStopPointRef ref="Test:SSP:T1"/>
 					<TimebandRef ref="Test:TimeBand:0-6"/>
-					<NumberOfBoarders>25</NumberOfBoarders>					
+					<NumberOfBoarders>25</NumberOfBoarders>
 				</ExpectedPassengerCount>
 				<ExpectedPassengerCount>
 					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 					<ScheduledStopPointRef ref="Test:SSP:1a"/>
 					<TimebandRef ref="Test:TimeBand:0-6"/>
-					<NumberOfAlighters>5</NumberOfAlighters>					
+					<NumberOfAlighters>5</NumberOfAlighters>
 				</ExpectedPassengerCount>
 				<ExpectedPassengerCount>
 					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 					<ScheduledStopPointRef ref="Test:SSP:T3a"/>
 					<TimebandRef ref="Test:TimeBand:0-6"/>
-					<NumberOfAlighters>20</NumberOfAlighters>					
+					<NumberOfAlighters>20</NumberOfAlighters>
 				</ExpectedPassengerCount>
 				<!-- A total row for TIME BAND 0-6 in the JOURNEY PATTERN - no SSP tag is present -->
 				<ExpectedPassengerCount>
 					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 					<TimebandRef ref="Test:TimeBand:0-6"/>
-					<NumberOfAlighters>25</NumberOfAlighters>					
-					<NumberOfBoarders>25</NumberOfBoarders>					
+					<NumberOfAlighters>25</NumberOfAlighters>
+					<NumberOfBoarders>25</NumberOfBoarders>
 				</ExpectedPassengerCount>
 				<!-- TIME BAND 6-9 -->
 				<ExpectedPassengerCount>
 					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 					<ScheduledStopPointRef ref="Test:SSP:T1"/>
 					<TimebandRef ref="Test:TimeBand:6-9"/>
-					<NumberOfBoarders>200</NumberOfBoarders>					
+					<NumberOfBoarders>200</NumberOfBoarders>
 				</ExpectedPassengerCount>
 				<ExpectedPassengerCount>
 					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 					<ScheduledStopPointRef ref="Test:SSP:1a"/>
 					<TimebandRef ref="Test:TimeBand:6-9"/>
-					<NumberOfAlighters>10</NumberOfAlighters>					
-					<NumberOfBoarders>10</NumberOfBoarders>					
+					<NumberOfAlighters>10</NumberOfAlighters>
+					<NumberOfBoarders>10</NumberOfBoarders>
 				</ExpectedPassengerCount>
 				<ExpectedPassengerCount>
 					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 					<ScheduledStopPointRef ref="Test:SSP:2"/>
 					<TimebandRef ref="Test:TimeBand:6-9"/>
-					<NumberOfAlighters>30</NumberOfAlighters>					
-					<NumberOfBoarders>30</NumberOfBoarders>					
+					<NumberOfAlighters>30</NumberOfAlighters>
+					<NumberOfBoarders>30</NumberOfBoarders>
 				</ExpectedPassengerCount>
 				<ExpectedPassengerCount>
 					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 					<ScheduledStopPointRef ref="Test:SSP:3"/>
 					<TimebandRef ref="Test:TimeBand:6-9"/>
-					<NumberOfAlighters>10</NumberOfAlighters>					
-					<NumberOfBoarders>10</NumberOfBoarders>					
+					<NumberOfAlighters>10</NumberOfAlighters>
+					<NumberOfBoarders>10</NumberOfBoarders>
 				</ExpectedPassengerCount>
 				<ExpectedPassengerCount>
 					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 					<ScheduledStopPointRef ref="Test:SSP:4"/>
 					<TimebandRef ref="Test:TimeBand:6-9"/>
-					<NumberOfAlighters>10</NumberOfAlighters>					
-					<NumberOfBoarders>10</NumberOfBoarders>					
+					<NumberOfAlighters>10</NumberOfAlighters>
+					<NumberOfBoarders>10</NumberOfBoarders>
 				</ExpectedPassengerCount>
 				<!-- Total for TIME BAND 6-9 -->
 				<ExpectedPassengerCount>
 					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 					<TimebandRef ref="Test:TimeBand:6-9"/>
-					<NumberOfAlighters>260</NumberOfAlighters>					
-					<NumberOfBoarders>260</NumberOfBoarders>					
+					<NumberOfAlighters>260</NumberOfAlighters>
+					<NumberOfBoarders>260</NumberOfBoarders>
 				</ExpectedPassengerCount>
 				<!-- etc.. -->
 				<!-- Total for JOURNEY PATTERN - no TimeBandRef tag is present -->
 				<ExpectedPassengerCount>
 					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-					<NumberOfAlighters>820</NumberOfAlighters>					
-					<NumberOfBoarders>820</NumberOfBoarders>					
+					<NumberOfAlighters>820</NumberOfAlighters>
+					<NumberOfBoarders>820</NumberOfBoarders>
 				</ExpectedPassengerCount>
 			</expectedPassengerCounts>
 		</RawDataFrame>
