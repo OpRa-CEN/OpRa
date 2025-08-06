@@ -71,6 +71,7 @@ Rail transport, Roads and Road transport
 			<xsd:element name="SiteRef" type="netex:SiteRefStructure" minOccurs="0"/>
 			<xsd:element name="NetworkRef" type="netex:NetworkRefStructure" minOccurs="0"/>
 			<xsd:element name="LineRef" type="netex:LineRefStructure" minOccurs="0"/>
+			<xsd:element name="JourneyPatternRef" type="netex:JourneyPatternRefStructure" minOccurs="0"/>
 			<xsd:element name="ScheduledStopPointRef" type="netex:ScheduledStopPointRefStructure" minOccurs="0"/>
 			<xsd:element name="VehicleJourneyRef" type="netex:VehicleJourneyRefStructure" minOccurs="0"/>
 			<xsd:element name="DatedVehicleJourneyRef" type="netex:DatedVehicleJourneyRefStructure" minOccurs="0"/>

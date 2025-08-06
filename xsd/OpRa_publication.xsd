@@ -6,7 +6,6 @@
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="opra_imports/opra_netex_imports.xsd"/>
 	<!-- ===Includes (OpRa)============================================================== -->
 	<xsd:include schemaLocation="opra_framework/opra_payload_framework.xsd"/>
-	<xsd:include schemaLocation="opra_framework/opra_frames/opra_opraDataFrame_version.xsd"/>
 	<!-- === Documentation ======================================= -->
 	<!-- ========================================== 
 	THIS IS BASICALLY A COPY OF THE NETEX PUBLICATION STRUCTURE: IT CAN (SHOULD ?) BE SPECIALISED FOR OPRA

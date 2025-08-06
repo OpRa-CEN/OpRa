@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0">
 	<!-- NeTEX Imports-->
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_imports.xsd"/>
+	<xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<!-- SIRI Imports-->
-	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../opra_imports/opra_siri_imports.xsd"/>
+	<xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
 	<!-- OpRa includes-->
 	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
 	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd"/>
@@ -71,9 +71,9 @@ Rail transport, Roads and Road transport
 	<xsd:group name="OnboardDeviceScopeGroup">
 		<xsd:sequence>
 			<xsd:element name="VehicleRef" type="siri:VehicleRefStructure" minOccurs="0"/>
-			<xsd:element name="PassengerSpaceRef" minOccurs="0"/>
-			<xsd:element name="DeckEntranceRef" minOccurs="0"/>
-			<xsd:element name="DeckEntranceSensorRef" minOccurs="0"/>
+			<xsd:element name="PassengerSpaceRef" type="netex:PassengerSpaceRefStructure" minOccurs="0"/>
+			<xsd:element name="PassengerEntranceRef" type="netex:PassengerEntranceRefStructure" minOccurs="0"/>
+			<xsd:element name="EntranceSensorRef" type="netex:EntranceSensorRefStructure" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ======================================================================= -->
@@ -86,7 +86,7 @@ Rail transport, Roads and Road transport
 				<xsd:restriction base="OnboardDeviceBasedPassengerCount_VersionStructure">
 					<xsd:sequence>
 						<xsd:sequence>
-							<xsd:group ref="netex:EntityInVersionGroup" minOccurs="0"/>
+							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
 						</xsd:sequence>
 						<xsd:sequence>
 							<xsd:group ref="netex:DataManagedObjectGroup"/>

@@ -17,6 +17,8 @@
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_vehicleJourney_support.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_datedVehicleJourney_support.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_3/part3_fares/netex_fareProduct_version.xsd"/>
+	<!-- Remove from final version, after synchronizing with current NeTEx developments -->
+	<xsd:include schemaLocation="opra_netex_facade.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="http://www.opra.org/opra">
