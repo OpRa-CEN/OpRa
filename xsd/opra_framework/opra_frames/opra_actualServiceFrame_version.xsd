@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../opra_imports/opra_netex_imports.xsd"/>
 	<!-- ======================================================================= -->
 	<xsd:annotation>
@@ -21,7 +21,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/opra_DatedJourneyInformationRecording_version.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_DatedJourneyInformationRecording_version.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>

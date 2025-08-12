@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <!-- NeTEX Imports-->
     <xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
     <!-- SIRI Imports-->
@@ -12,7 +12,7 @@
     <xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_statistics_support.xsd" />
     <xsd:annotation>
         <xsd:appinfo>
-			<Metadata xmlns="http://www.opra.org/opra">
+			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
 				<Coverage>Europe</Coverage>
@@ -28,7 +28,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/opra_lateDatedVehicleJourney_version.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_lateDatedVehicleJourney_version.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -85,8 +85,8 @@ Rail transport, Roads and Road transport
     </xsd:group>
     <xsd:group name="LateDatedVehicleJourneyScopeGroup">
         <xsd:sequence>
-            <xsd:element name="SituationRef" type="siri:SituationSimpleRefStructure" minOccurs="0" />
-            <xsd:element name="TypeOfDelayRef" type="netex:TypeOfDelayRefStructure" minOccurs="0">
+            <xsd:element ref="siri:SituationRef" minOccurs="0" />
+            <xsd:element ref="netex:TypeOfDelayRef" minOccurs="0">
                 <xsd:annotation>
                     <xsd:documentation>Classification of the DELAY (eg. within a regulatory context)</xsd:documentation>
                 </xsd:annotation>
@@ -99,6 +99,7 @@ Rail transport, Roads and Road transport
         </xsd:annotation>
         <xsd:restriction base="LoggableObjectIdType" />
     </xsd:simpleType>
+    <xsd:element name="LateDatedVehicleJourneyCountRef" type="LateDatedVehicleJourneyCountRefStructure" />
     <xsd:complexType name="LateDatedVehicleJourneyCountRefStructure">
         <xsd:annotation>
             <xsd:documentation>Reference to a LATE DATED VEHICLE JOURNEY COUNT.</xsd:documentation>
@@ -170,6 +171,7 @@ Rail transport, Roads and Road transport
     <xsd:simpleType name="LateDatedVehicleJourneyEntryIdType">
         <xsd:restriction base="netex:LogEntryIdType" />
     </xsd:simpleType>
+    <xsd:element name="LateDatedVehicleJourneyEntryRef" type="LateDatedVehicleJourneyEntryRefStructure" />
     <xsd:complexType name="LateDatedVehicleJourneyEntryRefStructure">
         <xsd:annotation>
             <xsd:documentation>Reference type for a LATE DATED VEHICLE JOURNEY ENTRY.</xsd:documentation>
@@ -237,7 +239,7 @@ Rail transport, Roads and Road transport
             <xsd:documentation>A collection of one or more LateDatedVehicleJourneyEntry instances.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="Entry" type="LateDatedVehicleJourneyEntry_Structure" maxOccurs="unbounded">
+            <xsd:element ref="LateDatedVehicleJourneyEntry" maxOccurs="unbounded">
                 <xsd:annotation>
                     <xsd:documentation>LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
                 </xsd:annotation>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_commonFrame_version">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_commonFrame_version">
 	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<xsd:annotation>
 		<xsd:appinfo>

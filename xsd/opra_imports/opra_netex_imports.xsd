@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_netex_imports" version="1.0">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_netex_imports" version="1.0">
 	<!-- NeTEX Imports-->
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_versionFrame_support.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_entity_support.xsd"/>
@@ -21,7 +21,7 @@
 	<xsd:include schemaLocation="opra_netex_facade.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
-			<Metadata xmlns="http://www.opra.org/opra">
+			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
 				<Coverage>Europe</Coverage>
@@ -37,7 +37,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/opra_imports/opra_netex_imports.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_imports/opra_netex_imports.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>

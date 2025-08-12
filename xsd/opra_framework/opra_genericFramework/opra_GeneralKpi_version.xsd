@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="http://www.opra.org/opra" version="1.0">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
 	<!-- NeTEX Imports-->
 	<xsd:import schemaLocation="../../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd" namespace="http://www.opengis.net/gml/3.2"/>
 	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
@@ -25,7 +25,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/opra_framework/opra_genericFramework/opra_generalKpi_version.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_framework/opra_genericFramework/opra_generalKpi_version.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>

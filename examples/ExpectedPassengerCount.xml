@@ -1,84 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PublicationDelivery xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opra.org/opra ../xsd/OpRa_publication.xsd">
+<PublicationDelivery xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/OpRa_publication.xsd">
 	<PublicationTimestamp>2001-12-17T09:30:47Z</PublicationTimestamp>
 	<ParticipantRef>OpraExamples</ParticipantRef>
 	<Description>Expected passenger count example on the sample network.</Description>
 	<dataObjects>
 		<RawDataFrame>
-			<preparedness>Raw</preparedness>
+			<PreparednessLevel>Raw</PreparednessLevel>
 			<expectedPassengerCounts>
 				<!-- Listing expected passenger counts at SCHEDULED STOP POINTs within a JOURNEY PATTERN: TIME BAND 0-6 -->
 				<ExpectedPassengerCount>
-					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-					<ScheduledStopPointRef ref="Test:SSP:T1"/>
-					<TimebandRef ref="Test:TimeBand:0-6"/>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:T1"/>
+					<netex:TimebandRef ref="Test:TimeBand:0-6"/>
 					<NumberOfBoarders>25</NumberOfBoarders>					
 				</ExpectedPassengerCount>
 				<ExpectedPassengerCount>
-					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-					<ScheduledStopPointRef ref="Test:SSP:1a"/>
-					<TimebandRef ref="Test:TimeBand:0-6"/>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:1a"/>
+					<netex:TimebandRef ref="Test:TimeBand:0-6"/>
 					<NumberOfAlighters>5</NumberOfAlighters>					
 				</ExpectedPassengerCount>
 				<ExpectedPassengerCount>
-					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-					<ScheduledStopPointRef ref="Test:SSP:T3a"/>
-					<TimebandRef ref="Test:TimeBand:0-6"/>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:T3a"/>
+					<netex:TimebandRef ref="Test:TimeBand:0-6"/>
 					<NumberOfAlighters>20</NumberOfAlighters>					
 				</ExpectedPassengerCount>
 				<!-- A total row for TIME BAND 0-6 in the JOURNEY PATTERN - no SSP tag is present -->
 				<ExpectedPassengerCount>
-					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-					<TimebandRef ref="Test:TimeBand:0-6"/>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:TimebandRef ref="Test:TimeBand:0-6"/>
 					<NumberOfAlighters>25</NumberOfAlighters>					
 					<NumberOfBoarders>25</NumberOfBoarders>					
 				</ExpectedPassengerCount>
 				<!-- TIME BAND 6-9 -->
 				<ExpectedPassengerCount>
-					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-					<ScheduledStopPointRef ref="Test:SSP:T1"/>
-					<TimebandRef ref="Test:TimeBand:6-9"/>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:T1"/>
+					<netex:TimebandRef ref="Test:TimeBand:6-9"/>
 					<NumberOfBoarders>200</NumberOfBoarders>					
 				</ExpectedPassengerCount>
 				<ExpectedPassengerCount>
-					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-					<ScheduledStopPointRef ref="Test:SSP:1a"/>
-					<TimebandRef ref="Test:TimeBand:6-9"/>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:1a"/>
+					<netex:TimebandRef ref="Test:TimeBand:6-9"/>
 					<NumberOfAlighters>10</NumberOfAlighters>					
 					<NumberOfBoarders>10</NumberOfBoarders>					
 				</ExpectedPassengerCount>
 				<ExpectedPassengerCount>
-					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-					<ScheduledStopPointRef ref="Test:SSP:2"/>
-					<TimebandRef ref="Test:TimeBand:6-9"/>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:2"/>
+					<netex:TimebandRef ref="Test:TimeBand:6-9"/>
 					<NumberOfAlighters>30</NumberOfAlighters>					
 					<NumberOfBoarders>30</NumberOfBoarders>					
 				</ExpectedPassengerCount>
 				<ExpectedPassengerCount>
-					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-					<ScheduledStopPointRef ref="Test:SSP:3"/>
-					<TimebandRef ref="Test:TimeBand:6-9"/>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:3"/>
+					<netex:TimebandRef ref="Test:TimeBand:6-9"/>
 					<NumberOfAlighters>10</NumberOfAlighters>					
 					<NumberOfBoarders>10</NumberOfBoarders>					
 				</ExpectedPassengerCount>
 				<ExpectedPassengerCount>
-					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-					<ScheduledStopPointRef ref="Test:SSP:4"/>
-					<TimebandRef ref="Test:TimeBand:6-9"/>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:4"/>
+					<netex:TimebandRef ref="Test:TimeBand:6-9"/>
 					<NumberOfAlighters>10</NumberOfAlighters>					
 					<NumberOfBoarders>10</NumberOfBoarders>					
 				</ExpectedPassengerCount>
 				<!-- Total for TIME BAND 6-9 -->
 				<ExpectedPassengerCount>
-					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-					<TimebandRef ref="Test:TimeBand:6-9"/>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:TimebandRef ref="Test:TimeBand:6-9"/>
 					<NumberOfAlighters>260</NumberOfAlighters>					
 					<NumberOfBoarders>260</NumberOfBoarders>					
 				</ExpectedPassengerCount>
 				<!-- etc.. -->
 				<!-- Total for JOURNEY PATTERN - no TimeBandRef tag is present -->
 				<ExpectedPassengerCount>
-					<JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 					<NumberOfAlighters>820</NumberOfAlighters>					
 					<NumberOfBoarders>820</NumberOfBoarders>					
 				</ExpectedPassengerCount>

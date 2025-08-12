@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_OpRa_version">
-	<!-- NeTEX Imports-->
-	<xsd:include schemaLocation="../opra_imports/opra_netex_imports.xsd"/>
-	<!-- SIRI Imports-->
-	<!-- OpRa includes-->
-	<xsd:annotation>
-		<xsd:appinfo>
-			<Metadata xmlns="http://www.opra.org/opra">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.netex.org.uk/netex" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- NeTEX Imports-->
+    <xsd:include schemaLocation="../opra_imports/opra_netex_imports.xsd" />
+    <!-- SIRI Imports-->
+    <!-- OpRa includes-->
+    <xsd:annotation>
+        <xsd:appinfo>
+			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
 				<Coverage>Europe</Coverage>
@@ -23,7 +23,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/opra_imports/opra_netex_facade.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_imports/opra_netex_facade.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -48,62 +48,66 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa NeTEx facade - provides future types and definitions</xsd:documentation>
-	</xsd:annotation>
-	<xsd:simpleType name="PassengerSpaceIdType">
-		<xsd:restriction base="netex:ObjectIdType"/>
-	</xsd:simpleType>
-	<xsd:complexType name="PassengerSpaceRefStructure">
-		<xsd:simpleContent>
-			<xsd:restriction base="netex:VersionOfObjectRefStructure">
-				<xsd:attribute name="ref" type="PassengerSpaceIdType" use="required">
-					<xsd:annotation>
-						<xsd:documentation>Identifier of referenced PASSENGER SPACE.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
-			</xsd:restriction>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<xsd:simpleType name="PassengerEntranceIdType">
-		<xsd:restriction base="netex:ObjectIdType"/>
-	</xsd:simpleType>
-	<xsd:complexType name="PassengerEntranceRefStructure">
-		<xsd:simpleContent>
-			<xsd:restriction base="netex:VersionOfObjectRefStructure">
-				<xsd:attribute name="ref" type="PassengerEntranceIdType" use="required">
-					<xsd:annotation>
-						<xsd:documentation>Identifier of referenced PASSENGER ENTRANCE.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
-			</xsd:restriction>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<xsd:simpleType name="EntranceSensorIdType">
-		<xsd:restriction base="netex:ObjectIdType"/>
-	</xsd:simpleType>
-	<xsd:complexType name="EntranceSensorRefStructure">
-		<xsd:simpleContent>
-			<xsd:restriction base="netex:VersionOfObjectRefStructure">
-				<xsd:attribute name="ref" type="EntranceSensorIdType" use="required">
-					<xsd:annotation>
-						<xsd:documentation>Identifier of referenced ENTRANCE SENSOR.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
-			</xsd:restriction>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<xsd:simpleType name="TypeOfDelayIdType">
-		<xsd:restriction base="netex:ObjectIdType"/>
-	</xsd:simpleType>
-	<xsd:complexType name="TypeOfDelayRefStructure">
-		<xsd:simpleContent>
-			<xsd:restriction base="netex:VersionOfObjectRefStructure">
-				<xsd:attribute name="ref" type="TypeOfDelayIdType" use="required">
-					<xsd:annotation>
-						<xsd:documentation>Identifier of referenced TYPE OF DELAY.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
-			</xsd:restriction>
-		</xsd:simpleContent>
-	</xsd:complexType>
+        <xsd:documentation>OpRa NeTEx facade - provides future types and definitions</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="PassengerSpaceIdType">
+        <xsd:restriction base="ObjectIdType" />
+    </xsd:simpleType>
+    <xsd:element name="PassengerSpaceRef" type="PassengerSpaceRefStructure" />
+    <xsd:complexType name="PassengerSpaceRefStructure">
+        <xsd:simpleContent>
+            <xsd:restriction base="VersionOfObjectRefStructure">
+                <xsd:attribute name="ref" type="PassengerSpaceIdType" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation>Identifier of referenced PASSENGER SPACE.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="PassengerEntranceIdType">
+        <xsd:restriction base="ObjectIdType" />
+    </xsd:simpleType>
+    <xsd:element name="PassengerEntranceRef" type="PassengerEntranceRefStructure" />
+    <xsd:complexType name="PassengerEntranceRefStructure">
+        <xsd:simpleContent>
+            <xsd:restriction base="VersionOfObjectRefStructure">
+                <xsd:attribute name="ref" type="PassengerEntranceIdType" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation>Identifier of referenced PASSENGER ENTRANCE.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="EntranceSensorIdType">
+        <xsd:restriction base="ObjectIdType" />
+    </xsd:simpleType>
+    <xsd:element name="EntranceSensorRef" type="EntranceSensorRefStructure" />
+    <xsd:complexType name="EntranceSensorRefStructure">
+        <xsd:simpleContent>
+            <xsd:restriction base="VersionOfObjectRefStructure">
+                <xsd:attribute name="ref" type="EntranceSensorIdType" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation>Identifier of referenced ENTRANCE SENSOR.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="TypeOfDelayIdType">
+        <xsd:restriction base="ObjectIdType" />
+    </xsd:simpleType>
+    <xsd:element name="TypeOfDelayRef" type="TypeOfDelayRefStructure" />
+    <xsd:complexType name="TypeOfDelayRefStructure">
+        <xsd:simpleContent>
+            <xsd:restriction base="VersionOfObjectRefStructure">
+                <xsd:attribute name="ref" type="TypeOfDelayIdType" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation>Identifier of referenced TYPE OF DELAY.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
 </xsd:schema>

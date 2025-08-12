@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.siri.org.uk/siri" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_siri_imports">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.siri.org.uk/siri" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_siri_imports">
 	<!-- SIRI Imports-->
 	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd"/>
 	<!--To avoid importing the duplicated SIRI version-->
@@ -10,7 +10,7 @@
 	<xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_reference.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
-			<Metadata xmlns="http://www.opra.org/opra">
+			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
 				<Coverage>Europe</Coverage>
@@ -26,7 +26,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/opra_imports/opra_siri_imports.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_imports/opra_siri_imports.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>

@@ -761,6 +761,8 @@
 		</Folder>
 	</Folder>
 	<Folder FolderName="Examples">
+		<File FilePath="examples\CancelledAndLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\ExpectedPassengerCount.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\placeholder.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\TicketingBasedPassengerCount.xml" HomeFolder="Yes"/>
 	</Folder>

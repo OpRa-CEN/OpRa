@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/OpRa_publication.xsd">
+	<PublicationTimestamp>2001-12-17T09:30:47Z</PublicationTimestamp>
+	<ParticipantRef>OpraExamples</ParticipantRef>
+	<Description>Cancelled and Late dated vehicle journey examples on the sample network.</Description>
+	<dataObjects>
+		<RawDataFrame>
+			<netex:ValidBetween>
+				<netex:FromDate>2025-03-16T00:00:00</netex:FromDate>
+				<netex:ToDate>2025-03-18T23:59:59</netex:ToDate>
+			</netex:ValidBetween>
+			<PreparednessLevel>Cleansed</PreparednessLevel>
+			<cancelledDatedVehicleJourneyEntries>
+				<CancelledDatedVehicleJourneyEntry>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250317_1700"/>
+					<ReplacementJourneyCreated>true</ReplacementJourneyCreated>
+				</CancelledDatedVehicleJourneyEntry>
+				<CancelledDatedVehicleJourneyEntry>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250318_0630"/>
+					<ReplacementJourneyCreated>false</ReplacementJourneyCreated>
+				</CancelledDatedVehicleJourneyEntry>
+			</cancelledDatedVehicleJourneyEntries>
+			<cancelledDatedVehicleJourneyCounts>
+				<CancelledDatedVehicleJourneyCount>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<NumberOfOccurrences>2</NumberOfOccurrences>
+					<PercentageOfOccurrences>0.0270</PercentageOfOccurrences>
+				</CancelledDatedVehicleJourneyCount>
+			</cancelledDatedVehicleJourneyCounts>
+			<lateDatedVehicleJourneyEntries>
+				<LateDatedVehicleJourneyEntry>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250316_0700"/>
+					<DelayDuration>PT5M</DelayDuration>
+				</LateDatedVehicleJourneyEntry>
+				<LateDatedVehicleJourneyEntry>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250316_1330"/>
+					<DelayDuration>PT5M</DelayDuration>
+				</LateDatedVehicleJourneyEntry>
+				<LateDatedVehicleJourneyEntry>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250317_0730"/>
+					<DelayDuration>PT5M</DelayDuration>
+				</LateDatedVehicleJourneyEntry>
+				<LateDatedVehicleJourneyEntry>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250317_1300"/>
+					<DelayDuration>PT10M</DelayDuration>
+				</LateDatedVehicleJourneyEntry>
+				<LateDatedVehicleJourneyEntry>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250318_1800"/>
+					<DelayDuration>PT10M</DelayDuration>
+				</LateDatedVehicleJourneyEntry>
+			</lateDatedVehicleJourneyEntries>
+			<lateDatedVehicleJourneyCounts>
+				<LateDatedVehicleJourneyCount>
+					<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+					<intervals>
+						<DurationInterval>
+							<!-- statistics for delays less than 5 (excl.) minutes -->
+							<EndOfInterval>PT5M</EndOfInterval>
+							<EndIncluded>false</EndIncluded>
+							<NumberOfOccurrences>69</NumberOfOccurrences>
+							<PercentageOfOccurrences>0.9324</PercentageOfOccurrences>
+						</DurationInterval>
+						<DurationInterval>
+							<!-- statistics for delays between 5 (incl.) and 10 (excl.) minutes -->
+							<StartOfInterval>PT5M</StartOfInterval>
+							<StartIncluded>true</StartIncluded>
+							<EndOfInterval>PT10M</EndOfInterval>
+							<EndIncluded>false</EndIncluded>
+							<NumberOfOccurrences>3</NumberOfOccurrences>
+							<PercentageOfOccurrences>0.0405</PercentageOfOccurrences>
+						</DurationInterval>
+						<DurationInterval>
+							<!-- statistics for delays of length at least 10 (incl.) minutes -->
+							<StartOfInterval>PT10M</StartOfInterval>
+							<StartIncluded>true</StartIncluded>
+							<NumberOfOccurrences>2</NumberOfOccurrences>
+							<PercentageOfOccurrences>0.0270</PercentageOfOccurrences>
+						</DurationInterval>
+					</intervals>
+				</LateDatedVehicleJourneyCount>
+			</lateDatedVehicleJourneyCounts>
+		</RawDataFrame>
+	</dataObjects>
+</PublicationDelivery>
