@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- NeTEX Imports-->
-    <!-- SIRI Imports-->
-    <!-- OpRa includes-->
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+	<!-- NeTEX Imports-->
+	<!-- SIRI Imports-->
+	<!-- OpRa includes-->
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -47,21 +47,21 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa Passenger Travel Entry related definitions.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:element name="PassengerTravelEntryType" type="PassengerTravelEntryTypeEnumeration" />
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="PassengerTravelEntryTypeEnumeration">
-        <xsd:annotation>
-            <xsd:documentation>Possible types for PASSENGER TRAVEL ENTRY (cf TRANSMODEL)</xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="xsd:NMTOKEN">
-            <xsd:enumeration value="PassengerCheckIn" />
-            <xsd:enumeration value="PassengerCheckOut" />
-            <xsd:enumeration value="PassengerWaypoint" />
-            <xsd:enumeration value="ControlPassengerTrip" />
-            <xsd:enumeration value="FareTripActivation" />
-            <xsd:enumeration value="ControlFareReversion" />
-        </xsd:restriction>
-    </xsd:simpleType>
+		<xsd:documentation>OpRa Passenger Travel Entry related definitions.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="PassengerTravelEntryType" type="PassengerTravelEntryTypeEnumeration"/>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="PassengerTravelEntryTypeEnumeration">
+		<xsd:annotation>
+			<xsd:documentation>Possible types for PASSENGER TRAVEL ENTRY (cf TRANSMODEL)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="PassengerCheckIn"/>
+			<xsd:enumeration value="PassengerCheckOut"/>
+			<xsd:enumeration value="PassengerWaypoint"/>
+			<xsd:enumeration value="ControlPassengerTrip"/>
+			<xsd:enumeration value="FareTripActivation"/>
+			<xsd:enumeration value="ControlFareReversion"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 </xsd:schema>
