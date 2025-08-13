@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.netex.org.uk/netex" version="1.0">
+	<!-- NeTEX Imports-->
+	<xsd:include schemaLocation="../opra_imports/opra_netex_imports.xsd"/>
+	<!-- SIRI Imports-->
+	<!-- OpRa includes-->
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
+				<Date>
+					<Created>2024-11-29</Created>
+				</Date>
+				<Description>
+					<p>OpRa - Operational Raw Data</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_imports/opra_netex_facade.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Rights>Unclassified
+				</Rights>
+				<Source>
+					<ul>
+						<li>Created for OpRa</li>
+					</ul>
+				</Source>
+				<Status>Initial Version</Status>
+				<Subject>
+					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+Air transport, Airports,
+Ports and maritime transport, Ferries (marine),
+Public transport, Bus services, Coach services, Bus stops and stations,
+Rail transport, Railway stations and track, Train services, Underground trains,
+Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+Rail transport, Roads and Road transport
+</Category>
+					<Project>CEN TC278 WG3 SG10.</Project>
+				</Subject>
+				<Title>Opra Operation Raw Data Exchange</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>OpRa NeTEx facade - provides future types and definitions</xsd:documentation>
+	</xsd:annotation>
+	<xsd:simpleType name="PassengerSpaceIdType">
+		<xsd:restriction base="ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="PassengerSpaceRef" type="PassengerSpaceRefStructure"/>
+	<xsd:complexType name="PassengerSpaceRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="PassengerSpaceIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced PASSENGER SPACE.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="PassengerEntranceIdType">
+		<xsd:restriction base="ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="PassengerEntranceRef" type="PassengerEntranceRefStructure"/>
+	<xsd:complexType name="PassengerEntranceRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="PassengerEntranceIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced PASSENGER ENTRANCE.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="EntranceSensorIdType">
+		<xsd:restriction base="ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="EntranceSensorRef" type="EntranceSensorRefStructure"/>
+	<xsd:complexType name="EntranceSensorRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="EntranceSensorIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced ENTRANCE SENSOR.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="TypeOfDelayIdType">
+		<xsd:restriction base="ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="TypeOfDelayRef" type="TypeOfDelayRefStructure"/>
+	<xsd:complexType name="TypeOfDelayRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="TypeOfDelayIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced TYPE OF DELAY.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+</xsd:schema>

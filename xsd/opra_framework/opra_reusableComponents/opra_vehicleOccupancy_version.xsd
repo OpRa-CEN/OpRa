@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.opra.org/opra" version="1.0">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
 	<!-- NeTEX Imports-->
 	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<!-- SIRI Imports-->
@@ -9,7 +9,7 @@
 	<!-- OpRa includes-->
 	<xsd:annotation>
 		<xsd:appinfo>
-			<Metadata xmlns="http://www.opra.org/opra">
+			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
 				<Coverage>Europe</Coverage>
@@ -25,7 +25,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/OpRa_DatedJourneyInformationRecording_version.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/OpRa_DatedJourneyInformationRecording_version.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -66,7 +66,7 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>Dynamic (may change in each state) elements for a MeasurePassengerCount. (as a LOG ENTRY)</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="TimebandRef" type="netex:TimebandRefStructure" minOccurs="0"/>
+			<xsd:element ref="netex:TimebandRef" minOccurs="0"/>
 			<xsd:element name="NumberOfAlighters" type="netex:NumberOfPassengers" minOccurs="0"/>
 			<xsd:element name="NumberOfBoarders" type="netex:NumberOfPassengers" minOccurs="0"/>
 			<xsd:element name="OnboardCount" type="netex:NumberOfPassengers" minOccurs="0"/>

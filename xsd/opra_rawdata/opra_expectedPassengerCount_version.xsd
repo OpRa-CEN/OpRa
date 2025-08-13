@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
 	<!-- NeTEX Imports-->
 	<xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<!-- SIRI Imports-->
 	<xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
 	<!-- OpRa includes-->
 	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
-	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_controlActionReference_support.xsd"/>
-	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_eventReference_support.xsd"/>
-	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_ptScope_support.xsd"/>
-	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd"/>
+	<xsd:include schemaLocation="opra_onboardDeviceBasedPassengerCount_version.xsd"/>
+	<xsd:include schemaLocation="opra_ticketingBasedPassengerCount_version.xsd"/>
+	<xsd:include schemaLocation="opra_externalPassengerCount_version.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
@@ -54,16 +53,40 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa TicketingBasedPassengerCount</xsd:documentation>
+		<xsd:documentation>OpRa ExpectedPassengerCount</xsd:documentation>
 	</xsd:annotation>
+	<xsd:simpleType name="ExpectedPassengerCountIdType">
+		<xsd:restriction base="LoggableObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="ExpectedPassengerCountRef" type="ExpectedPassengerCountRefStructure"/>
+	<xsd:complexType name="ExpectedPassengerCountRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="LoggableObjectRefStructure">
+				<xsd:attribute name="ref" type="ExpectedPassengerCountIdType" use="required"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:group name="ExpectedPassengerCountScopeGroup">
+		<xsd:sequence>
+			<xsd:element ref="netex:DayTypeRef" minOccurs="0"/>
+			<xsd:element ref="netex:OperatingDayRef" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:group name="ExpectedPassengerCountSourceGroup">
+		<xsd:sequence>
+			<xsd:element ref="OnboardDeviceBasedPassengerCountRef" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="TicketingBasedPassengerCountRef" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="ExternalPassengerCountRef" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:group>
 	<!-- ======================================================================= -->
-	<xsd:element name="MeasuredPassengerCount" substitutionGroup="LoggableObject_">
+	<xsd:element name="ExpectedPassengerCount" substitutionGroup="LoggableObject_">
 		<xsd:annotation>
-			<xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording MEASURED PASSENGER COUNT information.</xsd:documentation>
+			<xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording EXPECTED PASSENGER COUNT information.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:complexContent>
-				<xsd:restriction base="MeasuredPassengerCount_VersionStructure">
+				<xsd:restriction base="ExpectedPassengerCount_VersionStructure">
 					<xsd:sequence>
 						<xsd:sequence>
 							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
@@ -75,43 +98,44 @@ Rail transport, Roads and Road transport
 							<xsd:group ref="LoggableObjectGroup"/>
 						</xsd:sequence>
 						<xsd:sequence>
-							<xsd:group ref="MeasuredPassengerCountGroup"/>
+							<xsd:group ref="ExpectedPassengerCountGroup"/>
 						</xsd:sequence>
 					</xsd:sequence>
-					<xsd:attribute name="id" type="LoggableObjectIdType"/>
-					<!--SHOULD BE MeasuredPassengerCountIdType-->
+					<xsd:attribute name="id" type="ExpectedPassengerCountIdType"/>
 				</xsd:restriction>
+				<!--SHOULD BE ExpectedPassengerCount-->
 			</xsd:complexContent>
 		</xsd:complexType>
 	</xsd:element>
-	<xsd:complexType name="MeasuredPassengerCount_VersionStructure">
+	<xsd:complexType name="ExpectedPassengerCount_VersionStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for a LOGGABLE OBJECT designed for recording MEASURED PASSENGER COUNT information.</xsd:documentation>
+			<xsd:documentation>Type for a LOGGABLE OBJECT designed for recording EXPECTED PASSENGER COUNT information.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="LoggableObject_VersionStructure">
 				<xsd:sequence>
-					<xsd:group ref="MeasuredPassengerCountGroup"/>
+					<xsd:group ref="ExpectedPassengerCountGroup"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:group name="MeasuredPassengerCountGroup">
+	<xsd:group name="ExpectedPassengerCountGroup">
 		<xsd:annotation>
-			<xsd:documentation>Static (same in each state) elements for a CancelledDatedVehicleJourney (as a LOGGABLE OBJECT)</xsd:documentation>
+			<xsd:documentation>Static (same in each state) elements for an ExpectedPassengerCount (as a LOGGABLE OBJECT)</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="PtScopeGroup"/>
-			<xsd:group ref="VehicleLoadEntryGroup"/>
-			<xsd:element name="history" type="VehicleLoadEntries_RelStructure"/>
+			<xsd:group ref="ExpectedPassengerCountScopeGroup"/>
+			<xsd:group ref="EstimatedVehicleLoadEntryGroup"/>
+			<xsd:group ref="ExpectedPassengerCountSourceGroup"/>
 		</xsd:sequence>
 	</xsd:group>
-	<xsd:complexType name="MeasuredPassengerCounts_RelStructure">
+	<xsd:complexType name="ExpectedPassengerCounts_RelStructure">
 		<xsd:annotation>
-			<xsd:documentation>A collection of one or more CancelledDatedVehicleJourneys.</xsd:documentation>
+			<xsd:documentation>A collection of one or more ExpectedPassengerCounts.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="MeasuredPassengerCount" maxOccurs="unbounded">
+			<xsd:element ref="ExpectedPassengerCount" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>LOGGABLE OBJECT designed for recording DATED VEHICLE JOURNEY information.</xsd:documentation>
 				</xsd:annotation>

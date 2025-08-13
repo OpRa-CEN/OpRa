@@ -1,65 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PublicationDelivery xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opra.org/opra ../xsd/OpRa_publication.xsd">
+<PublicationDelivery xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/OpRa_publication.xsd">
 	<PublicationTimestamp>2001-12-17T09:30:47Z</PublicationTimestamp>
 	<ParticipantRef>OpraExamples</ParticipantRef>
 	<Description>Ticketing based passenger count examples on the sample network.</Description>
 	<dataObjects>
 		<RawDataFrame>
-			<preparedness>Cleansed</preparedness>
+			<PreparednessLevel>Cleansed</PreparednessLevel>
 			<validationEntries>
 				<ValidationEntry id="Test:VE:1_in">
-					<LineRef ref="Test:Line:10"/>
-					<ScheduledStopPointRef ref="Test:SSP:T1"/>
+					<netex:LineRef ref="Test:Line:10"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:T1"/>
 					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 				</ValidationEntry>
 				<ValidationEntry id="Test:VE:1_out">
-					<LineRef ref="Test:Line:10"/>
-					<ScheduledStopPointRef ref="Test:SSP:3"/>
+					<netex:LineRef ref="Test:Line:10"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:3"/>
 					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
 				</ValidationEntry>
 				<ValidationEntry id="Test:VE:2_in">
-					<LineRef ref="Test:Line:20"/>
-					<ScheduledStopPointRef ref="Test:SSP:T2"/>
+					<netex:LineRef ref="Test:Line:20"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:T2"/>
 					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 				</ValidationEntry>
 				<ValidationEntry id="Test:VE:2_out">
-					<SiteRef ref="Test:Site:SiteB"/>
-					<LineRef ref="Test:Line:20"/>
-					<ScheduledStopPointRef ref="Test:SSP:T3b"/>
+					<netex:SiteRef ref="Test:Site:SiteB"/>
+					<netex:LineRef ref="Test:Line:20"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:T3b"/>
 					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
 				</ValidationEntry>
 				<ValidationEntry id="Test:VE:3_in">
-					<SiteRef ref="Test:Site:SiteB"/>
+					<netex:SiteRef ref="Test:Site:SiteB"/>
 					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 				</ValidationEntry>
 				<ValidationEntry id="Test:VE:3_out">
-					<SiteRef ref="Test:Site:SiteA"/>
+					<netex:SiteRef ref="Test:Site:SiteA"/>
 					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
 				</ValidationEntry>
 				<ValidationEntry id="Test:VE:4_in">
-					<LineRef ref="Test:Line:10"/>
-					<ScheduledStopPointRef ref="Test:SSP:T1"/>
+					<netex:LineRef ref="Test:Line:10"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:T1"/>
 					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 				</ValidationEntry>
 				<ValidationEntry id="Test:VE:4_out">
-					<LineRef ref="Test:Line:20"/>
-					<ScheduledStopPointRef ref="Test:SSP:6"/>
+					<netex:LineRef ref="Test:Line:20"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:6"/>
 					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
 				</ValidationEntry>
 				<ValidationEntry id="Test:VE:5_in">
-					<LineRef ref="Test:Line:10"/>
-					<ScheduledStopPointRef ref="Test:SSP:2"/>
+					<netex:LineRef ref="Test:Line:10"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:2"/>
 					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 				</ValidationEntry>
 				<ValidationEntry id="Test:VE:5_out">
-					<LineRef ref="Test:Line:10"/>
-					<ScheduledStopPointRef ref="Test:SSP:4"/>
+					<netex:LineRef ref="Test:Line:10"/>
+					<netex:ScheduledStopPointRef ref="Test:SSP:4"/>
 					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
 				</ValidationEntry>
 			</validationEntries>
 			<ticketingBasedPassengerCounts>
 				<TicketingBasedPassengerCount>
-					<LineRef ref="Test:Line:10"/>
+					<netex:LineRef ref="Test:Line:10"/>
 					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
 					<NumberOfAlighters>3</NumberOfAlighters>
 					<NumberOfBoarders>3</NumberOfBoarders>
@@ -73,7 +73,7 @@
 					</validationEntryRefs>
 				</TicketingBasedPassengerCount>
 				<TicketingBasedPassengerCount>
-					<SiteRef ref="Test:Site:SiteB"/>
+					<netex:SiteRef ref="Test:Site:SiteB"/>
 					<NumberOfAlighters>1</NumberOfAlighters>
 					<NumberOfBoarders>1</NumberOfBoarders>
 					<validationEntryRefs>
