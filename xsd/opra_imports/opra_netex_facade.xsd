@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.netex.org.uk/netex" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- NeTEX Imports-->
-    <xsd:include schemaLocation="../opra_imports/opra_netex_imports.xsd" />
-    <!-- SIRI Imports-->
-    <!-- OpRa includes-->
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="http://www.netex.org.uk/netex" version="1.0">
+	<!-- NeTEX Imports-->
+	<xsd:include schemaLocation="../opra_imports/opra_netex_imports.xsd"/>
+	<!-- SIRI Imports-->
+	<!-- OpRa includes-->
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>

@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_validationEntry_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- NeTEX Imports-->
-    <xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
-    <!-- SIRI Imports-->
-    <!-- OpRa includes-->
-    <xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_ptScope_support.xsd" />
-    <xsd:include schemaLocation="opra_ticketingBasedPassengerCount_version.xsd" />
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_validationEntry_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+	<!-- NeTEX Imports-->
+	<xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- SIRI Imports-->
+	<!-- OpRa includes-->
+	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_ptScope_support.xsd"/>
+	<xsd:include schemaLocation="opra_ticketingBasedPassengerCount_version.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -50,48 +50,48 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa TicketingBasedPassengerCount</xsd:documentation>
-    </xsd:annotation>
-    <xsd:simpleType name="ValidatonEntryIdType">
-        <xsd:restriction base="netex:LogEntryIdType" />
-    </xsd:simpleType>
-    <xsd:element name="ValidationEntryRef" type="ValidationEntryRefStructure" />
-    <xsd:complexType name="ValidationEntryRefStructure">
-        <xsd:simpleContent>
-            <xsd:restriction base="netex:LogEntryRefStructure">
-                <xsd:attribute name="ref" type="ValidatonEntryIdType" use="required">
-                    <xsd:annotation>
-                        <xsd:documentation>Identifier of referenced VALIDATION ENTRY.</xsd:documentation>
-                    </xsd:annotation>
-                </xsd:attribute>
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:complexType name="ValidationEntryRefs_RelStructure">
-        <xsd:sequence>
-            <xsd:element ref="ValidationEntryRef" maxOccurs="unbounded" />
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:element name="ValidationEntry" type="ValidationEntry_Structure" />
-    <xsd:complexType name="ValidationEntry_Structure">
-        <xsd:complexContent>
-            <xsd:extension base="netex:LogEntry_VersionStructure">
-                <xsd:group ref="ValidationEntryGroup" />
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="ValidationEntryGroup">
-        <xsd:annotation>
-            <xsd:documentation>Dynamic (may change in each state) elements for a CancelledDatedVehicleJourney (as a LOG ENTRY)</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:group ref="PtScopeGroup" />
-            <xsd:group ref="TicketingScopeGroup" />
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:complexType name="ValidationEntries_RelStructure">
-        <xsd:sequence>
-            <xsd:element ref="ValidationEntry" maxOccurs="unbounded" />
-        </xsd:sequence>
-    </xsd:complexType>
+		<xsd:documentation>OpRa TicketingBasedPassengerCount</xsd:documentation>
+	</xsd:annotation>
+	<xsd:simpleType name="ValidatonEntryIdType">
+		<xsd:restriction base="netex:LogEntryIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="ValidationEntryRef" type="ValidationEntryRefStructure"/>
+	<xsd:complexType name="ValidationEntryRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="netex:LogEntryRefStructure">
+				<xsd:attribute name="ref" type="ValidatonEntryIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of referenced VALIDATION ENTRY.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ValidationEntryRefs_RelStructure">
+		<xsd:sequence>
+			<xsd:element ref="ValidationEntryRef" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="ValidationEntry" type="ValidationEntry_Structure"/>
+	<xsd:complexType name="ValidationEntry_Structure">
+		<xsd:complexContent>
+			<xsd:extension base="netex:LogEntry_VersionStructure">
+				<xsd:group ref="ValidationEntryGroup"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="ValidationEntryGroup">
+		<xsd:annotation>
+			<xsd:documentation>Dynamic (may change in each state) elements for a CancelledDatedVehicleJourney (as a LOG ENTRY)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="PtScopeGroup"/>
+			<xsd:group ref="TicketingScopeGroup"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="ValidationEntries_RelStructure">
+		<xsd:sequence>
+			<xsd:element ref="ValidationEntry" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
 </xsd:schema>

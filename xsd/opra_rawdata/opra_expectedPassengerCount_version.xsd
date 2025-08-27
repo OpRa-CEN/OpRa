@@ -1,17 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- NeTEX Imports-->
-    <xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
-    <!-- SIRI Imports-->
-    <xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
-    <!-- OpRa includes-->
-    <xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd" />
-    <xsd:include schemaLocation="opra_onboardDeviceBasedPassengerCount_version.xsd" />
-    <xsd:include schemaLocation="opra_ticketingBasedPassengerCount_version.xsd" />
-    <xsd:include schemaLocation="opra_externalPassengerCount_version.xsd" />
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+	<!-- NeTEX Imports-->
+	<xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- SIRI Imports-->
+	<xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
+	<!-- OpRa includes-->
+	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
+	<xsd:include schemaLocation="opra_onboardDeviceBasedPassengerCount_version.xsd"/>
+	<xsd:include schemaLocation="opra_ticketingBasedPassengerCount_version.xsd"/>
+	<xsd:include schemaLocation="opra_externalPassengerCount_version.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
