@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_opra_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
 	<!-- NeTEX Imports-->
@@ -74,7 +74,8 @@ Rail transport, Roads and Road transport
             <xsd:documentation>Additional segmentation references for an EXTERNAL PASSENGER COUNT.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="DayTypeRef" type="netex:DayTypeRefStructure" minOccurs="0" />
+            <xsd:element ref="netex:DayTypeRef" minOccurs="0" />
+            <xsd:element ref="netex:TimebandRef" minOccurs="0" />
         </xsd:sequence>
     </xsd:group>
     <!-- ======================================================================= -->
