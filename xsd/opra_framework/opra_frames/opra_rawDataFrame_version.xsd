@@ -92,6 +92,7 @@ Rail transport, Roads and Road transport
 			<xsd:enumeration value="Raw"/>
 			<xsd:enumeration value="Cleansed"/>
 			<xsd:enumeration value="Processed"/>
+			<xsd:enumeration value="Statistics"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:element name="RawDataFrame" substitutionGroup="netex:CommonFrame" abstract="false">
