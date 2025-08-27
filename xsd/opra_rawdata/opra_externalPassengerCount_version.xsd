@@ -57,7 +57,11 @@ Rail transport, Roads and Road transport
     <xsd:simpleType name="ExternalPassengerCountIdType">
         <xsd:restriction base="LoggableObjectIdType" />
     </xsd:simpleType>
-    <xsd:element name="ExternalPassengerCountRef" type="ExternalPassengerCountRefStructure" />
+    <xsd:element name="ExternalPassengerCountRef" type="ExternalPassengerCountRefStructure">
+        <xsd:annotation>
+            <xsd:documentation>Reference element of an EXTERNAL PASSENGER COUNT.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
     <xsd:complexType name="ExternalPassengerCountRefStructure">
         <xsd:simpleContent>
             <xsd:restriction base="LoggableObjectRefStructure">
@@ -66,9 +70,11 @@ Rail transport, Roads and Road transport
         </xsd:simpleContent>
     </xsd:complexType>
     <xsd:group name="ExternalScopeGroup">
+        <xsd:annotation>
+            <xsd:documentation>Additional segmentation references for an EXTERNAL PASSENGER COUNT.</xsd:documentation>
+        </xsd:annotation>
         <xsd:sequence>
             <xsd:element name="DayTypeRef" type="netex:DayTypeRefStructure" minOccurs="0" />
-            <xsd:element name="OperatingDayRef" type="netex:OperatingDayRefStructure" minOccurs="0" />
         </xsd:sequence>
     </xsd:group>
     <!-- ======================================================================= -->
@@ -118,6 +124,7 @@ Rail transport, Roads and Road transport
         <xsd:sequence>
             <xsd:group ref="PtScopeGroup" />
             <xsd:group ref="ExternalScopeGroup" />
+            <xsd:group ref="siri:OccupancyScopeFilterGroup" />
             <xsd:group ref="VehicleLoadEntryGroup" />
         </xsd:sequence>
     </xsd:group>

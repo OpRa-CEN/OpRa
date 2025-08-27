@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.siri.org.uk/siri" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_siri_imports">
 	<!-- SIRI Imports-->
@@ -6,7 +6,8 @@
 	<!--To avoid importing the duplicated SIRI version-->
 	<xsd:include schemaLocation="../../SIRI/xsd/siri_utility/siri_location.xsd"/>
 	<xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_situationClassifiers.xsd"/>
-	<xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_journey_support.xsd"/>
+    <xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_journey.xsd"/>
+    <xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_journey_support.xsd"/>
 	<xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_reference.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
@@ -38,13 +39,13 @@
 				<Status>Initial Version</Status>
 				<Subject>
 					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
-Air transport, Airports,
-Ports and maritime transport, Ferries (marine),
-Public transport, Bus services, Coach services, Bus stops and stations,
-Rail transport, Railway stations and track, Train services, Underground trains,
-Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
-Rail transport, Roads and Road transport
-</Category>
+                        Air transport, Airports,
+                        Ports and maritime transport, Ferries (marine),
+                        Public transport, Bus services, Coach services, Bus stops and stations,
+                        Rail transport, Railway stations and track, Train services, Underground trains,
+                        Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+                        Rail transport, Roads and Road transport
+                    </Category>
 					<Project>CEN TC278 WG3 SG10.</Project>
 				</Subject>
 				<Title>Opra Operation Raw Data Exchange</Title>

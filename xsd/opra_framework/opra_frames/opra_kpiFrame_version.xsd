@@ -1,70 +1,68 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="netex_OpRa_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
 	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<!-- OpRa includes-->
 	<xsd:include schemaLocation="../opra_genericFramework/opra_GeneralKpi_version.xsd"/>
 	<!-- ======================================================================= -->
-	<xsd:annotation>
-		<xsd:appinfo>
-			<Metadata>
-				<Aggregation>main schema</Aggregation>
-				<Audience>e-service developers</Audience>
-				<Coverage>Europe</Coverage>
-				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
-				<Date>
-					<Created>2024-11-29</Created>
-				</Date>
-				<Description>
-					<p>OpRa - Operational Raw Data</p>
-				</Description>
-				<Format>
-					<MediaType>text/xml</MediaType>
-					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
-					<Description>XML schema, W3C Recommendation 2001</Description>
-				</Format>
-				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_DatedJourneyInformationRecording_version.xsd</Identifier>
-				<Language>[ISO 639-2/B] ENG</Language>
-				<Rights>Unclassified
-				</Rights>
-				<Source>
-					<ul>
-						<li>Created for OpRa</li>
-					</ul>
-				</Source>
-				<Status>Initial Version</Status>
-				<Subject>
-					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
-Air transport, Airports,
-Ports and maritime transport, Ferries (marine),
-Public transport, Bus services, Coach services, Bus stops and stations,
-Rail transport, Railway stations and track, Train services, Underground trains,
-Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
-Rail transport, Roads and Road transport
-</Category>
-					<Project>CEN TC278 WG3 SG10.</Project>
-				</Subject>
-				<Title>Opra Operation Raw Data Exchange</Title>
-				<Type>Standard</Type>
-			</Metadata>
-		</xsd:appinfo>
-		<xsd:documentation>OpRa FRAME types.</xsd:documentation>
-	</xsd:annotation>
-	<!-- ======================================================================= -->
+    <xsd:annotation>
+        <xsd:appinfo>
+            <Metadata>
+                <Aggregation>main schema</Aggregation>
+                <Audience>e-service developers</Audience>
+                <Coverage>Europe</Coverage>
+                <Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
+                <Description>
+                    <p>OpRa - Operational Raw Data. This subschema defines KPI FRAME types.</p>
+                </Description>
+                <Format>
+                    <MediaType>text/xml</MediaType>
+                    <Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+                    <Description>XML schema, W3C Recommendation 2001</Description>
+                </Format>
+                <Identifier>https://transmodel-cen.eu/opra/1.0/xsd/opra_framework/opra_frames/opra_kpiFrame.xsd</Identifier>
+                <Language>[ISO 639-2/B] ENG</Language>
+                <Publisher>CEN TC278 WG3 SG10</Publisher>
+                <Rights>
+                </Rights>
+                <Source>
+                    <ul>
+                        <li>Derived from Transmodel, NeTEx, SIRI standards.</li>
+                    </ul>
+                </Source>
+                <Status>Version 1.0 Draft for approval</Status>
+                <Subject>
+                    <Category>
+                        Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+                        Air transport, Airports,
+                        Ports and maritime transport, Ferries (marine),
+                        Public transport, Bus services, Coach services, Bus stops and stations,
+                        Rail transport, Railway stations and track, Train services, Underground trains,
+                        Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+                        Rail transport, Roads and road transport
+                    </Category>
+                    <Project>CEN TC278 WG3 SG10</Project>
+                </Subject>
+                <Title>Operational Raw Data Exchange - Key Performance Indicator (KPI) FRAME types.</Title>
+                <Type>Standard</Type>
+            </Metadata>
+        </xsd:appinfo>
+        <xsd:documentation>KPI FRAME types for OpRa.</xsd:documentation>
+    </xsd:annotation>	<!-- ======================================================================= -->
 	<xsd:simpleType name="KpiFrameIdType">
 		<xsd:annotation>
-			<xsd:documentation>Type for identifier of a OpRa FRAME.</xsd:documentation>
+			<xsd:documentation>Type for identifier of an OpRa KPI FRAME.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="netex:VersionFrameIdType"/>
 	</xsd:simpleType>
 	<xsd:element name="KpiFrameRef" type="KpiFrameRefStructure" substitutionGroup="netex:VersionFrameRef" abstract="false">
 		<xsd:annotation>
-			<xsd:documentation>Reference to an OpRa FRAME.</xsd:documentation>
+			<xsd:documentation>Reference element to an OpRa KPI FRAME.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType abstract="false" name="KpiFrameRefStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for a reference to a OpRa FRAME.</xsd:documentation>
+			<xsd:documentation>Type for a reference to an OpRa KPI FRAME.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:simpleContent>
 			<xsd:restriction base="netex:VersionFrameRefStructure">
@@ -75,7 +73,7 @@ Rail transport, Roads and Road transport
 	<!-- ======================================================================= -->
 	<xsd:element name="KpiFrame" substitutionGroup="netex:CommonFrame" abstract="false">
 		<xsd:annotation>
-			<xsd:documentation>A coherent set of OpRa data to which the same frame VALIDITY CONDITIONs have been assigned.</xsd:documentation>
+			<xsd:documentation>A coherent set of KPIs to which the same frame VALIDITY CONDITIONs have been assigned.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:complexContent>
@@ -104,7 +102,7 @@ Rail transport, Roads and Road transport
 	</xsd:element>
 	<xsd:complexType abstract="false" name="opra_Kpi_VersionFrameStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for a OpRa FRAME.</xsd:documentation>
+			<xsd:documentation>Type for an OpRa KPI FRAME.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="netex:Common_VersionFrameStructure">
@@ -143,7 +141,7 @@ Rail transport, Roads and Road transport
 	</xsd:group>
 	<xsd:group name="KpiFrameGroup">
 		<xsd:annotation>
-			<xsd:documentation>Elements for a OpRa FRAME.</xsd:documentation>
+			<xsd:documentation>Elements for an OpRa KPI FRAME.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="KpiInFrameGroup"/>
@@ -152,7 +150,7 @@ Rail transport, Roads and Road transport
 	<!-- ======================================================================= -->
 	<xsd:group name="KpiInFrameGroup">
 		<xsd:annotation>
-			<xsd:documentation>OpRa related elements in frame.</xsd:documentation>
+			<xsd:documentation>KPI's in a KPI FRAME.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="kpis" type="Kpis_RelStructure"/>

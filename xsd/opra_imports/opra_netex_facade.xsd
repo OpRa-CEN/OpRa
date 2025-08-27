@@ -35,20 +35,20 @@
 				<Status>Initial Version</Status>
 				<Subject>
 					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
-Air transport, Airports,
-Ports and maritime transport, Ferries (marine),
-Public transport, Bus services, Coach services, Bus stops and stations,
-Rail transport, Railway stations and track, Train services, Underground trains,
-Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
-Rail transport, Roads and Road transport
-</Category>
+                        Air transport, Airports,
+                        Ports and maritime transport, Ferries (marine),
+                        Public transport, Bus services, Coach services, Bus stops and stations,
+                        Rail transport, Railway stations and track, Train services, Underground trains,
+                        Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+                        Rail transport, Roads and Road transport
+                    </Category>
 					<Project>CEN TC278 WG3 SG10.</Project>
 				</Subject>
 				<Title>Opra Operation Raw Data Exchange</Title>
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa NeTEx facade - provides future types and definitions</xsd:documentation>
+        <xsd:documentation>OpRa NeTEx facade - provides future NeTEx types and definitions - TO BE REMOVED WHEN NETEX/OPRA ARE SYNCHRONIZED.</xsd:documentation>
     </xsd:annotation>
     <xsd:simpleType name="PassengerSpaceIdType">
         <xsd:restriction base="ObjectIdType" />
