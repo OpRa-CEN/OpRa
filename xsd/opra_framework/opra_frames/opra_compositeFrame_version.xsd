@@ -1,35 +1,35 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_compositeFrame_version">
 	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<xsd:include schemaLocation="opra_commonFrame_version.xsd"/>
-    <xsd:annotation>
-        <xsd:appinfo>
-            <Metadata>
-                <Aggregation>main schema</Aggregation>
-                <Audience>e-service developers</Audience>
-                <Coverage>Europe</Coverage>
-                <Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
-                <Description>
-                    <p>OpRa - Operational Raw Data. This subschema defines COMPOSITE FRAME types.</p>
-                </Description>
-                <Format>
-                    <MediaType>text/xml</MediaType>
-                    <Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
-                    <Description>XML schema, W3C Recommendation 2001</Description>
-                </Format>
-                <Identifier>https://transmodel-cen.eu/opra/1.0/xsd/opra_framework/opra_frames/opra_compositeFrame.xsd</Identifier>
-                <Language>[ISO 639-2/B] ENG</Language>
-                <Publisher>CEN TC278 WG3 SG10</Publisher>
-                <Rights>
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata>
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
+				<Description>
+					<p>OpRa - Operational Raw Data. This subschema defines COMPOSITE FRAME types.</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>https://transmodel-cen.eu/opra/1.0/xsd/opra_framework/opra_frames/opra_compositeFrame.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Publisher>CEN TC278 WG3 SG10</Publisher>
+				<Rights>
                 </Rights>
-                <Source>
-                    <ul>
-                        <li>Derived from Transmodel, NeTEx, SIRI standards.</li>
-                    </ul>
-                </Source>
-                <Status>Version 1.0 Draft for approval</Status>
-                <Subject>
-                    <Category>
+				<Source>
+					<ul>
+						<li>Derived from Transmodel, NeTEx, SIRI standards.</li>
+					</ul>
+				</Source>
+				<Status>Version 1.0 Draft for approval</Status>
+				<Subject>
+					<Category>
                         Arts, recreation and travel, Tourism, Travel (tourism), Transport,
                         Air transport, Airports,
                         Ports and maritime transport, Ferries (marine),
@@ -38,20 +38,20 @@
                         Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
                         Rail transport, Roads and road transport
                     </Category>
-                    <Project>CEN TC278 WG3 SG10</Project>
-                </Subject>
-                <Title>Operational Raw Data Exchange - COMPOSITE FRAME types.</Title>
-                <Type>Standard</Type>
-            </Metadata>
-        </xsd:appinfo>
-        <xsd:documentation>COMPOSITE FRAME types for OpRa.</xsd:documentation>
-    </xsd:annotation>	
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="CompositeFrameIdType">
-        <xsd:annotation>
-            <xsd:documentation>Type for identifier of a COMPOSITE FRAME.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="netex:VersionFrameIdType"/>
+					<Project>CEN TC278 WG3 SG10</Project>
+				</Subject>
+				<Title>Operational Raw Data Exchange - COMPOSITE FRAME types.</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>COMPOSITE FRAME types for OpRa.</xsd:documentation>
+	</xsd:annotation>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="CompositeFrameIdType">
+		<xsd:annotation>
+			<xsd:documentation>Type for identifier of a COMPOSITE FRAME.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="netex:VersionFrameIdType"/>
 	</xsd:simpleType>
 	<xsd:element name="CompositeFrameRef" type="netex:CompositeFrameRefStructure" abstract="false" substitutionGroup="netex:VersionFrameRef">
 		<xsd:annotation>
