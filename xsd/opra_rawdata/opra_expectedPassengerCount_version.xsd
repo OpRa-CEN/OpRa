@@ -70,15 +70,6 @@ Rail transport, Roads and Road transport
             </xsd:restriction>
         </xsd:simpleContent>
     </xsd:complexType>
-    <xsd:group name="ExpectedPassengerCountScopeGroup">
-        <xsd:annotation>
-            <xsd:documentation>Additional filtering for an EXPECTED PASSENGER COUNT.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element ref="netex:DayTypeRef" minOccurs="0" />
-            <xsd:element ref="netex:TimebandRef" minOccurs="0" />
-        </xsd:sequence>
-    </xsd:group>
     <xsd:group name="ExpectedPassengerCountSourceGroup">
         <xsd:annotation>
             <xsd:documentation>Possible references to sources (ticketing, onboard, external counts) for an EXPECTED PASSENGER COUNT.</xsd:documentation>
@@ -135,7 +126,6 @@ Rail transport, Roads and Road transport
         </xsd:annotation>
         <xsd:sequence>
             <xsd:group ref="PtScopeGroup" />
-            <xsd:group ref="ExpectedPassengerCountScopeGroup" />
             <xsd:group ref="siri:OccupancyScopeFilterGroup" />
             <xsd:group ref="EstimatedVehicleLoadEntryGroup" />
             <xsd:group ref="ExpectedPassengerCountSourceGroup" />

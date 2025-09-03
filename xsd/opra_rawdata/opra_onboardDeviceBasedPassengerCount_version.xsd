@@ -75,7 +75,6 @@ Rail transport, Roads and Road transport
             <xsd:element ref="netex:PassengerSpaceRef" minOccurs="0" />
             <xsd:element ref="netex:PassengerEntranceRef" minOccurs="0" />
             <xsd:element ref="netex:EntranceSensorRef" minOccurs="0" />
-            <xsd:element ref="netex:TimebandRef" minOccurs="0" />
         </xsd:sequence>
     </xsd:group>
     <!-- ======================================================================= -->

@@ -4,7 +4,8 @@
 	<!-- SIRI Imports-->
 	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd"/>
 	<!--To avoid importing the duplicated SIRI version-->
-	<xsd:include schemaLocation="../../SIRI/xsd/siri_utility/siri_location.xsd"/>
+    <xsd:include schemaLocation="../../SIRI/xsd/siri/siri_requests.xsd"/>
+    <xsd:include schemaLocation="../../SIRI/xsd/siri_utility/siri_location.xsd"/>
 	<xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_situationClassifiers.xsd"/>
     <xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_journey.xsd"/>
     <xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_journey_support.xsd"/>

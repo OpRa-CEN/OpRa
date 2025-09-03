@@ -812,6 +812,7 @@
 			<File FilePath="xsd\opra_imports\opra_siri_imports.xsd" HomeFolder="Yes"/>
 		</Folder>
 		<File FilePath="xsd\OpRa_publication.xsd"/>
+		<File FilePath="xsd\opra_request.xsd" HomeFolder="Yes"/>
 	</Folder>
 	<File FilePath="README.md" HomeFolder="Yes"/>
 </Project>

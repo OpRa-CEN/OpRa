@@ -71,7 +71,6 @@ Rail transport, Roads and Road transport
             <xsd:element ref="PassengerTravelEntryType" minOccurs="0" />
             <xsd:element ref="netex:TicketValidatorEquipmentRef" minOccurs="0" />
             <xsd:element ref="netex:FareProductRef" minOccurs="0" />
-            <xsd:element ref="netex:TimebandRef" minOccurs="0" />
         </xsd:sequence>
     </xsd:group>
     <!-- ======================================================================= -->
