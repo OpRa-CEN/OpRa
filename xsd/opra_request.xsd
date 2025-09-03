@@ -96,7 +96,7 @@
         <xsd:complexContent>
             <xsd:extension base="OpRaRequests_RelStructure">
                 <xsd:sequence>
-                    <xsd:element name="frames" type="netex:frames_RelStructure" />
+                    <xsd:element name="frames" type="netex:frames_RelStructure" minOccurs="0" />
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
