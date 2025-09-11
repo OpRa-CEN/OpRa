@@ -764,6 +764,9 @@
 		<File FilePath="examples\CancelledAndLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\ExpectedPassengerCount.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\placeholder.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\RequestAllPassengerCounts.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\RequestLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\ResponseLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\TicketingBasedPassengerCount.xml" HomeFolder="Yes"/>
 	</Folder>
 	<Folder FolderName="OpRa">
@@ -811,6 +814,17 @@
 			<File FilePath="xsd\opra_imports\opra_netex_imports.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_imports\opra_siri_imports.xsd" HomeFolder="Yes"/>
 		</Folder>
+		<Folder FolderName="opra_service" ExtStr="xsd">
+			<File FilePath="xsd\opra_service\opra_all_services.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_payload_delivery.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_cancelledDatedVehicleJourneys.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_expectedPassengerCounts.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_externalPassengerCounts.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_lateDatedVehicleJourneys.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_onboardDeviceBasedPassengerCounts.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_ticketingBasedPassengerCounts.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<File FilePath="xsd\opra.xsd" HomeFolder="Yes"/>
 		<File FilePath="xsd\OpRa_publication.xsd"/>
 		<File FilePath="xsd\opra_request.xsd" HomeFolder="Yes"/>
 	</Folder>

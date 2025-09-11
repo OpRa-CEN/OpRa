@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_publication" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:Opra="https://transmodel-cen.eu/Opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_publication" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <!-- ===SIRI system IDs for  request =========================================================== -->
     <xsd:import schemaLocation="opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
     <!-- ===Regular netex============================================================== -->
     <xsd:import schemaLocation="opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
-    <!-- ===Includes (OpRa)============================================================== -->
-    <xsd:include schemaLocation="opra_framework/opra_payload_framework.xsd" />
+    <!-- ===Includes (Opra)============================================================== -->
+    <xsd:include schemaLocation="opra_service/opra_all_services.xsd" />
     <!-- === Documentation ======================================= -->
     <xsd:annotation>
         <xsd:appinfo>
@@ -14,25 +14,25 @@
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
 				<Coverage>Europe</Coverage>
-				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - Opra -  Editor CEN Opra Project Team</Creator>
 				<Date>
 					<Created>2024-11-29</Created>
 				</Date>
 				<Description>
-					<p>OpRa - Operational Raw Data</p>
+					<p>Opra - Operational Raw Data</p>
 				</Description>
 				<Format>
 					<MediaType>text/xml</MediaType>
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_request.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/Opra/1.0/xsd/Opra_request.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
 				<Source>
 					<ul>
-						<li>Created for OpRa</li>
+						<li>Created for Opra</li>
 					</ul>
 				</Source>
 				<Status>Initial Version</Status>
@@ -51,7 +51,7 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa REQUEST/RESPONSE DELIVERY SCHEMA</xsd:documentation>
+        <xsd:documentation>Opra REQUEST/RESPONSE/STATUS/DISCOVERY SCHEMA</xsd:documentation>
     </xsd:annotation>
     <!-- ======================================================================= -->
     <xsd:group name="ServiceRequestContextGroup">
@@ -77,9 +77,9 @@
                     <xsd:documentation>Identifier of the set of data being used by an information system, which allows a comparison to be made with the versions of data being used by overlapping systems. </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="ErrorCondition" type="OpRaErrorStructure" minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="ErrorCondition" type="OpraErrorStructure" minOccurs="0" maxOccurs="unbounded">
                 <xsd:annotation>
-                    <xsd:documentation>OpRa generic problem for the whole delivery.</xsd:documentation>
+                    <xsd:documentation>Opra generic problem for the whole delivery.</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
         </xsd:sequence>
@@ -87,23 +87,23 @@
     <xsd:annotation>
         <xsd:documentation>========================================== Request definitions ==========================================</xsd:documentation>
     </xsd:annotation>
-    <xsd:element name="OpRaRequests" type="OpRaBulkRequestsStructure">
+    <xsd:element name="OpraFunctionalRequests" type="OpraBulkRequestsStructure">
         <xsd:annotation>
-            <xsd:documentation>Main collection element for an OpRa (bulk) request.</xsd:documentation>
+            <xsd:documentation>Main collection element for an Opra (bulk) request.</xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-    <xsd:complexType name="OpRaBulkRequestsStructure">
+    <xsd:complexType name="OpraBulkRequestsStructure">
         <xsd:complexContent>
-            <xsd:extension base="OpRaRequests_RelStructure">
+            <xsd:extension base="OpraRequests_RelStructure">
                 <xsd:sequence>
                     <xsd:element name="frames" type="netex:frames_RelStructure" minOccurs="0" />
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
-    <xsd:complexType name="AbstractOpRaServiceRequestStructure">
+    <xsd:complexType name="AbstractOpraFunctionalServiceRequestStructure">
         <xsd:annotation>
-            <xsd:documentation>Basic request structure common for all OpRa service requests.</xsd:documentation>
+            <xsd:documentation>Basic request structure common for all Opra service requests.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
             <xsd:extension base="siri:AbstractFunctionalServiceRequestStructure">
@@ -111,54 +111,27 @@
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
-    <xsd:element name="OpRaRequest" type="OpRaRequestStructure" substitutionGroup="siri:AbstractFunctionalServiceRequest" abstract="true">
+    <xsd:element name="OpraFunctionalRequest" type="OpraFunctionalRequestStructure" substitutionGroup="siri:AbstractFunctionalServiceRequest" abstract="true">
         <xsd:annotation>
-            <xsd:documentation>Generic abstract OpRa request element. Substitute this element with topic-specific request elements.</xsd:documentation>
+            <xsd:documentation>Generic abstract Opra request element. Substitute this element with topic-specific request elements.</xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-    <xsd:complexType name="OpRaRequestStructure">
+    <xsd:complexType name="OpraFunctionalRequestStructure">
         <xsd:annotation>
-            <xsd:documentation>Type for the generic abstract OpRa request.</xsd:documentation>
+            <xsd:documentation>Type for the generic abstract Opra request.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
-            <xsd:extension base="AbstractOpRaServiceRequestStructure">
+            <xsd:extension base="AbstractOpraFunctionalServiceRequestStructure">
                 <xsd:sequence>
                     <xsd:element ref="siri:Extensions" minOccurs="0" />
-                    <xsd:group ref="OpRaRequestGroup" />
+                    <xsd:group ref="OpraFunctionalRequestGroup" />
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
-    <xsd:complexType name="OpRaRequests_RelStructure">
+    <xsd:group name="OpraFunctionalRequestGroup">
         <xsd:annotation>
-            <xsd:documentation>Type for a collection of OpRaRequests.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element ref="OpRaRequest" maxOccurs="unbounded" />
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:element name="OpRaDelivery" type="OpRaDeliveryStructure" substitutionGroup="siri:AbstractFunctionalServiceDelivery">
-        <xsd:annotation>
-            <xsd:documentation>Response element for OpRaRequests. Contains a generic OpRa payload.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="OpRaDeliveryStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for the generic OpRa response element.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="siri:AbstractServiceDeliveryStructure">
-                <xsd:sequence>
-                    <xsd:element ref="siri:Extensions" minOccurs="0" />
-                    <xsd:element ref="OpRaRequest" minOccurs="0" />
-                    <xsd:group ref="PayloadGroup" />
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="OpRaRequestGroup">
-        <xsd:annotation>
-            <xsd:documentation>Generic scope and preparedness state structures to be used in OpRaRequests.</xsd:documentation>
+            <xsd:documentation>Generic scope and preparedness state structures to be used in OpraRequests.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element name="Description" type="netex:MultilingualString" minOccurs="0" />
@@ -172,147 +145,135 @@
                     <xsd:documentation>Requested preparedness level for the delivered elements.</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:group ref="PtScopeGroup" />
+            <xsd:group ref="CalendarAwarePtScopeGroup" />
         </xsd:sequence>
     </xsd:group>
-    <xsd:element name="LateDatedVehicleJourneysRequest" type="LateDatedVehicleJourneysRequestStructure" substitutionGroup="OpRaRequest">
+    <xsd:complexType name="OpraRequests_RelStructure">
         <xsd:annotation>
-            <xsd:documentation>A request element to get LATE DATED VEHICLE JOURNEYs.</xsd:documentation>
+            <xsd:documentation>Type for a collection of OpraRequests.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="OpraFunctionalRequest" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="OpraFunctionalDelivery" type="OpraFunctionalDeliveryStructure" substitutionGroup="siri:AbstractFunctionalServiceDelivery" abstract="true">
+        <xsd:annotation>
+            <xsd:documentation>Response element for OpraRequests. Contains a generic Opra payload.</xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-    <xsd:complexType name="LateDatedVehicleJourneysRequestStructure">
+    <xsd:complexType name="OpraFunctionalDeliveryStructure">
         <xsd:annotation>
-            <xsd:documentation>Type for the request element to get LATE DATED VEHICLE JOURNEYs.</xsd:documentation>
+            <xsd:documentation>Type for the generic Opra response element.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
-            <xsd:extension base="OpRaRequestStructure">
-                <xsd:group ref="LateDatedVehicleJourneysRequestGroup" />
+            <xsd:extension base="siri:AbstractServiceDeliveryStructure">
+                <xsd:sequence>
+                    <xsd:element ref="siri:Extensions" minOccurs="0" />
+                    <xsd:group ref="OpraFunctionalDeliveryGroup" />
+                </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
-    <xsd:group name="LateDatedVehicleJourneysRequestGroup">
-        <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilites of requests for LATE DATED VEHICLE JOURNEYs.</xsd:documentation>
-        </xsd:annotation>
+    <xsd:group name="OpraFunctionalDeliveryGroup">
         <xsd:sequence>
-            <xsd:group ref="LateDatedVehicleJourneyScopeGroup" />
+            <xsd:element ref="OpraFunctionalRequest" minOccurs="0" />
         </xsd:sequence>
     </xsd:group>
-    <xsd:element name="CancelledDatedVehicleJourneysRequest" type="CancelledDatedVehicleJourneysRequestStructure" substitutionGroup="OpRaRequest">
-        <xsd:annotation>
-            <xsd:documentation>A request element to get CANCELLED DATED VEHICLE JOURNEYs.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="CancelledDatedVehicleJourneysRequestStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for the request element to get LATE DATED VEHICLE JOURNEYs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="OpRaRequestStructure">
-                <xsd:group ref="CancelledDatedVehicleJourneysRequestGroup" />
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="CancelledDatedVehicleJourneysRequestGroup">
-        <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilites of requests for CANCELLED DATED VEHICLE JOURNEYs.</xsd:documentation>
-        </xsd:annotation>
+    <xsd:element name="OpraFunctionalDeliveries" type="OpraFunctionalDeliveries_RelStructure" />
+    <xsd:complexType name="OpraFunctionalDeliveries_RelStructure">
         <xsd:sequence>
-            <xsd:group ref="CancelledDatedVehicleJourneyScopeGroup" />
+            <xsd:element ref="OpraFunctionalDelivery" maxOccurs="unbounded" />
         </xsd:sequence>
-    </xsd:group>
-    <xsd:element name="TicketingBasedPassengerCountRequest" type="TicketingBasedPassengerCountRequestStructure" substitutionGroup="OpRaRequest">
-        <xsd:annotation>
-            <xsd:documentation>A request element to get TICKETING BASED PASSENGER COUNTs.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="TicketingBasedPassengerCountRequestStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for the request element to get TICKETING BASED PASSENGER COUNTs.</xsd:documentation>
-        </xsd:annotation>
+    </xsd:complexType>
+    <xsd:element name="OpraSubscriptionRequest" abstract="true" />
+    <xsd:complexType name="OpraSubscriptionRequestStructure">
         <xsd:complexContent>
-            <xsd:extension base="OpRaRequestStructure">
-                <xsd:group ref="TicketingBasedPassengerCountRequestGroup" />
-            </xsd:extension>
+            <xsd:extension base="siri:AbstractSubscriptionRequestStructure" />
         </xsd:complexContent>
     </xsd:complexType>
-    <xsd:group name="TicketingBasedPassengerCountRequestGroup">
-        <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilites of requests for TICKETING BASED PASSENGER COUNTs.</xsd:documentation>
-        </xsd:annotation>
+    <xsd:element name="OpraSubscriptionRequests" type="OpraSubscriptionRequests_RelStructure" />
+    <xsd:complexType name="OpraSubscriptionRequests_RelStructure">
         <xsd:sequence>
-            <xsd:group ref="TicketingScopeGroup" />
+            <xsd:element ref="OpraSubscriptionRequest" maxOccurs="unbounded" />
         </xsd:sequence>
-    </xsd:group>
-    <xsd:element name="OnboardDeviceBasedPassengerCountRequest" type="OnboardDeviceBasedPassengerCountRequestStructure" substitutionGroup="OpRaRequest">
-        <xsd:annotation>
-            <xsd:documentation>A request element to get ONBOARD DEVICE BASED PASSENGER COUNTs.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="OnboardDeviceBasedPassengerCountRequestStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for the request element to get ONBOARD DEVICE BASED PASSENGER COUNTs.</xsd:documentation>
-        </xsd:annotation>
+    </xsd:complexType>
+    <xsd:element name="OpraDiscoveryRequest" type="OpraDiscoveryRequestStructure" abstract="true" />
+    <xsd:complexType name="OpraDiscoveryRequestStructure">
         <xsd:complexContent>
-            <xsd:extension base="OpRaRequestStructure">
-                <xsd:group ref="OnboardDeviceBasedPassengerCountRequestGroup" />
-            </xsd:extension>
+            <xsd:extension base="siri:AbstractDiscoveryRequestStructure" />
         </xsd:complexContent>
     </xsd:complexType>
-    <xsd:group name="OnboardDeviceBasedPassengerCountRequestGroup">
-        <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilites of requests for ONBOARD DEVICE BASED PASSENGER COUNTs.</xsd:documentation>
-        </xsd:annotation>
+    <xsd:element name="OpraDiscoveryRequests" type="OpraDiscoveryRequests_RelStructure" />
+    <xsd:complexType name="OpraDiscoveryRequests_RelStructure">
         <xsd:sequence>
-            <xsd:group ref="OnboardDeviceScopeGroup" />
+            <xsd:element ref="OpraDiscoveryRequest" maxOccurs="unbounded" />
         </xsd:sequence>
-    </xsd:group>
-    <xsd:element name="ExternalPassengerCountRequest" type="ExternalPassengerCountRequestStructure" substitutionGroup="OpRaRequest">
-        <xsd:annotation>
-            <xsd:documentation>A request element to get EXTERNAL PASSENGER COUNTs.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="ExternalPassengerCountRequestStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for the request element to get EXTERNAL PASSENGER COUNTs.</xsd:documentation>
-        </xsd:annotation>
+    </xsd:complexType>
+    <xsd:element name="OpraServiceCapabilitiesRequest" type="OpraServiceCapabilitiesRequestStructure" abstract="true" />
+    <xsd:complexType name="OpraServiceCapabilitiesRequestStructure">
         <xsd:complexContent>
-            <xsd:extension base="OpRaRequestStructure" />
+            <xsd:extension base="siri:AbstractServiceRequestStructure" />
         </xsd:complexContent>
     </xsd:complexType>
-    <xsd:group name="ExternalPassengerCountRequestGroup">
-        <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilites of requests for EXTERNAL PASSENGER COUNTs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence />
-    </xsd:group>
-    <xsd:element name="ExpectedPassengerCountRequest" type="ExpectedPassengerCountRequestStructure" substitutionGroup="OpRaRequest">
+    <xsd:element name="OpraServiceCapabilitiesRequests" type="OpraServiceCapabilitiesRequests_RelStructure" />
+    <xsd:complexType name="OpraServiceCapabilitiesRequests_RelStructure">
+        <xsd:sequence>
+            <xsd:element ref="OpraServiceCapabilitiesRequest" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="OpraServiceCapabilitiesResponse" type="OpraServiceCapabilitiesResponseStructure" abstract="true" />
+    <xsd:complexType name="OpraServiceCapabilitiesResponseStructure">
+        <xsd:complexContent>
+            <xsd:extension base="siri:AbstractServiceCapabilitiesResponseStructure" />
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="OpraServiceCapabilitiesResponses" type="OpraServiceCapabilitesResponses_RelStructure" />
+    <xsd:complexType name="OpraServiceCapabilitesResponses_RelStructure">
+        <xsd:sequence>
+            <xsd:element ref="OpraServiceCapabilitiesResponse" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="OpraDiscoveryDelivery" type="OpraDiscoveryDeliveryStructure" abstract="true" />
+    <xsd:complexType name="OpraDiscoveryDeliveryStructure">
+        <xsd:complexContent>
+            <xsd:extension base="siri:AbstractDiscoveryDeliveryStructure" />
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="OpraDiscoveryDeliveries" type="OpraDiscoveryDeliveries_RelStructure" />
+    <xsd:complexType name="OpraDiscoveryDeliveries_RelStructure">
+        <xsd:sequence>
+            <xsd:element ref="OpraDiscoveryDelivery" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="KpiRequest" type="KpiRequestStructure" substitutionGroup="OpraFunctionalRequest">
         <xsd:annotation>
             <xsd:documentation>A request element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-    <xsd:complexType name="ExpectedPassengerCountRequestStructure">
+    <xsd:complexType name="KpiRequestStructure">
         <xsd:annotation>
             <xsd:documentation>Type for the request element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
-            <xsd:extension base="OpRaRequestStructure" />
+            <xsd:extension base="OpraFunctionalRequestStructure" />
         </xsd:complexContent>
     </xsd:complexType>
-    <xsd:group name="ExpectedPassengerCountRequestGroup">
+    <xsd:group name="KpiRequestGroup">
         <xsd:annotation>
             <xsd:documentation>References that extend filtering capabilites of requests for EXPECTED PASSENGER COUNTs.</xsd:documentation>
         </xsd:annotation>
-        <xsd:sequence />
+        <xsd:sequence>
+            <xsd:element name="KpiIdentifierRef" />
+        </xsd:sequence>
     </xsd:group>
-    <xsd:element name="OpRaError" type="OpRaErrorStructure" substitutionGroup="siri:OtherError">
+    <xsd:element name="OpraError" type="OpraErrorStructure" substitutionGroup="siri:OtherError">
         <xsd:annotation>
-            <xsd:documentation>Error: All OpRa related errors.</xsd:documentation>
+            <xsd:documentation>Element for Opra related errors.</xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-    <xsd:complexType name="OpRaErrorStructure">
+    <xsd:complexType name="OpraErrorStructure">
         <xsd:annotation>
-            <xsd:documentation>Type for Error: OpRa Error.</xsd:documentation>
+            <xsd:documentation>Type for Opra Errors.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
             <xsd:extension base="siri:OtherErrorStructure">

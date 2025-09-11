@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- ===SIRI system IDs for  request =========================================================== -->
+    <xsd:import schemaLocation="opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
+    <!-- ===Regular netex============================================================== -->
+    <xsd:import schemaLocation="opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
+    <xsd:include schemaLocation="opra_request.xsd" />
+    <xsd:annotation>
+        <xsd:appinfo>
+            <Metadata>
+                <Aggregation>main schema</Aggregation>
+                <Audience>e-service developers</Audience>
+                <Coverage>Europe</Coverage>
+                <Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - Opra -  Editor CEN Opra Project Team</Creator>
+                <Date>
+                    <Created>2024-11-29</Created>
+                </Date>
+                <Description>
+                    <p>Opra - Operational Raw Data</p>
+                </Description>
+                <Format>
+                    <MediaType>text/xml</MediaType>
+                    <Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+                    <Description>XML schema, W3C Recommendation 2001</Description>
+                </Format>
+                <Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra.xsd</Identifier>
+                <Language>[ISO 639-2/B] ENG</Language>
+                <Rights>
+                    Unclassified
+                </Rights>
+                <Source>
+                    <ul>
+                        <li>Created for Opra</li>
+                    </ul>
+                </Source>
+                <Status>Initial Version</Status>
+                <Subject>
+                    <Category>
+                        Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+                        Air transport, Airports,
+                        Ports and maritime transport, Ferries (marine),
+                        Public transport, Bus services, Coach services, Bus stops and stations,
+                        Rail transport, Railway stations and track, Train services, Underground trains,
+                        Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+                        Rail transport, Roads and Road transport
+                    </Category>
+                    <Project>CEN TC278 WG3 SG10.</Project>
+                </Subject>
+                <Title>Opra Operational Raw Data Exchange</Title>
+                <Type>Standard</Type>
+            </Metadata>
+        </xsd:appinfo>
+        <xsd:documentation>Opra ROOT ELEMENT SCHEMA. Subclasses SIRI Root Schema Elements.</xsd:documentation>
+    </xsd:annotation>
+    <!-- ======================================================================= -->
+    <xsd:element name="Opra">
+        <xsd:annotation>
+            <xsd:documentation>Operational Raw Data Root Element.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:choice>
+                <xsd:group ref="RequestGroup" />
+                <xsd:group ref="ResponseGroup" />
+                <xsd:element ref="siri:Extensions" minOccurs="0" />
+            </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    <!--== Requests ===================================================================== -->
+    <xsd:group name="RequestGroup">
+        <xsd:annotation>
+            <xsd:documentation>SIRI All Requests.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:choice>
+            <xsd:group ref="ServiceRequestGroup" />
+            <xsd:group ref="siri:DeliveryRequestGroup" />
+            <xsd:group ref="siri:StatusRequestGroup" />
+            <xsd:group ref="OpraDiscoveryRequestGroup" />
+        </xsd:choice>
+    </xsd:group>
+    <!-- ===GS: ServiceRequest================================================ -->
+    <xsd:element name="ServiceRequest">
+        <xsd:annotation>
+            <xsd:documentation>Request from Consumer to Producer for immediate delivery of data. Answered with a ServiceDelivery (or a DataReadyRequest)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="ServiceRequestStructure" />
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:group name="ServiceRequestGroup">
+        <xsd:annotation>
+            <xsd:documentation>Requests for service provision.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:choice>
+            <xsd:element ref="ServiceRequest" />
+            <xsd:element ref="SubscriptionRequest" />
+            <xsd:element ref="siri:TerminateSubscriptionRequest" />
+        </xsd:choice>
+    </xsd:group>
+    <xsd:complexType name="ServiceRequestStructure">
+        <xsd:annotation>
+            <xsd:documentation>Opra Service Request.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="siri:ContextualisedRequestStructure">
+                <xsd:group ref="OpraServiceRequestGroup" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="OpraServiceRequestGroup">
+        <xsd:annotation>
+            <xsd:documentation>Opra Functional Service Concrete Requests.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="OpraFunctionalRequests" />
+        </xsd:sequence>
+    </xsd:group>
+    <!--===GS: Subscription Request ==================================================================== -->
+    <xsd:element name="SubscriptionRequest">
+        <xsd:annotation>
+            <xsd:documentation>
+                Request from Subscriber to Producer for a subscription. Answered with a SubscriptionResponse.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="SubscriptionRequestStructure" />
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="SubscriptionRequestStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for SIRI Subscription Request.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="siri:AbstractSubscriptionRequestStructure">
+                <xsd:sequence>
+                    <xsd:group ref="OpraSubscriptionRequestGroup" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="OpraSubscriptionRequestGroup">
+        <xsd:annotation>
+            <xsd:documentation>Opra Functional Service Subscription types. For a given SubscriptionRequest, must all be of the same service type.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:choice>
+            <xsd:element ref="OpraSubscriptionRequests" maxOccurs="unbounded" />
+        </xsd:choice>
+    </xsd:group>
+    <!-- === RESPONSES ================================================================== -->
+    <xsd:group name="ResponseGroup">
+        <xsd:annotation>
+            <xsd:documentation>Opra Service Responses.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:choice>
+            <xsd:group ref="siri:ServiceResponseGroup" />
+            <xsd:group ref="DeliveryResponseGroup" />
+            <xsd:group ref="siri:StatusResponseGroup" />
+            <xsd:group ref="OpraDiscoveryResponseGroup" />
+        </xsd:choice>
+    </xsd:group>
+    <xsd:group name="ServiceResponseGroup">
+        <xsd:annotation>
+            <xsd:documentation>Responses to requests other than deliveries and status information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:choice>
+            <xsd:element ref="siri:SubscriptionResponse" />
+            <xsd:element ref="siri:TerminateSubscriptionResponse" />
+            <xsd:element ref="siri:SubscriptionTerminatedNotification" />
+        </xsd:choice>
+    </xsd:group>
+    <!-- ===Data Delivery ============================================================== -->
+    <xsd:group name="DeliveryResponseGroup">
+        <xsd:annotation>
+            <xsd:documentation>Responses that deliver payload content.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:choice>
+            <xsd:element ref="siri:DataReadyAcknowledgement" />
+            <xsd:element ref="ServiceDelivery" />
+            <xsd:element ref="siri:DataReceivedAcknowledgement" />
+        </xsd:choice>
+    </xsd:group>
+    <!-- ===GS: Service Delivery==================================================================== -->
+    <xsd:element name="ServiceDelivery">
+        <xsd:annotation>
+            <xsd:documentation>Response from Producer to Consumer to deliver payload data. Either answers a direct ServiceRequest, or asynchronously satisfies a subscription. May be sent directly in one step, or fetched in response to a DataSupply Request.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="ServiceDeliveryStructure" />
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="ServiceDeliveryStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for Opra Service Delivery.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="siri:ProducerResponseStructure">
+                <xsd:sequence>
+                    <xsd:group ref="ServiceDeliveryBodyGroup" />
+                </xsd:sequence>
+                <xsd:attribute name="srsName" type="siri:SrsNameType">
+                    <xsd:annotation>
+                        <xsd:documentation>Default gml coordinate format for any location elements in response; applies if Coordinates element is used to specify points. May be overridden on individual points.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ServiceDeliveryBodyStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for SIRI Service Delivery Body..</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:group ref="ServiceDeliveryBodyGroup" />
+        </xsd:sequence>
+        <xsd:attribute name="srsName" type="siri:SrsNameType">
+            <xsd:annotation>
+                <xsd:documentation>Default gml coordinate format for any location elements in response; applies if Coordinates element is used to specify points. May be overridden on individual points.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    <xsd:group name="ServiceDeliveryBodyGroup">
+        <xsd:annotation>
+            <xsd:documentation>Elements for SIRI Service Delivery.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:group ref="siri:ServiceDeliveryRequestStatusGroup" />
+            <xsd:element name="MoreData" type="xsd:boolean" minOccurs="0" default="false">
+                <xsd:annotation>
+                    <xsd:documentation>Whether there is a further delivery message with more current updates that follows this one. Default is 'false'.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="OpraFunctionalDeliveries" />
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:group name="OpraServiceDeliveryGroup">
+        <xsd:annotation>
+            <xsd:documentation>Opra payload delivery.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:group ref="PayloadGroup" />
+        </xsd:sequence>
+    </xsd:group>
+    <!-- ===Discovery==================================================================== -->
+    <xsd:group name="OpraDiscoveryRequestGroup">
+        <xsd:annotation>
+            <xsd:documentation>Requests for reference data for use in SIRI Functional Service requests.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:choice>
+            <xsd:element ref="CapabilitiesRequest" />
+            <xsd:element ref="OpraDiscoveryRequests" />
+        </xsd:choice>
+    </xsd:group>
+    <xsd:group name="OpraDiscoveryResponseGroup">
+        <xsd:annotation>
+            <xsd:documentation>Responses with reference data for use in SIRI Functional Service requests.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:choice>
+            <xsd:element ref="CapabilitiesResponse">
+                <xsd:annotation>
+                    <xsd:documentation>Responses with the capabilities of an implementation. Answers a CapabilityRequest.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:group ref="OpraDiscoveryDeliveryGroup" />
+        </xsd:choice>
+    </xsd:group>
+    <!-- === Capabilities ============================================================== -->
+    <!-- ===GS: Capabilities Request==================================================================== -->
+    <xsd:element name="CapabilitiesRequest" type="CapabilitiesRequestStructure">
+        <xsd:annotation>
+            <xsd:documentation>Requests a the current capabilities of the server. Answred with a CpabailitiesResponse.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="CapabilitiesRequestStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for Requests for capabilities of the current system.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="siri:AuthenticatedRequestStructure">
+                <xsd:sequence>
+                    <xsd:element name="Address" type="siri:EndpointAddress" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:documentation>Address to which response is to be sent. This may also be determined from RequestorRef and preconfigured data.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element ref="siri:RequestorRef" />
+                    <xsd:group ref="siri:DelegatorEndpointGroup">
+                        <xsd:annotation>
+                            <xsd:documentation>If request has been proxied by an intermediate  aggregating system, tracking information relating to the original requestor. This allows the aggregation to be stateless</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:group>
+                    <xsd:group ref="ServiceCapabilitiesRequestGroup" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="ServiceCapabilitiesRequestGroup">
+        <xsd:annotation>
+            <xsd:documentation>Defines the capabilities of an individual SIRI service request functions.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="OpraServiceCapabilitiesRequests" />
+        </xsd:sequence>
+    </xsd:group>
+    <!-- ===GS: Capabilities Delivery==================================================================== -->
+    <xsd:element name="CapabilitiesResponse" type="CapabilitiesResponseStructure">
+        <xsd:annotation>
+            <xsd:documentation>Responses with the capabilities of an implementation.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="CapabilitiesResponseStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for the capabilities of an implementation.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="siri:ProducerResponseStructure">
+                <xsd:sequence>
+                    <xsd:group ref="OpraServiceCapabilitiesResponseGroup" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="OpraServiceCapabilitiesResponseGroup">
+        <xsd:annotation>
+            <xsd:documentation>Defines the capabilities of an individual SIRI service response functions.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="OpraServiceCapabilitiesResponses" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:group>
+    <!-- ======================================================================= -->
+    <xsd:group name="OpraDiscoveryDeliveryGroup">
+        <xsd:sequence>
+            <xsd:element ref="OpraDiscoveryDeliveries" />
+        </xsd:sequence>
+    </xsd:group>
+</xsd:schema>

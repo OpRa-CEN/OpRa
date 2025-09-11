@@ -8,7 +8,7 @@
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_responsibility_version.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_genericFramework/netex_loggable_version.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_reusableComponents/netex_transportOrganisation_support.xsd"/>
-	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_frames/netex_commonFrame_version.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_frames/netex_all_frames_framework.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_utility/netex_utility_xml.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_payload_framework.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_service/netex_filter_frame.xsd"/>
