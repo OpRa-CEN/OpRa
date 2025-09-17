@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_payload_delivery" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_payload_delivery" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- === Imports (NeTEx) ============================================================== -->
+    <xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
     <!-- ===Includes (OpRa)============================================================== -->
-    <xsd:include schemaLocation="../opra_framework/opra_payload_framework.xsd" />
     <xsd:include schemaLocation="../opra_request.xsd" />
     <!-- === Documentation ======================================= -->
     <xsd:annotation>
@@ -67,10 +68,57 @@
     </xsd:complexType>
     <xsd:group name="OnboardDeviceBasedPassengerCountRequestGroup">
         <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilites of requests for ONBOARD DEVICE BASED PASSENGER COUNTs.</xsd:documentation>
+            <xsd:documentation>References that extend filtering capabilities of requests for ONBOARD DEVICE BASED PASSENGER COUNTs.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:group ref="OnboardDeviceScopeGroup" />
         </xsd:sequence>
     </xsd:group>
+    <xsd:element name="OnboardDeviceBasedPassengerCountDiscoveryRequest" type="OnboardDeviceBasedPassengerCountDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
+        <xsd:annotation>
+            <xsd:documentation>A discovery request element to get ONBOARD DEVICE BASED PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="OnboardDeviceBasedPassengerCountDiscoveryRequestStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for the discovery request element to get ONBOARD DEVICE BASED PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="OpraDiscoveryRequestStructure">
+                <xsd:group ref="OnboardDeviceBasedPassengerCountDiscoveryRequestGroup" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="OnboardDeviceBasedPassengerCountDiscoveryRequestGroup">
+        <xsd:annotation>
+            <xsd:documentation>References that extend filtering capabilities of requests for ONBOARD DEVICE BASED PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:group ref="OnboardDeviceScopeGroup" />
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:element name="OnboardDeviceBasedPassengerCountDiscoveryDelivery" type="OnboardDeviceBasedPassengerCountDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
+        <xsd:annotation>
+            <xsd:documentation>A discovery delivery element to get ONBOARD DEVICE BASED PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="OnboardDeviceBasedPassengerCountDiscoveryDeliveryStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for the discovery delivery element to get ONBOARD DEVICE BASED PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="OpraDiscoveryDeliveryStructure">
+                <xsd:group ref="OnboardDeviceBasedPassengerCountDiscoveryDeliveryGroup" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="OnboardDeviceBasedPassengerCountDiscoveryDeliveryGroup">
+        <xsd:annotation>
+            <xsd:documentation>References that extend filtering capabilities of discovery delivery for ONBOARD DEVICE BASED PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:group ref="OnboardDeviceScopeGroup" />
+            <xsd:element name="OperatingDays" type="netex:operatingDays_RelStructure" />
+        </xsd:sequence>
+    </xsd:group>    
 </xsd:schema>

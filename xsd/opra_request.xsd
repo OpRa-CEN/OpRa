@@ -200,7 +200,9 @@
     <xsd:element name="OpraDiscoveryRequest" type="OpraDiscoveryRequestStructure" abstract="true" />
     <xsd:complexType name="OpraDiscoveryRequestStructure">
         <xsd:complexContent>
-            <xsd:extension base="siri:AbstractDiscoveryRequestStructure" />
+            <xsd:extension base="siri:AbstractDiscoveryRequestStructure">
+                <xsd:group ref="CalendarAwarePtScopeGroup" />
+            </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
     <xsd:element name="OpraDiscoveryRequests" type="OpraDiscoveryRequests_RelStructure" />
@@ -236,36 +238,22 @@
     <xsd:element name="OpraDiscoveryDelivery" type="OpraDiscoveryDeliveryStructure" abstract="true" />
     <xsd:complexType name="OpraDiscoveryDeliveryStructure">
         <xsd:complexContent>
-            <xsd:extension base="siri:AbstractDiscoveryDeliveryStructure" />
+            <xsd:extension base="siri:AbstractDiscoveryDeliveryStructure">
+                <xsd:group ref="OpraDIscoveryDeliveryGroup" />
+            </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
+    <xsd:group name="OpraDIscoveryDeliveryGroup">
+        <xsd:sequence>
+            <xsd:group ref="CalendarAwarePtScopeGroup" />
+        </xsd:sequence>
+    </xsd:group>
     <xsd:element name="OpraDiscoveryDeliveries" type="OpraDiscoveryDeliveries_RelStructure" />
     <xsd:complexType name="OpraDiscoveryDeliveries_RelStructure">
         <xsd:sequence>
             <xsd:element ref="OpraDiscoveryDelivery" />
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:element name="KpiRequest" type="KpiRequestStructure" substitutionGroup="OpraFunctionalRequest">
-        <xsd:annotation>
-            <xsd:documentation>A request element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="KpiRequestStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for the request element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="OpraFunctionalRequestStructure" />
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="KpiRequestGroup">
-        <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilites of requests for EXPECTED PASSENGER COUNTs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="KpiIdentifierRef" />
-        </xsd:sequence>
-    </xsd:group>
     <xsd:element name="OpraError" type="OpraErrorStructure" substitutionGroup="siri:OtherError">
         <xsd:annotation>
             <xsd:documentation>Element for Opra related errors.</xsd:documentation>

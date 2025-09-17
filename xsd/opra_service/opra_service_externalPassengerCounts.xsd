@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_payload_delivery" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_payload_delivery" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- === Imports (NeTEx) ============================================================== -->
+    <xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
     <!-- ===Includes (OpRa)============================================================== -->
-    <xsd:include schemaLocation="../opra_framework/opra_payload_framework.xsd" />
     <xsd:include schemaLocation="../opra_request.xsd" />
     <!-- === Documentation ======================================= -->
     <xsd:annotation>
@@ -68,5 +69,49 @@
             <xsd:documentation>References that extend filtering capabilites of requests for EXTERNAL PASSENGER COUNTs.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence />
+    </xsd:group>
+    <xsd:element name="ExternalPassengerCountDiscoveryRequest" type="ExternalPassengerCountDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
+        <xsd:annotation>
+            <xsd:documentation>A discovery request element to get EXTERNAL PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="ExternalPassengerCountDiscoveryRequestStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for the discovery request element to get EXTERNAL PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="OpraDiscoveryRequestStructure">
+                <xsd:group ref="ExternalPassengerCountDiscoveryRequestGroup" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="ExternalPassengerCountDiscoveryRequestGroup">
+        <xsd:annotation>
+            <xsd:documentation>References that extend filtering capabilities of requests for EXTERNAL PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence/>
+    </xsd:group>
+    <xsd:element name="ExternalPassengerCountDiscoveryDelivery" type="ExternalPassengerCountDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
+        <xsd:annotation>
+            <xsd:documentation>A discovery delivery element to get EXTERNAL PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="ExternalPassengerCountDiscoveryDeliveryStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for the discovery delivery element to get EXTERNAL PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="OpraDiscoveryDeliveryStructure">
+                <xsd:group ref="ExternalPassengerCountDiscoveryDeliveryGroup" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="ExternalPassengerCountDiscoveryDeliveryGroup">
+        <xsd:annotation>
+            <xsd:documentation>References that extend filtering capabilities of discovery delivery for EXTERNAL PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="OperatingDays" type="netex:operatingDays_RelStructure" />
+        </xsd:sequence>
     </xsd:group>
 </xsd:schema>

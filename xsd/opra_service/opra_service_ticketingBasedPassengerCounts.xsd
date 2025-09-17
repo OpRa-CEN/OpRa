@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_payload_delivery" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_payload_delivery" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- === Imports (NeTEx) ============================================================== -->
+    <xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
     <!-- ===Includes (OpRa)============================================================== -->
-    <xsd:include schemaLocation="../opra_framework/opra_payload_framework.xsd" />
     <xsd:include schemaLocation="../opra_request.xsd" />
     <!-- === Documentation ======================================= -->
     <xsd:annotation>
@@ -73,5 +74,51 @@
             <xsd:group ref="TicketingScopeGroup" />
         </xsd:sequence>
     </xsd:group>
-
+    <xsd:element name="TicketingBasedPassengerCountDiscoveryRequest" type="TicketingBasedPassengerCountDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
+        <xsd:annotation>
+            <xsd:documentation>A discovery request element to get TICKETING BASED PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="TicketingBasedPassengerCountDiscoveryRequestStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for the discovery request element to get TICKETING BASED PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="OpraDiscoveryRequestStructure">
+                <xsd:group ref="TicketingBasedPassengerCountDiscoveryRequestGroup" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="TicketingBasedPassengerCountDiscoveryRequestGroup">
+        <xsd:annotation>
+            <xsd:documentation>References that extend filtering capabilities of requests for TICKETING BASED PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:group ref="TicketingScopeGroup" />
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:element name="TicketingBasedPassengerCountDiscoveryDelivery" type="TicketingBasedPassengerCountDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
+        <xsd:annotation>
+            <xsd:documentation>A discovery delivery element to get TICKETING BASED PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="TicketingBasedPassengerCountDiscoveryDeliveryStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for the discovery delivery element to get TICKETING BASED PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="OpraDiscoveryDeliveryStructure">
+                <xsd:group ref="TicketingBasedPassengerCountDiscoveryDeliveryGroup" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="TicketingBasedPassengerCountDiscoveryDeliveryGroup">
+        <xsd:annotation>
+            <xsd:documentation>References that extend filtering capabilities of discovery delivery for TICKETING BASED PASSENGER COUNTs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:group ref="TicketingScopeGroup" />
+            <xsd:element name="OperatingDays" type="netex:operatingDays_RelStructure" />
+        </xsd:sequence>
+    </xsd:group>
 </xsd:schema>
