@@ -5,7 +5,7 @@
     <xsd:import schemaLocation="opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
     <!-- ===Regular netex============================================================== -->
     <xsd:import schemaLocation="opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
-    <xsd:include schemaLocation="opra_publication.xsd" />
+    <xsd:include schemaLocation="OpRa_publication.xsd" />
     <xsd:include schemaLocation="opra_request.xsd" />
     <xsd:annotation>
         <xsd:appinfo>
