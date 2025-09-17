@@ -49,6 +49,7 @@
 										<EndIncluded>false</EndIncluded>
 										<NumberOfOccurrences>69</NumberOfOccurrences>
 										<PercentageOfOccurrences>0.9324</PercentageOfOccurrences>
+										<TotalNumberOfOccurrences>74</TotalNumberOfOccurrences>
 									</DurationInterval>
 									<DurationInterval>
 										<!-- statistics for delays between 5 (incl.) and 10 (excl.) minutes -->
@@ -58,6 +59,7 @@
 										<EndIncluded>false</EndIncluded>
 										<NumberOfOccurrences>3</NumberOfOccurrences>
 										<PercentageOfOccurrences>0.0405</PercentageOfOccurrences>
+										<TotalNumberOfOccurrences>74</TotalNumberOfOccurrences>
 									</DurationInterval>
 									<DurationInterval>
 										<!-- statistics for delays of length at least 10 (incl.) minutes -->
@@ -65,6 +67,7 @@
 										<StartIncluded>true</StartIncluded>
 										<NumberOfOccurrences>2</NumberOfOccurrences>
 										<PercentageOfOccurrences>0.0270</PercentageOfOccurrences>
+										<TotalNumberOfOccurrences>74</TotalNumberOfOccurrences>
 									</DurationInterval>
 								</intervals>
 							</LateDatedVehicleJourneyCount>

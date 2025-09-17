@@ -108,31 +108,6 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>A set of NeTEx objects as assembled by a publication request or other service. Provides a general purpose wrapper for NeTEx data content.</xsd:documentation>
 		</xsd:annotation>
 		<!-- =======START OF CONSTRAINTS================================ -->
-		<!-- =====REFERENTIAL INTEGRITY Constraints========================= -->
-		<!-- =====FRAMEWORK Constraints=========================  -->
-		<!-- =====Codespace Key ========================== -->
-		<!-- ===== Codespace Unique===========================  -->
-		<!-- =====TypeOfFrame unique========================== -->
-		<xsd:unique name="TypeOfFrame_UniqueBy_Id_Version">
-			<xsd:annotation>
-				<xsd:documentation>Every [TypeOfFrame Id + TypeOfFrame] must be unique within document.</xsd:documentation>
-			</xsd:annotation>
-			<xsd:selector xpath=".//netex:TypeOfFrame"/>
-			<xsd:field xpath="@id"/>
-			<xsd:field xpath="@version"/>
-		</xsd:unique>
-		<!-- =====TypeOfFrame============================== -->
-		<xsd:keyref name="TypeOfFrame_AnyKeyRef" refer="TypeOfFrame_AnyVersionedKey">
-			<xsd:selector xpath=".//netex:TypeOfFrameRef"/>
-			<xsd:field xpath="@ref"/>
-			<xsd:field xpath="@version"/>
-		</xsd:keyref>
-		<!-- =====TypeOfFrame Key ========================== -->
-		<xsd:key name="TypeOfFrame_AnyVersionedKey">
-			<xsd:selector xpath=".//netex:TypeOfFrame"/>
-			<xsd:field xpath="@id"/>
-			<xsd:field xpath="@version"/>
-		</xsd:key>
 		<!-- =====TO BE COMPLETED WITH OPRA SPECIFIC CONSTRAINTS================= -->
 	</xsd:element>
 	<!-- =====END OF CONSTRAINTS================= -->

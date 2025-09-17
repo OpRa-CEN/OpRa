@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <!-- ===SIRI system IDs for  request =========================================================== -->
     <xsd:import schemaLocation="opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
     <!-- ===Regular netex============================================================== -->
     <xsd:import schemaLocation="opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
+    <xsd:include schemaLocation="opra_publication.xsd" />
     <xsd:include schemaLocation="opra_request.xsd" />
     <xsd:annotation>
         <xsd:appinfo>
@@ -69,7 +70,7 @@
     <!--== Requests ===================================================================== -->
     <xsd:group name="RequestGroup">
         <xsd:annotation>
-            <xsd:documentation>SIRI All Requests.</xsd:documentation>
+            <xsd:documentation>OpRa all Requests.</xsd:documentation>
         </xsd:annotation>
         <xsd:choice>
             <xsd:group ref="ServiceRequestGroup" />
@@ -111,7 +112,7 @@
     </xsd:complexType>
     <xsd:group name="OpraServiceRequestGroup">
         <xsd:annotation>
-            <xsd:documentation>Opra Functional Service Concrete Requests.</xsd:documentation>
+            <xsd:documentation>OpRa Functional Service Concrete Requests.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element ref="OpraFunctionalRequests" />
@@ -144,7 +145,7 @@
     </xsd:complexType>
     <xsd:group name="OpraSubscriptionRequestGroup">
         <xsd:annotation>
-            <xsd:documentation>Opra Functional Service Subscription types. For a given SubscriptionRequest, must all be of the same service type.</xsd:documentation>
+            <xsd:documentation>OpRa Functional Service Subscription types. For a given SubscriptionRequest, must all be of the same service type.</xsd:documentation>
         </xsd:annotation>
         <xsd:choice>
             <xsd:element ref="OpraSubscriptionRequests" maxOccurs="unbounded" />
