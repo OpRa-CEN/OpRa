@@ -3,9 +3,8 @@
 	<ServiceDelivery>
 		<siri:ResponseTimestamp>2025-03-22T00:05:00Z</siri:ResponseTimestamp>
 		<OpraFunctionalDeliveries>
-			<PublicationDelivery>
-				<siri:ResponseTimestamp>2025-03-22T00:05:00Z</siri:ResponseTimestamp>
-				<Description>Cancelled and Late dated vehicle journey examples on the sample network.</Description>
+			<OpraPayloadDelivery>
+				<siri:ResponseTimestamp>2025-03-22T00:06:00Z</siri:ResponseTimestamp>
 				<dataObjects>
 					<RawDataFrame>
 						<netex:ValidBetween>
@@ -13,25 +12,6 @@
 							<netex:ToDate>2025-03-18T23:59:59</netex:ToDate>
 						</netex:ValidBetween>
 						<PreparednessLevel>Cleansed</PreparednessLevel>
-						<cancelledDatedVehicleJourneyEntries>
-							<CancelledDatedVehicleJourneyEntry>
-								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-								<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250317_1700"/>
-								<ReplacementJourneyCreated>true</ReplacementJourneyCreated>
-							</CancelledDatedVehicleJourneyEntry>
-							<CancelledDatedVehicleJourneyEntry>
-								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-								<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250318_0630"/>
-								<ReplacementJourneyCreated>false</ReplacementJourneyCreated>
-							</CancelledDatedVehicleJourneyEntry>
-						</cancelledDatedVehicleJourneyEntries>
-						<cancelledDatedVehicleJourneyCounts>
-							<CancelledDatedVehicleJourneyCount>
-								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-								<NumberOfOccurrences>2</NumberOfOccurrences>
-								<PercentageOfOccurrences>0.0270</PercentageOfOccurrences>
-							</CancelledDatedVehicleJourneyCount>
-						</cancelledDatedVehicleJourneyCounts>
 						<lateDatedVehicleJourneyEntries>
 							<LateDatedVehicleJourneyEntry>
 								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
@@ -69,6 +49,7 @@
 										<EndIncluded>false</EndIncluded>
 										<NumberOfOccurrences>69</NumberOfOccurrences>
 										<PercentageOfOccurrences>0.9324</PercentageOfOccurrences>
+										<TotalNumberOfOccurrences>74</TotalNumberOfOccurrences>
 									</DurationInterval>
 									<DurationInterval>
 										<!-- statistics for delays between 5 (incl.) and 10 (excl.) minutes -->
@@ -78,6 +59,7 @@
 										<EndIncluded>false</EndIncluded>
 										<NumberOfOccurrences>3</NumberOfOccurrences>
 										<PercentageOfOccurrences>0.0405</PercentageOfOccurrences>
+										<TotalNumberOfOccurrences>74</TotalNumberOfOccurrences>
 									</DurationInterval>
 									<DurationInterval>
 										<!-- statistics for delays of length at least 10 (incl.) minutes -->
@@ -85,13 +67,14 @@
 										<StartIncluded>true</StartIncluded>
 										<NumberOfOccurrences>2</NumberOfOccurrences>
 										<PercentageOfOccurrences>0.0270</PercentageOfOccurrences>
+										<TotalNumberOfOccurrences>74</TotalNumberOfOccurrences>
 									</DurationInterval>
 								</intervals>
 							</LateDatedVehicleJourneyCount>
 						</lateDatedVehicleJourneyCounts>
 					</RawDataFrame>
 				</dataObjects>
-			</PublicationDelivery>
+			</OpraPayloadDelivery>
 		</OpraFunctionalDeliveries>
 	</ServiceDelivery>
 </Opra>

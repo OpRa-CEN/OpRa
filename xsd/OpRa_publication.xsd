@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_publication">
-	<!-- ===SIRI system IDs for  request =========================================================== -->
-	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="opra_imports/opra_siri_imports.xsd"/>
-	<!-- ===Regular netex============================================================== -->
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="opra_imports/opra_netex_imports.xsd"/>
-	<!-- ===Includes (OpRa)============================================================== -->
-	<xsd:include schemaLocation="opra_framework/opra_payload_framework.xsd"/>
-	<!-- === Documentation ======================================= -->
-	<xsd:annotation>
-		<xsd:appinfo>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_publication" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- ===Regular netex============================================================== -->
+    <xsd:import schemaLocation="opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
+    <!-- ===SIRI system IDs for  request =========================================================== -->
+    <xsd:import schemaLocation="opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
+    <!-- ===Includes (OpRa)============================================================== -->
+    <xsd:include schemaLocation="opra_request.xsd" />
+    <xsd:include schemaLocation="opra_framework/opra_payload_framework.xsd" />
+    <!-- === Documentation ======================================= -->
+    <xsd:annotation>
+        <xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -50,104 +52,55 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa PUBLICATION SCHEMA</xsd:documentation>
-	</xsd:annotation>
-	<!-- ======================================================================= -->
-	<xsd:element name="ParticipantRef" type="siri:ParticipantCodeType">
-		<xsd:annotation>
-			<xsd:documentation>Identifier of system requesting Data.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:element name="PublicationRequest" type="PublicationRequestStructure">
-		<xsd:annotation>
-			<xsd:documentation>A bulk publication request for OpRa objects specifying which elements should be returned. Can be echoed back in a publication response.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:complexType name="PublicationRequestStructure">
-		<xsd:annotation>
-			<xsd:documentation>Type for Publication Request.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element name="RequestTimestamp" type="xsd:dateTime">
-				<xsd:annotation>
-					<xsd:documentation>Time of request.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element ref="ParticipantRef" minOccurs="0"/>
-			<xsd:element name="Description" type="netex:MultilingualString" minOccurs="0"/>
-			<xsd:element name="topics" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>One or more Request filters that specify tthe data to be included in output. Multiple filters are logically ANDed.</xsd:documentation>
-				</xsd:annotation>
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element name="OpRaFrameTopic" type="netex:NetworkFrameTopicStructure" maxOccurs="unbounded">
-							<xsd:annotation>
-								<xsd:documentation>Values to use select Network Objects.</xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
-			<xsd:element name="RequestPolicy" type="netex:NetworkFrameRequestPolicyStructure" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Policies to apply when fetching data specified by Topics.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="SubscriptionPolicy" type="netex:NetworkFrameSubscriptionPolicyStructure" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Policy to use when processing Network Subscriptions.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-		<xsd:attribute name="version" type="xsd:NMTOKEN" default="1.0"/>
-	</xsd:complexType>
-	<!-- ===================================================================   -->
-	<xsd:element name="PublicationDelivery" type="PublicationDeliveryStructure">
-		<xsd:annotation>
-			<xsd:documentation>A set of NeTEx objects as assembled by a publication request or other service. Provides a general purpose wrapper for NeTEx data content.</xsd:documentation>
-		</xsd:annotation>
-		<!-- =======START OF CONSTRAINTS================================ -->
-		<!-- =====TO BE COMPLETED WITH OPRA SPECIFIC CONSTRAINTS================= -->
-	</xsd:element>
-	<!-- =====END OF CONSTRAINTS================= -->
-	<xsd:complexType name="PublicationDeliveryStructure">
-		<xsd:annotation>
-			<xsd:documentation>Type for Publication Delivery.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:group ref="PublicationHeaderGroup"/>
-			<xsd:group ref="PayloadGroup"/>
-		</xsd:sequence>
-		<xsd:attribute name="version" type="xsd:NMTOKEN" default="1.0"/>
-	</xsd:complexType>
-	<xsd:group name="PublicationHeaderGroup">
-		<xsd:annotation>
-			<xsd:documentation>Elements for Publication header.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element name="PublicationTimestamp" type="xsd:dateTime">
-				<xsd:annotation>
-					<xsd:documentation>Time of output of data.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element ref="ParticipantRef"/>
-			<xsd:element name="PublicationRequest" type="PublicationRequestStructure" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Echo Request used to create bulk response.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="PublicationRefreshInterval" type="xsd:duration" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>How often data in publication is refreshed.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="Description" type="netex:MultilingualString" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Description of contents.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:group>
-	<!--== Requests ===================================================================== -->
+        <xsd:documentation>OpRa PUBLICATION Request / Delivery</xsd:documentation>
+    </xsd:annotation>
+    <xsd:element name="PublicationRequest" type="PublicationRequestStructure" substitutionGroup="OpraFunctionalRequest">
+        <xsd:annotation>
+            <xsd:documentation>A bulk publication request for OpRa objects specifying which elements should be returned. Can be echoed back in a publication response.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="PublicationRequestStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for Publication Request.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="OpraFunctionalRequestStructure">
+                <xsd:group ref="PublicationHeaderGroup" />
+                <xsd:attribute name="version" default="1.0" type="xsd:NMTOKEN" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <!-- ===================================================================   -->
+    <xsd:element name="PublicationDelivery" type="PublicationDeliveryStructure" substitutionGroup="OpraFunctionalDelivery">
+        <xsd:annotation>
+            <xsd:documentation>OpRa publication delivery that contains a payload and refreshes in the specified interval.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="PublicationDeliveryStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for Publication Delivery.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="OpraFunctionalDeliveryStructure">
+                <xsd:sequence>
+                    <xsd:group ref="PublicationHeaderGroup" />
+                    <xsd:group ref="PayloadGroup" />
+                </xsd:sequence>
+                <xsd:attribute name="version" default="1.0" type="xsd:NMTOKEN" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="PublicationHeaderGroup">
+        <xsd:annotation>
+            <xsd:documentation>Elements for Publication header.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="PublicationRefreshInterval" type="xsd:duration" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>How often data in publication is refreshed.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:group>
+    <!--== Requests ===================================================================== -->
 </xsd:schema>

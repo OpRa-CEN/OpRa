@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_payload_delivery" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_lateDatedVehicleJourneys" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <!-- === Imports (NeTEx) ============================================================== -->
     <xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
     <!-- ===Includes (OpRa)============================================================== -->
@@ -24,7 +24,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_service/opra_payload_delivery.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_service/opra_service_lateDatedVehicleJourneys.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -49,7 +49,7 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa REQUEST/RESPONSE DELIVERY SCHEMA</xsd:documentation>
+        <xsd:documentation>OpRa LATE DATED VEHICLE JOURNEY Request / Discovery schema</xsd:documentation>
     </xsd:annotation>
     <xsd:element name="LateDatedVehicleJourneysRequest" type="LateDatedVehicleJourneysRequestStructure" substitutionGroup="OpraFunctionalRequest">
         <xsd:annotation>
@@ -91,7 +91,7 @@
     </xsd:complexType>
     <xsd:group name="LateDatedVehicleJourneyDiscoveryRequestGroup">
         <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilities of requests for LATE DATED VEHICLE JOURNEYs.</xsd:documentation>
+            <xsd:documentation>Currently empty placeholder for extending filtering capabilities of discovery requests for LATE DATED VEHICLE JOURNEYs.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence/>
     </xsd:group>
@@ -112,10 +112,14 @@
     </xsd:complexType>
     <xsd:group name="LateDatedVehicleJourneyDiscoveryDeliveryGroup">
         <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilities of discovery delivery for LATE DATED VEHICLE JOURNEYs.</xsd:documentation>
+            <xsd:documentation>Specific data content of discovery delivery for LATE DATED VEHICLE JOURNEYs.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="OperatingDays" type="netex:operatingDays_RelStructure" />
+            <xsd:element name="OperatingDays" type="netex:operatingDays_RelStructure">
+				<xsd:annotation>
+					<xsd:documentation>Collection of OPERATING DAYS that have data for the discovery request's scope.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
         </xsd:sequence>
     </xsd:group>
 </xsd:schema>

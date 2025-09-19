@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_payload_delivery" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_expectedPassengerCounts" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <!-- === Imports (NeTEx) ============================================================== -->
     <xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
     <!-- ===Includes (OpRa)============================================================== -->
@@ -24,7 +24,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_service/opra_payload_delivery.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_service/opra_service_expectedPassengerCounts.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -49,7 +49,7 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa REQUEST/RESPONSE DELIVERY SCHEMA</xsd:documentation>
+        <xsd:documentation>OpRa EXPECTED PASSENGER COUNT Request / Delivery schema.</xsd:documentation>
     </xsd:annotation>
     <xsd:element name="ExpectedPassengerCountRequest" type="ExpectedPassengerCountRequestStructure" substitutionGroup="OpraFunctionalRequest">
         <xsd:annotation>
@@ -66,7 +66,7 @@
     </xsd:complexType>
     <xsd:group name="ExpectedPassengerCountRequestGroup">
         <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilites of requests for EXPECTED PASSENGER COUNTs.</xsd:documentation>
+            <xsd:documentation>Currently empty placeholder for extending filtering capabilites of requests for EXPECTED PASSENGER COUNTs.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence />
     </xsd:group>
@@ -87,7 +87,7 @@
     </xsd:complexType>
     <xsd:group name="ExpectedPassengerCountDiscoveryRequestGroup">
         <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilities of requests for EXPECTED PASSENGER COUNTs.</xsd:documentation>
+            <xsd:documentation>Currently empty placeholder for extending filtering capabilities of discovery requests for EXPECTED PASSENGER COUNTs.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence/>
     </xsd:group>
@@ -108,10 +108,14 @@
     </xsd:complexType>
     <xsd:group name="ExpectedPassengerCountDiscoveryDeliveryGroup">
         <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilities of discovery delivery for EXPECTED PASSENGER COUNTs.</xsd:documentation>
+            <xsd:documentation>Specific data content of a discovery delivery for EXPECTED PASSENGER COUNTs.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="OperatingDays" type="netex:operatingDays_RelStructure" />
+            <xsd:element name="OperatingDays" type="netex:operatingDays_RelStructure">
+				<xsd:annotation>
+					<xsd:documentation>Collection of OPERATING DAYS that have data within the discovery request's scope.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
         </xsd:sequence>
     </xsd:group>
 </xsd:schema>

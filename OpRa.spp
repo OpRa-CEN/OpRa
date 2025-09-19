@@ -817,11 +817,13 @@
 		<Folder FolderName="opra_service" ExtStr="xsd">
 			<File FilePath="xsd\opra_service\opra_all_services.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_payload_delivery.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_actualService.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_cancelledDatedVehicleJourneys.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_expectedPassengerCounts.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_externalPassengerCounts.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_lateDatedVehicleJourneys.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_onboardDeviceBasedPassengerCounts.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_plannedService.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_ticketingBasedPassengerCounts.xsd" HomeFolder="Yes"/>
 		</Folder>
 		<File FilePath="xsd\opra.xsd" HomeFolder="Yes"/>

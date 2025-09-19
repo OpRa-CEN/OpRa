@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:Opra="https://transmodel-cen.eu/Opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_publication" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:opra="https://transmodel-cen.eu/Opra/1.0" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_request" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <!-- ===SIRI system IDs for  request =========================================================== -->
     <xsd:import schemaLocation="opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
     <!-- ===Regular netex============================================================== -->
@@ -47,11 +47,11 @@
                     </Category>
 					<Project>CEN TC278 WG3 SG10.</Project>
 				</Subject>
-				<Title>Opra Operational Raw Data Exchange</Title>
+				<Title>OpRa Operational Raw Data Exchange</Title>
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>Opra REQUEST/RESPONSE/STATUS/DISCOVERY SCHEMA</xsd:documentation>
+        <xsd:documentation>Opra abstract REQUEST/RESPONSE/STATUS/DISCOVERY SCHEMA</xsd:documentation>
     </xsd:annotation>
     <!-- ======================================================================= -->
     <xsd:group name="ServiceRequestContextGroup">
@@ -79,7 +79,7 @@
             </xsd:element>
             <xsd:element name="ErrorCondition" type="OpraErrorStructure" minOccurs="0" maxOccurs="unbounded">
                 <xsd:annotation>
-                    <xsd:documentation>Opra generic problem for the whole delivery.</xsd:documentation>
+                    <xsd:documentation>OpRa generic problem for the whole delivery.</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
         </xsd:sequence>
@@ -89,10 +89,13 @@
     </xsd:annotation>
     <xsd:element name="OpraFunctionalRequests" type="OpraBulkRequestsStructure">
         <xsd:annotation>
-            <xsd:documentation>Main collection element for an Opra (bulk) request.</xsd:documentation>
+            <xsd:documentation>Main collection element for an OpRa (bulk) request.</xsd:documentation>
         </xsd:annotation>
     </xsd:element>
     <xsd:complexType name="OpraBulkRequestsStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for a collection of OpraFunctionalRequest elements.</xsd:documentation>
+        </xsd:annotation>
         <xsd:complexContent>
             <xsd:extension base="OpraRequests_RelStructure">
                 <xsd:sequence>
@@ -103,7 +106,7 @@
     </xsd:complexType>
     <xsd:complexType name="AbstractOpraFunctionalServiceRequestStructure">
         <xsd:annotation>
-            <xsd:documentation>Basic request structure common for all Opra service requests.</xsd:documentation>
+            <xsd:documentation>Basic request structure common for all OpRa functional service requests.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
             <xsd:extension base="siri:AbstractFunctionalServiceRequestStructure">
@@ -113,12 +116,12 @@
     </xsd:complexType>
     <xsd:element name="OpraFunctionalRequest" type="OpraFunctionalRequestStructure" substitutionGroup="siri:AbstractFunctionalServiceRequest" abstract="true">
         <xsd:annotation>
-            <xsd:documentation>Generic abstract Opra request element. Substitute this element with topic-specific request elements.</xsd:documentation>
+            <xsd:documentation>Generic abstract OpRa request element. Substitute this element with topic-specific request elements.</xsd:documentation>
         </xsd:annotation>
     </xsd:element>
     <xsd:complexType name="OpraFunctionalRequestStructure">
         <xsd:annotation>
-            <xsd:documentation>Type for the generic abstract Opra request.</xsd:documentation>
+            <xsd:documentation>Type for the generic abstract OpRa request.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
             <xsd:extension base="AbstractOpraFunctionalServiceRequestStructure">
@@ -131,7 +134,7 @@
     </xsd:complexType>
     <xsd:group name="OpraFunctionalRequestGroup">
         <xsd:annotation>
-            <xsd:documentation>Generic scope and preparedness state structures to be used in OpraRequests.</xsd:documentation>
+            <xsd:documentation>Generic scope and preparedness state structures to be used in OpraFunctionalRequests.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element name="Description" type="netex:MultilingualString" minOccurs="0" />
@@ -158,12 +161,12 @@
     </xsd:complexType>
     <xsd:element name="OpraFunctionalDelivery" type="OpraFunctionalDeliveryStructure" substitutionGroup="siri:AbstractFunctionalServiceDelivery" abstract="true">
         <xsd:annotation>
-            <xsd:documentation>Response element for OpraRequests. Contains a generic Opra payload.</xsd:documentation>
+            <xsd:documentation>Abstract delivery element, responding for OpraRequest elements.</xsd:documentation>
         </xsd:annotation>
     </xsd:element>
     <xsd:complexType name="OpraFunctionalDeliveryStructure">
         <xsd:annotation>
-            <xsd:documentation>Type for the generic Opra response element.</xsd:documentation>
+            <xsd:documentation>Type for the abstract OpRa delivery element.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
             <xsd:extension base="siri:AbstractServiceDeliveryStructure">
@@ -176,6 +179,7 @@
     </xsd:complexType>
     <xsd:group name="OpraFunctionalDeliveryGroup">
         <xsd:sequence>
+            <xsd:element name="Description" type="netex:MultilingualString" minOccurs="0" maxOccurs="unbounded" />
             <xsd:element ref="OpraFunctionalRequest" minOccurs="0" />
         </xsd:sequence>
     </xsd:group>

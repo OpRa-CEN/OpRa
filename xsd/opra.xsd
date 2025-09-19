@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <!-- ===SIRI system IDs for  request =========================================================== -->
     <xsd:import schemaLocation="opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
     <!-- ===Regular netex============================================================== -->
     <xsd:import schemaLocation="opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
-    <xsd:include schemaLocation="OpRa_publication.xsd" />
+    <xsd:include schemaLocation="opra_publication.xsd" />
     <xsd:include schemaLocation="opra_request.xsd" />
     <xsd:annotation>
         <xsd:appinfo>
@@ -133,7 +133,7 @@
     </xsd:element>
     <xsd:complexType name="SubscriptionRequestStructure">
         <xsd:annotation>
-            <xsd:documentation>Type for SIRI Subscription Request.</xsd:documentation>
+            <xsd:documentation>Type for OpRa Subscription Request.</xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
             <xsd:extension base="siri:AbstractSubscriptionRequestStructure">
@@ -212,22 +212,9 @@
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
-    <xsd:complexType name="ServiceDeliveryBodyStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for SIRI Service Delivery Body..</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:group ref="ServiceDeliveryBodyGroup" />
-        </xsd:sequence>
-        <xsd:attribute name="srsName" type="siri:SrsNameType">
-            <xsd:annotation>
-                <xsd:documentation>Default gml coordinate format for any location elements in response; applies if Coordinates element is used to specify points. May be overridden on individual points.</xsd:documentation>
-            </xsd:annotation>
-        </xsd:attribute>
-    </xsd:complexType>
     <xsd:group name="ServiceDeliveryBodyGroup">
         <xsd:annotation>
-            <xsd:documentation>Elements for SIRI Service Delivery.</xsd:documentation>
+            <xsd:documentation>Elements for OpRa Service Delivery.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:group ref="siri:ServiceDeliveryRequestStatusGroup" />
@@ -239,18 +226,10 @@
             <xsd:element ref="OpraFunctionalDeliveries" />
         </xsd:sequence>
     </xsd:group>
-    <xsd:group name="OpraServiceDeliveryGroup">
-        <xsd:annotation>
-            <xsd:documentation>Opra payload delivery.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:group ref="PayloadGroup" />
-        </xsd:sequence>
-    </xsd:group>
     <!-- ===Discovery==================================================================== -->
     <xsd:group name="OpraDiscoveryRequestGroup">
         <xsd:annotation>
-            <xsd:documentation>Requests for reference data for use in SIRI Functional Service requests.</xsd:documentation>
+            <xsd:documentation>Requests for reference data for use in OpRa Functional Service requests.</xsd:documentation>
         </xsd:annotation>
         <xsd:choice>
             <xsd:element ref="CapabilitiesRequest" />
@@ -259,7 +238,7 @@
     </xsd:group>
     <xsd:group name="OpraDiscoveryResponseGroup">
         <xsd:annotation>
-            <xsd:documentation>Responses with reference data for use in SIRI Functional Service requests.</xsd:documentation>
+            <xsd:documentation>Responses with reference data for use in OpRa Functional Service requests.</xsd:documentation>
         </xsd:annotation>
         <xsd:choice>
             <xsd:element ref="CapabilitiesResponse">
@@ -274,7 +253,7 @@
     <!-- ===GS: Capabilities Request==================================================================== -->
     <xsd:element name="CapabilitiesRequest" type="CapabilitiesRequestStructure">
         <xsd:annotation>
-            <xsd:documentation>Requests a the current capabilities of the server. Answred with a CpabailitiesResponse.</xsd:documentation>
+            <xsd:documentation>Requests a the current capabilities of the server. Answred with a CapabilitiesResponse.</xsd:documentation>
         </xsd:annotation>
     </xsd:element>
     <xsd:complexType name="CapabilitiesRequestStructure">
@@ -292,7 +271,7 @@
                     <xsd:element ref="siri:RequestorRef" />
                     <xsd:group ref="siri:DelegatorEndpointGroup">
                         <xsd:annotation>
-                            <xsd:documentation>If request has been proxied by an intermediate  aggregating system, tracking information relating to the original requestor. This allows the aggregation to be stateless</xsd:documentation>
+                            <xsd:documentation>If request has been proxied by an intermediate aggregating system, tracking information relating to the original requestor. This allows the aggregation to be stateless.</xsd:documentation>
                         </xsd:annotation>
                     </xsd:group>
                     <xsd:group ref="ServiceCapabilitiesRequestGroup" />
@@ -302,7 +281,7 @@
     </xsd:complexType>
     <xsd:group name="ServiceCapabilitiesRequestGroup">
         <xsd:annotation>
-            <xsd:documentation>Defines the capabilities of an individual SIRI service request functions.</xsd:documentation>
+            <xsd:documentation>Defines the capabilities of an individual OpRa service request functions.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element ref="OpraServiceCapabilitiesRequests" />
@@ -328,7 +307,7 @@
     </xsd:complexType>
     <xsd:group name="OpraServiceCapabilitiesResponseGroup">
         <xsd:annotation>
-            <xsd:documentation>Defines the capabilities of an individual SIRI service response functions.</xsd:documentation>
+            <xsd:documentation>Defines the capabilities of an individual OpRa service delivery functions.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element ref="OpraServiceCapabilitiesResponses" minOccurs="0" />
