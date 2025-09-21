@@ -51,7 +51,7 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>Opra abstract REQUEST/RESPONSE/STATUS/DISCOVERY SCHEMA</xsd:documentation>
+        <xsd:documentation>Opra abstract REQUEST/DELIVERY/SUBSCRIPTION/STATUS/DISCOVERY SCHEMA</xsd:documentation>
     </xsd:annotation>
     <!-- ======================================================================= -->
     <xsd:group name="ServiceRequestContextGroup">
