@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_plannedService" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- ===Includes (OpRa)============================================================== -->
-    <xsd:include schemaLocation="../opra_request.xsd" />
-    <!-- === Documentation ======================================= -->
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_plannedService" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+	<!-- ===Includes (OpRa)============================================================== -->
+	<xsd:include schemaLocation="../opra_request.xsd"/>
+	<!-- === Documentation ======================================= -->
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -47,44 +47,44 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa PLANNED SERVICE Request schema.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:element name="PlannedServiceRequest" type="PlannedServiceRequestStructure" substitutionGroup="OpraFunctionalRequest">
-        <xsd:annotation>
-            <xsd:documentation>A request element to get PLANNED SERVICE FRAMEs.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="PlannedServiceRequestStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for the request element to get PLANNED SERVICE FRAMEs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="OpraFunctionalRequestStructure">
-                <xsd:group ref="PlannedServiceRequestGroup" />
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="PlannedServiceRequestGroup">
-        <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilities of requests for PLANNED SERVICE FRAMEs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="PreferURL" type="xsd:boolean" minOccurs="0" default="true" />
-            <xsd:group ref="NetexFilteringGroup" />
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:group name="NetexFilteringGroup">
+		<xsd:documentation>OpRa PLANNED SERVICE Request schema.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="PlannedServiceRequest" type="PlannedServiceRequestStructure" substitutionGroup="OpraFunctionalRequest">
+		<xsd:annotation>
+			<xsd:documentation>A request element to get PLANNED SERVICE FRAMEs.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="PlannedServiceRequestStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for the request element to get PLANNED SERVICE FRAMEs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="OpraFunctionalRequestStructure">
+				<xsd:group ref="PlannedServiceRequestGroup"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="PlannedServiceRequestGroup">
+		<xsd:annotation>
+			<xsd:documentation>References that extend filtering capabilities of requests for PLANNED SERVICE FRAMEs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="PreferURL" type="xsd:boolean" minOccurs="0" default="true"/>
+			<xsd:group ref="NetexFilteringGroup"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:group name="NetexFilteringGroup">
 		<xsd:annotation>
 			<xsd:documentation>Allows filtering which data groups shall be included in a delivery containing NeTEx data objects.</xsd:documentation>
 		</xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="IncludeNetworkDescription" type="xsd:boolean" minOccurs="0" default="true" />
-            <xsd:element name="IncludeFixedObjects" type="xsd:boolean" minOccurs="0" default="false" />
-            <xsd:element name="IncludeTacticalPlanning" type="xsd:boolean" minOccurs="0" default="true" />
-            <xsd:element name="IncludeJourneyTimes" type="xsd:boolean" minOccurs="0" default="true" />
-            <xsd:element name="IncludeVehicleService" type="xsd:boolean" minOccurs="0" default="false" />
-            <xsd:element name="IncludeFares" type="xsd:boolean" minOccurs="0" default="false" />
-            <xsd:element name="IncludeMonitoring" type="xsd:boolean" minOccurs="0" default="false" />
-        </xsd:sequence>
-    </xsd:group>
+		<xsd:sequence>
+			<xsd:element name="IncludeNetworkDescription" type="xsd:boolean" minOccurs="0" default="true"/>
+			<xsd:element name="IncludeFixedObjects" type="xsd:boolean" minOccurs="0" default="false"/>
+			<xsd:element name="IncludeTacticalPlanning" type="xsd:boolean" minOccurs="0" default="true"/>
+			<xsd:element name="IncludeJourneyTimes" type="xsd:boolean" minOccurs="0" default="true"/>
+			<xsd:element name="IncludeVehicleService" type="xsd:boolean" minOccurs="0" default="false"/>
+			<xsd:element name="IncludeFares" type="xsd:boolean" minOccurs="0" default="false"/>
+			<xsd:element name="IncludeMonitoring" type="xsd:boolean" minOccurs="0" default="false"/>
+		</xsd:sequence>
+	</xsd:group>
 </xsd:schema>

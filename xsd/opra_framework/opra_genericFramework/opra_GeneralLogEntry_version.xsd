@@ -2,8 +2,8 @@
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_generalLogEntry_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
 	<!-- NeTEX Imports-->
-	<!-- xsd:include schemaLocation="../../opra_imports/opra_netex_imports.xsd" / -->
-	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- xsd:include schemaLocation="../../opra_imports/opra_netex_facade.xsd" / -->
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<!-- SIRI Imports-->
 	<!-- xsd:include schemaLocation="../../opra_imports/opra_siri_imports.xsd" /-->
 	<xsd:import schemaLocation="../../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>

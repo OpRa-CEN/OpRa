@@ -1,12 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_actualService" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- ===Includes (OpRa)============================================================== -->
-    <xsd:include schemaLocation="../opra_request.xsd" />
-    <xsd:include schemaLocation="opra_service_plannedService.xsd" />
-    <!-- === Documentation ======================================= -->
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_actualService" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+	<!-- ===Includes (OpRa)============================================================== -->
+	<!--
+	<xsd:include schemaLocation="../opra_request.xsd"/>
+	-->
+	<xsd:include schemaLocation="opra_service_plannedService.xsd"/>
+	<!-- === Documentation ======================================= -->
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -48,34 +50,34 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa ACTUAL SERVICE Request / Discovery</xsd:documentation>
-    </xsd:annotation>
-    <xsd:element name="ActualServiceRequest" type="ActualServiceRequestStructure" substitutionGroup="OpraFunctionalRequest">
-        <xsd:annotation>
-            <xsd:documentation>A request element to get ACTUAL SERVICE FRAMEs.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="ActualServiceRequestStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for the request element to get ACTUAL SERVICE FRAMEs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="OpraFunctionalRequestStructure">
-                <xsd:group ref="ActualServiceRequestGroup" />
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="ActualServiceRequestGroup">
-        <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilites of requests for ACTUAL SERVICE FRAMEs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="IncludeDifferencesOnly" type="xsd:boolean" minOccurs="0" default="false">
-                <xsd:annotation>
-                    <xsd:documentation>Signals if only the differences between the PLANNED SERVICE and the ACTUAL SERVICE is requested within the frame of the request.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:group ref="NetexFilteringGroup" />
-        </xsd:sequence>
-    </xsd:group>
+		<xsd:documentation>OpRa ACTUAL SERVICE Request / Discovery</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="ActualServiceRequest" type="ActualServiceRequestStructure" substitutionGroup="OpraFunctionalRequest">
+		<xsd:annotation>
+			<xsd:documentation>A request element to get ACTUAL SERVICE FRAMEs.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="ActualServiceRequestStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for the request element to get ACTUAL SERVICE FRAMEs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="OpraFunctionalRequestStructure">
+				<xsd:group ref="ActualServiceRequestGroup"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="ActualServiceRequestGroup">
+		<xsd:annotation>
+			<xsd:documentation>References that extend filtering capabilites of requests for ACTUAL SERVICE FRAMEs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="IncludeDifferencesOnly" type="xsd:boolean" minOccurs="0" default="false">
+				<xsd:annotation>
+					<xsd:documentation>Signals if only the differences between the PLANNED SERVICE and the ACTUAL SERVICE is requested within the frame of the request.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:group ref="NetexFilteringGroup"/>
+		</xsd:sequence>
+	</xsd:group>
 </xsd:schema>
