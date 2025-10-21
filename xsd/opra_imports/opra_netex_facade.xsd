@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="https://transmodel-cen.eu/opra/1.0" xmlns="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_netex_facade" targetNamespace="http://www.netex.org.uk/netex" version="1.0">
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_netex_facade" version="1.0">
 	<!-- NeTEX Imports-->
 	<xsd:include schemaLocation="opra_netex_imports.xsd"/>
 	<!-- SIRI Imports-->
