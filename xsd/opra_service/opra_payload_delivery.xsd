@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.siri.org.uk/siri" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_siri_imports">
-	<!-- SIRI Imports-->
-	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../NeTEx/xsd/gml/gml_extract_all_objects_v_3_2_1.xsd"/>
-	<!--To avoid importing the duplicated SIRI version-->
-	<xsd:include schemaLocation="../../SIRI/xsd/siri.xsd"/>
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_payload_delivery" version="1.0">
+	<!-- ===Includes (OpRa)============================================================== -->
 	<!--
-	<xsd:include schemaLocation="../../SIRI/xsd/siri_utility/siri_location.xsd"/>
-	<xsd:include schemaLocation="../../SIRI/xsd/siri/siri_common_services.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_payload_framework.xsd"/>
 	-->
-	<xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_situationClassifiers.xsd"/>
-	<xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_journey.xsd"/>
-	<xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_journey_support.xsd"/>
-	<xsd:include schemaLocation="../../SIRI/xsd/siri_model/siri_reference.xsd"/>
+	<xsd:include schemaLocation="../opra_request.xsd"/>
+	<!-- === Documentation ======================================= -->
 	<xsd:annotation>
 		<xsd:appinfo>
-			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
+			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
 				<Coverage>Europe</Coverage>
@@ -31,7 +25,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_imports/opra_siri_imports.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_service/opra_payload_delivery.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -52,10 +46,25 @@
                     </Category>
 					<Project>CEN TC278 WG3 SG10.</Project>
 				</Subject>
-				<Title>Opra Operation Raw Data Exchange</Title>
+				<Title>Opra Operational Raw Data Exchange</Title>
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>Common SIRI import node for OpRa schema</xsd:documentation>
+		<xsd:documentation>OpRa REQUEST/RESPONSE DELIVERY SCHEMA</xsd:documentation>
 	</xsd:annotation>
+	<xsd:element name="OpraPayloadDelivery" type="OpraPayloadDeliveryStructure" substitutionGroup="OpraFunctionalDelivery">
+		<xsd:annotation>
+			<xsd:documentation>Common delivery element, responding to OpraFunctionalRequests.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="OpraPayloadDeliveryStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for the common delivery element, responding to OpraFunctionalRequests.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="OpraFunctionalDeliveryStructure">
+				<xsd:group ref="PayloadGroup"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
 </xsd:schema>

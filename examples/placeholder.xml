@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PublicationDelivery xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opra.org/opra ../xsd/OpRa_publication.xsd">
-	<PublicationTimestamp>2025-04-22T12:00:00Z</PublicationTimestamp>
-	<ParticipantRef>ExampleParticipant</ParticipantRef>
-	<PublicationRefreshInterval>P1D</PublicationRefreshInterval>
-	<Description>Example Publication Delivery</Description>
-	<dataObjects>
-		<RawDataFrame>
-			<!--DATA-->
-			<preparedness>Raw</preparedness>
-		</RawDataFrame>
-	</dataObjects>
-</PublicationDelivery>
+<Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
+	<ServiceDelivery>
+		<siri:ResponseTimestamp>2025-04-22T12:00:00Z</siri:ResponseTimestamp>
+		<siri:ProducerRef>ExampleParticipant</siri:ProducerRef>
+		<OpraFunctionalDeliveries>
+			<PublicationDelivery>
+				<siri:ResponseTimestamp>2025-04-22T12:00:01Z</siri:ResponseTimestamp>
+				<Description>Example Publication Delivery</Description>
+				<dataObjects>
+					<RawDataFrame>
+						<!--DATA-->
+						<PreparednessLevel>Raw</PreparednessLevel>
+					</RawDataFrame>
+				</dataObjects>
+			</PublicationDelivery>
+		</OpraFunctionalDeliveries>
+	</ServiceDelivery>
+</Opra>

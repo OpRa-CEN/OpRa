@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
+	<ServiceRequest>
+		<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
+		<siri:RequestorRef>NMTOKEN</siri:RequestorRef>
+		<OpraFunctionalRequests>
+			<LateDatedVehicleJourneysRequest>
+				<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
+				<Description>Request delays for the T1-T3a direction in the sample network.</Description>
+				<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+			</LateDatedVehicleJourneysRequest>
+			<LateDatedVehicleJourneysRequest>
+				<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
+				<Description>Request delays for the T3a-T1 direction in the sample network.</Description>
+				<netex:JourneyPatternRef ref="Test:JP:10:T3a-T1"/>
+			</LateDatedVehicleJourneysRequest>
+			<frames>
+				<RawDataFrame id="frame_20250316-20250318">
+					<netex:ValidBetween>
+						<netex:FromDate>2025-03-16T00:00:00</netex:FromDate>
+						<netex:ToDate>2025-03-18T23:59:59</netex:ToDate>
+					</netex:ValidBetween>
+				</RawDataFrame>
+			</frames>
+		</OpraFunctionalRequests>
+	</ServiceRequest>
+</Opra>

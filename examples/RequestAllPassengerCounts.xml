@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
+	<ServiceRequest>
+		<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
+		<siri:RequestorRef>NMTOKEN</siri:RequestorRef>
+		<OpraFunctionalRequests>
+			<TicketingBasedPassengerCountRequest>
+				<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
+				<Description>Request ticketing based passenger counts for Line 10 on the sample network.</Description>
+				<netex:LineRef ref="Test:Line:10"/>
+			</TicketingBasedPassengerCountRequest>
+			<TicketingBasedPassengerCountRequest>
+				<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
+				<Description>Request ticketing based passenger counts for Line 20 on the sample network.</Description>
+				<netex:LineRef ref="Test:Line:20"/>
+			</TicketingBasedPassengerCountRequest>
+			<OnboardDeviceBasedPassengerCountRequest>
+				<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
+				<Description>Request onboard device based passenger counts for Line 10 on the sample network.</Description>
+				<netex:LineRef ref="Test:Line:10"/>
+			</OnboardDeviceBasedPassengerCountRequest>
+			<OnboardDeviceBasedPassengerCountRequest>
+				<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
+				<Description>Request onboard device based passenger counts for Line 20 on the sample network.</Description>
+				<netex:LineRef ref="Test:Line:20"/>
+			</OnboardDeviceBasedPassengerCountRequest>
+		</OpraFunctionalRequests>
+	</ServiceRequest>
+</Opra>

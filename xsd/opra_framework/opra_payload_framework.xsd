@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_payload_framework">
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_payload_framework">
 	<!-- ===Payload ============================= -->
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_imports.xsd"/>
+	<!--
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_facade.xsd"/>
+	-->
 	<!-- xsd:include schemaLocation="opra_frames/opra_compositeFrame_version.xsd"/ -->
 	<xsd:include schemaLocation="opra_frames/opra_compositeFrame_version.xsd"/>
 	<xsd:include schemaLocation="opra_frames/opra_plannedServiceFrame_version.xsd"/>
@@ -11,7 +13,7 @@
 	<!--TODO: NEEDS A PROPER HEADER	-->
 	<xsd:complexType name="dataObjects_RelStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for a list of objects.</xsd:documentation>
+			<xsd:documentation>Type for the possible data objects within an OpRa payload.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice maxOccurs="unbounded">
 			<xsd:element ref="CompositeFrame" minOccurs="0"/>
@@ -23,12 +25,12 @@
 	</xsd:complexType>
 	<xsd:group name="PayloadGroup">
 		<xsd:annotation>
-			<xsd:documentation>OpRa List of all objects.</xsd:documentation>
+			<xsd:documentation>OpRa payload elements.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="dataObjects" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>OpRa Entities of any type.</xsd:documentation>
+					<xsd:documentation>OpRa Entities in the data exchange.</xsd:documentation>
 				</xsd:annotation>
 				<xsd:complexType>
 					<xsd:complexContent>

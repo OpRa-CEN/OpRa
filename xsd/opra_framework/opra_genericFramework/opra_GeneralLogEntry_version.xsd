@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_generalLogEntry_version" targetNamespace="http://www.opra.org/opra" version="1.0">
-	<!-- NeTEX Imports-->
-	<!-- xsd:include schemaLocation="../../opra_imports/opra_netex_imports.xsd" / -->
-	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_generalLogEntry_version" version="1.0">
 	<!-- SIRI Imports-->
 	<!-- xsd:include schemaLocation="../../opra_imports/opra_siri_imports.xsd" /-->
 	<xsd:import schemaLocation="../../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
+	<!-- NeTEX Imports-->
+	<!-- xsd:include schemaLocation="../../opra_imports/opra_netex_facade.xsd" / -->
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<!-- OpRa Include-->
 	<xsd:include schemaLocation="../opra_reusableComponents/opra_controlActionReference_support.xsd"/>
 	<xsd:include schemaLocation="../opra_reusableComponents/opra_eventReference_support.xsd"/>
@@ -28,7 +28,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/opra_framework/opra_genericFramework/opra_generalLogEntry_version.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_framework/opra_genericFramework/opra_generalLogEntry_version.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -64,12 +64,12 @@ Rail transport, Roads and Road transport
 	</xsd:simpleType>
 	<xsd:element name="LoggableObjectRef" type="LoggableObjectRefStructure" substitutionGroup="netex:VersionOfObjectRef" abstract="false">
 		<xsd:annotation>
-			<xsd:documentation>Reference to a LOG.</xsd:documentation>
+			<xsd:documentation>Reference element to a LOGGABLE OBJECT.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="LoggableObjectRefStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for a reference to a LoggableObject.</xsd:documentation>
+			<xsd:documentation>Type for a reference to a LOGGABLE OBJECT.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:simpleContent>
 			<xsd:restriction base="netex:VersionOfObjectRefStructure">
@@ -84,13 +84,13 @@ Rail transport, Roads and Road transport
 	<!-- ======================================================================= -->
 	<xsd:simpleType name="GeneralLogEntryIdType">
 		<xsd:annotation>
-			<xsd:documentation>Identifier of a concreat generic LOG ENTRY.</xsd:documentation>
+			<xsd:documentation>Identifier of a concrete generic LOG ENTRY.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="netex:ObjectIdType"/>
 	</xsd:simpleType>
 	<xsd:element name="GeneralLogEntryRef" type="GeneralLogEntryRefStructure" substitutionGroup="netex:VersionOfObjectRef" abstract="false">
 		<xsd:annotation>
-			<xsd:documentation>Reference to a GeneralLogEntry.</xsd:documentation>
+			<xsd:documentation>Reference element to a GeneralLogEntry.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="GeneralLogEntryRefStructure">
@@ -116,7 +116,7 @@ Rail transport, Roads and Road transport
 	</xsd:simpleType>
 	<xsd:element name="LogEntryValueRef" type="LogEntryValueRefStructure" substitutionGroup="netex:VersionOfObjectRef" abstract="false">
 		<xsd:annotation>
-			<xsd:documentation>Reference to a LOG ENTRY Value.</xsd:documentation>
+			<xsd:documentation>Reference element to a LOG ENTRY Value.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="LogEntryValueRefStructure">

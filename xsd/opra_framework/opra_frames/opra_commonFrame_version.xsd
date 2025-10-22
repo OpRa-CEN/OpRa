@@ -1,39 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opra.org/opra" xmlns:opra="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="http://www.opra.org/opra" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_commonFrame_version">
-	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_commonFrame_version">
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<xsd:annotation>
 		<xsd:appinfo>
-			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
+			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
 				<Coverage>Europe</Coverage>
-				<Creator>Drafted for version 1.0 CEN TC278 WG3 SG6 Editor Nicholas Knowles, Kizoom.</Creator>
-				<Date>
-					<Created>2010-09-04</Created>
-				</Date>
-				<Date>
-					<Modified>2011-02-05</Modified>
-				</Date>
-				<Date>
-					<Modified>2010-11-05</Modified>
-				</Date>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
 				<Description>
-					<p>NeTEx - Network Exchange. This subschema defines COMMON FRAME types.</p>
+					<p>OpRa - Operational Raw Data. This subschema defines COMMON FRAME types.</p>
 				</Description>
 				<Format>
 					<MediaType>text/xml</MediaType>
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.netex.org.uk/schemas/0.4/netex}netex_utility_types.xsd</Identifier>
+				<Identifier>https://transmodel-cen.eu/opra/1.0/xsd/opra_framework/opra_frames/opra_commonFrame.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
-				<Publisher>Kizoom Software Ltd, 16 High Holborn, London WC1V 6BX</Publisher>
-				<Rights>Unclassified
-                            <Copyright>CEN, Crown Copyright 2006, 2007, 2011</Copyright>
+				<Publisher>CEN TC278 WG3 SG10</Publisher>
+				<Rights>
 				</Rights>
 				<Source>
 					<ul>
-						<li>Derived from the Transmodel, VDV, TransXChange, NaPTAN, NOPTIS, BISON and Trident standards.</li>
+						<li>Derived from Transmodel, NeTEx, SIRI standards.</li>
 					</ul>
 				</Source>
 				<Status>Version 1.0 Draft for approval</Status>
@@ -46,15 +36,14 @@ Rail transport, Railway stations and track, Train services, Underground trains,
 Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
 Rail transport, Roads and road transport
 </Category>
-					<Project>CEN TC278 WG3 SG6</Project>
+					<Project>CEN TC278 WG3 SG10</Project>
 				</Subject>
-				<Title>NeTEx Network Exchange - COMMON FRAME types.</Title>
+				<Title>Operational Raw Data Exchange - COMMON FRAME types.</Title>
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>COMMON FRAME   types for NeTEx</xsd:documentation>
+		<xsd:documentation>COMMON FRAME types for OpRa.</xsd:documentation>
 	</xsd:annotation>
-	<!-- ======================================================================= -->
 	<!-- ======================================================================= -->
 	<xsd:element name="CommonFrame" type="Common_VersionFrameStructure" abstract="true" substitutionGroup="netex:VersionFrame">
 		<xsd:annotation>

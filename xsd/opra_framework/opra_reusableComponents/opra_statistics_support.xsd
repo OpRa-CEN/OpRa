@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:opra="http://www.opra.org/opra" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_ptScope_support" targetNamespace="http://www.opra.org/opra" version="1.0">
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_statistics_support">
 	<!-- NeTEX Imports-->
-	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../opra_imports/opra_netex_facade.xsd"/>
 	<!-- SIRI Imports-->
 	<!-- OpRa Include-->
 	<xsd:annotation>
@@ -23,7 +23,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{http://www.opra.org/schemas/xsd/opra_GeneralLogEntry_version.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_framework/opra_reusableComponents/opra_statistics_support.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -35,26 +35,42 @@
 				<Status>Initial Version</Status>
 				<Subject>
 					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
-Air transport, Airports,
-Ports and maritime transport, Ferries (marine),
-Public transport, Bus services, Coach services, Bus stops and stations,
-Rail transport, Railway stations and track, Train services, Underground trains,
-Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
-Rail transport, Roads and Road transport
-</Category>
+                        Air transport, Airports,
+                        Ports and maritime transport, Ferries (marine),
+                        Public transport, Bus services, Coach services, Bus stops and stations,
+                        Rail transport, Railway stations and track, Train services, Underground trains,
+                        Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+                        Rail transport, Roads and Road transport
+                    </Category>
 					<Project>CEN TC278 WG3 SG10.</Project>
 				</Subject>
 				<Title>Opra Operation Raw Data Exchange</Title>
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa: PT SCOPE related definitions.</xsd:documentation>
+		<xsd:documentation>OpRa: basic statistical definitions.</xsd:documentation>
 	</xsd:annotation>
 	<!-- ======================================================================= -->
 	<xsd:group name="OccurrenceStatisticsGroup">
+		<xsd:annotation>
+			<xsd:documentation>Representation of occurrence-related statistics.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="NumberOfOccurrences" type="xsd:nonNegativeInteger" minOccurs="0"/>
-			<xsd:element name="PercentageOfOccurrences" type="netex:PercentageType" minOccurs="0"/>
+			<xsd:element name="NumberOfOccurrences" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Absolute number of occurrences of a statistical group.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PercentageOfOccurrences" type="netex:PercentageType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Relative occurrence of a statistical group within a domain.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TotalNumberOfOccurrences" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Total number of occurrences of a statistical group.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
 </xsd:schema>

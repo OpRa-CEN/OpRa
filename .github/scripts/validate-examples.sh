@@ -21,7 +21,7 @@ find examples -name "*.xml" -print0 | while IFS= read -r -d '' file
 do 
   echo "$file"
   if
-    xmllint --noout --schema xsd/OpRa_publication.xsd "$file";
+    xmllint --noout --schema xsd/opra.xsd "$file";
   then 
     echo -e '\033[0;32mValidating' "$file" 'succeeded\033[0m'
   else

@@ -1,87 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PublicationDelivery xmlns="http://www.opra.org/opra" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opra.org/opra ../xsd/OpRa_publication.xsd">
-	<PublicationTimestamp>2001-12-17T09:30:47Z</PublicationTimestamp>
-	<ParticipantRef>OpraExamples</ParticipantRef>
-	<Description>Ticketing based passenger count examples on the sample network.</Description>
-	<dataObjects>
-		<RawDataFrame>
-			<preparedness>Cleansed</preparedness>
-			<validationEntries>
-				<ValidationEntry id="Test:VE:1_in">
-					<LineRef ref="Test:Line:10"/>
-					<ScheduledStopPointRef ref="Test:SSP:T1"/>
-					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
-				</ValidationEntry>
-				<ValidationEntry id="Test:VE:1_out">
-					<LineRef ref="Test:Line:10"/>
-					<ScheduledStopPointRef ref="Test:SSP:3"/>
-					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
-				</ValidationEntry>
-				<ValidationEntry id="Test:VE:2_in">
-					<LineRef ref="Test:Line:20"/>
-					<ScheduledStopPointRef ref="Test:SSP:T2"/>
-					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
-				</ValidationEntry>
-				<ValidationEntry id="Test:VE:2_out">
-					<SiteRef ref="Test:Site:SiteB"/>
-					<LineRef ref="Test:Line:20"/>
-					<ScheduledStopPointRef ref="Test:SSP:T3b"/>
-					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
-				</ValidationEntry>
-				<ValidationEntry id="Test:VE:3_in">
-					<SiteRef ref="Test:Site:SiteB"/>
-					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
-				</ValidationEntry>
-				<ValidationEntry id="Test:VE:3_out">
-					<SiteRef ref="Test:Site:SiteA"/>
-					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
-				</ValidationEntry>
-				<ValidationEntry id="Test:VE:4_in">
-					<LineRef ref="Test:Line:10"/>
-					<ScheduledStopPointRef ref="Test:SSP:T1"/>
-					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
-				</ValidationEntry>
-				<ValidationEntry id="Test:VE:4_out">
-					<LineRef ref="Test:Line:20"/>
-					<ScheduledStopPointRef ref="Test:SSP:6"/>
-					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
-				</ValidationEntry>
-				<ValidationEntry id="Test:VE:5_in">
-					<LineRef ref="Test:Line:10"/>
-					<ScheduledStopPointRef ref="Test:SSP:2"/>
-					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
-				</ValidationEntry>
-				<ValidationEntry id="Test:VE:5_out">
-					<LineRef ref="Test:Line:10"/>
-					<ScheduledStopPointRef ref="Test:SSP:4"/>
-					<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
-				</ValidationEntry>
-			</validationEntries>
-			<ticketingBasedPassengerCounts>
-				<TicketingBasedPassengerCount>
-					<LineRef ref="Test:Line:10"/>
-					<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
-					<NumberOfAlighters>3</NumberOfAlighters>
-					<NumberOfBoarders>3</NumberOfBoarders>
-					<validationEntryRefs>
-						<ValidationEntryRef ref="Test:VE:1_in"/>
-						<ValidationEntryRef ref="Test:VE:1_out"/>
-						<ValidationEntryRef ref="Test:VE:4_in"/>
-						<ValidationEntryRef ref="Test:VE:4_out"/>
-						<ValidationEntryRef ref="Test:VE:5_in"/>
-						<ValidationEntryRef ref="Test:VE:5_out"/>
-					</validationEntryRefs>
-				</TicketingBasedPassengerCount>
-				<TicketingBasedPassengerCount>
-					<SiteRef ref="Test:Site:SiteB"/>
-					<NumberOfAlighters>1</NumberOfAlighters>
-					<NumberOfBoarders>1</NumberOfBoarders>
-					<validationEntryRefs>
-						<ValidationEntryRef ref="Test:VE:2_out"/>
-						<ValidationEntryRef ref="Test:VE:3_in"/>
-					</validationEntryRefs>
-				</TicketingBasedPassengerCount>
-			</ticketingBasedPassengerCounts>
-		</RawDataFrame>
-	</dataObjects>
-</PublicationDelivery>
+<Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
+	<ServiceDelivery>
+		<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
+		<siri:ProducerRef>OpraExamples</siri:ProducerRef>
+		<OpraFunctionalDeliveries>
+			<OpraPayloadDelivery>
+				<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
+				<Description>Ticketing based passenger count examples on the sample network.</Description>
+				<dataObjects>
+					<RawDataFrame>
+						<PreparednessLevel>Cleansed</PreparednessLevel>
+						<validationEntries>
+							<ValidationEntry id="Test:VE:1_in">
+								<netex:LineRef ref="Test:Line:10"/>
+								<netex:ScheduledStopPointRef ref="Test:SSP:T1"/>
+								<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
+							</ValidationEntry>
+							<ValidationEntry id="Test:VE:1_out">
+								<netex:LineRef ref="Test:Line:10"/>
+								<netex:ScheduledStopPointRef ref="Test:SSP:3"/>
+								<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
+							</ValidationEntry>
+							<ValidationEntry id="Test:VE:2_in">
+								<netex:LineRef ref="Test:Line:20"/>
+								<netex:ScheduledStopPointRef ref="Test:SSP:T2"/>
+								<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
+							</ValidationEntry>
+							<ValidationEntry id="Test:VE:2_out">
+								<netex:SiteRef ref="Test:Site:SiteB"/>
+								<netex:LineRef ref="Test:Line:20"/>
+								<netex:ScheduledStopPointRef ref="Test:SSP:T3b"/>
+								<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
+							</ValidationEntry>
+							<ValidationEntry id="Test:VE:3_in">
+								<netex:SiteRef ref="Test:Site:SiteB"/>
+								<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
+							</ValidationEntry>
+							<ValidationEntry id="Test:VE:3_out">
+								<netex:SiteRef ref="Test:Site:SiteA"/>
+								<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
+							</ValidationEntry>
+							<ValidationEntry id="Test:VE:4_in">
+								<netex:LineRef ref="Test:Line:10"/>
+								<netex:ScheduledStopPointRef ref="Test:SSP:T1"/>
+								<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
+							</ValidationEntry>
+							<ValidationEntry id="Test:VE:4_out">
+								<netex:LineRef ref="Test:Line:20"/>
+								<netex:ScheduledStopPointRef ref="Test:SSP:6"/>
+								<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
+							</ValidationEntry>
+							<ValidationEntry id="Test:VE:5_in">
+								<netex:LineRef ref="Test:Line:10"/>
+								<netex:ScheduledStopPointRef ref="Test:SSP:2"/>
+								<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
+							</ValidationEntry>
+							<ValidationEntry id="Test:VE:5_out">
+								<netex:LineRef ref="Test:Line:10"/>
+								<netex:ScheduledStopPointRef ref="Test:SSP:4"/>
+								<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
+							</ValidationEntry>
+						</validationEntries>
+						<ticketingBasedPassengerCounts>
+							<TicketingBasedPassengerCount>
+								<netex:LineRef ref="Test:Line:10"/>
+								<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
+								<siri:AlightingCount>3</siri:AlightingCount>
+								<siri:BoardingCount>3</siri:BoardingCount>
+								<validationEntryRefs>
+									<ValidationEntryRef ref="Test:VE:1_in"/>
+									<ValidationEntryRef ref="Test:VE:1_out"/>
+									<ValidationEntryRef ref="Test:VE:4_in"/>
+									<ValidationEntryRef ref="Test:VE:4_out"/>
+									<ValidationEntryRef ref="Test:VE:5_in"/>
+									<ValidationEntryRef ref="Test:VE:5_out"/>
+								</validationEntryRefs>
+							</TicketingBasedPassengerCount>
+							<TicketingBasedPassengerCount>
+								<netex:SiteRef ref="Test:Site:SiteB"/>
+								<siri:AlightingCount>1</siri:AlightingCount>
+								<siri:BoardingCount>1</siri:BoardingCount>
+								<validationEntryRefs>
+									<ValidationEntryRef ref="Test:VE:2_out"/>
+									<ValidationEntryRef ref="Test:VE:3_in"/>
+								</validationEntryRefs>
+							</TicketingBasedPassengerCount>
+						</ticketingBasedPassengerCounts>
+					</RawDataFrame>
+				</dataObjects>
+			</OpraPayloadDelivery>
+		</OpraFunctionalDeliveries>
+	</ServiceDelivery>
+</Opra>
