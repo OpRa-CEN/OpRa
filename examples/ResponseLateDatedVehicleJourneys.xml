@@ -12,7 +12,7 @@
 							<netex:ToDate>2025-03-18T23:59:59</netex:ToDate>
 						</netex:ValidBetween>
 						<PreparednessLevel>Cleansed</PreparednessLevel>
-						<lateDatedVehicleJourneyEntries>
+						<indicatorLogEntries>
 							<LateDatedVehicleJourneyEntry>
 								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 								<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250316_0700"/>
@@ -38,8 +38,8 @@
 								<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250318_1800"/>
 								<DelayDuration>PT10M</DelayDuration>
 							</LateDatedVehicleJourneyEntry>
-						</lateDatedVehicleJourneyEntries>
-						<lateDatedVehicleJourneyCounts>
+						</indicatorLogEntries>
+						<indicators>
 							<LateDatedVehicleJourneyCount>
 								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 								<intervals>
@@ -71,7 +71,7 @@
 									</DurationInterval>
 								</intervals>
 							</LateDatedVehicleJourneyCount>
-						</lateDatedVehicleJourneyCounts>
+						</indicators>
 					</RawDataFrame>
 				</dataObjects>
 			</OpraPayloadDelivery>
