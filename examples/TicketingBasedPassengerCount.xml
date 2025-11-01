@@ -10,7 +10,7 @@
 				<dataObjects>
 					<RawDataFrame>
 						<PreparednessLevel>Cleansed</PreparednessLevel>
-						<validationEntries>
+						<indicatorLogEntries>
 							<ValidationEntry id="Test:VE:1_in">
 								<netex:LineRef ref="Test:Line:10"/>
 								<netex:ScheduledStopPointRef ref="Test:SSP:T1"/>
@@ -60,8 +60,8 @@
 								<netex:ScheduledStopPointRef ref="Test:SSP:4"/>
 								<PassengerTravelEntryType>PassengerCheckOut</PassengerTravelEntryType>
 							</ValidationEntry>
-						</validationEntries>
-						<ticketingBasedPassengerCounts>
+						</indicatorLogEntries>
+						<indicators>
 							<TicketingBasedPassengerCount>
 								<netex:LineRef ref="Test:Line:10"/>
 								<PassengerTravelEntryType>PassengerCheckIn</PassengerTravelEntryType>
@@ -85,7 +85,7 @@
 									<ValidationEntryRef ref="Test:VE:3_in"/>
 								</validationEntryRefs>
 							</TicketingBasedPassengerCount>
-						</ticketingBasedPassengerCounts>
+						</indicators>
 					</RawDataFrame>
 				</dataObjects>
 			</OpraPayloadDelivery>
