@@ -1,6 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_rawDataFrame_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_rawDataFrame_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import schemaLocation="../../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
     <xsd:import schemaLocation="../../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex" />
     <!-- OpRa includes-->
     <!--
@@ -14,6 +15,7 @@
     <xsd:include schemaLocation="../../opra_rawdata/opra_expectedPassengerCount_version.xsd" />
     <xsd:include schemaLocation="../../opra_rawdata/opra_cancelledDatedVehicleJourney_version.xsd" />
     <xsd:include schemaLocation="../../opra_rawdata/opra_lateDatedVehicleJourney_version.xsd" />
+    <xsd:include schemaLocation="../../opra_rawdata/opra_capacity_version.xsd" />
     <!-- ======================================================================= -->
     <xsd:annotation>
         <xsd:appinfo>
@@ -163,6 +165,7 @@ Rail transport, Roads and Road transport
             <xsd:documentation>Elements for a OpRa RAW DATA FRAME.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
+            <xsd:element name="RawDataFrameDefaults" type="RawDataFrameDefaultsStructure" minOccurs="0" />
             <xsd:element ref="PreparednessLevel" minOccurs="0" />
             <xsd:group ref="RawDataInFrameGroup" />
         </xsd:sequence>
@@ -178,4 +181,39 @@ Rail transport, Roads and Road transport
         </xsd:sequence>
     </xsd:group>
     <!-- ======================================================================= -->
+    <xsd:complexType name="RawDataFrameDefaultsStructure">
+        <xsd:sequence>
+            <xsd:group ref="RawDataFrameDefaultsGroup" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:group name="RawDataFrameDefaultsGroup">
+        <xsd:sequence>
+            <xsd:element name="DefaultCapacityContext" type="CapacitySpecificationStructure" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="CapacitySpecificationStructure">
+        <xsd:sequence>
+            <xsd:element name="SpecificationMethod" type="CapacitySpecificationEnumeration" />
+            <xsd:element name="nominalCapacities" type="VehicleTypeCapacities_RelStructure" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="CapacitySpecificationEnumeration">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="asManufactured" />
+            <xsd:enumeration value="nominalPerVehicleType" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:element name="VehicleTypeCapacity" type="VehicleTypeCapacityStructure" />
+    <xsd:complexType name="VehicleTypeCapacityStructure">
+        <xsd:sequence>
+            <xsd:element ref="netex:VehicleTypeRef" />
+            <xsd:group ref="siri:OccupancyScopeFilterGroup" />
+            <xsd:group ref="netex:CapacityGroup" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="VehicleTypeCapacities_RelStructure">
+        <xsd:sequence>
+            <xsd:element ref="VehicleTypeCapacity" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
 </xsd:schema>

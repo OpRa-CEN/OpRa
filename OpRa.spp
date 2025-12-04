@@ -764,6 +764,7 @@
 		<File FilePath="examples\CancelledAndLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\ExpectedPassengerCount.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\placeholder.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\PlannedCapacity.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\RequestAllPassengerCounts.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\RequestLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\ResponseLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>

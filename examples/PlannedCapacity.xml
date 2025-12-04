@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
+	<ServiceDelivery>
+		<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
+		<siri:ProducerRef>OpraExamples</siri:ProducerRef>
+		<OpraFunctionalDeliveries>
+			<OpraPayloadDelivery>
+				<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
+				<Description>Expected passenger count example on the sample network.</Description>
+				<dataObjects>
+					<RawDataFrame>
+						<RawDataFrameDefaults>
+							<DefaultCapacityContext>
+								<SpecificationMethod>nominalPerVehicleType</SpecificationMethod>
+								<nominalCapacities>
+									<VehicleTypeCapacity>
+										<netex:VehicleTypeRef ref="Test:VT:bus:regular"/>
+										<netex:TotalCapacity>70</netex:TotalCapacity>
+										<netex:WheelchairPlaceCapacity>1</netex:WheelchairPlaceCapacity>
+									</VehicleTypeCapacity>
+									<VehicleTypeCapacity>
+										<netex:VehicleTypeRef ref="Test:VT:bus:articulated"/>
+										<netex:TotalCapacity>125</netex:TotalCapacity>
+										<netex:WheelchairPlaceCapacity>1</netex:WheelchairPlaceCapacity>
+									</VehicleTypeCapacity>
+								</nominalCapacities>
+							</DefaultCapacityContext>
+						</RawDataFrameDefaults>
+						<PreparednessLevel>Raw</PreparednessLevel>
+						<indicators>
+							<PlannedCapacity>
+								<netex:LineRef ref="Test:Line:10"/>
+								<!-- Line 10 has 50 journeys with regular buses with nominal capacity of 70 per journey -->
+								<netex:TotalCapacity>3500</netex:TotalCapacity>
+								<netex:WheelchairPlaceCapacity>50</netex:WheelchairPlaceCapacity>
+							</PlannedCapacity>
+							<PlannedCapacity>
+								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+								<!-- Journey Pattern 10:T1-T3a has 25 journeys with regular buses with nominal capacity of 70 per journey -->
+								<netex:TotalCapacity>1750</netex:TotalCapacity>
+								<netex:WheelchairPlaceCapacity>25</netex:WheelchairPlaceCapacity>
+							</PlannedCapacity>
+							<PlannedCapacity>
+								<netex:JourneyPatternRef ref="Test:JP:10:T3a-T1"/>
+								<!-- Journey Pattern 10:T3a-T1 has 25 journeys with regular buses with nominal capacity of 70 per journey -->
+								<netex:TotalCapacity>1750</netex:TotalCapacity>
+								<netex:WheelchairPlaceCapacity>25</netex:WheelchairPlaceCapacity>
+							</PlannedCapacity>
+						</indicators>
+					</RawDataFrame>
+				</dataObjects>
+			</OpraPayloadDelivery>
+		</OpraFunctionalDeliveries>
+	</ServiceDelivery>
+</Opra>
