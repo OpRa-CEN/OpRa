@@ -7,9 +7,9 @@
     <!--
 	<xsd:include schemaLocation="../opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
 	-->
-    <xsd:include schemaLocation="../../opra_rawdata/opra_onboardDeviceBasedPassengerCount_version.xsd" />
-    <xsd:include schemaLocation="../../opra_rawdata/opra_ticketingBasedPassengerCount_version.xsd" />
-    <!--
+	<xsd:include schemaLocation="../../opra_rawdata/opra_onboardDeviceBasedPassengerCount_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_rawdata/opra_ticketingBasedPassengerCount_version.xsd"/>
+	<!--
 	<xsd:include schemaLocation="../../opra_rawdata/opra_externalPassengerCount_version.xsd"/>
 	-->
     <xsd:include schemaLocation="../../opra_rawdata/opra_expectedPassengerCount_version.xsd" />
