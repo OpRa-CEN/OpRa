@@ -12,15 +12,15 @@
 	<!--
 	<xsd:include schemaLocation="../../opra_rawdata/opra_externalPassengerCount_version.xsd"/>
 	-->
-    <xsd:include schemaLocation="../../opra_rawdata/opra_expectedPassengerCount_version.xsd" />
-    <xsd:include schemaLocation="../../opra_rawdata/opra_cancelledDatedVehicleJourney_version.xsd" />
-    <xsd:include schemaLocation="../../opra_rawdata/opra_lateDatedVehicleJourney_version.xsd" />
-    <xsd:include schemaLocation="../../opra_rawdata/opra_capacity_version.xsd" />
-    <xsd:include schemaLocation="../../opra_rawdata/opra_serviceIntensity_version.xsd" />
-    <xsd:include schemaLocation="../../opra_rawdata/opra_serviceDimensions_version.xsd" />
-    <!-- ======================================================================= -->
-    <xsd:annotation>
-        <xsd:appinfo>
+	<xsd:include schemaLocation="../../opra_rawdata/opra_expectedPassengerCount_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_rawdata/opra_cancelledDatedVehicleJourney_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_rawdata/opra_lateDatedVehicleJourney_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_rawdata/opra_capacity_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_rawdata/opra_serviceIntensity_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_rawdata/opra_serviceDimensions_version.xsd"/>
+	<!-- ======================================================================= -->
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
