@@ -8,7 +8,7 @@
 				<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
 				<Description>Expected passenger count example on the sample network.</Description>
 				<dataObjects>
-					<RawDataFrame>
+					<IndicatorFrame>
 						<PreparednessLevel>Raw</PreparednessLevel>
 						<indicators>
 							<!-- Listing expected passenger counts at SCHEDULED STOP POINTs within a JOURNEY PATTERN: TIME BAND 0-6 -->
@@ -87,7 +87,7 @@
 								<siri:BoardingCount>820</siri:BoardingCount>
 							</ExpectedPassengerCount>
 						</indicators>
-					</RawDataFrame>
+					</IndicatorFrame>
 				</dataObjects>
 			</OpraPayloadDelivery>
 		</OpraFunctionalDeliveries>

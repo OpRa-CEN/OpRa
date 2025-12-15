@@ -6,7 +6,7 @@
 			<OpraPayloadDelivery>
 				<siri:ResponseTimestamp>2025-03-22T00:06:00Z</siri:ResponseTimestamp>
 				<dataObjects>
-					<RawDataFrame>
+					<IndicatorFrame>
 						<netex:ValidBetween>
 							<netex:FromDate>2025-03-16T00:00:00</netex:FromDate>
 							<netex:ToDate>2025-03-18T23:59:59</netex:ToDate>
@@ -72,7 +72,7 @@
 								</intervals>
 							</LateDatedVehicleJourneyCount>
 						</indicators>
-					</RawDataFrame>
+					</IndicatorFrame>
 				</dataObjects>
 			</OpraPayloadDelivery>
 		</OpraFunctionalDeliveries>

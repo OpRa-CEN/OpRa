@@ -15,12 +15,12 @@
 				<netex:JourneyPatternRef ref="Test:JP:10:T3a-T1"/>
 			</LateDatedVehicleJourneysRequest>
 			<frames>
-				<RawDataFrame id="frame_20250316-20250318">
+				<IndicatorFrame id="frame_20250316-20250318">
 					<netex:ValidBetween>
 						<netex:FromDate>2025-03-16T00:00:00</netex:FromDate>
 						<netex:ToDate>2025-03-18T23:59:59</netex:ToDate>
 					</netex:ValidBetween>
-				</RawDataFrame>
+				</IndicatorFrame>
 			</frames>
 		</OpraFunctionalRequests>
 	</ServiceRequest>

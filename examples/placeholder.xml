@@ -8,10 +8,10 @@
 				<siri:ResponseTimestamp>2025-04-22T12:00:01Z</siri:ResponseTimestamp>
 				<Description>Example Publication Delivery</Description>
 				<dataObjects>
-					<RawDataFrame>
+					<IndicatorFrame>
 						<!--DATA-->
 						<PreparednessLevel>Raw</PreparednessLevel>
-					</RawDataFrame>
+					</IndicatorFrame>
 				</dataObjects>
 			</PublicationDelivery>
 		</OpraFunctionalDeliveries>

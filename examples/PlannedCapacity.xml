@@ -8,8 +8,8 @@
 				<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
 				<Description>Expected passenger count example on the sample network.</Description>
 				<dataObjects>
-					<RawDataFrame>
-						<RawDataFrameDefaults>
+					<IndicatorFrame>
+						<IndicatorFrameDefaults>
 							<DefaultCapacityContext>
 								<SpecificationMethod>nominalPerVehicleType</SpecificationMethod>
 								<nominalCapacities>
@@ -25,7 +25,7 @@
 									</VehicleTypeCapacity>
 								</nominalCapacities>
 							</DefaultCapacityContext>
-						</RawDataFrameDefaults>
+						</IndicatorFrameDefaults>
 						<PreparednessLevel>Raw</PreparednessLevel>
 						<indicators>
 							<PlannedCapacity>
@@ -47,7 +47,7 @@
 								<netex:WheelchairPlaceCapacity>25</netex:WheelchairPlaceCapacity>
 							</PlannedCapacity>
 						</indicators>
-					</RawDataFrame>
+					</IndicatorFrame>
 				</dataObjects>
 			</OpraPayloadDelivery>
 		</OpraFunctionalDeliveries>

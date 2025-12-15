@@ -5,7 +5,7 @@
 	<xsd:import schemaLocation="../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<!-- SIRI Imports-->
 	<!-- OpRa includes-->
-	<xsd:include schemaLocation="../opra_framework/opra_frames/opra_rawDataFrame_version.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_frames/opra_indicatorFrame_version.xsd"/>
 	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_ptScope_support.xsd"/>
 	<xsd:include schemaLocation="opra_ticketingBasedPassengerCount_version.xsd"/>
 	<xsd:annotation>

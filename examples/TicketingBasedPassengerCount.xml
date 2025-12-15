@@ -8,7 +8,7 @@
 				<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
 				<Description>Ticketing based passenger count examples on the sample network.</Description>
 				<dataObjects>
-					<RawDataFrame>
+					<IndicatorFrame>
 						<PreparednessLevel>Cleansed</PreparednessLevel>
 						<indicatorLogEntries>
 							<ValidationEntry id="Test:VE:1_in">
@@ -86,7 +86,7 @@
 								</validationEntryRefs>
 							</TicketingBasedPassengerCount>
 						</indicators>
-					</RawDataFrame>
+					</IndicatorFrame>
 				</dataObjects>
 			</OpraPayloadDelivery>
 		</OpraFunctionalDeliveries>
