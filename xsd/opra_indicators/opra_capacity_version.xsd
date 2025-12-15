@@ -1,17 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_capacity_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- SIRI Imports-->
-    <xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
-    <!-- NeTEX Imports-->
-    <xsd:import schemaLocation="../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex" />
-    <!-- OpRa includes-->
-    <xsd:include schemaLocation="../opra_framework/opra_frames/opra_indicatorFrame_version.xsd" />
-    <xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd" />
-    <xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_ptScope_support.xsd" />
-    <xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd" />
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_capacity_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+	<!-- SIRI Imports-->
+	<xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
+	<!-- NeTEX Imports-->
+	<xsd:import schemaLocation="../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- OpRa includes-->
+	<xsd:include schemaLocation="../opra_framework/opra_frames/opra_indicatorFrame_version.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_ptScope_support.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -53,163 +53,163 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa PlannedCapacity</xsd:documentation>
-    </xsd:annotation>
-    <xsd:simpleType name="PlannedCapacityIdType">
-        <xsd:restriction base="LoggableObjectIdType" />
-    </xsd:simpleType>
-    <xsd:element name="PlannedCapacityRef" type="PlannedCapacityRefStructure">
-        <xsd:annotation>
-            <xsd:documentation>Reference element of an PLANNED CAPACITY.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="PlannedCapacityRefStructure">
-        <xsd:simpleContent>
-            <xsd:restriction base="LoggableObjectRefStructure">
-                <xsd:attribute name="ref" type="PlannedCapacityIdType" use="required" />
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <!-- ======================================================================= -->
-    <xsd:element name="PlannedCapacity" substitutionGroup="AbstractIndicator">
-        <xsd:annotation>
-            <xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording PLANNED CAPACITY information.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexType>
-            <xsd:complexContent>
-                <xsd:restriction base="OfferedCapacity_VersionStructure">
-                    <xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="netex:DataManagedObjectGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="LoggableObjectGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="OfferedCapacityGroup" />
-                        </xsd:sequence>
-                    </xsd:sequence>
-                    <xsd:attribute name="id" type="PlannedCapacityIdType" />
-                </xsd:restriction>
-            </xsd:complexContent>
-        </xsd:complexType>
-    </xsd:element>
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="ActualCapacityIdType">
-        <xsd:restriction base="LoggableObjectIdType" />
-    </xsd:simpleType>
-    <xsd:element name="ActualCapacityRef" type="ActualCapacityRefStructure">
-        <xsd:annotation>
-            <xsd:documentation>Reference element of an ACTUAL CAPACITY.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="ActualCapacityRefStructure">
-        <xsd:simpleContent>
-            <xsd:restriction base="LoggableObjectRefStructure">
-                <xsd:attribute name="ref" type="ActualCapacityIdType" use="required" />
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <!-- ======================================================================= -->
-    <xsd:element name="ActualCapacity" substitutionGroup="AbstractIndicator">
-        <xsd:annotation>
-            <xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording ACTUAL CAPACITY information.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexType>
-            <xsd:complexContent>
-                <xsd:restriction base="OfferedCapacity_VersionStructure">
-                    <xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="netex:DataManagedObjectGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="LoggableObjectGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="OfferedCapacityGroup" />
-                        </xsd:sequence>
-                    </xsd:sequence>
-                    <xsd:attribute name="id" type="ActualCapacityIdType" />
-                </xsd:restriction>
-            </xsd:complexContent>
-        </xsd:complexType>
-    </xsd:element>
-    <xsd:complexType name="OfferedCapacity_VersionStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for a LOGGABLE OBJECT designed for recording PLANNED CAPACITY information.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="Indicator_VersionStructure">
-                <xsd:sequence>
-                    <xsd:group ref="OfferedCapacityGroup" />
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="OfferedCapacityGroup">
-        <xsd:annotation>
-            <xsd:documentation>Static (same in each state) elements for an PlannedCapacity (as a LOGGABLE OBJECT)</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:group ref="CalendarAwarePtScopeGroup" />
-            <xsd:group ref="siri:OccupancyScopeFilterGroup" />
-            <xsd:element name="SpecificationMethod" type="CapacitySpecificationEnumeration" minOccurs="0" />
-            <xsd:group ref="netex:PassengerCapacityGroup" />
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:complexType name="PlannedCapacities_RelStructure">
-        <xsd:annotation>
-            <xsd:documentation>A collection of one or more PlannedCapacity elements.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element ref="PlannedCapacity" maxOccurs="unbounded">
-                <xsd:annotation>
-                    <xsd:documentation>LOGGABLE OBJECT designed for recording PLANNED CAPACITY information.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:complexType name="ActualCapacities_RelStructure">
-        <xsd:annotation>
-            <xsd:documentation>A collection of one or more ActualCapacity elements.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element ref="ActualCapacity" maxOccurs="unbounded">
-                <xsd:annotation>
-                    <xsd:documentation>LOGGABLE OBJECT designed for recording ACTUAL CAPACITY information.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:complexType name="CapacitySpecificationStructure">
-        <xsd:sequence>
-            <xsd:element name="SpecificationMethod" type="CapacitySpecificationEnumeration" />
-            <xsd:element name="nominalCapacities" type="VehicleTypeCapacities_RelStructure" minOccurs="0" />
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:simpleType name="CapacitySpecificationEnumeration">
-        <xsd:restriction base="xsd:NMTOKEN">
-            <xsd:enumeration value="asManufactured" />
-            <xsd:enumeration value="nominalPerVehicleType" />
-        </xsd:restriction>
-    </xsd:simpleType>
-    <xsd:element name="VehicleTypeCapacity" type="VehicleTypeCapacityStructure" />
-    <xsd:complexType name="VehicleTypeCapacityStructure">
-        <xsd:sequence>
-            <xsd:element ref="netex:VehicleTypeRef" />
-            <xsd:group ref="siri:OccupancyScopeFilterGroup" />
-            <xsd:group ref="netex:PassengerCapacityGroup" />
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:complexType name="VehicleTypeCapacities_RelStructure">
-        <xsd:sequence>
-            <xsd:element ref="VehicleTypeCapacity" maxOccurs="unbounded" />
-        </xsd:sequence>
-    </xsd:complexType>
+		<xsd:documentation>OpRa PlannedCapacity</xsd:documentation>
+	</xsd:annotation>
+	<xsd:simpleType name="PlannedCapacityIdType">
+		<xsd:restriction base="LoggableObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="PlannedCapacityRef" type="PlannedCapacityRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Reference element of an PLANNED CAPACITY.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="PlannedCapacityRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="LoggableObjectRefStructure">
+				<xsd:attribute name="ref" type="PlannedCapacityIdType" use="required"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:element name="PlannedCapacity" substitutionGroup="AbstractIndicator">
+		<xsd:annotation>
+			<xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording PLANNED CAPACITY information.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="OfferedCapacity_VersionStructure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:DataManagedObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="LoggableObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="OfferedCapacityGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="PlannedCapacityIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="ActualCapacityIdType">
+		<xsd:restriction base="LoggableObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="ActualCapacityRef" type="ActualCapacityRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Reference element of an ACTUAL CAPACITY.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="ActualCapacityRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="LoggableObjectRefStructure">
+				<xsd:attribute name="ref" type="ActualCapacityIdType" use="required"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:element name="ActualCapacity" substitutionGroup="AbstractIndicator">
+		<xsd:annotation>
+			<xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording ACTUAL CAPACITY information.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="OfferedCapacity_VersionStructure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:DataManagedObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="LoggableObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="OfferedCapacityGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="ActualCapacityIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="OfferedCapacity_VersionStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a LOGGABLE OBJECT designed for recording PLANNED CAPACITY information.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="Indicator_VersionStructure">
+				<xsd:sequence>
+					<xsd:group ref="OfferedCapacityGroup"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="OfferedCapacityGroup">
+		<xsd:annotation>
+			<xsd:documentation>Static (same in each state) elements for an PlannedCapacity (as a LOGGABLE OBJECT)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="CalendarAwarePtScopeGroup"/>
+			<xsd:group ref="siri:OccupancyScopeFilterGroup"/>
+			<xsd:element name="SpecificationMethod" type="CapacitySpecificationEnumeration" minOccurs="0"/>
+			<xsd:group ref="netex:PassengerCapacityGroup"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="PlannedCapacities_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of one or more PlannedCapacity elements.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="PlannedCapacity" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>LOGGABLE OBJECT designed for recording PLANNED CAPACITY information.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ActualCapacities_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of one or more ActualCapacity elements.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="ActualCapacity" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>LOGGABLE OBJECT designed for recording ACTUAL CAPACITY information.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CapacitySpecificationStructure">
+		<xsd:sequence>
+			<xsd:element name="SpecificationMethod" type="CapacitySpecificationEnumeration"/>
+			<xsd:element name="nominalCapacities" type="VehicleTypeCapacities_RelStructure" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="CapacitySpecificationEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="asManufactured"/>
+			<xsd:enumeration value="nominalPerVehicleType"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="VehicleTypeCapacity" type="VehicleTypeCapacityStructure"/>
+	<xsd:complexType name="VehicleTypeCapacityStructure">
+		<xsd:sequence>
+			<xsd:element ref="netex:VehicleTypeRef"/>
+			<xsd:group ref="siri:OccupancyScopeFilterGroup"/>
+			<xsd:group ref="netex:PassengerCapacityGroup"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleTypeCapacities_RelStructure">
+		<xsd:sequence>
+			<xsd:element ref="VehicleTypeCapacity" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
 </xsd:schema>
