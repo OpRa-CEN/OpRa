@@ -3,7 +3,7 @@
 	<ServiceDelivery>
 		<siri:ResponseTimestamp>2025-04-22T12:00:00Z</siri:ResponseTimestamp>
 		<siri:ProducerRef>ExampleParticipant</siri:ProducerRef>
-		<OpraFunctionalDeliveries>
+		<opraFunctionalDeliveries>
 			<PublicationDelivery>
 				<siri:ResponseTimestamp>2025-04-22T12:00:01Z</siri:ResponseTimestamp>
 				<Description>Example Publication Delivery</Description>
@@ -14,6 +14,6 @@
 					</IndicatorFrame>
 				</dataObjects>
 			</PublicationDelivery>
-		</OpraFunctionalDeliveries>
+		</opraFunctionalDeliveries>
 	</ServiceDelivery>
 </Opra>

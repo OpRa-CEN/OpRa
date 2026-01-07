@@ -3,7 +3,7 @@
 	<ServiceDelivery>
 		<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
 		<siri:ProducerRef>OpraExamples</siri:ProducerRef>
-		<OpraFunctionalDeliveries>
+		<opraFunctionalDeliveries>
 			<OpraPayloadDelivery>
 				<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
 				<Description>Expected passenger count example on the sample network.</Description>
@@ -90,6 +90,6 @@
 					</IndicatorFrame>
 				</dataObjects>
 			</OpraPayloadDelivery>
-		</OpraFunctionalDeliveries>
+		</opraFunctionalDeliveries>
 	</ServiceDelivery>
 </Opra>

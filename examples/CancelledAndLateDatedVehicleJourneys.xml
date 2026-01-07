@@ -2,8 +2,8 @@
 <Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
 	<ServiceDelivery>
 		<siri:ResponseTimestamp>2025-03-22T00:05:00Z</siri:ResponseTimestamp>
-		<OpraFunctionalDeliveries>
-			<PublicationDelivery>
+		<opraFunctionalDeliveries>
+			<OpraPayloadDelivery>
 				<siri:ResponseTimestamp>2025-03-22T00:05:00Z</siri:ResponseTimestamp>
 				<Description>Cancelled and Late dated vehicle journey examples on the sample network.</Description>
 				<dataObjects>
@@ -87,7 +87,7 @@
 						</indicators>
 					</IndicatorFrame>
 				</dataObjects>
-			</PublicationDelivery>
-		</OpraFunctionalDeliveries>
+			</OpraPayloadDelivery>
+		</opraFunctionalDeliveries>
 	</ServiceDelivery>
 </Opra>

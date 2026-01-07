@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_serviceDimensions" version="1.0">
+	<!-- === Imports (NeTEx) ============================================================== -->
+	<xsd:import schemaLocation="../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- ===Includes (OpRa)============================================================== -->
+	<xsd:include schemaLocation="../opra_request.xsd"/>
+	<!-- === Documentation ======================================= -->
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata>
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
+				<Date>
+					<Created>2024-11-29</Created>
+				</Date>
+				<Description>
+					<p>OpRa - Operational Raw Data</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_service/opra_service_serviceDimensions.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Rights>Unclassified
+				</Rights>
+				<Source>
+					<ul>
+						<li>Created for OpRa</li>
+					</ul>
+				</Source>
+				<Status>Initial Version</Status>
+				<Subject>
+					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+                        Air transport, Airports,
+                        Ports and maritime transport, Ferries (marine),
+                        Public transport, Bus services, Coach services, Bus stops and stations,
+                        Rail transport, Railway stations and track, Train services, Underground trains,
+                        Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+                        Rail transport, Roads and Road transport
+                    </Category>
+					<Project>CEN TC278 WG3 SG10.</Project>
+				</Subject>
+				<Title>Opra Operational Raw Data Exchange</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>OpRa PLANNED / ACTUAL SERVICE DIMENSIONS Request / Discovery schema.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="PlannedServiceDimensionsRequest" type="ServiceDimensionsRequestStructure" substitutionGroup="OpraFunctionalRequest">
+		<xsd:annotation>
+			<xsd:documentation>A request element to get PLANNED SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+    <xsd:element name="ActualServiceDimensionsRequest" type="ServiceDimensionsRequestStructure" substitutionGroup="OpraFunctionalRequest">
+        <xsd:annotation>
+            <xsd:documentation>A request element to get ACTUAL SERVICE DIMENSIONS.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="ServiceDimensionsRequestStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for the request element to get SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="OpraFunctionalRequestStructure"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="ServiceDimensionsRequestGroup">
+		<xsd:annotation>
+			<xsd:documentation>Currently empty placeholder for extending filtering capabilites of requests for SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence/>
+	</xsd:group>
+	<xsd:element name="PlannedServiceDimensionsDiscoveryRequest" type="ServiceDimensionsDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
+		<xsd:annotation>
+			<xsd:documentation>A discovery request element to get PLANNED SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+    <xsd:element name="ActualServiceDimensionsDiscoveryRequest" type="ServiceDimensionsDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
+        <xsd:annotation>
+            <xsd:documentation>A discovery request element to get ACTUAL SERVICE DIMENSIONS.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="ServiceDimensionsDiscoveryRequestStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for the discovery request element to get SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="OpraDiscoveryRequestStructure">
+				<xsd:group ref="ServiceDimensionsDiscoveryRequestGroup"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="ServiceDimensionsDiscoveryRequestGroup">
+		<xsd:annotation>
+			<xsd:documentation>Currently empty placeholder for extending filtering capabilities of discovery requests for SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence/>
+	</xsd:group>
+	<xsd:element name="PlannedServiceDimensionsDiscoveryDelivery" type="ServiceDimensionsDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
+		<xsd:annotation>
+			<xsd:documentation>A discovery delivery element to get PLANNED SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+    <xsd:element name="ActualServiceDimensionsDiscoveryDelivery" type="ServiceDimensionsDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
+        <xsd:annotation>
+            <xsd:documentation>A discovery delivery element to get ACTUAL SERVICE DIMENSIONS.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="ServiceDimensionsDiscoveryDeliveryStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for the discovery delivery element to get SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="OpraDiscoveryDeliveryStructure">
+				<xsd:group ref="ServiceDimensionsDiscoveryDeliveryGroup"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="ServiceDimensionsDiscoveryDeliveryGroup">
+		<xsd:annotation>
+			<xsd:documentation>Specific data content of a discovery delivery for SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="OperatingDays" type="netex:operatingDays_RelStructure">
+				<xsd:annotation>
+					<xsd:documentation>Collection of OPERATING DAYS that have data within the discovery request's scope.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>
