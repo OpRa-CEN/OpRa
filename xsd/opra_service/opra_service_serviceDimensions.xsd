@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_serviceDimensions" version="1.0">
 	<!-- === Imports (NeTEx) ============================================================== -->
@@ -56,12 +56,12 @@
 			<xsd:documentation>A request element to get PLANNED SERVICE DIMENSIONS.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-    <xsd:element name="ActualServiceDimensionsRequest" type="ServiceDimensionsRequestStructure" substitutionGroup="OpraFunctionalRequest">
-        <xsd:annotation>
-            <xsd:documentation>A request element to get ACTUAL SERVICE DIMENSIONS.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="ServiceDimensionsRequestStructure">
+	<xsd:element name="ActualServiceDimensionsRequest" type="ServiceDimensionsRequestStructure" substitutionGroup="OpraFunctionalRequest">
+		<xsd:annotation>
+			<xsd:documentation>A request element to get ACTUAL SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="ServiceDimensionsRequestStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for the request element to get SERVICE DIMENSIONS.</xsd:documentation>
 		</xsd:annotation>
@@ -80,12 +80,12 @@
 			<xsd:documentation>A discovery request element to get PLANNED SERVICE DIMENSIONS.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-    <xsd:element name="ActualServiceDimensionsDiscoveryRequest" type="ServiceDimensionsDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
-        <xsd:annotation>
-            <xsd:documentation>A discovery request element to get ACTUAL SERVICE DIMENSIONS.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="ServiceDimensionsDiscoveryRequestStructure">
+	<xsd:element name="ActualServiceDimensionsDiscoveryRequest" type="ServiceDimensionsDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
+		<xsd:annotation>
+			<xsd:documentation>A discovery request element to get ACTUAL SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="ServiceDimensionsDiscoveryRequestStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for the discovery request element to get SERVICE DIMENSIONS.</xsd:documentation>
 		</xsd:annotation>
@@ -106,12 +106,12 @@
 			<xsd:documentation>A discovery delivery element to get PLANNED SERVICE DIMENSIONS.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-    <xsd:element name="ActualServiceDimensionsDiscoveryDelivery" type="ServiceDimensionsDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
-        <xsd:annotation>
-            <xsd:documentation>A discovery delivery element to get ACTUAL SERVICE DIMENSIONS.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="ServiceDimensionsDiscoveryDeliveryStructure">
+	<xsd:element name="ActualServiceDimensionsDiscoveryDelivery" type="ServiceDimensionsDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
+		<xsd:annotation>
+			<xsd:documentation>A discovery delivery element to get ACTUAL SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="ServiceDimensionsDiscoveryDeliveryStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for the discovery delivery element to get SERVICE DIMENSIONS.</xsd:documentation>
 		</xsd:annotation>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_serviceIntensity" version="1.0">
 	<!-- === Imports (NeTEx) ============================================================== -->
@@ -56,12 +56,12 @@
 			<xsd:documentation>A request element to get PLANNED SERVICE INTENSITIes.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-    <xsd:element name="ActualServiceIntensityRequest" type="ServiceIntensityRequestStructure" substitutionGroup="OpraFunctionalRequest">
-        <xsd:annotation>
-            <xsd:documentation>A request element to get ACTUAL SERVICE INTENSITIes.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="ServiceIntensityRequestStructure">
+	<xsd:element name="ActualServiceIntensityRequest" type="ServiceIntensityRequestStructure" substitutionGroup="OpraFunctionalRequest">
+		<xsd:annotation>
+			<xsd:documentation>A request element to get ACTUAL SERVICE INTENSITIes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="ServiceIntensityRequestStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for the request element to get SERVICE INTENSITIes.</xsd:documentation>
 		</xsd:annotation>
@@ -75,17 +75,17 @@
 		</xsd:annotation>
 		<xsd:sequence/>
 	</xsd:group>
-    <xsd:element name="PlannedServiceIntensityDiscoveryRequest" type="ServiceIntensityDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
-        <xsd:annotation>
-            <xsd:documentation>A discovery request element to get PLANNED SERVICE INTENSITIes.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="ActualServiceIntensityDiscoveryRequest" type="ServiceIntensityDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
-        <xsd:annotation>
-            <xsd:documentation>A discovery request element to get ACTUAL SERVICE INTENSITIes.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="ServiceIntensityDiscoveryRequestStructure">
+	<xsd:element name="PlannedServiceIntensityDiscoveryRequest" type="ServiceIntensityDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
+		<xsd:annotation>
+			<xsd:documentation>A discovery request element to get PLANNED SERVICE INTENSITIes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ActualServiceIntensityDiscoveryRequest" type="ServiceIntensityDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
+		<xsd:annotation>
+			<xsd:documentation>A discovery request element to get ACTUAL SERVICE INTENSITIes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="ServiceIntensityDiscoveryRequestStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for the discovery request element to get SERVICE INTENSITIes.</xsd:documentation>
 		</xsd:annotation>
@@ -101,17 +101,17 @@
 		</xsd:annotation>
 		<xsd:sequence/>
 	</xsd:group>
-    <xsd:element name="PlannedServiceIntensityDiscoveryDelivery" type="ServiceIntensityDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
-        <xsd:annotation>
-            <xsd:documentation>A discovery delivery element to get PLANNED SERVICE INTENSITIes.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="ActualServiceIntensityDiscoveryDelivery" type="ServiceIntensityDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
-        <xsd:annotation>
-            <xsd:documentation>A discovery delivery element to get ACTUAL SERVICE INTENSITIes.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="ServiceIntensityDiscoveryDeliveryStructure">
+	<xsd:element name="PlannedServiceIntensityDiscoveryDelivery" type="ServiceIntensityDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
+		<xsd:annotation>
+			<xsd:documentation>A discovery delivery element to get PLANNED SERVICE INTENSITIes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ActualServiceIntensityDiscoveryDelivery" type="ServiceIntensityDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
+		<xsd:annotation>
+			<xsd:documentation>A discovery delivery element to get ACTUAL SERVICE INTENSITIes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="ServiceIntensityDiscoveryDeliveryStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for the discovery delivery element to get SERVICE INTENSITIes.</xsd:documentation>
 		</xsd:annotation>
