@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2026 (x64) (https://www.altova.com) by Gergely Nitsch (One Planet Engineering Ltd.) -->
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_netex_imports" version="1.0">
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_netex_imports">
 	<!-- NeTEX Imports-->
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_versionFrame_support.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_framework/netex_responsibility/netex_entity_support.xsd"/>
@@ -15,6 +16,7 @@
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_service/netex_filter_frame.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_1/part1_ifopt/netex_ifopt_equipmentTicketing_support.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_1/part1_ifopt/netex_ifopt_site_support.xsd"/>
+	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_1/part1_networkDescription/netex_vehicleAndCrewPoint_support.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_frames/netex_timetableFrame_version.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_vehicleJourney_support.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_datedVehicleJourney_support.xsd"/>
