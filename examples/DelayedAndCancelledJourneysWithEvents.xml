@@ -46,7 +46,6 @@
 							<CancelledDatedVehicleJourneyEntry>
 								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 								<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250317_1700"/>
-								<siri:SituationRef> </siri:SituationRef>
 								<ControlActionType>JourneyCancellation</ControlActionType>
 								<operationalEvents>
 									<SimpleEventRef>
