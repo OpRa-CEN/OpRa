@@ -25,7 +25,7 @@
                 <file name="xsd/opra_framework/opra_frames/opra_actualServiceFrame_version.xsd"/>
                 <file name="xsd/opra_framework/opra_frames/opra_commonFrame_version.xsd"/>
                 <file name="xsd/opra_framework/opra_frames/opra_compositeFrame_version.xsd"/>
-                <file name="xsd/opra_framework/opra_frames/opra_kpiFrame_version.xsd"/>
+                <file name="xsd/opra_framework/opra_frames/opra_contextualIndicatorFrame_version.xsd"/>
                 <file name="xsd/opra_framework/opra_frames/opra_plannedServiceFrame_version.xsd"/>
                 <file name="xsd/opra_framework/opra_frames/opra_indicatorFrame_version.xsd"/>
             </folder>
