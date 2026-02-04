@@ -60,7 +60,7 @@
 							<CancelledDatedVehicleJourneyEntry>
 								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 								<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250318_0630"/>
-								<ControlActionType>JourneyCreation</ControlActionType>
+								<ControlActionType>JourneyCancellation</ControlActionType>
 								<operationalEvents>
 									<SimpleEventRef>
 										<EventType>ReportDamageToVehicleEvent</EventType>
