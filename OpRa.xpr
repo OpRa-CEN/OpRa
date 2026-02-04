@@ -27,7 +27,7 @@
                 <file name="xsd/opra_framework/opra_frames/opra_compositeFrame_version.xsd"/>
                 <file name="xsd/opra_framework/opra_frames/opra_kpiFrame_version.xsd"/>
                 <file name="xsd/opra_framework/opra_frames/opra_plannedServiceFrame_version.xsd"/>
-                <file name="xsd/opra_framework/opra_frames/opra_rawDataFrame_version.xsd"/>
+                <file name="xsd/opra_framework/opra_frames/opra_indicatorFrame_version.xsd"/>
             </folder>
             <folder name="Generic Framework">
                 <file name="xsd/opra_framework/opra_genericFramework/opra_GeneralKpi_version.xsd"/>
