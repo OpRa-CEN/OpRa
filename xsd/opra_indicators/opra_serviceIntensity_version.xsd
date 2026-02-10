@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- edited with XMLSpy v2026 (x64) (https://www.altova.com) by Gergely Nitsch (One Planet Engineering Ltd.) -->
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_serviceIntensity_version">
-	<!-- SIRI Imports-->
-	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../opra_imports/opra_siri_imports.xsd"/>
-	<!-- NeTEX Imports-->
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_facade.xsd"/>
-	<!-- OpRa includes-->
-	<xsd:include schemaLocation="../opra_framework/opra_frames/opra_indicatorFrame_version.xsd"/>
-	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
-	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_ptScope_support.xsd"/>
-	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd"/>
-	<xsd:annotation>
-		<xsd:appinfo>
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_serviceIntensity_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- SIRI Imports-->
+    <xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
+    <!-- NeTEX Imports-->
+    <xsd:import schemaLocation="../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex" />
+    <!-- OpRa includes-->
+    <xsd:include schemaLocation="../opra_framework/opra_frames/opra_indicatorFrame_version.xsd" />
+    <xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd" />
+    <xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_ptScope_support.xsd" />
+    <xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd" />
+    <xsd:annotation>
+        <xsd:appinfo>
 			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -54,172 +53,267 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa PlannedServiceIntensity</xsd:documentation>
-	</xsd:annotation>
-	<xsd:simpleType name="PlannedServiceIntensityIdType">
-		<xsd:restriction base="LoggableObjectIdType"/>
-	</xsd:simpleType>
-	<xsd:element name="PlannedServiceIntensityRef" type="PlannedServiceIntensityRefStructure">
-		<xsd:annotation>
-			<xsd:documentation>Reference element of an PLANNED SERVICE INTENSITY.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:complexType name="PlannedServiceIntensityRefStructure">
-		<xsd:simpleContent>
-			<xsd:restriction base="LoggableObjectRefStructure">
-				<xsd:attribute name="ref" type="PlannedServiceIntensityIdType" use="required"/>
-			</xsd:restriction>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<!-- ======================================================================= -->
-	<xsd:element name="PlannedServiceIntensity" substitutionGroup="AbstractIndicator">
-		<xsd:annotation>
-			<xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording PLANNED SERVICE INTENSITY information.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:restriction base="ServiceIntensity_VersionStructure">
-					<xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="netex:EntityInVersionGroup" minOccurs="0"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="netex:DataManagedObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="LoggableObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="ServiceIntensityGroup"/>
-						</xsd:sequence>
-					</xsd:sequence>
-					<xsd:attribute name="id" type="PlannedServiceIntensityIdType"/>
-				</xsd:restriction>
-			</xsd:complexContent>
-		</xsd:complexType>
-	</xsd:element>
-	<!-- ======================================================================= -->
-	<xsd:simpleType name="ActualServiceIntensityIdType">
-		<xsd:restriction base="LoggableObjectIdType"/>
-	</xsd:simpleType>
-	<xsd:element name="ActualServiceIntensityRef" type="ActualServiceIntensityRefStructure">
-		<xsd:annotation>
-			<xsd:documentation>Reference element of an ACTUAL SERVICE INTENSITY.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:complexType name="ActualServiceIntensityRefStructure">
-		<xsd:simpleContent>
-			<xsd:restriction base="LoggableObjectRefStructure">
-				<xsd:attribute name="ref" type="ActualServiceIntensityIdType" use="required"/>
-			</xsd:restriction>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<!-- ======================================================================= -->
-	<xsd:element name="ActualServiceIntensity" substitutionGroup="AbstractIndicator">
-		<xsd:annotation>
-			<xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording ACTUAL SERVICE INTENSITY information.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:complexContent>
-				<xsd:restriction base="ServiceIntensity_VersionStructure">
-					<xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="netex:EntityInVersionGroup" minOccurs="0"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="netex:DataManagedObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="LoggableObjectGroup"/>
-						</xsd:sequence>
-						<xsd:sequence>
-							<xsd:group ref="ServiceIntensityGroup"/>
-						</xsd:sequence>
-					</xsd:sequence>
-					<xsd:attribute name="id" type="ActualServiceIntensityIdType"/>
-				</xsd:restriction>
-			</xsd:complexContent>
-		</xsd:complexType>
-	</xsd:element>
-	<xsd:complexType name="ServiceIntensity_VersionStructure">
-		<xsd:annotation>
-			<xsd:documentation>Type for a LOGGABLE OBJECT designed for recording SERVICE INTENSITY information.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexContent>
-			<xsd:extension base="Indicator_VersionStructure">
-				<xsd:sequence>
-					<xsd:group ref="ServiceIntensityGroup"/>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<xsd:group name="ServiceIntensityGroup">
-		<xsd:annotation>
-			<xsd:documentation>Static (same in each state) elements for an PlannedServiceIntensity (as a LOGGABLE OBJECT)</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:group ref="CalendarAwarePtScopeGroup"/>
-			<xsd:group ref="FleetScopeGroup"/>
-			<xsd:group ref="ServiceIntensityIndicatorsGroup"/>
-		</xsd:sequence>
-	</xsd:group>
-	<xsd:group name="ServiceIntensityIndicatorsGroup">
-		<xsd:sequence>
-			<xsd:element ref="MeanCapacityOverNetworkDistance" minOccurs="0"/>
-			<xsd:element ref="MeanCapacityOverRouteDistance" minOccurs="0"/>
-			<xsd:element ref="MeanCapacityOverJourneyDistance" minOccurs="0"/>
-			<xsd:element name="AverageCommercialSpeed" type="netex:SpeedType" minOccurs="0"/>
-		</xsd:sequence>
-	</xsd:group>
-	<xsd:element name="MeanCapacityOverNetworkDistance">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:group ref="MeanCapacityOverDistanceGroup"/>
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
-	<xsd:element name="MeanCapacityOverRouteDistance">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:group ref="MeanCapacityOverDistanceGroup"/>
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
-	<xsd:element name="MeanCapacityOverJourneyDistance">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:group ref="MeanCapacityOverDistanceGroup"/>
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
-	<xsd:group name="MeanCapacityOverDistanceGroup">
-		<xsd:sequence>
-			<xsd:group ref="netex:PassengerCapacityGroup"/>
-			<xsd:element name="Distance" type="siri:DistanceType" minOccurs="0"/>
-		</xsd:sequence>
-	</xsd:group>
-	<xsd:complexType name="PlannedServiceIntensities_RelStructure">
-		<xsd:annotation>
-			<xsd:documentation>A collection of one or more PlannedServiceIntensity elements.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element ref="PlannedServiceIntensity" maxOccurs="unbounded">
-				<xsd:annotation>
-					<xsd:documentation>LOGGABLE OBJECT designed for recording PLANNED SERVICE INTENSITY information.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:complexType name="ActualServiceIntensities_RelStructure">
-		<xsd:annotation>
-			<xsd:documentation>A collection of one or more ActualServiceIntensity elements.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element ref="ActualServiceIntensity" maxOccurs="unbounded">
-				<xsd:annotation>
-					<xsd:documentation>LOGGABLE OBJECT designed for recording ACTUAL SERVICE INTENSITY information.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
+        <xsd:documentation>OpRa PlannedServiceIntensity</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="PlannedServiceIntensityIdType">
+        <xsd:restriction base="LoggableObjectIdType" />
+    </xsd:simpleType>
+    <xsd:element name="PlannedServiceIntensityRef" type="PlannedServiceIntensityRefStructure">
+        <xsd:annotation>
+            <xsd:documentation>Reference element of an PLANNED SERVICE INTENSITY.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="PlannedServiceIntensityRefStructure">
+        <xsd:simpleContent>
+            <xsd:restriction base="LoggableObjectRefStructure">
+                <xsd:attribute name="ref" type="PlannedServiceIntensityIdType" use="required" />
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <!-- ======================================================================= -->
+    <xsd:element name="PlannedServiceIntensity" substitutionGroup="AbstractIndicator">
+        <xsd:annotation>
+            <xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording PLANNED SERVICE INTENSITY information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:restriction base="ServiceIntensity_VersionStructure">
+                    <xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="netex:DataManagedObjectGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="LoggableObjectGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="ServiceIntensityGroup" />
+                        </xsd:sequence>
+                    </xsd:sequence>
+                    <xsd:attribute name="id" type="PlannedServiceIntensityIdType" />
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+    <!-- ======================================================================= -->
+    <xsd:simpleType name="ActualServiceIntensityIdType">
+        <xsd:restriction base="LoggableObjectIdType" />
+    </xsd:simpleType>
+    <xsd:element name="ActualServiceIntensityRef" type="ActualServiceIntensityRefStructure">
+        <xsd:annotation>
+            <xsd:documentation>Reference element of an ACTUAL SERVICE INTENSITY.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="ActualServiceIntensityRefStructure">
+        <xsd:simpleContent>
+            <xsd:restriction base="LoggableObjectRefStructure">
+                <xsd:attribute name="ref" type="ActualServiceIntensityIdType" use="required" />
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:element name="ActualServiceIntensity" substitutionGroup="AbstractIndicator">
+        <xsd:annotation>
+            <xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording ACTUAL SERVICE INTENSITY information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:restriction base="ServiceIntensity_VersionStructure">
+                    <xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="netex:DataManagedObjectGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="LoggableObjectGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="ServiceIntensityGroup" />
+                        </xsd:sequence>
+                    </xsd:sequence>
+                    <xsd:attribute name="id" type="ActualServiceIntensityIdType" />
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+    <!-- ======================================================================= -->
+    <xsd:simpleType name="ExpectedServiceIntensityIdType">
+        <xsd:restriction base="LoggableObjectIdType" />
+    </xsd:simpleType>
+    <xsd:element name="ExpectedServiceIntensityRef" type="ExpectedServiceIntensityRefStructure">
+        <xsd:annotation>
+            <xsd:documentation>Reference element of an EXPECTED SERVICE INTENSITY.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="ExpectedServiceIntensityRefStructure">
+        <xsd:simpleContent>
+            <xsd:restriction base="LoggableObjectRefStructure">
+                <xsd:attribute name="ref" type="ExpectedServiceIntensityIdType" use="required" />
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:element name="ExpectedServiceIntensity" substitutionGroup="AbstractIndicator">
+        <xsd:annotation>
+            <xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording EXPECTED SERVICE INTENSITY information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:restriction base="ServiceIntensity_VersionStructure">
+                    <xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="netex:DataManagedObjectGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="LoggableObjectGroup" />
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:group ref="ServiceIntensityGroup" />
+                        </xsd:sequence>
+                    </xsd:sequence>
+                    <xsd:attribute name="id" type="ExpectedServiceIntensityIdType" />
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="ServiceIntensity_VersionStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type for a LOGGABLE OBJECT designed for recording SERVICE INTENSITY information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="Indicator_VersionStructure">
+                <xsd:sequence>
+                    <xsd:group ref="ServiceIntensityGroup" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:group name="ServiceIntensityGroup">
+        <xsd:annotation>
+            <xsd:documentation>Static (same in each state) elements for an PlannedServiceIntensity (as a LOGGABLE OBJECT)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:group ref="CalendarAwarePtScopeGroup" />
+            <xsd:group ref="FleetScopeGroup" />
+            <xsd:group ref="ServiceIntensityIndicatorsGroup" />
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:group name="ServiceIntensityIndicatorsGroup">
+        <xsd:sequence>
+            <xsd:element ref="MeanCapacityOverNetworkDistance" minOccurs="0" />
+            <xsd:element ref="MeanCapacityOverRouteDistance" minOccurs="0" />
+            <xsd:element ref="MeanCapacityOverJourneyDistance" minOccurs="0" />
+            <xsd:element ref="LoadOverJourneyDistance" minOccurs="0" />
+            <xsd:element ref="TransportPerformance" minOccurs="0" />
+            <xsd:element ref="TransportPerformancePerVehicle" minOccurs="0" />
+            <xsd:element ref="AverageCommercialSpeed" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:element name="MeanCapacityOverNetworkDistance">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:group ref="CapacityOverDistanceGroup" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="MeanCapacityOverRouteDistance">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:group ref="CapacityOverDistanceGroup" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="MeanCapacityOverJourneyDistance">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:group ref="CapacityOverDistanceGroup" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="LoadOverJourneyDistance">
+        <xsd:annotation>
+            <xsd:documentation>Mean passenger (and other transported unit) count per total journey distance [capita/m]</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:group ref="CapacityOverDistanceGroup" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="TransportPerformance">
+        <xsd:annotation>
+            <xsd:documentation>Total loaded transport performance [passenger-meter] within the scope.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:group ref="CapacityOverDistanceGroup" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="TransportPerformancePerVehicle">
+        <xsd:annotation>
+            <xsd:documentation>Average loaded transport performance [passenger-meter/vehicle] within the scope.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:group ref="CapacityOverDistanceGroup" />
+                <xsd:element name="VehicleCount" type="netex:NumberOfVehicles" minOccurs="0" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:group name="CapacityOverDistanceGroup">
+        <xsd:annotation>
+            <xsd:documentation>Shared structure for capacity-related values over different distance types.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:group ref="netex:PassengerCapacityGroup" />
+            <xsd:element name="Distance" type="siri:DistanceType" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:element name="AverageCommercialSpeed" type="netex:SpeedType">
+        <xsd:annotation>
+            <xsd:documentation>Speed value calculated from difference between arrival and departure time at terminals and ROUTE length, including stop waiting times.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="PlannedServiceIntensities_RelStructure">
+        <xsd:annotation>
+            <xsd:documentation>A collection of one or more PlannedServiceIntensity elements.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="PlannedServiceIntensity" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>LOGGABLE OBJECT designed for recording PLANNED SERVICE INTENSITY information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ActualServiceIntensities_RelStructure">
+        <xsd:annotation>
+            <xsd:documentation>A collection of one or more ActualServiceIntensity elements.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="ActualServiceIntensity" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>LOGGABLE OBJECT designed for recording ACTUAL SERVICE INTENSITY information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ExpectedServiceIntensities_RelStructure">
+        <xsd:annotation>
+            <xsd:documentation>A collection of one or more ExpectedServiceIntensity elements.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="ExpectedServiceIntensity" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>LOGGABLE OBJECT designed for recording EXPECTED SERVICE INTENSITY information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 </xsd:schema>

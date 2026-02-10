@@ -16,6 +16,7 @@
 	<xsd:include schemaLocation="opra_service_onboardDeviceBasedPassengerCounts.xsd"/>
 	<xsd:include schemaLocation="opra_service_externalPassengerCounts.xsd"/>
 	<xsd:include schemaLocation="opra_service_expectedPassengerCounts.xsd"/>
+	<xsd:include schemaLocation="opra_service_contextualIndicators.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">

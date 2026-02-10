@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_request" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_request">
 	<!-- ===SIRI system IDs for  request =========================================================== -->
-	<xsd:import schemaLocation="opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
+	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="opra_imports/opra_siri_imports.xsd"/>
 	<!-- ===Regular netex============================================================== -->
-	<xsd:import schemaLocation="opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="opra_imports/opra_netex_facade.xsd"/>
 	<!-- ===Includes (Opra)============================================================== -->
 	<!--
 	<xsd:include schemaLocation="opra_service/opra_all_services.xsd"/>
@@ -117,7 +117,7 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:element name="OpraFunctionalRequest" type="OpraFunctionalRequestStructure" substitutionGroup="siri:AbstractFunctionalServiceRequest" abstract="true">
+	<xsd:element name="OpraFunctionalRequest" type="OpraFunctionalRequestStructure" abstract="true" substitutionGroup="siri:AbstractFunctionalServiceRequest">
 		<xsd:annotation>
 			<xsd:documentation>Generic abstract OpRa request element. Substitute this element with topic-specific request elements.</xsd:documentation>
 		</xsd:annotation>
@@ -140,6 +140,7 @@
 			<xsd:enumeration value="groupByTransportOrganization"/>
 			<xsd:enumeration value="groupBySite"/>
 			<xsd:enumeration value="groupByNetwork"/>
+			<xsd:enumeration value="groupByTransportMode"/>
 			<xsd:enumeration value="groupByLine"/>
 			<xsd:enumeration value="groupByJourneyPattern"/>
 			<xsd:enumeration value="groupByScheduledStopPoint"/>
@@ -148,6 +149,10 @@
 			<xsd:enumeration value="groupByDayType"/>
 			<xsd:enumeration value="groupByOperatingDay"/>
 			<xsd:enumeration value="groupByTimeband"/>
+			<xsd:enumeration value="groupByGarage"/>
+			<xsd:enumeration value="groupByVehicleType"/>
+			<xsd:enumeration value="groupByVehicle"/>
+			<xsd:enumeration value="groupByRollingStockType"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="AggregateFunctionEnumeration">
@@ -160,7 +165,7 @@
 	<xsd:group name="AggregationInstructionsGroup">
 		<xsd:sequence>
 			<xsd:element name="GroupBy" type="GroupingInstructionEnumeration" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="AggregateFunction" type="AggregateFunctionEnumeration" minOccurs="0" default="dailyAverage"/>
+			<xsd:element name="AggregateFunction" type="AggregateFunctionEnumeration" default="dailyAverage" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:group>
 	<xsd:group name="OpraFunctionalRequestGroup">
@@ -180,6 +185,7 @@
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:group ref="CalendarAwarePtScopeGroup"/>
+			<xsd:group ref="FleetScopeGroup"/>
 			<xsd:group ref="AggregationInstructionsGroup"/>
 		</xsd:sequence>
 	</xsd:group>
@@ -191,7 +197,7 @@
 			<xsd:element ref="OpraFunctionalRequest" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:element name="OpraFunctionalDelivery" type="OpraFunctionalDeliveryStructure" substitutionGroup="siri:AbstractFunctionalServiceDelivery" abstract="true">
+	<xsd:element name="OpraFunctionalDelivery" type="OpraFunctionalDeliveryStructure" abstract="true" substitutionGroup="siri:AbstractFunctionalServiceDelivery">
 		<xsd:annotation>
 			<xsd:documentation>Abstract delivery element, responding for OpraRequest elements.</xsd:documentation>
 		</xsd:annotation>
@@ -233,11 +239,20 @@
 			<xsd:element ref="OpraSubscriptionRequest" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:element name="OpraDiscoveryRequest" type="OpraDiscoveryRequestStructure" abstract="true"/>
+	<xsd:element name="OpraDiscoveryRequest" abstract="true">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="OpraDiscoveryRequestStructure"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
 	<xsd:complexType name="OpraDiscoveryRequestStructure">
 		<xsd:complexContent>
 			<xsd:extension base="siri:AbstractDiscoveryRequestStructure">
-				<xsd:group ref="CalendarAwarePtScopeGroup"/>
+				<xsd:sequence>
+					<xsd:group ref="CalendarAwarePtScopeGroup"/>
+					<xsd:group ref="FleetScopeGroup"/>
+				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -275,13 +290,14 @@
 	<xsd:complexType name="OpraDiscoveryDeliveryStructure">
 		<xsd:complexContent>
 			<xsd:extension base="siri:AbstractDiscoveryDeliveryStructure">
-				<xsd:group ref="OpraDIscoveryDeliveryGroup"/>
+				<xsd:group ref="OpraDiscoveryDeliveryGroup"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:group name="OpraDIscoveryDeliveryGroup">
+	<xsd:group name="OpraDiscoveryDeliveryGroup">
 		<xsd:sequence>
 			<xsd:group ref="CalendarAwarePtScopeGroup"/>
+			<xsd:group ref="FleetScopeGroup"/>
 		</xsd:sequence>
 	</xsd:group>
 	<xsd:element name="opraDiscoveryDeliveries" type="OpraDiscoveryDeliveries_RelStructure"/>
@@ -303,7 +319,7 @@
 			<xsd:extension base="siri:OtherErrorStructure">
 				<xsd:sequence>
 					<xsd:element ref="ErrorType"/>
-					<xsd:group minOccurs="0" ref="ProblemDetailGroup">
+					<xsd:group ref="ProblemDetailGroup" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>ProblemDetailGroup</xsd:documentation>
 						</xsd:annotation>

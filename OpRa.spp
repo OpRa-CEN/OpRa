@@ -809,6 +809,7 @@
 			<File FilePath="xsd\opra_service\opra_service_actualService.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_cancelledDatedVehicleJourneys.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_capacity.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_contextualIndicators.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_expectedPassengerCounts.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_externalPassengerCounts.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_fleetDimensions.xsd" HomeFolder="Yes"/>
