@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- edited with XMLSpy v2026 (x64) (https://www.altova.com) by Gergely Nitsch (One Planet Engineering Ltd.) -->
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_serviceDimensions_version">
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_serviceDimensions_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
 	<!-- SIRI Imports-->
-	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../opra_imports/opra_siri_imports.xsd"/>
+	<xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
 	<!-- NeTEX Imports-->
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_facade.xsd"/>
+	<xsd:import schemaLocation="../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<!-- OpRa includes-->
 	<xsd:include schemaLocation="../opra_framework/opra_frames/opra_indicatorFrame_version.xsd"/>
 	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
