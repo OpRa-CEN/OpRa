@@ -1,16 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2026 (x64) (https://www.altova.com) by Gergely Nitsch (One Planet Engineering Ltd.) -->
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_GenericContextualIndicator_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- NeTEX Imports-->
-    <xsd:import schemaLocation="../../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex" />
-    <xsd:include schemaLocation="..\opra_reusableComponents\opra_ptScope_support.xsd" />
-    <!-- SIRI Imports-->
-    <!--
-	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../../../SIRI/xsd/siri_model/siri_situationClassifiers.xsd"/>
-	-->
-    <!-- OpRa Include-->
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_GenericContextualIndicator_version">
+	<!-- NeTEX Imports-->
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../opra_imports/opra_netex_facade.xsd"/>
+	<!-- SIRI Imports-->
+	<!-- OpRa Include-->
+	<xsd:include schemaLocation="../opra_reusableComponents/opra_ptScope_support.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -52,74 +50,74 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa generic presentation of CONTEXTUAL INDICATORs</xsd:documentation>
-    </xsd:annotation>
-    <xsd:group name="IndicatorContextGroup">
-        <xsd:annotation>
-            <xsd:documentation>Contextual information for the CONTEXTUAL INDICATORs within the frame.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="ContextIdentifier" type="xsd:normalizedString">
-                <xsd:annotation>
-                    <xsd:documentation>An identifier that is recognizable by producer and consumer systems (eg. set by a regulation or an agreement)</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="ContextVersion" type="netex:VersionIdType">
-                <xsd:annotation>
-                    <xsd:documentation>A version identifier within the domain of the context identifier.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="ContextKeyList" type="netex:KeyListStructure">
-                <xsd:annotation>
-                    <xsd:documentation>A key/value list recognizable within the context domain. Might contain aggregation details.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:element name="GenericContextualIndicator" type="GenericCtxIndicatorStructure" substitutionGroup="AbstractCtxIndicator" />
-    <xsd:complexType name="GenericCtxIndicatorStructure">
-        <xsd:complexContent>
-            <xsd:extension base="CtxIndicatorStructure" />
-        </xsd:complexContent>
-    </xsd:complexType>
-    <!-- ======================================================================= -->
-    <xsd:element name="AbstractCtxIndicator" type="CtxIndicatorStructure" substitutionGroup="netex:DataManagedObject" abstract="true">
-        <xsd:annotation>
-            <xsd:documentation>Dummy Supertype for a CONTEXTUAL INDICATOR.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="CtxIndicatorStructure">
-        <xsd:complexContent>
-            <xsd:extension base="netex:DataManagedObjectStructure">
-                <xsd:group ref="CtxIndicatorSpecificationGroup" />
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="CtxIndicatorSpecificationGroup">
-        <xsd:annotation>
-            <xsd:documentation>Context definition, indicator value and unit of measure for a CONTEXTUAL INDICATOR.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="CtxIndicatorIdentifier" type="xsd:normalizedString">
-                <xsd:annotation>
-                    <xsd:documentation>A recognizable identifier of the CONTEXTUAL INDICATOR within the context domain.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:group ref="CalendarAwarePtScopeGroup" />
-            <xsd:group ref="FleetScopeGroup" />
-            <xsd:element name="CtxIndicatorValue" type="xsd:anySimpleType" />
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:complexType name="CtxIndicators_RelStructure">
-        <xsd:annotation>
-            <xsd:documentation>A collection of one or more CONTEXTUAL INDICATORs</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element ref="AbstractCtxIndicator" maxOccurs="unbounded">
-                <xsd:annotation>
-                    <xsd:documentation>A CONTEXTUAL INDICATOR in the collection.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
+		<xsd:documentation>OpRa generic presentation of CONTEXTUAL INDICATORs</xsd:documentation>
+	</xsd:annotation>
+	<xsd:group name="IndicatorContextGroup">
+		<xsd:annotation>
+			<xsd:documentation>Contextual information for the CONTEXTUAL INDICATORs within the frame.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ContextIdentifier" type="xsd:normalizedString">
+				<xsd:annotation>
+					<xsd:documentation>An identifier that is recognizable by producer and consumer systems (eg. set by a regulation or an agreement)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ContextVersion" type="netex:VersionIdType">
+				<xsd:annotation>
+					<xsd:documentation>A version identifier within the domain of the context identifier.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ContextKeyList" type="netex:KeyListStructure">
+				<xsd:annotation>
+					<xsd:documentation>A key/value list recognizable within the context domain. Might contain aggregation details.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:element name="GenericContextualIndicator" type="GenericCtxIndicatorStructure" substitutionGroup="AbstractCtxIndicator"/>
+	<xsd:complexType name="GenericCtxIndicatorStructure">
+		<xsd:complexContent>
+			<xsd:extension base="CtxIndicatorStructure"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:element name="AbstractCtxIndicator" type="CtxIndicatorStructure" abstract="true" substitutionGroup="netex:DataManagedObject">
+		<xsd:annotation>
+			<xsd:documentation>Dummy Supertype for a CONTEXTUAL INDICATOR.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="CtxIndicatorStructure">
+		<xsd:complexContent>
+			<xsd:extension base="netex:DataManagedObjectStructure">
+				<xsd:group ref="CtxIndicatorSpecificationGroup"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="CtxIndicatorSpecificationGroup">
+		<xsd:annotation>
+			<xsd:documentation>Context definition, indicator value and unit of measure for a CONTEXTUAL INDICATOR.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="CtxIndicatorIdentifier" type="xsd:normalizedString">
+				<xsd:annotation>
+					<xsd:documentation>A recognizable identifier of the CONTEXTUAL INDICATOR within the context domain.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:group ref="CalendarAwarePtScopeGroup"/>
+			<xsd:group ref="FleetScopeGroup"/>
+			<xsd:element name="CtxIndicatorValue" type="xsd:anySimpleType"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="CtxIndicators_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of one or more CONTEXTUAL INDICATORs</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="AbstractCtxIndicator" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A CONTEXTUAL INDICATOR in the collection.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 </xsd:schema>

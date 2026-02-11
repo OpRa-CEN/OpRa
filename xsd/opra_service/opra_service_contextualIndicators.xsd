@@ -1,12 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2026 (x64) (https://www.altova.com) by Gergely Nitsch (One Planet Engineering Ltd.) -->
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_contextualIndicators" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <xsd:import schemaLocation="..\opra_imports\opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
-    <!-- ===Includes (OpRa)============================================================== -->
-    <xsd:include schemaLocation="..\opra_request.xsd" />
-    <!-- === Documentation ======================================= -->
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_service_contextualIndicators">
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_imports.xsd"/>
+	<!-- ===Includes (OpRa)============================================================== -->
+	<xsd:include schemaLocation="../opra_request.xsd"/>
+	<!-- === Documentation ======================================= -->
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -48,80 +49,80 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa CONTEXTUAL INDICATORs Request schema</xsd:documentation>
-    </xsd:annotation>
-    <xsd:element name="ContextualIndicatorRequest" type="CtxIndicatorRequestStructure" substitutionGroup="OpraFunctionalRequest">
-        <xsd:annotation>
-            <xsd:documentation>A request element to get KPIs.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="CtxIndicatorRequestStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for the request element to get KPIs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="OpraFunctionalRequestStructure">
-                <xsd:group ref="CtxIndicatorRequestGroup" />
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="CtxIndicatorRequestGroup">
-        <xsd:annotation>
-            <xsd:documentation>References that extend filtering capabilities of requests for KPIs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:group ref="IndicatorContextRequestGroup" />
-            <xsd:element name="CtxIndicatorIdentifierRef" type="xsd:normalizedString" />
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:group name="IndicatorContextRequestGroup">
-        <xsd:sequence>
-            <xsd:element name="ContextIdentifierRef" type="xsd:normalizedString" />
-            <xsd:element name="MinimumContextVersion" type="netex:VersionIdType" minOccurs="0" />
-            <xsd:element name="ExactContextVersion" type="netex:VersionIdType" minOccurs="0" />
-            <xsd:element name="ContextKeyList" type="netex:KeyListStructure" minOccurs="0" />
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:element name="ContextualIndicatorDiscoveryRequest" type="CtxIndicatorDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
-        <xsd:annotation>
-            <xsd:documentation>A request element to get KPIs.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="CtxIndicatorDiscoveryRequestStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for the request element to get KPIs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="OpraDiscoveryRequestStructure">
-                <xsd:group ref="CtxIndicatorRequestGroup" />
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:element name="ContextualIndicatorDiscoveryDelivery" type="CtxIndicatorDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
-        <xsd:annotation>
-            <xsd:documentation>A request element to get CONTEXTUAL INDICATORs.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="CtxIndicatorDiscoveryDeliveryStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for the request element to get CONTEXTUAL INDICATORs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="OpraDiscoveryDeliveryStructure">
-                <xsd:group ref="CtxIndicatorDiscoveryDeliveryGroup" />
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="CtxIndicatorDiscoveryDeliveryGroup">
-        <xsd:annotation>
-            <xsd:documentation>Specific data content of a discovery delivery for CONTEXTUAL INDICATORs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="OperatingDays" type="netex:operatingDays_RelStructure">
-                <xsd:annotation>
-                    <xsd:documentation>Collection of OPERATING DAYS that have data within the discovery request's scope.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:group>
+		<xsd:documentation>OpRa CONTEXTUAL INDICATORs Request schema</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="ContextualIndicatorRequest" type="CtxIndicatorRequestStructure" substitutionGroup="OpraFunctionalRequest">
+		<xsd:annotation>
+			<xsd:documentation>A request element to get KPIs.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="CtxIndicatorRequestStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for the request element to get KPIs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="OpraFunctionalRequestStructure">
+				<xsd:group ref="CtxIndicatorRequestGroup"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="CtxIndicatorRequestGroup">
+		<xsd:annotation>
+			<xsd:documentation>References that extend filtering capabilities of requests for KPIs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="IndicatorContextRequestGroup"/>
+			<xsd:element name="CtxIndicatorIdentifierRef" type="xsd:normalizedString"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:group name="IndicatorContextRequestGroup">
+		<xsd:sequence>
+			<xsd:element name="ContextIdentifierRef" type="xsd:normalizedString"/>
+			<xsd:element name="MinimumContextVersion" type="netex:VersionIdType" minOccurs="0"/>
+			<xsd:element name="ExactContextVersion" type="netex:VersionIdType" minOccurs="0"/>
+			<xsd:element name="ContextKeyList" type="netex:KeyListStructure" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:element name="ContextualIndicatorDiscoveryRequest" type="CtxIndicatorDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
+		<xsd:annotation>
+			<xsd:documentation>A request element to get KPIs.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="CtxIndicatorDiscoveryRequestStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for the request element to get KPIs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="OpraDiscoveryRequestStructure">
+				<xsd:group ref="CtxIndicatorRequestGroup"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:element name="ContextualIndicatorDiscoveryDelivery" type="CtxIndicatorDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
+		<xsd:annotation>
+			<xsd:documentation>A request element to get CONTEXTUAL INDICATORs.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="CtxIndicatorDiscoveryDeliveryStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for the request element to get CONTEXTUAL INDICATORs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="OpraDiscoveryDeliveryStructure">
+				<xsd:group ref="CtxIndicatorDiscoveryDeliveryGroup"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="CtxIndicatorDiscoveryDeliveryGroup">
+		<xsd:annotation>
+			<xsd:documentation>Specific data content of a discovery delivery for CONTEXTUAL INDICATORs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="OperatingDays" type="netex:operatingDays_RelStructure">
+				<xsd:annotation>
+					<xsd:documentation>Collection of OPERATING DAYS that have data within the discovery request's scope.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
 </xsd:schema>

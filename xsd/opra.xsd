@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2026 (x64) (https://www.altova.com) by Gergely Nitsch (One Planet Engineering Ltd.) -->
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra">
 	<!-- ===SIRI system IDs for  request =========================================================== -->
-	<xsd:import schemaLocation="opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
+	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="opra_imports/opra_siri_imports.xsd"/>
 	<!-- ===Regular netex============================================================== -->
-	<!--
-	<xsd:import schemaLocation="opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex"/>
-	-->
 	<xsd:include schemaLocation="OpRa_publication.xsd"/>
-	<!--
-	<xsd:include schemaLocation="opra_request.xsd"/>
-	-->
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata>
@@ -222,7 +217,7 @@
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="siri:ServiceDeliveryRequestStatusGroup"/>
-			<xsd:element name="MoreData" type="xsd:boolean" minOccurs="0" default="false">
+			<xsd:element name="MoreData" type="xsd:boolean" default="false" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>Whether there is a further delivery message with more current updates that follows this one. Default is 'false'.</xsd:documentation>
 				</xsd:annotation>
