@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_kpiFrame_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <xsd:import schemaLocation="../../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex" />
-    <!-- OpRa includes-->
-    <xsd:include schemaLocation="../opra_genericFramework/opra_GenericContextualIndicator_version.xsd" />
-    <!-- ======================================================================= -->
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_kpiFrame_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- OpRa includes-->
+	<xsd:include schemaLocation="../opra_genericFramework/opra_GenericContextualIndicator_version.xsd"/>
+	<!-- ======================================================================= -->
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -47,93 +47,93 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>CONTEXTUAL INDICATOR FRAME types for OpRa.</xsd:documentation>
-    </xsd:annotation>
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="ContextualIndicatorFrameIdType">
-        <xsd:annotation>
-            <xsd:documentation>Type for identifier of an OpRa CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="netex:VersionFrameIdType" />
-    </xsd:simpleType>
-    <xsd:element name="ContextualIndicatorFrameRef" type="ContextualIndicatorFrameRefStructure" substitutionGroup="netex:VersionFrameRef" abstract="false">
-        <xsd:annotation>
-            <xsd:documentation>Reference element to an OpRa CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType abstract="false" name="ContextualIndicatorFrameRefStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for a reference to an OpRa CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:simpleContent>
-            <xsd:restriction base="netex:VersionFrameRefStructure">
-                <xsd:attribute name="ref" type="ContextualIndicatorFrameIdType" use="required" />
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <!-- ======================================================================= -->
-    <xsd:element name="ContextualIndicatorFrame" substitutionGroup="netex:CommonFrame" abstract="false">
-        <xsd:annotation>
-            <xsd:documentation>A coherent set of CONTEXTUAL INDICATORs to which the same frame VALIDITY CONDITIONs have been assigned.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexType>
-            <xsd:complexContent>
-                <xsd:restriction base="ContextualIndicatorFrameStructure">
-                    <xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="netex:DataManagedObjectGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="netex:VersionFrameGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="IndicatorContextGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="ContextualIndicatorFrameGroup" />
-                        </xsd:sequence>
-                    </xsd:sequence>
-                    <xsd:attribute name="id" type="ContextualIndicatorFrameIdType" />
-                </xsd:restriction>
-            </xsd:complexContent>
-        </xsd:complexType>
-    </xsd:element>
-    <xsd:complexType abstract="false" name="ContextualIndicatorFrameStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for an OpRa CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="netex:Common_VersionFrameStructure">
-                <xsd:sequence>
-                    <xsd:sequence>
-                        <xsd:group ref="IndicatorContextGroup" />
-                    </xsd:sequence>
-                    <xsd:sequence>
-                        <xsd:group ref="ContextualIndicatorFrameGroup" />
-                    </xsd:sequence>
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="ContextualIndicatorFrameGroup">
-        <xsd:annotation>
-            <xsd:documentation>Elements for an OpRa CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:group ref="ContextualIndicatorsInFrameGroup" />
-        </xsd:sequence>
-    </xsd:group>
-    <!-- ======================================================================= -->
-    <xsd:group name="ContextualIndicatorsInFrameGroup">
-        <xsd:annotation>
-            <xsd:documentation>Indicators in a CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element name="indicators" type="CtxIndicators_RelStructure" />
-        </xsd:sequence>
-    </xsd:group>
-    <!-- ======================================================================= -->
+		<xsd:documentation>CONTEXTUAL INDICATOR FRAME types for OpRa.</xsd:documentation>
+	</xsd:annotation>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="ContextualIndicatorFrameIdType">
+		<xsd:annotation>
+			<xsd:documentation>Type for identifier of an OpRa CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="netex:VersionFrameIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="ContextualIndicatorFrameRef" type="ContextualIndicatorFrameRefStructure" substitutionGroup="netex:VersionFrameRef" abstract="false">
+		<xsd:annotation>
+			<xsd:documentation>Reference element to an OpRa CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType abstract="false" name="ContextualIndicatorFrameRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a reference to an OpRa CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="netex:VersionFrameRefStructure">
+				<xsd:attribute name="ref" type="ContextualIndicatorFrameIdType" use="required"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:element name="ContextualIndicatorFrame" substitutionGroup="netex:CommonFrame" abstract="false">
+		<xsd:annotation>
+			<xsd:documentation>A coherent set of CONTEXTUAL INDICATORs to which the same frame VALIDITY CONDITIONs have been assigned.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="ContextualIndicatorFrameStructure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:DataManagedObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:VersionFrameGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="IndicatorContextGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="ContextualIndicatorFrameGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="ContextualIndicatorFrameIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType abstract="false" name="ContextualIndicatorFrameStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for an OpRa CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="netex:Common_VersionFrameStructure">
+				<xsd:sequence>
+					<xsd:sequence>
+						<xsd:group ref="IndicatorContextGroup"/>
+					</xsd:sequence>
+					<xsd:sequence>
+						<xsd:group ref="ContextualIndicatorFrameGroup"/>
+					</xsd:sequence>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="ContextualIndicatorFrameGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for an OpRa CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="ContextualIndicatorsInFrameGroup"/>
+		</xsd:sequence>
+	</xsd:group>
+	<!-- ======================================================================= -->
+	<xsd:group name="ContextualIndicatorsInFrameGroup">
+		<xsd:annotation>
+			<xsd:documentation>Indicators in a CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="indicators" type="CtxIndicators_RelStructure"/>
+		</xsd:sequence>
+	</xsd:group>
+	<!-- ======================================================================= -->
 </xsd:schema>
