@@ -6,7 +6,7 @@
 	<!-- SIRI Imports-->
 	<!-- OpRa includes-->
 	<xsd:include schemaLocation="../opra_framework/opra_frames/opra_indicatorFrame_version.xsd"/>
-	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_ptScope_support.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_filtering_support.xsd"/>
 	<xsd:include schemaLocation="opra_ticketingBasedPassengerCount_version.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>

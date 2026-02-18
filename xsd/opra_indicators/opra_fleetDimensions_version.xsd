@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2026 (x64) (https://www.altova.com) by Gergely Nitsch (One Planet Engineering Ltd.) -->
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_fleetDimensions_version">
 	<!-- SIRI Imports-->
@@ -8,7 +9,7 @@
 	<!-- OpRa includes-->
 	<xsd:include schemaLocation="../opra_framework/opra_frames/opra_indicatorFrame_version.xsd"/>
 	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
-	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_ptScope_support.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_filtering_support.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
@@ -55,14 +56,20 @@ Rail transport, Roads and Road transport
 		<xsd:documentation>OpRa PlannedFleetDimensions</xsd:documentation>
 	</xsd:annotation>
 	<xsd:simpleType name="PlannedFleetDimensionsIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of a PLANNED FLEET DIMENSIONS indicator.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:restriction base="LoggableObjectIdType"/>
 	</xsd:simpleType>
 	<xsd:element name="PlannedFleetDimensionsRef" type="PlannedFleetDimensionsRefStructure">
 		<xsd:annotation>
-			<xsd:documentation>Reference element of an PLANNED FLEET DIMENSIONS.</xsd:documentation>
+			<xsd:documentation>Reference element of a PLANNED FLEET DIMENSIONS indicator.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="PlannedFleetDimensionsRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a reference to a PLANNED FLEET DIMENSIONS indicator.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:simpleContent>
 			<xsd:restriction base="LoggableObjectRefStructure">
 				<xsd:attribute name="ref" type="PlannedFleetDimensionsIdType" use="required"/>
@@ -98,14 +105,20 @@ Rail transport, Roads and Road transport
 	</xsd:element>
 	<!-- ======================================================================= -->
 	<xsd:simpleType name="ActualFleetDimensionsIdType">
+		<xsd:annotation>
+			<xsd:documentation>Identifier of an ACTUAL FLEET DIMENSIONS indicator.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:restriction base="LoggableObjectIdType"/>
 	</xsd:simpleType>
 	<xsd:element name="ActualFleetDimensionsRef" type="ActualFleetDimensionsRefStructure">
 		<xsd:annotation>
-			<xsd:documentation>Reference element of an ACTUAL FLEET DIMENSIONS.</xsd:documentation>
+			<xsd:documentation>Reference element of an ACTUAL FLEET DIMENSIONS indicator.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="ActualFleetDimensionsRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a reference to an ACTIAL FLEET DIMENSIONS indicator.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:simpleContent>
 			<xsd:restriction base="LoggableObjectRefStructure">
 				<xsd:attribute name="ref" type="ActualFleetDimensionsIdType" use="required"/>
@@ -153,7 +166,7 @@ Rail transport, Roads and Road transport
 	</xsd:complexType>
 	<xsd:group name="FleetDimensionsGroup">
 		<xsd:annotation>
-			<xsd:documentation>Static (same in each state) elements for an PlannedFleetDimensions (as a LOGGABLE OBJECT)</xsd:documentation>
+			<xsd:documentation>Static elements for a PlannedFleetDimensions (as a LOGGABLE OBJECT)</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="CalendarAwarePtScopeGroup"/>
@@ -162,6 +175,9 @@ Rail transport, Roads and Road transport
 		</xsd:sequence>
 	</xsd:group>
 	<xsd:group name="FleetDimensionsIndicatorsGroup">
+		<xsd:annotation>
+			<xsd:documentation>Fleet-related indicator fields.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="NumberOfVehiclesTotal" type="xsd:nonNegativeInteger" minOccurs="0">
 				<xsd:annotation>
