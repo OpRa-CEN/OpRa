@@ -5,7 +5,7 @@
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../../opra_imports/opra_netex_facade.xsd"/>
 	<!-- SIRI Imports-->
 	<!-- OpRa Include-->
-	<xsd:include schemaLocation="../opra_reusableComponents/opra_ptScope_support.xsd"/>
+	<xsd:include schemaLocation="../opra_reusableComponents/opra_filtering_support.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata>
@@ -73,8 +73,15 @@ Rail transport, Roads and Road transport
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
-	<xsd:element name="GenericContextualIndicator" type="GenericCtxIndicatorStructure" substitutionGroup="AbstractCtxIndicator"/>
+	<xsd:element name="GenericContextualIndicator" type="GenericCtxIndicatorStructure" substitutionGroup="AbstractCtxIndicator">
+		<xsd:annotation>
+			<xsd:documentation>Representation of a generic CONTEXTUAL INDICATOR.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
 	<xsd:complexType name="GenericCtxIndicatorStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type definition for a generic CONTEXTUAL INDICATOR that implements the abstract CI without additions.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="CtxIndicatorStructure"/>
 		</xsd:complexContent>
@@ -86,6 +93,9 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="CtxIndicatorStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type definition for an abstract CONTEXTUAL INDICATOR.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="netex:DataManagedObjectStructure">
 				<xsd:group ref="CtxIndicatorSpecificationGroup"/>
