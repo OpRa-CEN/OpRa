@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
+	<ServiceDelivery>
+		<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
+		<siri:ProducerRef>OpraExamples</siri:ProducerRef>
+		<opraFunctionalDeliveries>
+			<OpraPayloadDelivery>
+				<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
+				<Description>Actual service dimensions example on the sample network.</Description>
+				<dataObjects>
+					<IndicatorFrame>
+						<PreparednessLevel>Raw</PreparednessLevel>
+						<indicators>
+							<!-- Actual dimensions observed for line 10 on an operating day -->
+							<ActualServiceDimensions>
+								<netex:LineRef ref="Test:Line:10"/>
+								<netex:OperatingDayRef ref="Test:OperatingDay:2001-12-17"/>
+								<NumberOfStopPoints>17</NumberOfStopPoints>
+								<NumberOfLines>1</NumberOfLines>
+								<NumberOfRoutes>2</NumberOfRoutes>
+								<NumberOfJourneys>89</NumberOfJourneys>
+								<TotalVehicleJourneyDistance>1148</TotalVehicleJourneyDistance>
+								<TotalServiceJourneyDistance>1097</TotalServiceJourneyDistance>
+								<TotalTrainVehicleJourneyDistance>0</TotalTrainVehicleJourneyDistance>
+								<TotalTrainServiceJourneyDistance>0</TotalTrainServiceJourneyDistance>
+							</ActualServiceDimensions>
+							<!-- Actual peak dimensions for a journey pattern and vehicle type -->
+							<ActualServiceDimensions>
+								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+								<netex:TimebandRef ref="Test:TimeBand:6-9"/>
+								<netex:VehicleTypeRef ref="Test:VT:bus:regular"/>
+								<NumberOfStopPoints>9</NumberOfStopPoints>
+								<NumberOfLines>1</NumberOfLines>
+								<NumberOfRoutes>1</NumberOfRoutes>
+								<NumberOfJourneys>21</NumberOfJourneys>
+								<TotalVehicleJourneyDistance>276</TotalVehicleJourneyDistance>
+								<TotalServiceJourneyDistance>258</TotalServiceJourneyDistance>
+								<TotalTrainVehicleJourneyDistance>0</TotalTrainVehicleJourneyDistance>
+								<TotalTrainServiceJourneyDistance>0</TotalTrainServiceJourneyDistance>
+							</ActualServiceDimensions>
+						</indicators>
+					</IndicatorFrame>
+				</dataObjects>
+			</OpraPayloadDelivery>
+		</opraFunctionalDeliveries>
+	</ServiceDelivery>
+</Opra>
