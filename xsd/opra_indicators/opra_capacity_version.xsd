@@ -154,13 +154,17 @@ Rail transport, Roads and Road transport
 	</xsd:complexType>
 	<xsd:group name="OfferedCapacityGroup">
 		<xsd:annotation>
-			<xsd:documentation>Static (same in each state) elements for an PlannedCapacity (as a LOGGABLE OBJECT)</xsd:documentation>
+			<xsd:documentation>Common representation for an abstract OFFERED CAPACITY indicator.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="CalendarAwarePtScopeGroup"/>
 			<xsd:group ref="FleetScopeGroup"/>
 			<xsd:group ref="siri:OccupancyScopeFilterGroup"/>
-			<xsd:element name="SpecificationMethod" type="CapacitySpecificationEnumeration" minOccurs="0"/>
+			<xsd:element ref="CapacitySpecification" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation/>
+				</xsd:annotation>
+			</xsd:element>
 			<xsd:group ref="netex:PassengerCapacityGroup"/>
 		</xsd:sequence>
 	</xsd:group>
@@ -188,19 +192,31 @@ Rail transport, Roads and Road transport
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
+	<xsd:element name="CapacitySpecification" type="CapacitySpecificationStructure">
+		<xsd:annotation>
+			<xsd:documentation>Element providing capability to specify methods and capacity values for VEHICLE TYPEs.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
 	<xsd:complexType name="CapacitySpecificationStructure">
 		<xsd:sequence>
 			<xsd:element name="SpecificationMethod" type="CapacitySpecificationEnumeration"/>
-			<xsd:element name="nominalCapacities" type="VehicleTypeCapacities_RelStructure" minOccurs="0"/>
+			<xsd:element name="vehicleTypeCapacities" type="VehicleTypeCapacities_RelStructure" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:simpleType name="CapacitySpecificationEnumeration">
+		<xsd:annotation>
+			<xsd:documentation>Enumerates methods of specifying capacity for a VEHICLE TYPE.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:restriction base="xsd:NMTOKEN">
 			<xsd:enumeration value="asManufactured"/>
 			<xsd:enumeration value="nominalPerVehicleType"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-	<xsd:element name="VehicleTypeCapacity" type="VehicleTypeCapacityStructure"/>
+	<xsd:element name="VehicleTypeCapacity" type="VehicleTypeCapacityStructure">
+		<xsd:annotation>
+			<xsd:documentation>Element to represent capacity values for a VEHICLE TYPE.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
 	<xsd:complexType name="VehicleTypeCapacityStructure">
 		<xsd:sequence>
 			<xsd:element ref="netex:VehicleTypeRef"/>

@@ -10,9 +10,9 @@
 				<dataObjects>
 					<IndicatorFrame>
 						<IndicatorFrameDefaults>
-							<DefaultCapacityContext>
+							<DefaultCapacitySpecification>
 								<SpecificationMethod>nominalPerVehicleType</SpecificationMethod>
-								<nominalCapacities>
+								<vehicleTypeCapacities>
 									<VehicleTypeCapacity>
 										<netex:VehicleTypeRef ref="Test:VT:bus:regular"/>
 										<netex:TotalCapacity>70</netex:TotalCapacity>
@@ -23,8 +23,8 @@
 										<netex:TotalCapacity>125</netex:TotalCapacity>
 										<netex:WheelchairPlaceCapacity>1</netex:WheelchairPlaceCapacity>
 									</VehicleTypeCapacity>
-								</nominalCapacities>
-							</DefaultCapacityContext>
+								</vehicleTypeCapacities>
+							</DefaultCapacitySpecification>
 						</IndicatorFrameDefaults>
 						<PreparednessLevel>Raw</PreparednessLevel>
 						<indicators>

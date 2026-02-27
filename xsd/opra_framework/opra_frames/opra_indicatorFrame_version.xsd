@@ -190,7 +190,7 @@ Rail transport, Roads and Road transport
 	</xsd:complexType>
 	<xsd:group name="IndicatorFrameDefaultsGroup">
 		<xsd:sequence>
-			<xsd:element name="DefaultCapacityContext" type="CapacitySpecificationStructure" minOccurs="0"/>
+			<xsd:element name="DefaultCapacitySpecification" type="CapacitySpecificationStructure" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:group>
 </xsd:schema>

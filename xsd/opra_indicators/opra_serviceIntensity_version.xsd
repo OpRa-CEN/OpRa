@@ -10,6 +10,7 @@
 	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
 	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_filtering_support.xsd"/>
 	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd"/>
+	<xsd:include schemaLocation="../opra_indicators/opra_capacity_version.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
@@ -195,12 +196,21 @@ Rail transport, Roads and Road transport
 	</xsd:complexType>
 	<xsd:group name="ServiceIntensityGroup">
 		<xsd:annotation>
-			<xsd:documentation>Static (same in each state) elements for an PlannedServiceIntensity (as a LOGGABLE OBJECT)</xsd:documentation>
+			<xsd:documentation>Representation of an abstract SERVICE INTENSITY.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="CalendarAwarePtScopeGroup"/>
 			<xsd:group ref="FleetScopeGroup"/>
+			<xsd:group ref="ServiceIntensityCapacityGroup"/>
 			<xsd:group ref="ServiceIntensityIndicatorsGroup"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:group name="ServiceIntensityCapacityGroup">
+		<xsd:annotation>
+			<xsd:documentation>Representation of capacity specification affecting indicator values.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="CapacitySpecification" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:group>
 	<xsd:group name="ServiceIntensityIndicatorsGroup">
@@ -215,6 +225,9 @@ Rail transport, Roads and Road transport
 		</xsd:sequence>
 	</xsd:group>
 	<xsd:element name="MeanCapacityOverNetworkDistance">
+		<xsd:annotation>
+			<xsd:documentation>Average passenger (and other transported unit) capacity values provided for a distance unit (see DefaultSystemOfUnits for the FRAME) of a NETWORK.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
 				<xsd:group ref="CapacityOverDistanceGroup"/>
@@ -222,6 +235,9 @@ Rail transport, Roads and Road transport
 		</xsd:complexType>
 	</xsd:element>
 	<xsd:element name="MeanCapacityOverRouteDistance">
+		<xsd:annotation>
+			<xsd:documentation>Average passenger (and other transported unit) capacity values provided for a distance unit (see DefaultSystemOfUnits for the FRAME) of all ROUTEs considered.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
 				<xsd:group ref="CapacityOverDistanceGroup"/>
@@ -229,6 +245,9 @@ Rail transport, Roads and Road transport
 		</xsd:complexType>
 	</xsd:element>
 	<xsd:element name="MeanCapacityOverJourneyDistance">
+		<xsd:annotation>
+			<xsd:documentation>Average passenger (and other transported unit) capacity values provided per VEHICLE JOURNEY distance unit (see DefaultSystemOfUnits for the FRAME)</xsd:documentation>
+		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
 				<xsd:group ref="CapacityOverDistanceGroup"/>
@@ -237,7 +256,7 @@ Rail transport, Roads and Road transport
 	</xsd:element>
 	<xsd:element name="LoadOverJourneyDistance">
 		<xsd:annotation>
-			<xsd:documentation>Mean passenger (and other transported unit) count per total journey distance [capita/m]</xsd:documentation>
+			<xsd:documentation>Mean passenger (and other transported unit) count per total journey distance unit [capita/m] or [capita/km] depending on DefaultSystemOfUnits for the FRAME.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
@@ -247,7 +266,7 @@ Rail transport, Roads and Road transport
 	</xsd:element>
 	<xsd:element name="TransportPerformance">
 		<xsd:annotation>
-			<xsd:documentation>Total loaded transport performance [passenger-meter] within the scope.</xsd:documentation>
+			<xsd:documentation>Total loaded transport performance within the scope, measured in [passenger-meter] or [passenger-km] depending on DefaultSystemOfUnits for the FRAME.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
@@ -257,7 +276,7 @@ Rail transport, Roads and Road transport
 	</xsd:element>
 	<xsd:element name="TransportPerformancePerVehicle">
 		<xsd:annotation>
-			<xsd:documentation>Average loaded transport performance [passenger-meter/vehicle] within the scope.</xsd:documentation>
+			<xsd:documentation>Average loaded transport performance measured in [passenger-meter/vehicle] or [passenger-km/vehicle] depending on DefaultSystemOfUnits for the FRAME.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:sequence>
