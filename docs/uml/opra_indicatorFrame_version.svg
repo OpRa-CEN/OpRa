@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">UML model for opra_indicatorFrame_version.xsd</title>
+  <desc id="desc">Class-style UML diagram showing key elements and types for IndicatorFrame schema.</desc>
+
+  <defs>
+    <style><![CDATA[
+      .bg { fill:#ffffff; }
+      .title { font: 700 24px Arial, sans-serif; fill:#1f2937; }
+      .subtitle { font: 400 14px Arial, sans-serif; fill:#4b5563; }
+      .classbox { fill:#f8fafc; stroke:#334155; stroke-width:1.5; rx:8; ry:8; }
+      .header { fill:#e2e8f0; stroke:#334155; stroke-width:1.5; }
+      .name { font: 700 14px Arial, sans-serif; fill:#0f172a; }
+      .meta { font: 400 12px Arial, sans-serif; fill:#334155; }
+      .attr { font: 400 12px Arial, sans-serif; fill:#111827; }
+      .stereo { font: italic 12px Arial, sans-serif; fill:#475569; }
+      .edge { stroke:#334155; stroke-width:1.5; fill:none; }
+      .edge-dashed { stroke:#64748b; stroke-width:1.5; fill:none; stroke-dasharray:7 5; }
+      .label { font: 12px Arial, sans-serif; fill:#1f2937; }
+      .legend { fill:#f1f5f9; stroke:#94a3b8; stroke-width:1; rx:6; ry:6; }
+      .small { font: 11px Arial, sans-serif; fill:#334155; }
+    ]]></style>
+
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
+    </marker>
+    <marker id="triangle" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto">
+      <polygon points="0 6, 12 0, 12 12" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1600" height="980"/>
+  <text class="title" x="28" y="40">UML model: opra_indicatorFrame_version.xsd</text>
+  <text class="subtitle" x="28" y="64">Namespace: https://transmodel-cen.eu/opra/1.0</text>
+
+  <!-- External/base types -->
+  <g transform="translate(70,120)">
+    <rect class="classbox" width="280" height="90"/>
+    <rect class="header" width="280" height="28"/>
+    <text class="stereo" x="12" y="18">«netex element/type»</text>
+    <text class="name" x="12" y="48">CommonFrame</text>
+    <text class="meta" x="12" y="68">abstract head element</text>
+  </g>
+
+  <g transform="translate(70,250)">
+    <rect class="classbox" width="280" height="95"/>
+    <rect class="header" width="280" height="28"/>
+    <text class="stereo" x="12" y="18">«netex complexType»</text>
+    <text class="name" x="12" y="48">Common_VersionFrameStructure</text>
+    <text class="meta" x="12" y="69">base for OpRa frame structures</text>
+  </g>
+
+  <!-- Core frame -->
+  <g transform="translate(450,90)">
+    <rect class="classbox" width="430" height="185"/>
+    <rect class="header" width="430" height="28"/>
+    <text class="stereo" x="12" y="18">«xsd:element» concrete</text>
+    <text class="name" x="12" y="48">IndicatorFrame</text>
+    <text class="attr" x="12" y="72">id : IndicatorFrameIdType [0..1]</text>
+    <text class="meta" x="12" y="96">substitutionGroup = netex:CommonFrame</text>
+    <text class="meta" x="12" y="116">content is restriction of IndicatorVersionFrameStructure</text>
+    <text class="meta" x="12" y="136">+ netex:EntityInVersionGroup [0..1]</text>
+    <text class="meta" x="12" y="154">+ netex:DataManagedObjectGroup [1]</text>
+    <text class="meta" x="12" y="172">+ netex:VersionFrameGroup [1] + IndicatorFrameGroup [1]</text>
+  </g>
+
+  <g transform="translate(450,315)">
+    <rect class="classbox" width="430" height="130"/>
+    <rect class="header" width="430" height="28"/>
+    <text class="stereo" x="12" y="18">«xsd:complexType»</text>
+    <text class="name" x="12" y="48">IndicatorVersionFrameStructure</text>
+    <text class="meta" x="12" y="72">extends netex:Common_VersionFrameStructure</text>
+    <text class="attr" x="12" y="96">+ IndicatorFrameGroup [1]</text>
+    <text class="meta" x="12" y="116">abstract = false</text>
+  </g>
+
+  <g transform="translate(930,315)">
+    <rect class="classbox" width="360" height="145"/>
+    <rect class="header" width="360" height="28"/>
+    <text class="stereo" x="12" y="18">«xsd:group»</text>
+    <text class="name" x="12" y="48">IndicatorFrameGroup</text>
+    <text class="attr" x="12" y="72">+ IndicatorFrameDefaults : IndicatorFrameDefaultsStructure [0..1]</text>
+    <text class="attr" x="12" y="93">+ PreparednessLevel : PreparednessEnumeration [0..1]</text>
+    <text class="attr" x="12" y="114">+ IndicatorInFrameGroup [1]</text>
+  </g>
+
+  <g transform="translate(930,500)">
+    <rect class="classbox" width="360" height="130"/>
+    <rect class="header" width="360" height="28"/>
+    <text class="stereo" x="12" y="18">«xsd:group»</text>
+    <text class="name" x="12" y="48">IndicatorInFrameGroup</text>
+    <text class="attr" x="12" y="73">+ indicatorLogEntries : AbstractIndicatorLogEntries_RelStructure [0..1]</text>
+    <text class="attr" x="12" y="96">+ indicators : AbstractIndicators_RelStructure [0..1]</text>
+  </g>
+
+  <!-- Defaults -->
+  <g transform="translate(450,500)">
+    <rect class="classbox" width="430" height="120"/>
+    <rect class="header" width="430" height="28"/>
+    <text class="stereo" x="12" y="18">«xsd:complexType»</text>
+    <text class="name" x="12" y="48">IndicatorFrameDefaultsStructure</text>
+    <text class="attr" x="12" y="73">+ IndicatorFrameDefaultsGroup [1]</text>
+    <text class="attr" x="12" y="96">(contains DefaultCapacityContext [0..1])</text>
+  </g>
+
+  <!-- Preparedness -->
+  <g transform="translate(70,420)">
+    <rect class="classbox" width="280" height="170"/>
+    <rect class="header" width="280" height="28"/>
+    <text class="stereo" x="12" y="18">«xsd:simpleType» enum</text>
+    <text class="name" x="12" y="48">PreparednessEnumeration</text>
+    <text class="attr" x="12" y="73">Raw</text>
+    <text class="attr" x="12" y="94">Cleansed</text>
+    <text class="attr" x="12" y="115">Processed</text>
+    <text class="meta" x="12" y="141">base = xsd:NMTOKEN</text>
+  </g>
+
+  <!-- Abstract indicators -->
+  <g transform="translate(70,640)">
+    <rect class="classbox" width="390" height="140"/>
+    <rect class="header" width="390" height="28"/>
+    <text class="stereo" x="12" y="18">«xsd:complexType»</text>
+    <text class="name" x="12" y="48">AbstractIndicators_RelStructure</text>
+    <text class="attr" x="12" y="73">+ AbstractIndicator [1..*]</text>
+    <text class="meta" x="12" y="98">relation container for indicators</text>
+  </g>
+
+  <g transform="translate(500,660)">
+    <rect class="classbox" width="380" height="120"/>
+    <rect class="header" width="380" height="28"/>
+    <text class="stereo" x="12" y="18">«xsd:element» abstract</text>
+    <text class="name" x="12" y="48">AbstractIndicator</text>
+    <text class="attr" x="12" y="73">type = Indicator_VersionStructure</text>
+    <text class="meta" x="12" y="96">substitutionGroup = AbstractLoggableObject</text>
+  </g>
+
+  <g transform="translate(930,660)">
+    <rect class="classbox" width="330" height="120"/>
+    <rect class="header" width="330" height="28"/>
+    <text class="stereo" x="12" y="18">«xsd:complexType»</text>
+    <text class="name" x="12" y="48">Indicator_VersionStructure</text>
+    <text class="meta" x="12" y="73">extends LoggableObject_VersionStructure</text>
+  </g>
+
+  <!-- Abstract indicator log entries -->
+  <g transform="translate(70,810)">
+    <rect class="classbox" width="390" height="140"/>
+    <rect class="header" width="390" height="28"/>
+    <text class="stereo" x="12" y="18">«xsd:complexType»</text>
+    <text class="name" x="12" y="48">AbstractIndicatorLogEntries_RelStructure</text>
+    <text class="attr" x="12" y="73">+ AbstractIndicatorLogEntry [1..*]</text>
+    <text class="meta" x="12" y="98">relation container for log entries</text>
+  </g>
+
+  <g transform="translate(500,830)">
+    <rect class="classbox" width="380" height="120"/>
+    <rect class="header" width="380" height="28"/>
+    <text class="stereo" x="12" y="18">«xsd:element» abstract</text>
+    <text class="name" x="12" y="48">AbstractIndicatorLogEntry</text>
+    <text class="attr" x="12" y="73">type = IndicatorLogEntry_VersionStructure</text>
+    <text class="meta" x="12" y="96">substitutionGroup = AbstractLogEntry</text>
+  </g>
+
+  <g transform="translate(930,830)">
+    <rect class="classbox" width="360" height="120"/>
+    <rect class="header" width="360" height="28"/>
+    <text class="stereo" x="12" y="18">«xsd:complexType»</text>
+    <text class="name" x="12" y="48">IndicatorLogEntry_VersionStructure</text>
+    <text class="meta" x="12" y="73">extends netex:LogEntry_VersionStructure</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- substitution/generalization: IndicatorFrame -> CommonFrame -->
+  <path class="edge" d="M 450 145 L 350 145" marker-end="url(#triangle)"/>
+  <text class="label" x="360" y="136">substitutes</text>
+
+  <!-- type relationship: IndicatorFrame -> IndicatorVersionFrameStructure -->
+  <path class="edge-dashed" d="M 665 275 L 665 315" marker-end="url(#arrow)"/>
+  <text class="label" x="675" y="300">type/restriction</text>
+
+  <!-- extension: IndicatorVersionFrameStructure -> Common_VersionFrameStructure -->
+  <path class="edge" d="M 450 360 L 350 298" marker-end="url(#triangle)"/>
+  <text class="label" x="356" y="335">extends</text>
+
+  <!-- composition: IndicatorVersionFrameStructure -> IndicatorFrameGroup -->
+  <path class="edge-dashed" d="M 880 380 L 930 380" marker-end="url(#arrow)"/>
+
+  <!-- composition: IndicatorFrameGroup -> IndicatorInFrameGroup -->
+  <path class="edge-dashed" d="M 1110 460 L 1110 500" marker-end="url(#arrow)"/>
+
+  <!-- composition: IndicatorFrameGroup -> PreparednessEnumeration -->
+  <path class="edge-dashed" d="M 930 355 L 350 485" marker-end="url(#arrow)"/>
+  <text class="label" x="610" y="395">PreparednessLevel type</text>
+
+  <!-- composition: IndicatorFrameGroup -> IndicatorFrameDefaultsStructure -->
+  <path class="edge-dashed" d="M 930 410 L 880 540" marker-end="url(#arrow)"/>
+
+  <!-- composition: IndicatorInFrameGroup -> relation structures -->
+  <path class="edge-dashed" d="M 930 565 L 460 705" marker-end="url(#arrow)"/>
+  <path class="edge-dashed" d="M 930 590 L 460 875" marker-end="url(#arrow)"/>
+
+  <!-- relation structures to abstract elements/types -->
+  <path class="edge-dashed" d="M 460 710 L 500 710" marker-end="url(#arrow)"/>
+  <path class="edge-dashed" d="M 880 710 L 930 710" marker-end="url(#arrow)"/>
+  <path class="edge-dashed" d="M 460 875 L 500 875" marker-end="url(#arrow)"/>
+  <path class="edge-dashed" d="M 880 875 L 930 875" marker-end="url(#arrow)"/>
+
+  <!-- Legend -->
+  <g transform="translate(1320,32)">
+    <rect class="legend" width="250" height="138"/>
+    <text class="name" x="12" y="24">Legend</text>
+    <line class="edge" x1="12" y1="42" x2="62" y2="42" marker-end="url(#triangle)"/>
+    <text class="small" x="74" y="46">Generalization / substitution</text>
+    <line class="edge-dashed" x1="12" y1="66" x2="62" y2="66" marker-end="url(#arrow)"/>
+    <text class="small" x="74" y="70">Association / composition / type</text>
+    <text class="small" x="12" y="95">Multiplicity uses UML style:</text>
+    <text class="small" x="12" y="113">[0..1], [1], [1..*]</text>
+  </g>
+</svg>

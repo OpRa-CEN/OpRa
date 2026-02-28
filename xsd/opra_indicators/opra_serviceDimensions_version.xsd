@@ -154,7 +154,7 @@ Rail transport, Roads and Road transport
 	</xsd:complexType>
 	<xsd:group name="ServiceDimensionsGroup">
 		<xsd:annotation>
-			<xsd:documentation>Static (same in each state) elements for an PlannedServiceDimensions (as a LOGGABLE OBJECT)</xsd:documentation>
+			<xsd:documentation>Static (same in each state) elements for a PlannedServiceDimensions and ActualServiceDimensions (as a LOGGABLE OBJECT)</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="CalendarAwarePtScopeGroup"/>

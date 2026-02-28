@@ -6,10 +6,16 @@
     </meta>
     <projectTree name="OpRa.xpr">
         <folder name="Examples">
+            <file name="examples/ActualServiceDimensions.xml"/>
             <file name="examples/CancelledAndLateDatedVehicleJourneys.xml"/>
+            <file name="examples/ContextualIndicatorFrame.xml"/>
             <file name="examples/DelayedAndCancelledJourneysWithEvents.xml"/>
             <file name="examples/ExpectedPassengerCount.xml"/>
+            <file name="examples/ExpectedServiceIntensity.xml"/>
+            <file name="examples/Placeholder.xml"/>
             <file name="examples/PlannedCapacity.xml"/>
+            <file name="examples/PlannedServiceDimensions.xml"/>
+            <file name="examples/PlannedServiceIntensity.xml"/>
             <file name="examples/RequestAllPassengerCounts.xml"/>
             <file name="examples/RequestLateDatedVehicleJourneys.xml"/>
             <file name="examples/ResponseLateDatedVehicleJourneys.xml"/>
