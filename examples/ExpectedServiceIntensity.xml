@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
 	<ServiceDelivery>
-		<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
+		<siri:ResponseTimestamp>2025-12-17T09:30:47Z</siri:ResponseTimestamp>
 		<siri:ProducerRef>OpraExamples</siri:ProducerRef>
 		<opraFunctionalDeliveries>
 			<OpraPayloadDelivery>
-				<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
+				<siri:ResponseTimestamp>2025-12-17T09:30:47Z</siri:ResponseTimestamp>
 				<Description>Expected service intensity example including all indicator elements and one-to-many relation in indicators.</Description>
 				<dataObjects>
 					<IndicatorFrame>
@@ -23,9 +23,9 @@
 								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 								<netex:ScheduledStopPointRef ref="Test:SSP:T1"/>
 								<netex:VehicleJourneyRef ref="Test:VJ:10:101"/>
-								<netex:DatedVehicleJourneyRef ref="Test:DVJ:10:2001-12-17:101"/>
+								<netex:DatedVehicleJourneyRef ref="Test:DVJ:10:2025-12-17:101"/>
 								<netex:DayTypeRef ref="Test:DayType:Weekdays"/>
-								<netex:OperatingDayRef ref="Test:OperatingDay:2001-12-17"/>
+								<netex:OperatingDayRef ref="Test:OperatingDay:2025-12-17"/>
 								<netex:TimebandRef ref="Test:TimeBand:16-19"/>
 								<netex:GarageRef ref="Test:Garage:North"/>
 								<netex:VehicleTypeRef ref="Test:VT:bus:regular"/>
@@ -105,9 +105,9 @@
 								<netex:JourneyPatternRef ref="Test:JP:10:T3a-T1"/>
 								<netex:ScheduledStopPointRef ref="Test:SSP:T3a"/>
 								<netex:VehicleJourneyRef ref="Test:VJ:10:102"/>
-								<netex:DatedVehicleJourneyRef ref="Test:DVJ:10:2001-12-17:102"/>
+								<netex:DatedVehicleJourneyRef ref="Test:DVJ:10:2025-12-17:102"/>
 								<netex:DayTypeRef ref="Test:DayType:Weekdays"/>
-								<netex:OperatingDayRef ref="Test:OperatingDay:2001-12-17"/>
+								<netex:OperatingDayRef ref="Test:OperatingDay:2025-12-17"/>
 								<netex:TimebandRef ref="Test:TimeBand:16-19"/>
 								<netex:GarageRef ref="Test:Garage:North"/>
 								<netex:VehicleTypeRef ref="Test:VT:bus:regular"/>

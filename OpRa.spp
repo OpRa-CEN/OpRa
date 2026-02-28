@@ -761,10 +761,16 @@
 		</Folder>
 	</Folder>
 	<Folder FolderName="Examples">
+		<File FilePath="examples\ActualServiceDimensions.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\CancelledAndLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\ContextualIndicatorFrame.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\DelayedAndCancelledJourneysWithEvents.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\ExpectedPassengerCount.xml" HomeFolder="Yes"/>
-		<File FilePath="examples\placeholder.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\ExpectedServiceIntensity.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\Placeholder.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\PlannedCapacity.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\PlannedServiceDimensions.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\PlannedServiceIntensity.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\RequestAllPassengerCounts.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\RequestLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\ResponseLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>

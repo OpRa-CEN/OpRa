@@ -1,180 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
 	<ServiceDelivery>
-		<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
+		<siri:ResponseTimestamp>2025-12-17T09:30:47Z</siri:ResponseTimestamp>
 		<siri:ProducerRef>OpraExamples</siri:ProducerRef>
 		<opraFunctionalDeliveries>
 			<OpraPayloadDelivery>
-				<siri:ResponseTimestamp>2001-12-17T09:30:47Z</siri:ResponseTimestamp>
-				<Description>Planned service intensity example including all indicator elements and one-to-many relation in indicators.</Description>
+				<siri:ResponseTimestamp>2025-12-17T09:30:47Z</siri:ResponseTimestamp>
+				<Description>Planned service intensity for one authority and one network, buses only, aggregated for weekend operation in a city of about 150000 citizens and 10 bus lines.</Description>
 				<dataObjects>
 					<IndicatorFrame>
 						<PreparednessLevel>Raw</PreparednessLevel>
 						<indicators>
-							<!-- One-to-many relation: multiple PlannedServiceIntensity elements in one indicators collection -->
 							<PlannedServiceIntensity>
-								<Description>Planned service intensity for line-level weekday operation.</Description>
+								<Description>Weekend planned service intensity for the full bus network for standard fare class over one month, assuming 10 lines with a 30-minute frequency per direction from 06:00 to 22:00 and typical urban bus-priority operations.</Description>
 								<netex:AuthorityRef ref="Test:Authority:1"/>
 								<netex:OperatorRef ref="Test:Operator:OpraBus"/>
-								<netex:SiteRef ref="Test:Site:CityDepot"/>
 								<netex:NetworkRef ref="Test:Network:Main"/>
 								<netex:VehicleMode>bus</netex:VehicleMode>
-								<netex:LineRef ref="Test:Line:10"/>
-								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-								<netex:ScheduledStopPointRef ref="Test:SSP:T1"/>
-								<netex:VehicleJourneyRef ref="Test:VJ:10:001"/>
-								<netex:DatedVehicleJourneyRef ref="Test:DVJ:10:2001-12-17:001"/>
-								<netex:DayTypeRef ref="Test:DayType:Weekdays"/>
-								<netex:OperatingDayRef ref="Test:OperatingDay:2001-12-17"/>
-								<netex:TimebandRef ref="Test:TimeBand:6-9"/>
-								<netex:GarageRef ref="Test:Garage:North"/>
-								<netex:VehicleTypeRef ref="Test:VT:bus:regular"/>
-								<netex:VehicleRef ref="Test:Vehicle:Bus-1001"/>
-								<RollingStockType>selfPropelled</RollingStockType>
+								<netex:DayTypeRef ref="Test:DayType:Weekend"/>
+								<netex:TimebandRef ref="Test:TimeBand:Month:2025-12"/>
 								<MeanCapacityOverNetworkDistance>
 									<netex:FareClass>standardClass</netex:FareClass>
-									<netex:TotalCapacity>780</netex:TotalCapacity>
-									<netex:SeatingCapacity>420</netex:SeatingCapacity>
-									<netex:StandingCapacity>340</netex:StandingCapacity>
-									<netex:SpecialPlaceCapacity>8</netex:SpecialPlaceCapacity>
-									<netex:PushchairCapacity>6</netex:PushchairCapacity>
-									<netex:WheelchairPlaceCapacity>6</netex:WheelchairPlaceCapacity>
-									<Distance>1260</Distance>
+									<netex:TotalCapacity>64</netex:TotalCapacity>
+									<netex:SeatingCapacity>35</netex:SeatingCapacity>
+									<netex:StandingCapacity>27</netex:StandingCapacity>
+									<netex:SpecialPlaceCapacity>1</netex:SpecialPlaceCapacity>
+									<netex:PushchairCapacity>1</netex:PushchairCapacity>
+									<netex:WheelchairPlaceCapacity>1</netex:WheelchairPlaceCapacity>
+									<Distance>71680</Distance>
 								</MeanCapacityOverNetworkDistance>
-								<MeanCapacityOverRouteDistance>
-									<netex:FareClass>standardClass</netex:FareClass>
-									<netex:TotalCapacity>420</netex:TotalCapacity>
-									<netex:SeatingCapacity>230</netex:SeatingCapacity>
-									<netex:StandingCapacity>180</netex:StandingCapacity>
-									<netex:SpecialPlaceCapacity>4</netex:SpecialPlaceCapacity>
-									<netex:PushchairCapacity>3</netex:PushchairCapacity>
-									<netex:WheelchairPlaceCapacity>3</netex:WheelchairPlaceCapacity>
-									<Distance>630</Distance>
-								</MeanCapacityOverRouteDistance>
-								<MeanCapacityOverJourneyDistance>
-									<netex:FareClass>standardClass</netex:FareClass>
-									<netex:TotalCapacity>70</netex:TotalCapacity>
-									<netex:SeatingCapacity>38</netex:SeatingCapacity>
-									<netex:StandingCapacity>30</netex:StandingCapacity>
-									<netex:SpecialPlaceCapacity>1</netex:SpecialPlaceCapacity>
-									<netex:PushchairCapacity>1</netex:PushchairCapacity>
-									<netex:WheelchairPlaceCapacity>1</netex:WheelchairPlaceCapacity>
-									<Distance>15</Distance>
-								</MeanCapacityOverJourneyDistance>
-								<LoadOverJourneyDistance>
-									<netex:FareClass>standardClass</netex:FareClass>
-									<netex:TotalCapacity>48</netex:TotalCapacity>
-									<netex:SeatingCapacity>32</netex:SeatingCapacity>
-									<netex:StandingCapacity>15</netex:StandingCapacity>
-									<netex:SpecialPlaceCapacity>1</netex:SpecialPlaceCapacity>
-									<netex:PushchairCapacity>1</netex:PushchairCapacity>
-									<netex:WheelchairPlaceCapacity>1</netex:WheelchairPlaceCapacity>
-									<Distance>15</Distance>
-								</LoadOverJourneyDistance>
 								<TransportPerformance>
 									<netex:FareClass>standardClass</netex:FareClass>
-									<netex:TotalCapacity>57120</netex:TotalCapacity>
-									<netex:SeatingCapacity>38080</netex:SeatingCapacity>
-									<netex:StandingCapacity>17850</netex:StandingCapacity>
-									<netex:SpecialPlaceCapacity>840</netex:SpecialPlaceCapacity>
-									<netex:PushchairCapacity>840</netex:PushchairCapacity>
-									<netex:WheelchairPlaceCapacity>840</netex:WheelchairPlaceCapacity>
-									<Distance>1260</Distance>
+									<netex:TotalCapacity>327680</netex:TotalCapacity>
+									<netex:SeatingCapacity>179200</netex:SeatingCapacity>
+									<netex:StandingCapacity>138240</netex:StandingCapacity>
+									<netex:SpecialPlaceCapacity>5120</netex:SpecialPlaceCapacity>
+									<netex:PushchairCapacity>5120</netex:PushchairCapacity>
+									<netex:WheelchairPlaceCapacity>5120</netex:WheelchairPlaceCapacity>
+									<Distance>71680</Distance>
 								</TransportPerformance>
-								<TransportPerformancePerVehicle>
-									<netex:FareClass>standardClass</netex:FareClass>
-									<netex:TotalCapacity>595</netex:TotalCapacity>
-									<netex:SeatingCapacity>396</netex:SeatingCapacity>
-									<netex:StandingCapacity>186</netex:StandingCapacity>
-									<netex:SpecialPlaceCapacity>8</netex:SpecialPlaceCapacity>
-									<netex:PushchairCapacity>8</netex:PushchairCapacity>
-									<netex:WheelchairPlaceCapacity>8</netex:WheelchairPlaceCapacity>
-									<Distance>13</Distance>
-									<VehicleCount>96</VehicleCount>
-								</TransportPerformancePerVehicle>
-								<AverageCommercialSpeed>8.75</AverageCommercialSpeed>
-							</PlannedServiceIntensity>
-							<PlannedServiceIntensity>
-								<Description>Planned service intensity for opposite direction in same timeband.</Description>
-								<netex:AuthorityRef ref="Test:Authority:1"/>
-								<netex:OperatorRef ref="Test:Operator:OpraBus"/>
-								<netex:SiteRef ref="Test:Site:CityDepot"/>
-								<netex:NetworkRef ref="Test:Network:Main"/>
-								<netex:VehicleMode>bus</netex:VehicleMode>
-								<netex:LineRef ref="Test:Line:10"/>
-								<netex:JourneyPatternRef ref="Test:JP:10:T3a-T1"/>
-								<netex:ScheduledStopPointRef ref="Test:SSP:T3a"/>
-								<netex:VehicleJourneyRef ref="Test:VJ:10:002"/>
-								<netex:DatedVehicleJourneyRef ref="Test:DVJ:10:2001-12-17:002"/>
-								<netex:DayTypeRef ref="Test:DayType:Weekdays"/>
-								<netex:OperatingDayRef ref="Test:OperatingDay:2001-12-17"/>
-								<netex:TimebandRef ref="Test:TimeBand:6-9"/>
-								<netex:GarageRef ref="Test:Garage:North"/>
-								<netex:VehicleTypeRef ref="Test:VT:bus:regular"/>
-								<netex:VehicleRef ref="Test:Vehicle:Bus-1002"/>
-								<RollingStockType>selfPropelled</RollingStockType>
-								<MeanCapacityOverNetworkDistance>
-									<netex:FareClass>standardClass</netex:FareClass>
-									<netex:TotalCapacity>720</netex:TotalCapacity>
-									<netex:SeatingCapacity>390</netex:SeatingCapacity>
-									<netex:StandingCapacity>315</netex:StandingCapacity>
-									<netex:SpecialPlaceCapacity>8</netex:SpecialPlaceCapacity>
-									<netex:PushchairCapacity>6</netex:PushchairCapacity>
-									<netex:WheelchairPlaceCapacity>6</netex:WheelchairPlaceCapacity>
-									<Distance>1188</Distance>
-								</MeanCapacityOverNetworkDistance>
-								<MeanCapacityOverRouteDistance>
-									<netex:FareClass>standardClass</netex:FareClass>
-									<netex:TotalCapacity>390</netex:TotalCapacity>
-									<netex:SeatingCapacity>215</netex:SeatingCapacity>
-									<netex:StandingCapacity>165</netex:StandingCapacity>
-									<netex:SpecialPlaceCapacity>4</netex:SpecialPlaceCapacity>
-									<netex:PushchairCapacity>3</netex:PushchairCapacity>
-									<netex:WheelchairPlaceCapacity>3</netex:WheelchairPlaceCapacity>
-									<Distance>594</Distance>
-								</MeanCapacityOverRouteDistance>
-								<MeanCapacityOverJourneyDistance>
-									<netex:FareClass>standardClass</netex:FareClass>
-									<netex:TotalCapacity>68</netex:TotalCapacity>
-									<netex:SeatingCapacity>37</netex:SeatingCapacity>
-									<netex:StandingCapacity>29</netex:StandingCapacity>
-									<netex:SpecialPlaceCapacity>1</netex:SpecialPlaceCapacity>
-									<netex:PushchairCapacity>1</netex:PushchairCapacity>
-									<netex:WheelchairPlaceCapacity>1</netex:WheelchairPlaceCapacity>
-									<Distance>15</Distance>
-								</MeanCapacityOverJourneyDistance>
-								<LoadOverJourneyDistance>
-									<netex:FareClass>standardClass</netex:FareClass>
-									<netex:TotalCapacity>44</netex:TotalCapacity>
-									<netex:SeatingCapacity>29</netex:SeatingCapacity>
-									<netex:StandingCapacity>14</netex:StandingCapacity>
-									<netex:SpecialPlaceCapacity>1</netex:SpecialPlaceCapacity>
-									<netex:PushchairCapacity>1</netex:PushchairCapacity>
-									<netex:WheelchairPlaceCapacity>1</netex:WheelchairPlaceCapacity>
-									<Distance>15</Distance>
-								</LoadOverJourneyDistance>
-								<TransportPerformance>
-									<netex:FareClass>standardClass</netex:FareClass>
-									<netex:TotalCapacity>52272</netex:TotalCapacity>
-									<netex:SeatingCapacity>34506</netex:SeatingCapacity>
-									<netex:StandingCapacity>16632</netex:StandingCapacity>
-									<netex:SpecialPlaceCapacity>756</netex:SpecialPlaceCapacity>
-									<netex:PushchairCapacity>756</netex:PushchairCapacity>
-									<netex:WheelchairPlaceCapacity>756</netex:WheelchairPlaceCapacity>
-									<Distance>1188</Distance>
-								</TransportPerformance>
-								<TransportPerformancePerVehicle>
-									<netex:FareClass>standardClass</netex:FareClass>
-									<netex:TotalCapacity>592</netex:TotalCapacity>
-									<netex:SeatingCapacity>391</netex:SeatingCapacity>
-									<netex:StandingCapacity>188</netex:StandingCapacity>
-									<netex:SpecialPlaceCapacity>8</netex:SpecialPlaceCapacity>
-									<netex:PushchairCapacity>8</netex:PushchairCapacity>
-									<netex:WheelchairPlaceCapacity>8</netex:WheelchairPlaceCapacity>
-									<Distance>13</Distance>
-									<VehicleCount>89</VehicleCount>
-								</TransportPerformancePerVehicle>
-								<AverageCommercialSpeed>8.40</AverageCommercialSpeed>
+								<AverageCommercialSpeed>13.5</AverageCommercialSpeed>
 							</PlannedServiceIntensity>
 						</indicators>
 					</IndicatorFrame>
