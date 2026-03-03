@@ -9,7 +9,7 @@ set -e
 
 # Update the submodules, usefull only when there is a submodul update (can be commented most of the time)
 echo "Syncronising submodules ..."
-git submodule update --init -–recursive
+git submodule update --init --recursive
 
 #-------------------------------------------------------
 
