@@ -14,6 +14,7 @@
             <file name="examples/ExpectedServiceIntensity.xml"/>
             <file name="examples/Placeholder.xml"/>
             <file name="examples/PlannedCapacity.xml"/>
+            <file name="examples/PlannedFleetDimensions.xml"/>
             <file name="examples/PlannedServiceDimensions.xml"/>
             <file name="examples/PlannedServiceIntensity.xml"/>
             <file name="examples/RequestAllPassengerCounts.xml"/>
@@ -36,15 +37,15 @@
                 <file name="xsd/opra_framework/opra_frames/opra_indicatorFrame_version.xsd"/>
             </folder>
             <folder name="Generic Framework">
-                <file name="xsd/opra_framework/opra_genericFramework/opra_GeneralKpi_version.xsd"/>
+                <file name="xsd/opra_framework/opra_genericFramework/opra_GenericContextualIndicator_version.xsd"/>
                 <file name="xsd/opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
             </folder>
             <folder name="Reusable Components">
                 <file name="xsd/opra_framework/opra_reusableComponents/opra_controlActionReference_support.xsd"/>
                 <file name="xsd/opra_framework/opra_reusableComponents/opra_durationDistribution_support.xsd"/>
                 <file name="xsd/opra_framework/opra_reusableComponents/opra_eventReference_support.xsd"/>
+                <file name="xsd/opra_framework/opra_reusableComponents/opra_filtering_support.xsd"/>
                 <file name="xsd/opra_framework/opra_reusableComponents/opra_passengerTravelControl_support.xsd"/>
-                <file name="xsd/opra_framework/opra_reusableComponents/opra_ptScope_support.xsd"/>
                 <file name="xsd/opra_framework/opra_reusableComponents/opra_statistics_support.xsd"/>
                 <file name="xsd/opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd"/>
             </folder>
@@ -61,6 +62,7 @@
             <file name="xsd/opra_service/opra_service_actualService.xsd"/>
             <file name="xsd/opra_service/opra_service_cancelledDatedVehicleJourneys.xsd"/>
             <file name="xsd/opra_service/opra_service_capacity.xsd"/>
+            <file name="xsd/opra_service/opra_service_contextualIndicators.xsd"/>
             <file name="xsd/opra_service/opra_service_expectedPassengerCounts.xsd"/>
             <file name="xsd/opra_service/opra_service_externalPassengerCounts.xsd"/>
             <file name="xsd/opra_service/opra_service_fleetDimensions.xsd"/>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
+	<ServiceDelivery>
+		<siri:ResponseTimestamp>2026-03-04T08:30:00Z</siri:ResponseTimestamp>
+		<siri:ProducerRef>OpraExamples</siri:ProducerRef>
+		<opraFunctionalDeliveries>
+			<OpraPayloadDelivery>
+				<siri:ResponseTimestamp>2026-03-04T08:30:00Z</siri:ResponseTimestamp>
+				<Description>Planned capacity indicator example for one line and operating day.</Description>
+				<dataObjects>
+					<IndicatorFrame id="Test:IndicatorFrame:PlannedCapacity:2026-03-01">
+						<IndicatorFrameDefaults>
+							<DefaultCapacitySpecification>
+								<SpecificationMethod>nominalPerVehicleType</SpecificationMethod>
+								<vehicleTypeCapacities>
+									<VehicleTypeCapacity>
+										<netex:VehicleTypeRef ref="Test:VT:bus:regular"/>
+										<netex:TotalCapacity>70</netex:TotalCapacity>
+										<netex:WheelchairPlaceCapacity>1</netex:WheelchairPlaceCapacity>
+									</VehicleTypeCapacity>
+								</vehicleTypeCapacities>
+							</DefaultCapacitySpecification>
+						</IndicatorFrameDefaults>
+						<PreparednessLevel>Raw</PreparednessLevel>
+						<indicators>
+							<PlannedCapacity id="Test:PlannedCapacity:Line10:2026-03-01">
+								<Description>Planned total and wheelchair capacity for Line 10 on one operating day.</Description>
+								<netex:LineRef ref="Test:Line:10"/>
+								<netex:OperatingDayRef ref="Test:OperatingDay:2026-03-01"/>
+								<netex:TotalCapacity>3500</netex:TotalCapacity>
+								<netex:WheelchairPlaceCapacity>50</netex:WheelchairPlaceCapacity>
+							</PlannedCapacity>
+							<PlannedCapacity id="Test:PlannedCapacity:JP10:T1-T3a:2026-03-01">
+								<Description>Planned capacity for one journey pattern segment of Line 10.</Description>
+								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+								<netex:OperatingDayRef ref="Test:OperatingDay:2026-03-01"/>
+								<netex:TotalCapacity>1750</netex:TotalCapacity>
+								<netex:WheelchairPlaceCapacity>25</netex:WheelchairPlaceCapacity>
+							</PlannedCapacity>
+						</indicators>
+					</IndicatorFrame>
+				</dataObjects>
+			</OpraPayloadDelivery>
+		</opraFunctionalDeliveries>
+	</ServiceDelivery>
+</Opra>
