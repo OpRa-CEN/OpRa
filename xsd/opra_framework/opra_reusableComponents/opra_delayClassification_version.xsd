@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_delayClassification_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
-    <xsd:import schemaLocation="../../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
-    <!-- OpRa includes-->
-    <xsd:include schemaLocation="opra_durationDistribution_support.xsd" />
-    <xsd:annotation>
-        <xsd:appinfo>
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_delayClassification_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<xsd:import schemaLocation="../../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
+	<!-- OpRa includes-->
+	<xsd:include schemaLocation="opra_durationDistribution_support.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo>
 			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -48,60 +48,60 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-        <xsd:documentation>OpRa DELAY Classification</xsd:documentation>
-    </xsd:annotation>
-    <xsd:simpleType name="TypeOfDelayIdType">
-        <xsd:restriction base="netex:ObjectIdType" />
-    </xsd:simpleType>
-    <xsd:complexType name="TypeOfDelayRefStructure">
-        <xsd:simpleContent>
-            <xsd:restriction base="netex:VersionOfObjectRefStructure">
-                <xsd:attribute name="ref" type="TypeOfDelayIdType" use="required" />
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:element name="TypeOfDelayRef" type="TypeOfDelayRefStructure" />
-    <!-- ======================================================================= -->
-    <xsd:element name="TypeOfDelay" substitutionGroup="netex:DataManagedObject">
-        <xsd:annotation>
-            <xsd:documentation>Element for a TYPE OF DELAY classifying DELAYs, e.g. for implementing regulations that differentiate between DELAYs.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexType>
-            <xsd:complexContent>
-                <xsd:restriction base="TypeOfDelay_Structure">
-                    <xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="netex:DataManagedObjectGroup" />
-                        </xsd:sequence>
-                    </xsd:sequence>
-                    <xsd:attribute name="id" type="TypeOfDelayIdType" />
-                </xsd:restriction>
-            </xsd:complexContent>
-        </xsd:complexType>
-    </xsd:element>
-    <xsd:complexType name="TypeOfDelay_Structure">
-        <xsd:complexContent>
-            <xsd:extension base="netex:DataManagedObjectStructure">
-                <xsd:sequence>
-                    <xsd:group ref="TypeOfDelayGroup" />
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="TypeOfDelayGroup">
-        <xsd:annotation>
-            <xsd:documentation>Representation of a TYPE OF DELAY, defining a duration range.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:group ref="DurationIntervalGroup" />
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:complexType name="TypesOfDelay_RelStructure">
-        <xsd:sequence>
-            <xsd:element name="TypeOfDelay" type="TypeOfDelay_Structure" maxOccurs="unbounded" />
-        </xsd:sequence>
-    </xsd:complexType>
+		<xsd:documentation>OpRa DELAY Classification</xsd:documentation>
+	</xsd:annotation>
+	<xsd:simpleType name="TypeOfDelayIdType">
+		<xsd:restriction base="netex:ObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:complexType name="TypeOfDelayRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="netex:VersionOfObjectRefStructure">
+				<xsd:attribute name="ref" type="TypeOfDelayIdType" use="required"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:element name="TypeOfDelayRef" type="TypeOfDelayRefStructure"/>
+	<!-- ======================================================================= -->
+	<xsd:element name="TypeOfDelay" substitutionGroup="netex:DataManagedObject">
+		<xsd:annotation>
+			<xsd:documentation>Element for a TYPE OF DELAY classifying DELAYs, e.g. for implementing regulations that differentiate between DELAYs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="TypeOfDelay_Structure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:DataManagedObjectGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="TypeOfDelayIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="TypeOfDelay_Structure">
+		<xsd:complexContent>
+			<xsd:extension base="netex:DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:group ref="TypeOfDelayGroup"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="TypeOfDelayGroup">
+		<xsd:annotation>
+			<xsd:documentation>Representation of a TYPE OF DELAY, defining a duration range.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="DurationIntervalGroup"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="TypesOfDelay_RelStructure">
+		<xsd:sequence>
+			<xsd:element name="TypeOfDelay" type="TypeOfDelay_Structure" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
 </xsd:schema>

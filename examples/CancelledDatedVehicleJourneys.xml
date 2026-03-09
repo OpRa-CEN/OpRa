@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
+	<ServiceDelivery>
+		<siri:ResponseTimestamp>2025-03-22T00:05:00Z</siri:ResponseTimestamp>
+		<opraFunctionalDeliveries>
+			<OpraPayloadDelivery>
+				<siri:ResponseTimestamp>2025-03-22T00:05:00Z</siri:ResponseTimestamp>
+				<Description>Cancelled dated vehicle journey examples on the sample network.</Description>
+				<dataObjects>
+					<IndicatorFrame>
+						<netex:ValidBetween>
+							<netex:FromDate>2025-03-16T00:00:00</netex:FromDate>
+							<netex:ToDate>2025-03-18T23:59:59</netex:ToDate>
+						</netex:ValidBetween>
+						<PreparednessLevel>Cleansed</PreparednessLevel>
+						<indicatorLogEntries>
+							<CancelledDatedVehicleJourneyEntry>
+								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+								<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250317_1700"/>
+								<ReplacementJourneyCreated>true</ReplacementJourneyCreated>
+							</CancelledDatedVehicleJourneyEntry>
+							<CancelledDatedVehicleJourneyEntry>
+								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+								<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250318_0630"/>
+								<ReplacementJourneyCreated>false</ReplacementJourneyCreated>
+							</CancelledDatedVehicleJourneyEntry>
+						</indicatorLogEntries>
+						<indicators>
+							<CancelledDatedVehicleJourneyCount>
+								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
+								<!-- Numerator: journeys cancelled in the scope above -->
+								<NumberOfOccurrences>2</NumberOfOccurrences>
+								<PercentageOfOccurrences>0.0270</PercentageOfOccurrences>
+								<!-- Denominator: all monitored journeys in the same scope (cancelled + not cancelled) -->
+								<TotalNumberOfOccurrences>74</TotalNumberOfOccurrences>
+							</CancelledDatedVehicleJourneyCount>
+						</indicators>
+					</IndicatorFrame>
+				</dataObjects>
+			</OpraPayloadDelivery>
+		</opraFunctionalDeliveries>
+	</ServiceDelivery>
+</Opra>
