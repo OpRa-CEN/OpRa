@@ -53,22 +53,22 @@
 	<!-- ======================================================================= -->
 	<xsd:group name="OccurrenceStatisticsGroup">
 		<xsd:annotation>
-			<xsd:documentation>Representation of occurrence-related statistics.</xsd:documentation>
+			<xsd:documentation>Representation of occurrence-related statistics as a numerator and denominator pair within a scoped population (for example cancelled journeys out of all monitored journeys, or journeys in a delay interval out of all monitored journeys).</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="NumberOfOccurrences" type="xsd:nonNegativeInteger" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>Absolute number of occurrences of a statistical group.</xsd:documentation>
+					<xsd:documentation>Numerator: absolute number of observations that satisfy the condition represented by the enclosing indicator (e.g. cancelled journeys, or journeys within a specific delay interval).</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="PercentageOfOccurrences" type="netex:PercentageType" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>Relative occurrence of a statistical group within a domain.</xsd:documentation>
+					<xsd:documentation>Relative proportion of NumberOfOccurrences within TotalNumberOfOccurrences for the same scope.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="TotalNumberOfOccurrences" type="xsd:nonNegativeInteger" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>Total number of occurrences of a statistical group.</xsd:documentation>
+					<xsd:documentation>Denominator: total number of observations in scope against which NumberOfOccurrences is evaluated (e.g. all monitored journeys in the same scope, not only the subset that satisfies the condition).</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>

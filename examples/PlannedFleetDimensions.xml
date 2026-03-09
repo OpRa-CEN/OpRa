@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlannedFleetDimensions xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Test:PlannedFleetDimensions:Line10:2026-03-01" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra_indicators/opra_fleetDimensions_version.xsd">
+	<Description>Planned fleet dimensions for Line 10 for one operating day.</Description>
+	<netex:LineRef ref="Test:Line:10"/>
+	<netex:OperatingDayRef ref="Test:OperatingDay:2026-03-01"/>
+	<netex:VehicleTypeRef ref="Test:VT:bus:regular"/>
+	<RollingStockType>selfPropelled</RollingStockType>
+	<NumberOfVehiclesTotal>24</NumberOfVehiclesTotal>
+	<NumberOfVehiclesRequired>20</NumberOfVehiclesRequired>
+	<NumberOfVehiclesInReserve>2</NumberOfVehiclesInReserve>
+	<NumberOfVehiclesAvailable>22</NumberOfVehiclesAvailable>
+</PlannedFleetDimensions>
