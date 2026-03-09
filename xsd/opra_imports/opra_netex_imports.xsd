@@ -20,10 +20,6 @@
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_vehicleJourney_support.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_2/part2_journeyTimes/netex_datedVehicleJourney_support.xsd"/>
 	<xsd:include schemaLocation="../../NeTEx/xsd/netex_part_3/part3_fares/netex_fareProduct_version.xsd"/>
-	<!-- Remove from final version, after synchronizing with current NeTEx developments -->
-	<!--
-	<xsd:include schemaLocation="opra_netex_facade.xsd"/>
-	-->
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
@@ -42,7 +38,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_imports/opra_netex_facade.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_imports/opra_netex_imports.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>

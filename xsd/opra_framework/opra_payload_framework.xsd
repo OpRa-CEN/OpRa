@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_payload_framework">
-	<!-- ===Payload ============================= -->
-	<!--
-	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_facade.xsd"/>
-	-->
-	<!-- xsd:include schemaLocation="opra_frames/opra_compositeFrame_version.xsd"/ -->
-	<xsd:include schemaLocation="opra_frames/opra_compositeFrame_version.xsd"/>
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_payload_framework" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+	<xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<xsd:include schemaLocation="opra_frames/opra_plannedServiceFrame_version.xsd"/>
 	<xsd:include schemaLocation="opra_frames/opra_actualServiceFrame_version.xsd"/>
 	<xsd:include schemaLocation="opra_frames/opra_indicatorFrame_version.xsd"/>
@@ -16,7 +12,7 @@
 			<xsd:documentation>Type for the possible data objects within an OpRa payload.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice maxOccurs="unbounded">
-			<xsd:element ref="CompositeFrame" minOccurs="0"/>
+			<xsd:element ref="netex:CompositeFrame" minOccurs="0"/>
 			<xsd:element ref="PlannedServiceFrame" minOccurs="0"/>
 			<xsd:element ref="ActualServiceFrame" minOccurs="0"/>
 			<xsd:element ref="IndicatorFrame" minOccurs="0"/>
