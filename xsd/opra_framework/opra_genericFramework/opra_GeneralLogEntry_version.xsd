@@ -4,7 +4,7 @@
 	<!-- SIRI Imports-->
 	<xsd:import schemaLocation="../../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
 	<!-- NeTEX Imports-->
-	<xsd:import schemaLocation="../../opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<!-- OpRa Include-->
 	<xsd:include schemaLocation="../opra_reusableComponents/opra_controlActionReference_support.xsd"/>
 	<xsd:include schemaLocation="../opra_reusableComponents/opra_eventReference_support.xsd"/>
