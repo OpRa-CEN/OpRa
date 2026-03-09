@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
+	<ServiceDelivery>
+		<siri:ResponseTimestamp>2025-02-27T10:15:00Z</siri:ResponseTimestamp>
+		<siri:ProducerRef>OpraExamples</siri:ProducerRef>
+		<opraFunctionalDeliveries>
+			<OpraPayloadDelivery>
+				<siri:ResponseTimestamp>2025-02-27T10:15:00Z</siri:ResponseTimestamp>
+				<Description>Operator operational statistics at network level for a weekday: one bus KPI and one rail KPI.</Description>
+				<dataObjects>
+					<ContextualIndicatorFrame id="CIF:2025-02-27:OpraExamples:1">
+						<ContextIdentifier>OPERATOR_NETWORK_STATISTICS</ContextIdentifier>
+						<ContextVersion>2025.1</ContextVersion>
+						<ContextKeyList>
+							<netex:KeyValue>
+								<netex:Key>KPI_OWNER</netex:Key>
+								<netex:Value>Test:Operator:OpraTransit</netex:Value>
+							</netex:KeyValue>
+							<netex:KeyValue>
+								<netex:Key>AGGREGATION_LEVEL</netex:Key>
+								<netex:Value>NETWORK_BY_MODE</netex:Value>
+							</netex:KeyValue>
+							<netex:KeyValue>
+								<netex:Key>REPORTING_WINDOW</netex:Key>
+								<netex:Value>DAY_TYPE</netex:Value>
+							</netex:KeyValue>
+							<netex:KeyValue>
+								<netex:Key>VALUE_SCALE</netex:Key>
+								<netex:Value>FRACTION_0_1</netex:Value>
+							</netex:KeyValue>
+						</ContextKeyList>
+						<indicators>
+							<GenericContextualIndicator id="CIF:2025-02-27:OpraExamples:1:BusKPI">
+								<CtxIndicatorIdentifier>BusNetworkOnTimeDepartureRate</CtxIndicatorIdentifier>
+								<netex:AuthorityRef ref="Test:Authority:1"/>
+								<netex:OperatorRef ref="Test:Operator:OpraTransit"/>
+								<netex:NetworkRef ref="Test:Network:Main"/>
+								<netex:VehicleMode>bus</netex:VehicleMode>
+								<netex:DayTypeRef ref="Test:DayType:Weekdays"/>
+								<CtxIndicatorValue>0.91</CtxIndicatorValue>
+							</GenericContextualIndicator>
+							<GenericContextualIndicator>
+								<CtxIndicatorIdentifier>RailNetworkOnTimeDepartureRate</CtxIndicatorIdentifier>
+								<netex:AuthorityRef ref="Test:Authority:1"/>
+								<netex:OperatorRef ref="Test:Operator:OpraTransit"/>
+								<netex:NetworkRef ref="Test:Network:Main"/>
+								<netex:VehicleMode>rail</netex:VehicleMode>
+								<netex:DayTypeRef ref="Test:DayType:Weekdays"/>
+								<CtxIndicatorValue>0.93</CtxIndicatorValue>
+							</GenericContextualIndicator>
+						</indicators>
+					</ContextualIndicatorFrame>
+				</dataObjects>
+			</OpraPayloadDelivery>
+		</opraFunctionalDeliveries>
+	</ServiceDelivery>
+</Opra>

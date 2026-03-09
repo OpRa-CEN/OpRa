@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_expectedPassengerCounts" version="1.0">
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_capacity" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
 	<!-- === Imports (NeTEx) ============================================================== -->
 	<xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<!-- ===Includes (OpRa)============================================================== -->
@@ -24,7 +24,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_service/opra_service_expectedPassengerCounts.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_service/opra_service_capacity.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -49,66 +49,79 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa EXPECTED PASSENGER COUNT Request / Delivery schema.</xsd:documentation>
+		<xsd:documentation>OpRa PLANNED / ACTUAL CAPACITY Request / Discovery schema.</xsd:documentation>
 	</xsd:annotation>
-	<xsd:element name="ExpectedPassengerCountRequest" type="ExpectedPassengerCountRequestStructure" substitutionGroup="OpraFunctionalRequest">
+	<xsd:element name="PlannedCapacityRequest" type="OfferedCapacityRequestStructure" substitutionGroup="OpraFunctionalRequest">
 		<xsd:annotation>
-			<xsd:documentation>A request element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>A request element to get PLANNED CAPACITIes.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:complexType name="ExpectedPassengerCountRequestStructure">
+	<xsd:element name="ActualCapacityRequest" type="OfferedCapacityRequestStructure" substitutionGroup="OpraFunctionalRequest">
 		<xsd:annotation>
-			<xsd:documentation>Type for the request element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>A request element to get ACTUAL CAPACITIes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="OfferedCapacityRequestStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for the request element to get CAPACITIes.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="OpraFunctionalRequestStructure"/>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:group name="ExpectedPassengerCountRequestGroup">
+	<xsd:group name="OfferedCapacityRequestGroup">
 		<xsd:annotation>
-			<xsd:documentation>Currently empty placeholder for extending filtering capabilites of requests for EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>Currently empty placeholder for extending filtering capabilites of requests for CAPACITIes.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence/>
 	</xsd:group>
-	<xsd:element name="ExpectedPassengerCountDiscoveryRequest" type="ExpectedPassengerCountDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
+	<xsd:element name="PlannedCapacityDiscoveryRequest" type="OfferedCapacityDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
 		<xsd:annotation>
-			<xsd:documentation>A discovery request element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>A discovery request element to get PLANNED CAPACITIes.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:complexType name="ExpectedPassengerCountDiscoveryRequestStructure">
+	<xsd:element name="ActualCapacityDiscoveryRequest" type="OfferedCapacityDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
 		<xsd:annotation>
-			<xsd:documentation>Type for the discovery request element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>A discovery request element to get ACTUAL CAPACITIes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="OfferedCapacityDiscoveryRequestStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for the discovery request element to get CAPACITIes.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:extension base="OpraDiscoveryRequestStructure">
-				<xsd:group ref="ExpectedPassengerCountDiscoveryRequestGroup"/>
-			</xsd:extension>
+			<xsd:extension base="OpraDiscoveryRequestStructure"/>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:group name="ExpectedPassengerCountDiscoveryRequestGroup">
+	<xsd:group name="OfferedCapacityDiscoveryRequestGroup">
 		<xsd:annotation>
-			<xsd:documentation>Currently empty placeholder for extending filtering capabilities of discovery requests for EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>Currently empty placeholder for extending filtering capabilities of discovery requests for CAPACITIes.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence/>
 	</xsd:group>
-	<xsd:element name="ExpectedPassengerCountDiscoveryDelivery" type="ExpectedPassengerCountDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
+	<xsd:element name="PlannedCapacityDiscoveryDelivery" type="OfferedCapacityDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
 		<xsd:annotation>
-			<xsd:documentation>A discovery delivery element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>A discovery delivery element to get PLANNED CAPACITIes.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:complexType name="ExpectedPassengerCountDiscoveryDeliveryStructure">
+	<xsd:element name="ActualCapacityDiscoveryDelivery" type="OfferedCapacityDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
 		<xsd:annotation>
-			<xsd:documentation>Type for the discovery delivery element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>A discovery delivery element to get ACTUAL CAPACITIes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="OfferedCapacityDiscoveryDeliveryStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for the discovery delivery element to get CAPACITIes.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="OpraDiscoveryDeliveryStructure">
-				<xsd:group ref="ExpectedPassengerCountDiscoveryDeliveryGroup"/>
+				<xsd:group ref="OfferedCapacityDiscoveryDeliveryGroup"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:group name="ExpectedPassengerCountDiscoveryDeliveryGroup">
+	<xsd:group name="OfferedCapacityDiscoveryDeliveryGroup">
 		<xsd:annotation>
-			<xsd:documentation>Specific data content of a discovery delivery for EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>Specific data content of a discovery delivery for CAPACITIes.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="OperatingDays" type="netex:operatingDays_RelStructure">

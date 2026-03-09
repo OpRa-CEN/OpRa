@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="OpRa.xpr">
+        <folder name="Examples">
+            <file name="examples/ActualServiceDimensions.xml"/>
+            <file name="examples/CancelledAndLateDatedVehicleJourneys.xml"/>
+            <file name="examples/ContextualIndicatorFrame.xml"/>
+            <file name="examples/DelayedAndCancelledJourneysWithEvents.xml"/>
+            <file name="examples/ExpectedPassengerCount.xml"/>
+            <file name="examples/ExpectedServiceIntensity.xml"/>
+            <file name="examples/Placeholder.xml"/>
+            <file name="examples/PlannedCapacity.xml"/>
+            <file name="examples/PlannedServiceDimensions.xml"/>
+            <file name="examples/PlannedServiceIntensity.xml"/>
+            <file name="examples/RequestAllPassengerCounts.xml"/>
+            <file name="examples/RequestLateDatedVehicleJourneys.xml"/>
+            <file name="examples/ResponseLateDatedVehicleJourneys.xml"/>
+            <file name="examples/TicketingBasedPassengerCount.xml"/>
+        </folder>
+        <folder name="OpRa Core Schemas">
+            <file name="xsd/opra.xsd"/>
+            <file name="xsd/OpRa_publication.xsd"/>
+            <file name="xsd/opra_request.xsd"/>
+        </folder>
+        <folder name="OpRa Framework">
+            <folder name="Frames">
+                <file name="xsd/opra_framework/opra_frames/opra_actualServiceFrame_version.xsd"/>
+                <file name="xsd/opra_framework/opra_frames/opra_commonFrame_version.xsd"/>
+                <file name="xsd/opra_framework/opra_frames/opra_compositeFrame_version.xsd"/>
+                <file name="xsd/opra_framework/opra_frames/opra_contextualIndicatorFrame_version.xsd"/>
+                <file name="xsd/opra_framework/opra_frames/opra_plannedServiceFrame_version.xsd"/>
+                <file name="xsd/opra_framework/opra_frames/opra_indicatorFrame_version.xsd"/>
+            </folder>
+            <folder name="Generic Framework">
+                <file name="xsd/opra_framework/opra_genericFramework/opra_GeneralKpi_version.xsd"/>
+                <file name="xsd/opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
+            </folder>
+            <folder name="Reusable Components">
+                <file name="xsd/opra_framework/opra_reusableComponents/opra_controlActionReference_support.xsd"/>
+                <file name="xsd/opra_framework/opra_reusableComponents/opra_durationDistribution_support.xsd"/>
+                <file name="xsd/opra_framework/opra_reusableComponents/opra_eventReference_support.xsd"/>
+                <file name="xsd/opra_framework/opra_reusableComponents/opra_passengerTravelControl_support.xsd"/>
+                <file name="xsd/opra_framework/opra_reusableComponents/opra_ptScope_support.xsd"/>
+                <file name="xsd/opra_framework/opra_reusableComponents/opra_statistics_support.xsd"/>
+                <file name="xsd/opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd"/>
+            </folder>
+            <file name="xsd/opra_framework/opra_payload_framework.xsd"/>
+        </folder>
+        <folder name="OpRa Imports">
+            <file name="xsd/opra_imports/opra_netex_facade.xsd"/>
+            <file name="xsd/opra_imports/opra_netex_imports.xsd"/>
+            <file name="xsd/opra_imports/opra_siri_imports.xsd"/>
+        </folder>
+        <folder name="OpRa Service">
+            <file name="xsd/opra_service/opra_all_services.xsd"/>
+            <file name="xsd/opra_service/opra_payload_delivery.xsd"/>
+            <file name="xsd/opra_service/opra_service_actualService.xsd"/>
+            <file name="xsd/opra_service/opra_service_cancelledDatedVehicleJourneys.xsd"/>
+            <file name="xsd/opra_service/opra_service_capacity.xsd"/>
+            <file name="xsd/opra_service/opra_service_expectedPassengerCounts.xsd"/>
+            <file name="xsd/opra_service/opra_service_externalPassengerCounts.xsd"/>
+            <file name="xsd/opra_service/opra_service_fleetDimensions.xsd"/>
+            <file name="xsd/opra_service/opra_service_lateDatedVehicleJourneys.xsd"/>
+            <file name="xsd/opra_service/opra_service_onboardDeviceBasedPassengerCounts.xsd"/>
+            <file name="xsd/opra_service/opra_service_plannedService.xsd"/>
+            <file name="xsd/opra_service/opra_service_serviceDimensions.xsd"/>
+            <file name="xsd/opra_service/opra_service_serviceIntensity.xsd"/>
+            <file name="xsd/opra_service/opra_service_ticketingBasedPassengerCounts.xsd"/>
+        </folder>
+        <folder name="OpRa Indicators">
+            <file name="xsd/opra_indicators/opra_cancelledDatedVehicleJourney_version.xsd"/>
+            <file name="xsd/opra_indicators/opra_capacity_version.xsd"/>
+            <file name="xsd/opra_indicators/opra_expectedPassengerCount_version.xsd"/>
+            <file name="xsd/opra_indicators/opra_externalPassengerCount_version.xsd"/>
+            <file name="xsd/opra_indicators/opra_fleetDimensions_version.xsd"/>
+            <file name="xsd/opra_indicators/opra_lateDatedVehicleJourney_version.xsd"/>
+            <file name="xsd/opra_indicators/opra_onboardDeviceBasedPassengerCount_version.xsd"/>
+            <file name="xsd/opra_indicators/opra_serviceDimensions_version.xsd"/>
+            <file name="xsd/opra_indicators/opra_serviceIntensity_version.xsd"/>
+            <file name="xsd/opra_indicators/opra_ticketingBasedPassengerCount_version.xsd"/>
+            <file name="xsd/opra_indicators/opra_validationEntry_version.xsd"/>
+        </folder>
+        <folder name="NeTEx Schemas">
+            <folder name="Top Level">
+                <file name="NeTEx/xsd/ifopt.xsd"/>
+                <file name="NeTEx/xsd/NeTEx_publication.xsd"/>
+                <file name="NeTEx/xsd/NeTEx_publication-NoConstraint.xsd"/>
+                <file name="NeTEx/xsd/NeTEx_publication_timetable.xsd"/>
+                <file name="NeTEx/xsd/NeTEx_siri.xsd"/>
+                <file name="NeTEx/xsd/NeTEx_siri_SG.xsd"/>
+                <file name="NeTEx/xsd/NX.xsd"/>
+            </folder>
+        </folder>
+        <folder name="SIRI Schemas">
+            <file name="SIRI/xsd/siri.xsd"/>
+            <file name="SIRI/xsd/siriSg.xsd"/>
+        </folder>
+        <folder name="OJP Schemas">
+            <file name="OJP/OJP.xsd"/>
+        </folder>
+        <folder name="Documentation">
+            <file name="README.md"/>
+        </folder>
+    </projectTree>
+</project>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_expectedPassengerCounts" version="1.0">
-	<!-- === Imports (NeTEx) ============================================================== -->
-	<xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_service_contextualIndicators">
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_imports.xsd"/>
 	<!-- ===Includes (OpRa)============================================================== -->
 	<xsd:include schemaLocation="../opra_request.xsd"/>
 	<!-- === Documentation ======================================= -->
@@ -24,7 +23,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_service/opra_service_expectedPassengerCounts.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_service/opra_service_contextualIndicators.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -49,66 +48,73 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa EXPECTED PASSENGER COUNT Request / Delivery schema.</xsd:documentation>
+		<xsd:documentation>OpRa CONTEXTUAL INDICATORs Request schema</xsd:documentation>
 	</xsd:annotation>
-	<xsd:element name="ExpectedPassengerCountRequest" type="ExpectedPassengerCountRequestStructure" substitutionGroup="OpraFunctionalRequest">
+	<xsd:element name="ContextualIndicatorRequest" type="CtxIndicatorRequestStructure" substitutionGroup="OpraFunctionalRequest">
 		<xsd:annotation>
-			<xsd:documentation>A request element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>A request element to get KPIs.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:complexType name="ExpectedPassengerCountRequestStructure">
+	<xsd:complexType name="CtxIndicatorRequestStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for the request element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>Type for the request element to get KPIs.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:extension base="OpraFunctionalRequestStructure"/>
+			<xsd:extension base="OpraFunctionalRequestStructure">
+				<xsd:group ref="CtxIndicatorRequestGroup"/>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:group name="ExpectedPassengerCountRequestGroup">
+	<xsd:group name="CtxIndicatorRequestGroup">
 		<xsd:annotation>
-			<xsd:documentation>Currently empty placeholder for extending filtering capabilites of requests for EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>References that extend filtering capabilities of requests for KPIs.</xsd:documentation>
 		</xsd:annotation>
-		<xsd:sequence/>
+		<xsd:sequence>
+			<xsd:group ref="IndicatorContextRequestGroup"/>
+			<xsd:element name="CtxIndicatorIdentifierRef" type="xsd:normalizedString"/>
+		</xsd:sequence>
 	</xsd:group>
-	<xsd:element name="ExpectedPassengerCountDiscoveryRequest" type="ExpectedPassengerCountDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
+	<xsd:group name="IndicatorContextRequestGroup">
+		<xsd:sequence>
+			<xsd:element name="ContextIdentifierRef" type="xsd:normalizedString"/>
+			<xsd:element name="MinimumContextVersion" type="netex:VersionIdType" minOccurs="0"/>
+			<xsd:element name="ExactContextVersion" type="netex:VersionIdType" minOccurs="0"/>
+			<xsd:element name="ContextKeyList" type="netex:KeyListStructure" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:element name="ContextualIndicatorDiscoveryRequest" type="CtxIndicatorDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
 		<xsd:annotation>
-			<xsd:documentation>A discovery request element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>A request element to get KPIs.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:complexType name="ExpectedPassengerCountDiscoveryRequestStructure">
+	<xsd:complexType name="CtxIndicatorDiscoveryRequestStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for the discovery request element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>Type for the request element to get KPIs.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="OpraDiscoveryRequestStructure">
-				<xsd:group ref="ExpectedPassengerCountDiscoveryRequestGroup"/>
+				<xsd:group ref="CtxIndicatorRequestGroup"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:group name="ExpectedPassengerCountDiscoveryRequestGroup">
+	<xsd:element name="ContextualIndicatorDiscoveryDelivery" type="CtxIndicatorDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
 		<xsd:annotation>
-			<xsd:documentation>Currently empty placeholder for extending filtering capabilities of discovery requests for EXPECTED PASSENGER COUNTs.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence/>
-	</xsd:group>
-	<xsd:element name="ExpectedPassengerCountDiscoveryDelivery" type="ExpectedPassengerCountDiscoveryDeliveryStructure" substitutionGroup="OpraDiscoveryDelivery">
-		<xsd:annotation>
-			<xsd:documentation>A discovery delivery element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>A request element to get CONTEXTUAL INDICATORs.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:complexType name="ExpectedPassengerCountDiscoveryDeliveryStructure">
+	<xsd:complexType name="CtxIndicatorDiscoveryDeliveryStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for the discovery delivery element to get EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>Type for the request element to get CONTEXTUAL INDICATORs.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="OpraDiscoveryDeliveryStructure">
-				<xsd:group ref="ExpectedPassengerCountDiscoveryDeliveryGroup"/>
+				<xsd:group ref="CtxIndicatorDiscoveryDeliveryGroup"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:group name="ExpectedPassengerCountDiscoveryDeliveryGroup">
+	<xsd:group name="CtxIndicatorDiscoveryDeliveryGroup">
 		<xsd:annotation>
-			<xsd:documentation>Specific data content of a discovery delivery for EXPECTED PASSENGER COUNTs.</xsd:documentation>
+			<xsd:documentation>Specific data content of a discovery delivery for CONTEXTUAL INDICATORs.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="OperatingDays" type="netex:operatingDays_RelStructure">

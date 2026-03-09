@@ -761,33 +761,36 @@
 		</Folder>
 	</Folder>
 	<Folder FolderName="Examples">
+		<File FilePath="examples\ActualServiceDimensions.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\CancelledAndLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\ContextualIndicatorFrame.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\DelayedAndCancelledJourneysWithEvents.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\ExpectedPassengerCount.xml" HomeFolder="Yes"/>
-		<File FilePath="examples\placeholder.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\ExpectedServiceIntensity.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\Placeholder.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\PlannedCapacity.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\PlannedServiceDimensions.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\PlannedServiceIntensity.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\RequestAllPassengerCounts.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\RequestLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\ResponseLateDatedVehicleJourneys.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\TicketingBasedPassengerCount.xml" HomeFolder="Yes"/>
 	</Folder>
 	<Folder FolderName="OpRa">
-		<Folder FolderName="OpRa_top_level_Schema">
-			<File FilePath="xsd\OpRa_publication.xsd" HomeFolder="Yes"/>
-		</Folder>
 		<Folder FolderName="OpRa_framework">
 			<Folder FolderName="OpRa_frames">
 				<File FilePath="xsd\opra_framework\opra_frames\opra_actualServiceFrame_version.xsd" HomeFolder="Yes"/>
-				<File FilePath="xsd\opra_framework\opra_frames\opra_commonFrame_version.xsd" HomeFolder="Yes"/>
-				<File FilePath="xsd\opra_framework\opra_frames\opra_compositeFrame_version.xsd" HomeFolder="Yes"/>
-				<File FilePath="xsd\opra_framework\opra_frames\opra_kpiFrame_version.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_frames\opra_contextualIndicatorFrame_version.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_frames\opra_indicatorFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_plannedServiceFrame_version.xsd" HomeFolder="Yes"/>
-				<File FilePath="xsd\opra_framework\opra_frames\opra_rawDataFrame_version.xsd" HomeFolder="Yes"/>
 			</Folder>
 			<Folder FolderName="OpRa_genericFramework">
-				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralKpi_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralLogEntry_version.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GenericContextualIndicator_version.xsd" HomeFolder="Yes"/>
 			</Folder>
 			<Folder FolderName="opra_reusableComponents" ExtStr="csd">
 				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_controlActionReference_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_delayClassification_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_durationDistribution_support.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_eventReference_support.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_passengerTravelControl_support.xsd" HomeFolder="Yes"/>
@@ -796,18 +799,6 @@
 				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_vehicleOccupancy_version.xsd" HomeFolder="Yes"/>
 			</Folder>
 			<File FilePath="xsd\opra_framework\opra_payload_framework.xsd" HomeFolder="Yes"/>
-		</Folder>
-		<Folder FolderName="OpRa_kpi">
-			<File FilePath="xsd\opra_kpi\opra_NumberOfJourneyCancellations_version.xsd" HomeFolder="Yes"/>
-		</Folder>
-		<Folder FolderName="OpRa_rawdata">
-			<File FilePath="xsd\opra_rawdata\opra_cancelledDatedVehicleJourney_version.xsd" HomeFolder="Yes"/>
-			<File FilePath="xsd\opra_rawdata\opra_expectedPassengerCount_version.xsd" HomeFolder="Yes"/>
-			<File FilePath="xsd\opra_rawdata\opra_externalPassengerCount_version.xsd" HomeFolder="Yes"/>
-			<File FilePath="xsd\opra_rawdata\opra_lateDatedVehicleJourney_version.xsd" HomeFolder="Yes"/>
-			<File FilePath="xsd\opra_rawdata\opra_onboardDeviceBasedPassengerCount_version.xsd" HomeFolder="Yes"/>
-			<File FilePath="xsd\opra_rawdata\opra_ticketingBasedPassengerCount_version.xsd" HomeFolder="Yes"/>
-			<File FilePath="xsd\opra_rawdata\opra_validationEntry_version.xsd" HomeFolder="Yes"/>
 		</Folder>
 		<Folder FolderName="opra_imports">
 			<File FilePath="xsd\opra_imports\opra_netex_facade.xsd" HomeFolder="Yes"/>
@@ -819,15 +810,33 @@
 			<File FilePath="xsd\opra_service\opra_payload_delivery.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_actualService.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_cancelledDatedVehicleJourneys.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_capacity.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_contextualIndicators.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_expectedPassengerCounts.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_externalPassengerCounts.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_fleetDimensions.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_lateDatedVehicleJourneys.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_onboardDeviceBasedPassengerCounts.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_plannedService.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_serviceDimensions.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_serviceIntensity.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_ticketingBasedPassengerCounts.xsd" HomeFolder="Yes"/>
 		</Folder>
+		<Folder FolderName="opra_indicators">
+			<File FilePath="xsd\opra_indicators\opra_cancelledDatedVehicleJourney_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_indicators\opra_capacity_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_indicators\opra_expectedPassengerCount_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_indicators\opra_externalPassengerCount_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_indicators\opra_fleetDimensions_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_indicators\opra_lateDatedVehicleJourney_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_indicators\opra_onboardDeviceBasedPassengerCount_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_indicators\opra_serviceDimensions_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_indicators\opra_serviceIntensity_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_indicators\opra_ticketingBasedPassengerCount_version.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_indicators\opra_validationEntry_version.xsd" HomeFolder="Yes"/>
+		</Folder>
 		<File FilePath="xsd\opra.xsd" HomeFolder="Yes"/>
-		<File FilePath="xsd\OpRa_publication.xsd"/>
+		<File FilePath="xsd\OpRa_publication.xsd" HomeFolder="Yes"/>
 		<File FilePath="xsd\opra_request.xsd" HomeFolder="Yes"/>
 	</Folder>
 	<File FilePath="README.md" HomeFolder="Yes"/>

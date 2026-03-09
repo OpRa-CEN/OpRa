@@ -7,6 +7,12 @@
 # The -e flag causes the script to exit as soon as one command returns a non-zero exit code
 set -e
 
+# Update the submodules, usefull only when there is a submodul update (can be commented most of the time)
+echo "Syncronising submodules ..."
+git submodule update --init --recursive
+
+#-------------------------------------------------------
+
 echo "Validating XML file structure and linting XSD and XML files ..."
 
 PARSING_ERROR=0

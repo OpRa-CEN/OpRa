@@ -3,27 +3,21 @@
 	<ServiceRequest>
 		<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
 		<siri:RequestorRef>NMTOKEN</siri:RequestorRef>
-		<OpraFunctionalRequests>
+		<opraFunctionalRequests>
 			<TicketingBasedPassengerCountRequest>
 				<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
-				<Description>Request ticketing based passenger counts for Line 10 on the sample network.</Description>
-				<netex:LineRef ref="Test:Line:10"/>
-			</TicketingBasedPassengerCountRequest>
-			<TicketingBasedPassengerCountRequest>
-				<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
-				<Description>Request ticketing based passenger counts for Line 20 on the sample network.</Description>
-				<netex:LineRef ref="Test:Line:20"/>
+				<Description>Request (by default: daily) average ticketing based passenger counts for all lines, each vehicle journey and scheduled stop point on the sample network.</Description>
+				<netex:NetworkRef ref="Test:NW:Sample"/>
+				<GroupBy>groupByVehicleJourney</GroupBy>
+				<GroupBy>groupByScheduledStopPoint</GroupBy>
 			</TicketingBasedPassengerCountRequest>
 			<OnboardDeviceBasedPassengerCountRequest>
 				<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
-				<Description>Request onboard device based passenger counts for Line 10 on the sample network.</Description>
-				<netex:LineRef ref="Test:Line:10"/>
+				<Description>Request (by default: daily) onboard device based passenger counts all lines, each vehicle journey and scheduled stop point on the sample network.</Description>
+				<netex:NetworkRef ref="Test:NW:Sample"/>
+				<GroupBy>groupByVehicleJourney</GroupBy>
+				<GroupBy>groupByScheduledStopPoint</GroupBy>
 			</OnboardDeviceBasedPassengerCountRequest>
-			<OnboardDeviceBasedPassengerCountRequest>
-				<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
-				<Description>Request onboard device based passenger counts for Line 20 on the sample network.</Description>
-				<netex:LineRef ref="Test:Line:20"/>
-			</OnboardDeviceBasedPassengerCountRequest>
-		</OpraFunctionalRequests>
+		</opraFunctionalRequests>
 	</ServiceRequest>
 </Opra>

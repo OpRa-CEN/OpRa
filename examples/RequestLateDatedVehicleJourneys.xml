@@ -3,7 +3,7 @@
 	<ServiceRequest>
 		<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
 		<siri:RequestorRef>NMTOKEN</siri:RequestorRef>
-		<OpraFunctionalRequests>
+		<opraFunctionalRequests>
 			<LateDatedVehicleJourneysRequest>
 				<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
 				<Description>Request delays for the T1-T3a direction in the sample network.</Description>
@@ -11,17 +11,18 @@
 			</LateDatedVehicleJourneysRequest>
 			<LateDatedVehicleJourneysRequest>
 				<siri:RequestTimestamp>2025-03-22T00:00:00Z</siri:RequestTimestamp>
-				<Description>Request delays for the T3a-T1 direction in the sample network.</Description>
-				<netex:JourneyPatternRef ref="Test:JP:10:T3a-T1"/>
+				<Description>Request delays for the sample network grouped by journey patterns.</Description>
+				<netex:NetworkRef ref="Test:NW:Sample"/>
+				<GroupBy>groupByJourneyPattern</GroupBy>
 			</LateDatedVehicleJourneysRequest>
 			<frames>
-				<RawDataFrame id="frame_20250316-20250318">
+				<IndicatorFrame id="frame_20250316-20250318">
 					<netex:ValidBetween>
 						<netex:FromDate>2025-03-16T00:00:00</netex:FromDate>
 						<netex:ToDate>2025-03-18T23:59:59</netex:ToDate>
 					</netex:ValidBetween>
-				</RawDataFrame>
+				</IndicatorFrame>
 			</frames>
-		</OpraFunctionalRequests>
+		</opraFunctionalRequests>
 	</ServiceRequest>
 </Opra>

@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:siri="http://www.siri.org.uk/siri" targetNamespace="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra" version="1.0">
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra">
 	<!-- ===SIRI system IDs for  request =========================================================== -->
-	<xsd:import schemaLocation="opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
+	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="opra_imports/opra_siri_imports.xsd"/>
 	<!-- ===Regular netex============================================================== -->
-	<!--
-	<xsd:import schemaLocation="opra_imports/opra_netex_facade.xsd" namespace="http://www.netex.org.uk/netex"/>
-	-->
 	<xsd:include schemaLocation="OpRa_publication.xsd"/>
-	<!--
-	<xsd:include schemaLocation="opra_request.xsd"/>
-	-->
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata>
@@ -119,7 +113,7 @@
 			<xsd:documentation>OpRa Functional Service Concrete Requests.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="OpraFunctionalRequests"/>
+			<xsd:element ref="opraFunctionalRequests"/>
 		</xsd:sequence>
 	</xsd:group>
 	<!--===GS: Subscription Request ==================================================================== -->
@@ -152,7 +146,7 @@
 			<xsd:documentation>OpRa Functional Service Subscription types. For a given SubscriptionRequest, must all be of the same service type.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
-			<xsd:element ref="OpraSubscriptionRequests" maxOccurs="unbounded"/>
+			<xsd:element ref="opraSubscriptionRequests" maxOccurs="unbounded"/>
 		</xsd:choice>
 	</xsd:group>
 	<!-- === RESPONSES ================================================================== -->
@@ -222,12 +216,12 @@
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="siri:ServiceDeliveryRequestStatusGroup"/>
-			<xsd:element name="MoreData" type="xsd:boolean" minOccurs="0" default="false">
+			<xsd:element name="MoreData" type="xsd:boolean" default="false" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>Whether there is a further delivery message with more current updates that follows this one. Default is 'false'.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element ref="OpraFunctionalDeliveries"/>
+			<xsd:element ref="opraFunctionalDeliveries"/>
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ===Discovery==================================================================== -->
@@ -237,7 +231,7 @@
 		</xsd:annotation>
 		<xsd:choice>
 			<xsd:element ref="CapabilitiesRequest"/>
-			<xsd:element ref="OpraDiscoveryRequests"/>
+			<xsd:element ref="opraDiscoveryRequests"/>
 		</xsd:choice>
 	</xsd:group>
 	<xsd:group name="OpraDiscoveryResponseGroup">
@@ -288,7 +282,7 @@
 			<xsd:documentation>Defines the capabilities of an individual OpRa service request functions.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="OpraServiceCapabilitiesRequests"/>
+			<xsd:element ref="opraServiceCapabilitiesRequests"/>
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ===GS: Capabilities Delivery==================================================================== -->
@@ -314,13 +308,13 @@
 			<xsd:documentation>Defines the capabilities of an individual OpRa service delivery functions.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="OpraServiceCapabilitiesResponses" minOccurs="0"/>
+			<xsd:element ref="opraServiceCapabilitiesResponses" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ======================================================================= -->
 	<xsd:group name="OpraDiscoveryDeliveryGroup">
 		<xsd:sequence>
-			<xsd:element ref="OpraDiscoveryDeliveries"/>
+			<xsd:element ref="opraDiscoveryDeliveries"/>
 		</xsd:sequence>
 	</xsd:group>
 </xsd:schema>

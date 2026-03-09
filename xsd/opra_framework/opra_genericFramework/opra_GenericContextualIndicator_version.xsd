@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_GenericContextualIndicator_version">
+	<!-- NeTEX Imports-->
+	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- SIRI Imports-->
+	<!-- OpRa Include-->
+	<xsd:include schemaLocation="../opra_reusableComponents/opra_filtering_support.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata>
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
+				<Date>
+					<Created>2024-11-29</Created>
+				</Date>
+				<Description>
+					<p>OpRa - Operational Raw Data</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_framework/opra_genericFramework/opra_genericContextualIndicator_version.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Rights>Unclassified
+				</Rights>
+				<Source>
+					<ul>
+						<li>Created for OpRa</li>
+					</ul>
+				</Source>
+				<Status>Initial Version</Status>
+				<Subject>
+					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+Air transport, Airports,
+Ports and maritime transport, Ferries (marine),
+Public transport, Bus services, Coach services, Bus stops and stations,
+Rail transport, Railway stations and track, Train services, Underground trains,
+Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+Rail transport, Roads and Road transport
+</Category>
+					<Project>CEN TC278 WG3 SG10.</Project>
+				</Subject>
+				<Title>Opra Operation Raw Data Exchange</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>OpRa generic presentation of CONTEXTUAL INDICATORs</xsd:documentation>
+	</xsd:annotation>
+	<xsd:group name="IndicatorContextGroup">
+		<xsd:annotation>
+			<xsd:documentation>Contextual information for the CONTEXTUAL INDICATORs within the frame.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ContextIdentifier" type="xsd:normalizedString">
+				<xsd:annotation>
+					<xsd:documentation>An identifier that is recognizable by producer and consumer systems (eg. set by a regulation or an agreement)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ContextVersion" type="netex:VersionIdType">
+				<xsd:annotation>
+					<xsd:documentation>A version identifier within the domain of the context identifier.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ContextKeyList" type="netex:KeyListStructure">
+				<xsd:annotation>
+					<xsd:documentation>A key/value list recognizable within the context domain. Might contain aggregation details.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:element name="GenericContextualIndicator" type="GenericCtxIndicatorStructure" substitutionGroup="AbstractCtxIndicator">
+		<xsd:annotation>
+			<xsd:documentation>Representation of a generic CONTEXTUAL INDICATOR.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="GenericCtxIndicatorStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type definition for a generic CONTEXTUAL INDICATOR that implements the abstract CI without additions.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CtxIndicatorStructure"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:element name="AbstractCtxIndicator" type="CtxIndicatorStructure" abstract="true" substitutionGroup="netex:DataManagedObject">
+		<xsd:annotation>
+			<xsd:documentation>Dummy Supertype for a CONTEXTUAL INDICATOR.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="CtxIndicatorStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type definition for an abstract CONTEXTUAL INDICATOR.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="netex:DataManagedObjectStructure">
+				<xsd:group ref="CtxIndicatorSpecificationGroup"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="CtxIndicatorSpecificationGroup">
+		<xsd:annotation>
+			<xsd:documentation>Context definition, indicator value and unit of measure for a CONTEXTUAL INDICATOR.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="CtxIndicatorIdentifier" type="xsd:normalizedString">
+				<xsd:annotation>
+					<xsd:documentation>A recognizable identifier of the CONTEXTUAL INDICATOR within the context domain.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:group ref="CalendarAwarePtScopeGroup"/>
+			<xsd:group ref="FleetScopeGroup"/>
+			<xsd:element name="CtxIndicatorValue" type="xsd:anySimpleType"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="CtxIndicators_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of one or more CONTEXTUAL INDICATORs</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="AbstractCtxIndicator" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A CONTEXTUAL INDICATOR in the collection.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

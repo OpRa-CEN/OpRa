@@ -2,17 +2,17 @@
 <Opra xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
 	<ServiceDelivery>
 		<siri:ResponseTimestamp>2025-03-22T00:05:00Z</siri:ResponseTimestamp>
-		<OpraFunctionalDeliveries>
+		<opraFunctionalDeliveries>
 			<OpraPayloadDelivery>
 				<siri:ResponseTimestamp>2025-03-22T00:06:00Z</siri:ResponseTimestamp>
 				<dataObjects>
-					<RawDataFrame>
+					<IndicatorFrame>
 						<netex:ValidBetween>
 							<netex:FromDate>2025-03-16T00:00:00</netex:FromDate>
 							<netex:ToDate>2025-03-18T23:59:59</netex:ToDate>
 						</netex:ValidBetween>
 						<PreparednessLevel>Cleansed</PreparednessLevel>
-						<lateDatedVehicleJourneyEntries>
+						<indicatorLogEntries>
 							<LateDatedVehicleJourneyEntry>
 								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 								<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250316_0700"/>
@@ -38,8 +38,8 @@
 								<netex:DatedVehicleJourneyRef ref="Test:DVJ:20250318_1800"/>
 								<DelayDuration>PT10M</DelayDuration>
 							</LateDatedVehicleJourneyEntry>
-						</lateDatedVehicleJourneyEntries>
-						<lateDatedVehicleJourneyCounts>
+						</indicatorLogEntries>
+						<indicators>
 							<LateDatedVehicleJourneyCount>
 								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 								<intervals>
@@ -71,10 +71,10 @@
 									</DurationInterval>
 								</intervals>
 							</LateDatedVehicleJourneyCount>
-						</lateDatedVehicleJourneyCounts>
-					</RawDataFrame>
+						</indicators>
+					</IndicatorFrame>
 				</dataObjects>
 			</OpraPayloadDelivery>
-		</OpraFunctionalDeliveries>
+		</opraFunctionalDeliveries>
 	</ServiceDelivery>
 </Opra>
