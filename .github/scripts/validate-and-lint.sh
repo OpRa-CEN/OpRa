@@ -8,8 +8,11 @@
 set -e
 
 # Update the submodules, useful only when there is a submodule update (can be commented most of the time)
-#echo "Synchronising submodules ..."
-#git submodule update --init --recursive
+echo "Synchronising submodules ..."
+git submodule deinit -f NeTEx
+rm -rf .git/modules/NeTEx
+rm -rf NeTEx
+git submodule update --init --recursive
 
 #-------------------------------------------------------
 
