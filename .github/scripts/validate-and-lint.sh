@@ -7,10 +7,9 @@
 # The -e flag causes the script to exit as soon as one command returns a non-zero exit code
 set -e
 
-# Update the submodules, usefull only when there is a submodule update (can be commented most of the time)
-echo "Synchronising submodules ..."
+# Update the submodules, useful only when there is a submodule update (can be commented most of the time)
+#echo "Synchronising submodules ..."
 #git submodule update --init --recursive
-git submodule init --recursive
 
 #-------------------------------------------------------
 
