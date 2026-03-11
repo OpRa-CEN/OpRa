@@ -11,7 +11,6 @@
         <opraFunctionalDeliveries>
             <PublicationDelivery version="1.0">
                 <siri:ResponseTimestamp>2026-03-09T13:37:00Z</siri:ResponseTimestamp>
-                
                 <!-- Minimal request header, no duplication of planned data -->
                 <ActualServiceRequest>
                     <siri:RequestTimestamp>2026-03-09T13:37:00Z</siri:RequestTimestamp>
@@ -19,14 +18,25 @@
                 </ActualServiceRequest>
                 
                 <dataObjects>
-                    
+                    <!-- Setting up the DataSource of SIRI and where to find it -->
+                    <netex:CompositeFrame id="ENT:CompositeFrame:1">
+                        <netex:frames>
+                            <netex:ResourceFrame id="ENT:ResourceFrame:1">
+                                <netex:dataSources>
+                                    <netex:DataSource id="VR:DataSource:SIRI">
+                                        <netex:Url>www.SIRI_MESSAGE_DATABASE.com</netex:Url>
+                                    </netex:DataSource>
+                                </netex:dataSources>
+                            </netex:ResourceFrame>
+                        </netex:frames>
+                    </netex:CompositeFrame>
                     <!-- (A) REFERANSE TIL PLAN (URL/ID), men uten å gjenskape plan -->
                     <PlannedServiceFrame>
-                        <NetexUrl>VR_InterCity.xml</NetexUrl>
+                        <NetexUrl>NeTEx_VR_Example.xml</NetexUrl>
                     </PlannedServiceFrame>
-                    
-                    <!-- (B) OBSERVERT/EMPIRISK LAG (kun actual og avledede målinger) -->
-                    <ActualServiceFrame>
+                                        <!-- (B) OBSERVERT/EMPIRISK LAG (kun actual og avledede målinger) -->
+                    <!-- Referencing the DataSource and a identifier to look up the message used for this ActualServiceFrame -->
+                    <ActualServiceFrame dataSourceRef="VR:DataSource:SIRI" derivedFromObjectRef="b752f9ddddca90638137a3efe1fdcde34d0ec17fa017934135a274d7ad8d2a59">
                         <NetexPayload>
                             <netex:CompositeFrame id="ENT:CompositeFrame:Observed-2026-01-04">
                                 <netex:frames>
@@ -143,6 +153,7 @@
                                     
                                     <!-- 2) FAKTISK STOPPSEKVENS (datedCalls), kun actual tider -->
                                     <netex:TimetableFrame id="ENT:TimetableFrame:Observed-2026-01-04" version="1">
+                                       
                                         <netex:vehicleJourneys>
                                             <netex:DatedVehicleJourney id="ENT:DatedVehicleJourney:Observed:VR:DatedServiceJourney:1_2026-01-04"
                                                 version="1"
@@ -235,6 +246,7 @@
                                                 </netex:datedCalls>
                                             </netex:DatedVehicleJourney>
                                         </netex:vehicleJourneys>
+                                    
                                     </netex:TimetableFrame>
                                     
                                 </netex:frames>
