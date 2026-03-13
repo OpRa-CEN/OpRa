@@ -251,7 +251,7 @@
 	<!-- ===GS: Capabilities Request==================================================================== -->
 	<xsd:element name="CapabilitiesRequest" type="CapabilitiesRequestStructure">
 		<xsd:annotation>
-			<xsd:documentation>Requests a the current capabilities of the server. Answred with a CapabilitiesResponse.</xsd:documentation>
+			<xsd:documentation>Requests a the current capabilities of the server. Answered with a CapabilitiesResponse.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="CapabilitiesRequestStructure">

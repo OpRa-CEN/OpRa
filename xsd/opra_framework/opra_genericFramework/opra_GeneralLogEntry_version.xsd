@@ -186,7 +186,7 @@ Rail transport, Roads and Road transport
 				<xsd:sequence>
 					<xsd:group ref="LoggableObjectGroup">
 						<xsd:annotation>
-							<xsd:documentation>Elements for a generic conrete LOG ENTRY</xsd:documentation>
+							<xsd:documentation>Elements for a generic concrete LOG ENTRY</xsd:documentation>
 						</xsd:annotation>
 					</xsd:group>
 				</xsd:sequence>
