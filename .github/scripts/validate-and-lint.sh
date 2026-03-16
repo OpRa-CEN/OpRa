@@ -9,6 +9,8 @@ set -e
 
 # Update the submodules, useful only when there is a submodule update (can be commented most of the time)
 echo "Synchronising submodules ..."
+# ==> Check .github/worlflow/ci.yml
+
 #git submodule deinit -f NeTEx
 #rm -rf .git/modules/NeTEx
 #rm -rf NeTEx
@@ -16,11 +18,11 @@ echo "Synchronising submodules ..."
 
 
 # Sync submodule remote URLs (in case .gitmodules changed)  
-cd SIRI
-git fetch origin SIRI-for-OpRa
-git checkout origin/SIRI-for-OpRa
-cd ..
-git add SIRI
+#cd SIRI
+#git fetch origin SIRI-for-OpRa
+#git checkout origin/SIRI-for-OpRa
+#cd ..
+#git add SIRI
 
 
 #-------------------------------------------------------
