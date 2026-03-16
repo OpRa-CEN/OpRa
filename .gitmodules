@@ -5,3 +5,7 @@
 [submodule "OJP"]
 	path = OJP
 	url = https://github.com/VDVde/OJP
+[submodule "SIRI"]
+	path = SIRI
+	url = https://github.com/Aurige/SIRI
+	branch = SIRI-for-OpRa
