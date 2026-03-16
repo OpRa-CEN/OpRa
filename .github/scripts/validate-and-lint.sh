@@ -18,9 +18,11 @@ echo "Synchronising submodules ..."
 # Sync submodule remote URLs (in case .gitmodules changed)  
 cd SIRI
 git fetch origin
+git reset --hard origin/SIRI-for-OpRa
+git checkout SIRI-for-OpRa
 cd ..
 #git submodule update --remote SIRI
-#git add SIRI
+git add SIRI
 git submodule update --init --recursive
 
 #-------------------------------------------------------
