@@ -34,5 +34,5 @@ jobs:
         with:
           default_author: github_actions
           message: 'Lint and update documentation tables'
-          exclude: '.gitmodules SIRI NeTEx OJP'
+          add: 'xsd examples'
 
