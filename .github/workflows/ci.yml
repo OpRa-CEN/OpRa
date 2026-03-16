@@ -12,7 +12,9 @@ jobs:
 
       - name: Check out repository code
         uses: actions/checkout@v4
-
+        with:
+            submodules: false
+            
       - name: Update git submodules
         run: git submodule update --init --recursive
 
