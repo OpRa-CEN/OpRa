@@ -16,7 +16,7 @@ jobs:
             submodules: false
             
       - name: Update git submodules
-        run: git submodule update --init --recursive --depth 1
+        run: git submodule update --init --recursive
 
       - name: Install xmllint and xsltproc
         run: |
@@ -34,4 +34,5 @@ jobs:
         with:
           default_author: github_actions
           message: 'Lint and update documentation tables'
+          exclude: '.gitmodules SIRI NeTEx OJP'
 
