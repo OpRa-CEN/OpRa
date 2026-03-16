@@ -20,7 +20,7 @@ git submodule sync --recursive
 # Update submodules to latest remote commits and merge  
 git submodule update --remote --merge --recursive  
 # Stage changes to submodule references  
-git add .gitmodules */.gitmodules  # Add all .gitmodules files  
+#git add .gitmodules */.gitmodules  # Add all .gitmodules files  
 git add NeTEx
 git add SIRI
 git add OJP
