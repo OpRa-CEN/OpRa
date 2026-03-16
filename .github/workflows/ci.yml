@@ -28,16 +28,10 @@ jobs:
 
       - name: Validate OpRa XML examples
         run: ./.github/scripts/validate-examples.sh
-        
-      - name: Détager les submodules
-        run: |
-          git reset -- SIRI OJP NeTEx
-          git checkout -- SIRI OJP NeTEx
     
       - name: Commit changes
         uses: EndBug/add-and-commit@v9 # https://github.com/marketplace/actions/add-commit
         with:
           default_author: github_actions
           message: 'Lint and update documentation tables'
-          add: 'xsd examples'
 
