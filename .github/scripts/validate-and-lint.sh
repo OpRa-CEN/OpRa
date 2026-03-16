@@ -21,8 +21,7 @@ git fetch origin SIRI-for-OpRa
 git checkout origin/SIRI-for-OpRa
 cd ..
 git add SIRI
-git commit -m "Update SIRI submodule to latest SIRI-for-OpRa commit"
-git push
+
 
 #-------------------------------------------------------
 
