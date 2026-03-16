@@ -9,10 +9,21 @@ set -e
 
 # Update the submodules, useful only when there is a submodule update (can be commented most of the time)
 echo "Synchronising submodules ..."
-git submodule deinit -f NeTEx
-rm -rf .git/modules/NeTEx
-rm -rf NeTEx
-git submodule update --init --recursive
+#git submodule deinit -f NeTEx
+#rm -rf .git/modules/NeTEx
+#rm -rf NeTEx
+#git submodule update --init --recursive
+
+
+# Sync submodule remote URLs (in case .gitmodules changed)  
+git submodule sync --recursive  
+# Update submodules to latest remote commits and merge  
+git submodule update --remote --merge --recursive  
+# Stage changes to submodule references  
+git add .gitmodules */.gitmodules  # Add all .gitmodules files  
+git add NeTEx
+git add SIRI
+git add OJP
 
 #-------------------------------------------------------
 
