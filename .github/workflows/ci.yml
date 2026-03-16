@@ -16,7 +16,7 @@ jobs:
             submodules: false
             
       - name: Update git submodules
-        run: git submodule update --init --recursive
+        run: git submodule update --init --recursive --depth 1
 
       - name: Install xmllint and xsltproc
         run: |
