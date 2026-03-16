@@ -23,7 +23,7 @@ git checkout SIRI-for-OpRa
 cd ..
 #git submodule update --remote SIRI
 git add SIRI
-git submodule update --init --recursive
+git submodule update --init --recursive --remote
 
 #-------------------------------------------------------
 
