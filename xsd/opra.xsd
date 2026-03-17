@@ -1,10 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra">
 	<!-- ===SIRI system IDs for  request =========================================================== -->
 	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="opra_imports/opra_siri_imports.xsd"/>
-
-    <xsd:include schemaLocation="OpRa_publication.xsd"/>
+	<xsd:include schemaLocation="OpRa_publication.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata>
