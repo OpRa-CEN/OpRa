@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra">
 	<!-- ===SIRI system IDs for  request =========================================================== -->
 	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="opra_imports/opra_siri_imports.xsd"/>
-	<!-- ===Regular netex============================================================== -->
-	<xsd:include schemaLocation="OpRa_publication.xsd"/>
+
+    <xsd:include schemaLocation="OpRa_publication.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata>
@@ -100,7 +100,7 @@
 	</xsd:group>
 	<xsd:complexType name="ServiceRequestStructure">
 		<xsd:annotation>
-			<xsd:documentation>Opra Service Request.</xsd:documentation>
+			<xsd:documentation>OpRa Service Request.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="siri:ContextualisedRequestStructure">
@@ -110,7 +110,7 @@
 	</xsd:complexType>
 	<xsd:group name="OpraServiceRequestGroup">
 		<xsd:annotation>
-			<xsd:documentation>OpRa Functional Service Concrete Requests.</xsd:documentation>
+			<xsd:documentation>OpRa Functional Service Requests.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element ref="opraFunctionalRequests"/>
@@ -119,8 +119,7 @@
 	<!--===GS: Subscription Request ==================================================================== -->
 	<xsd:element name="SubscriptionRequest">
 		<xsd:annotation>
-			<xsd:documentation>
-                Request from Subscriber to Producer for a subscription. Answered with a SubscriptionResponse.
+			<xsd:documentation>Request from Subscriber to Producer for a subscription. Answered with a SubscriptionResponse.
             </xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -143,7 +142,7 @@
 	</xsd:complexType>
 	<xsd:group name="OpraSubscriptionRequestGroup">
 		<xsd:annotation>
-			<xsd:documentation>OpRa Functional Service Subscription types. For a given SubscriptionRequest, must all be of the same service type.</xsd:documentation>
+			<xsd:documentation>OpRa Subscription types. For a given SubscriptionRequest, must all be of the same service type.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice>
 			<xsd:element ref="opraSubscriptionRequests" maxOccurs="unbounded"/>
@@ -251,12 +250,12 @@
 	<!-- ===GS: Capabilities Request==================================================================== -->
 	<xsd:element name="CapabilitiesRequest" type="CapabilitiesRequestStructure">
 		<xsd:annotation>
-			<xsd:documentation>Requests a the current capabilities of the server. Answered with a CapabilitiesResponse.</xsd:documentation>
+			<xsd:documentation>Requests a the current capabilities of the server. Answered with a CapabilitiesResponse. Reserved for future use.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="CapabilitiesRequestStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for Requests for capabilities of the current system.</xsd:documentation>
+			<xsd:documentation>Type for Requests for capabilities of the current system.  Reserved for future use.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="siri:AuthenticatedRequestStructure">
@@ -279,7 +278,7 @@
 	</xsd:complexType>
 	<xsd:group name="ServiceCapabilitiesRequestGroup">
 		<xsd:annotation>
-			<xsd:documentation>Defines the capabilities of an individual OpRa service request functions.</xsd:documentation>
+			<xsd:documentation>Defines the capabilities of an individual OpRa service request functions.  Reserved for future use.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element ref="opraServiceCapabilitiesRequests"/>
@@ -288,12 +287,12 @@
 	<!-- ===GS: Capabilities Delivery==================================================================== -->
 	<xsd:element name="CapabilitiesResponse" type="CapabilitiesResponseStructure">
 		<xsd:annotation>
-			<xsd:documentation>Responses with the capabilities of an implementation.</xsd:documentation>
+			<xsd:documentation>Responses with the capabilities of an implementation.  Reserved for future use.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="CapabilitiesResponseStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for the capabilities of an implementation.</xsd:documentation>
+			<xsd:documentation>Type for the capabilities of an implementation.  Reserved for future use.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="siri:ProducerResponseStructure">
@@ -305,7 +304,7 @@
 	</xsd:complexType>
 	<xsd:group name="OpraServiceCapabilitiesResponseGroup">
 		<xsd:annotation>
-			<xsd:documentation>Defines the capabilities of an individual OpRa service delivery functions.</xsd:documentation>
+			<xsd:documentation>Defines the capabilities of an individual OpRa service delivery functions.  Reserved for future use.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element ref="opraServiceCapabilitiesResponses" minOccurs="0"/>
@@ -313,8 +312,15 @@
 	</xsd:group>
 	<!-- ======================================================================= -->
 	<xsd:group name="OpraDiscoveryDeliveryGroup">
+		<xsd:annotation>
+			<xsd:documentation>Reference data availability information block of a Discovery Response.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element ref="opraDiscoveryDeliveries"/>
+			<xsd:element ref="opraDiscoveryDeliveries">
+				<xsd:annotation>
+					<xsd:documentation>Collection of Opra Discovery Deliveries.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
 </xsd:schema>
