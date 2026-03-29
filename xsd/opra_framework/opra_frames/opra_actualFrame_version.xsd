@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_actualServiceFrame_version" version="1.0">
+<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_actualFrame_version" version="1.0">
 	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
 	<!-- ======================================================================= -->
 	<xsd:annotation>
@@ -21,7 +21,7 @@
 					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
 					<Description>XML schema, W3C Recommendation 2001</Description>
 				</Format>
-				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_frames/opra_actualServiceFrame_version.xsd</Identifier>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_frames/opra_actualFrame_version.xsd</Identifier>
 				<Language>[ISO 639-2/B] ENG</Language>
 				<Rights>Unclassified
 				</Rights>
@@ -46,38 +46,38 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa ACTUAL SERVICE FRAME, containing data for concluded actual service.</xsd:documentation>
+		<xsd:documentation>OpRa ACTUAL FRAME, containing data for concluded actual service.</xsd:documentation>
 	</xsd:annotation>
 	<!-- ======================================================================= -->
-	<xsd:simpleType name="ActualServiceFrameIdType">
+	<xsd:simpleType name="ActualFrameIdType">
 		<xsd:annotation>
 			<xsd:documentation>Type for identifier of an ActualServiceFrame.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="netex:VersionFrameIdType"/>
 	</xsd:simpleType>
-	<xsd:element name="ActualServiceFrameRef" type="ActualServiceFrameRefStructure" substitutionGroup="netex:VersionFrameRef" abstract="false">
+	<xsd:element name="ActualFrameRef" type="ActualFrameRefStructure" substitutionGroup="netex:VersionFrameRef" abstract="false">
 		<xsd:annotation>
-			<xsd:documentation>Reference element to an ActualServiceFrame.</xsd:documentation>
+			<xsd:documentation>Reference element to an ActualFrame.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:complexType abstract="false" name="ActualServiceFrameRefStructure">
+	<xsd:complexType abstract="false" name="ActualFrameRefStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for a reference element to an ActualServiceFrame.</xsd:documentation>
+			<xsd:documentation>Type for a reference element to an ActualFrame.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:simpleContent>
 			<xsd:restriction base="netex:VersionFrameRefStructure">
-				<xsd:attribute name="ref" type="ActualServiceFrameIdType" use="required"/>
+				<xsd:attribute name="ref" type="ActualFrameIdType" use="required"/>
 			</xsd:restriction>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<!-- ======================================================================= -->
-	<xsd:element name="ActualServiceFrame" substitutionGroup="netex:CommonFrame" abstract="false">
+	<xsd:element name="ActualFrame" substitutionGroup="netex:CommonFrame" abstract="false">
 		<xsd:annotation>
 			<xsd:documentation>The container element for the actual service within the VALIDITY CONDITIONs.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
 			<xsd:complexContent>
-				<xsd:restriction base="ActualService_VersionFrameStructure">
+				<xsd:restriction base="ActualFrame_VersionFrameStructure">
 					<xsd:sequence>
 						<xsd:sequence>
 							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
@@ -89,29 +89,29 @@ Rail transport, Roads and Road transport
 							<xsd:group ref="netex:VersionFrameGroup"/>
 						</xsd:sequence>
 						<xsd:sequence>
-							<xsd:group ref="ActualServiceFrameGroup"/>
+							<xsd:group ref="ActualFrameGroup"/>
 						</xsd:sequence>
 					</xsd:sequence>
-					<xsd:attribute name="id" type="ActualServiceFrameIdType"/>
+					<xsd:attribute name="id" type="ActualFrameIdType"/>
 				</xsd:restriction>
 			</xsd:complexContent>
 		</xsd:complexType>
 	</xsd:element>
-	<xsd:complexType abstract="false" name="ActualService_VersionFrameStructure">
+	<xsd:complexType name="ActualFrame_VersionFrameStructure" abstract="false">
 		<xsd:annotation>
-			<xsd:documentation>Type for an ActualServiceFrame.</xsd:documentation>
+			<xsd:documentation>Type for an ActualFrame.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="netex:Common_VersionFrameStructure">
 				<xsd:sequence>
-					<xsd:group ref="ActualServiceFrameGroup"/>
+					<xsd:group ref="ActualFrameGroup"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:group name="ActualServiceFrameGroup">
+	<xsd:group name="ActualFrameGroup">
 		<xsd:annotation>
-			<xsd:documentation>Elements for an ActualServiceFrame.</xsd:documentation>
+			<xsd:documentation>Elements for an ActualFrame.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="ActualServiceInFrameGroup"/>
@@ -120,7 +120,7 @@ Rail transport, Roads and Road transport
 	<!-- ======================================================================= -->
 	<xsd:group name="ActualServiceInFrameGroup">
 		<xsd:annotation>
-			<xsd:documentation>ActualServiceFrame content group.</xsd:documentation>
+			<xsd:documentation>ActualFrame content group.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="NetexPayload" type="netex:dataObjects_RelStructure">

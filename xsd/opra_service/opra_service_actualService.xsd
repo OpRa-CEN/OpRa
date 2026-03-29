@@ -2,9 +2,6 @@
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_service_actualService" version="1.0">
 	<!-- ===Includes (OpRa)============================================================== -->
-	<!--
-	<xsd:include schemaLocation="../opra_request.xsd"/>
-	-->
 	<xsd:include schemaLocation="opra_service_plannedService.xsd"/>
 	<!-- === Documentation ======================================= -->
 	<xsd:annotation>
@@ -54,12 +51,12 @@
 	</xsd:annotation>
 	<xsd:element name="ActualServiceRequest" type="ActualServiceRequestStructure" substitutionGroup="OpraFunctionalRequest">
 		<xsd:annotation>
-			<xsd:documentation>A request element to get ACTUAL SERVICE FRAMEs.</xsd:documentation>
+			<xsd:documentation>A request element to get ACTUAL FRAMEs.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="ActualServiceRequestStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for the request element to get ACTUAL SERVICE FRAMEs.</xsd:documentation>
+			<xsd:documentation>Type for the request element to get ACTUAL FRAMEs.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="OpraFunctionalRequestStructure">
@@ -69,7 +66,7 @@
 	</xsd:complexType>
 	<xsd:group name="ActualServiceRequestGroup">
 		<xsd:annotation>
-			<xsd:documentation>References that extend filtering capabilites of requests for ACTUAL SERVICE FRAMEs.</xsd:documentation>
+			<xsd:documentation>References that extend filtering capabilites of requests for ACTUAL FRAMEs.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="IncludeDifferencesOnly" type="xsd:boolean" minOccurs="0" default="false">

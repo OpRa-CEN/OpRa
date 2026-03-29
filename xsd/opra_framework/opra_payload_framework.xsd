@@ -2,8 +2,8 @@
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_payload_framework" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
 	<xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
-	<xsd:include schemaLocation="opra_frames/opra_plannedServiceFrame_version.xsd"/>
-	<xsd:include schemaLocation="opra_frames/opra_actualServiceFrame_version.xsd"/>
+	<xsd:include schemaLocation="opra_frames/opra_plannedFrame_version.xsd"/>
+	<xsd:include schemaLocation="opra_frames/opra_actualFrame_version.xsd"/>
 	<xsd:include schemaLocation="opra_frames/opra_indicatorFrame_version.xsd"/>
 	<xsd:include schemaLocation="opra_frames/opra_contextualIndicatorFrame_version.xsd"/>
 	<xsd:annotation>
@@ -59,8 +59,8 @@
 		</xsd:annotation>
 		<xsd:choice maxOccurs="unbounded">
 			<xsd:element ref="netex:CompositeFrame" minOccurs="0"/>
-			<xsd:element ref="PlannedServiceFrame" minOccurs="0"/>
-			<xsd:element ref="ActualServiceFrame" minOccurs="0"/>
+			<xsd:element ref="PlannedFrame" minOccurs="0"/>
+			<xsd:element ref="ActualFrame" minOccurs="0"/>
 			<xsd:element ref="IndicatorFrame" minOccurs="0"/>
 			<xsd:element ref="ContextualIndicatorFrame" minOccurs="0"/>
 		</xsd:choice>
