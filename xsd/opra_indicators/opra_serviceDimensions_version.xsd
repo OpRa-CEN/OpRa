@@ -1,45 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_serviceDimensions_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- SIRI Imports-->
-    <xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
-    <!-- NeTEX Imports-->
-    <xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
-    <!-- OpRa includes-->
-    <xsd:include schemaLocation="../opra_framework/opra_frames/opra_indicatorFrame_version.xsd" />
-    <xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd" />
-    <xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_filtering_support.xsd" />
-    <xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd" />
-    <xsd:annotation>
-        <xsd:appinfo>
-            <Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
-                <Aggregation>main schema</Aggregation>
-                <Audience>e-service developers</Audience>
-                <Coverage>Europe</Coverage>
-                <Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
-                <Date>
-                    <Created>2024-11-29</Created>
-                </Date>
-                <Description>
-                    <p>OpRa - Operational Raw Data</p>
-                </Description>
-                <Format>
-                    <MediaType>text/xml</MediaType>
-                    <Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
-                    <Description>XML schema, W3C Recommendation 2001</Description>
-                </Format>
-                <Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_serviceDimensions_version.xsd</Identifier>
-                <Language>[ISO 639-2/B] ENG</Language>
-                <Rights>Unclassified
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_serviceDimensions_version" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
+	<!-- SIRI Imports-->
+	<xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
+	<!-- NeTEX Imports-->
+	<xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<!-- OpRa includes-->
+	<xsd:include schemaLocation="../opra_framework/opra_frames/opra_indicatorFrame_version.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_filtering_support.xsd"/>
+	<xsd:include schemaLocation="../opra_framework/opra_reusableComponents/opra_vehicleOccupancy_version.xsd"/>
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata xmlns="https://transmodel-cen.eu/opra/1.0">
+				<Aggregation>main schema</Aggregation>
+				<Audience>e-service developers</Audience>
+				<Coverage>Europe</Coverage>
+				<Creator>First Drafted for version 1.0 CEN TC278 WG3 SG10 - OpRa -  Editor CEN Opra Project Team</Creator>
+				<Date>
+					<Created>2024-11-29</Created>
+				</Date>
+				<Description>
+					<p>OpRa - Operational Raw Data</p>
+				</Description>
+				<Format>
+					<MediaType>text/xml</MediaType>
+					<Syntax>http://www.w3.org/2001/XMLSchema</Syntax>
+					<Description>XML schema, W3C Recommendation 2001</Description>
+				</Format>
+				<Identifier>{https://transmodel-cen.eu/opra/1.0/xsd/opra_serviceDimensions_version.xsd</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Rights>Unclassified
 				</Rights>
-                <Source>
-                    <ul>
-                        <li>Created for OpRa</li>
-                    </ul>
-                </Source>
-                <Status>Initial Version</Status>
-                <Subject>
-                    <Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
+				<Source>
+					<ul>
+						<li>Created for OpRa</li>
+					</ul>
+				</Source>
+				<Status>Initial Version</Status>
+				<Subject>
+					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
 Air transport, Airports,
 Ports and maritime transport, Ferries (marine),
 Public transport, Bus services, Coach services, Bus stops and stations,
@@ -47,181 +47,181 @@ Rail transport, Railway stations and track, Train services, Underground trains,
 Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
 Rail transport, Roads and Road transport
 </Category>
-                    <Project>CEN TC278 WG3 SG10.</Project>
-                </Subject>
-                <Title>OpRa Service Dimensions indicators.</Title>
-                <Type>Standard</Type>
-            </Metadata>
-        </xsd:appinfo>
-        <xsd:documentation>OpRa Planned and Actual Service Dimensions</xsd:documentation>
-    </xsd:annotation>
-    <xsd:simpleType name="PlannedServiceDimensionsIdType">
-        <xsd:restriction base="LoggableObjectIdType" />
-    </xsd:simpleType>
-    <xsd:element name="PlannedServiceDimensionsRef" type="PlannedServiceDimensionsRefStructure">
-        <xsd:annotation>
-            <xsd:documentation>Reference element of PLANNED SERVICE DIMENSIONS.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="PlannedServiceDimensionsRefStructure">
-        <xsd:simpleContent>
-            <xsd:restriction base="LoggableObjectRefStructure">
-                <xsd:attribute name="ref" type="PlannedServiceDimensionsIdType" use="required" />
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <!-- ======================================================================= -->
-    <xsd:element name="PlannedServiceDimensions" substitutionGroup="AbstractIndicator">
-        <xsd:annotation>
-            <xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording PLANNED SERVICE DIMENSIONS information.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexType>
-            <xsd:complexContent>
-                <xsd:restriction base="ServiceDimensions_VersionStructure">
-                    <xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="netex:DataManagedObjectGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="LoggableObjectGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="ServiceDimensionsGroup" />
-                        </xsd:sequence>
-                    </xsd:sequence>
-                    <xsd:attribute name="id" type="PlannedServiceDimensionsIdType" />
-                </xsd:restriction>
-            </xsd:complexContent>
-        </xsd:complexType>
-    </xsd:element>
-    <!-- ======================================================================= -->
-    <xsd:simpleType name="ActualServiceDimensionsIdType">
-        <xsd:restriction base="LoggableObjectIdType" />
-    </xsd:simpleType>
-    <xsd:element name="ActualServiceDimensionsRef" type="ActualServiceDimensionsRefStructure">
-        <xsd:annotation>
-            <xsd:documentation>Reference element of an ACTUAL SERVICE DIMENSIONS.</xsd:documentation>
-        </xsd:annotation>
-    </xsd:element>
-    <xsd:complexType name="ActualServiceDimensionsRefStructure">
-        <xsd:simpleContent>
-            <xsd:restriction base="LoggableObjectRefStructure">
-                <xsd:attribute name="ref" type="ActualServiceDimensionsIdType" use="required" />
-            </xsd:restriction>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <!-- ======================================================================= -->
-    <xsd:element name="ActualServiceDimensions" substitutionGroup="AbstractIndicator">
-        <xsd:annotation>
-            <xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording ACTUAL SERVICE DIMENSIONS information.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexType>
-            <xsd:complexContent>
-                <xsd:restriction base="ServiceDimensions_VersionStructure">
-                    <xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group minOccurs="0" ref="netex:EntityInVersionGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="netex:DataManagedObjectGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="LoggableObjectGroup" />
-                        </xsd:sequence>
-                        <xsd:sequence>
-                            <xsd:group ref="ServiceDimensionsGroup" />
-                        </xsd:sequence>
-                    </xsd:sequence>
-                    <xsd:attribute name="id" type="ActualServiceDimensionsIdType" />
-                </xsd:restriction>
-            </xsd:complexContent>
-        </xsd:complexType>
-    </xsd:element>
-    <xsd:complexType name="ServiceDimensions_VersionStructure">
-        <xsd:annotation>
-            <xsd:documentation>Type for a LOGGABLE OBJECT designed for recording SERVICE DIMENSIONS information.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexContent>
-            <xsd:extension base="Indicator_VersionStructure">
-                <xsd:sequence>
-                    <xsd:group ref="ServiceDimensionsGroup" />
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:group name="ServiceDimensionsGroup">
-        <xsd:annotation>
-            <xsd:documentation>Static (same in each state) elements for a PlannedServiceDimensions and ActualServiceDimensions (as a LOGGABLE OBJECT)</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:group ref="CalendarAwarePtScopeGroup" />
-            <xsd:group ref="FleetScopeGroup" />
-            <xsd:group ref="ServiceDimensionsIndicatorsGroup" />
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:group name="ServiceDimensionsIndicatorsGroup">
-        <xsd:sequence>
-            <xsd:element name="NumberOfStopPoints" type="xsd:nonNegativeInteger" minOccurs="0" />
-            <xsd:element name="NumberOfLines" type="xsd:nonNegativeInteger" minOccurs="0" />
-            <xsd:element name="NumberOfRoutes" type="xsd:nonNegativeInteger" minOccurs="0" />
-            <xsd:element name="NumberOfJourneys" type="xsd:nonNegativeInteger" minOccurs="0" />
-            <xsd:element name="TotalLengthOfRoutes" type="netex:LengthType" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>Total length of ROUTEs within the scope.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="TotalLengthOfNetwork" type="netex:LengthType" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>Total length of ROUTE LINKs comprising the network within the scope.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="TotalVehicleJourneyDistance" type="siri:DistanceType" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>The total length of VEHICLE JOURNEYs (including DEAD RUNs) within the scope. TRAIN ELEMENTs shall be considered on per-element level.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="TotalServiceJourneyDistance" type="siri:DistanceType" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>The total length of SERVICE JOURNEYs (DEAD RUNs not included) within the scope. TRAIN ELEMENTs shall be considered on per-element level.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="TotalTrainVehicleJourneyDistance" type="siri:DistanceType" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>The total length of VEHICLE JOURNEYs (including DEAD RUNs) within the scope. TRAIN ELEMENTs shall be considered on per-train level.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="TotalTrainServiceJourneyDistance" type="siri:DistanceType" minOccurs="0">
-                <xsd:annotation>
-                    <xsd:documentation>The total length of SERVICE JOURNEYs (DEAD RUNs not included) within the scope. TRAIN ELEMENTs shall be considered on per-train level.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:group>
-    <xsd:complexType name="PlannedServiceDimensions_RelStructure">
-        <xsd:annotation>
-            <xsd:documentation>A collection of one or more PlannedServiceDimensions elements.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element ref="PlannedServiceDimensions" maxOccurs="unbounded">
-                <xsd:annotation>
-                    <xsd:documentation>LOGGABLE OBJECT designed for recording PLANNED SERVICE DIMENSIONS information.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:complexType name="ActualServiceIDimensions_RelStructure">
-        <xsd:annotation>
-            <xsd:documentation>A collection of one or more ActualServiceDimensions elements.</xsd:documentation>
-        </xsd:annotation>
-        <xsd:sequence>
-            <xsd:element ref="ActualServiceDimensions" maxOccurs="unbounded">
-                <xsd:annotation>
-                    <xsd:documentation>LOGGABLE OBJECT designed for recording ACTUAL SERVICE DIMENSIONS information.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
+					<Project>CEN TC278 WG3 SG10.</Project>
+				</Subject>
+				<Title>OpRa Service Dimensions indicators.</Title>
+				<Type>Standard</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>OpRa Planned and Actual Service Dimensions</xsd:documentation>
+	</xsd:annotation>
+	<xsd:simpleType name="PlannedServiceDimensionsIdType">
+		<xsd:restriction base="LoggableObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="PlannedServiceDimensionsRef" type="PlannedServiceDimensionsRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Reference element of PLANNED SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="PlannedServiceDimensionsRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="LoggableObjectRefStructure">
+				<xsd:attribute name="ref" type="PlannedServiceDimensionsIdType" use="required"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:element name="PlannedServiceDimensions" substitutionGroup="AbstractIndicator">
+		<xsd:annotation>
+			<xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording PLANNED SERVICE DIMENSIONS information.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="ServiceDimensions_VersionStructure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:DataManagedObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="LoggableObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="ServiceDimensionsGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="PlannedServiceDimensionsIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- ======================================================================= -->
+	<xsd:simpleType name="ActualServiceDimensionsIdType">
+		<xsd:restriction base="LoggableObjectIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="ActualServiceDimensionsRef" type="ActualServiceDimensionsRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Reference element of an ACTUAL SERVICE DIMENSIONS.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="ActualServiceDimensionsRefStructure">
+		<xsd:simpleContent>
+			<xsd:restriction base="LoggableObjectRefStructure">
+				<xsd:attribute name="ref" type="ActualServiceDimensionsIdType" use="required"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- ======================================================================= -->
+	<xsd:element name="ActualServiceDimensions" substitutionGroup="AbstractIndicator">
+		<xsd:annotation>
+			<xsd:documentation>Implementation of LOGGABLE OBJECT designed for recording ACTUAL SERVICE DIMENSIONS information.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="ServiceDimensions_VersionStructure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="netex:DataManagedObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="LoggableObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="ServiceDimensionsGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="ActualServiceDimensionsIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="ServiceDimensions_VersionStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a LOGGABLE OBJECT designed for recording SERVICE DIMENSIONS information.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="Indicator_VersionStructure">
+				<xsd:sequence>
+					<xsd:group ref="ServiceDimensionsGroup"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="ServiceDimensionsGroup">
+		<xsd:annotation>
+			<xsd:documentation>Static (same in each state) elements for a PlannedServiceDimensions and ActualServiceDimensions (as a LOGGABLE OBJECT)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="CalendarAwarePtScopeGroup"/>
+			<xsd:group ref="FleetScopeGroup"/>
+			<xsd:group ref="ServiceDimensionsIndicatorsGroup"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:group name="ServiceDimensionsIndicatorsGroup">
+		<xsd:sequence>
+			<xsd:element name="NumberOfStopPoints" type="xsd:nonNegativeInteger" minOccurs="0"/>
+			<xsd:element name="NumberOfLines" type="xsd:nonNegativeInteger" minOccurs="0"/>
+			<xsd:element name="NumberOfRoutes" type="xsd:nonNegativeInteger" minOccurs="0"/>
+			<xsd:element name="NumberOfJourneys" type="xsd:nonNegativeInteger" minOccurs="0"/>
+			<xsd:element name="TotalLengthOfRoutes" type="netex:LengthType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Total length of ROUTEs within the scope.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TotalLengthOfNetwork" type="netex:LengthType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Total length of ROUTE LINKs comprising the network within the scope.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TotalVehicleJourneyDistance" type="siri:DistanceType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The total length of VEHICLE JOURNEYs (including DEAD RUNs) within the scope. TRAIN ELEMENTs shall be considered on per-element level.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TotalServiceJourneyDistance" type="siri:DistanceType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The total length of SERVICE JOURNEYs (DEAD RUNs not included) within the scope. TRAIN ELEMENTs shall be considered on per-element level.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TotalTrainVehicleJourneyDistance" type="siri:DistanceType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The total length of VEHICLE JOURNEYs (including DEAD RUNs) within the scope. TRAIN ELEMENTs shall be considered on per-train level.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TotalTrainServiceJourneyDistance" type="siri:DistanceType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The total length of SERVICE JOURNEYs (DEAD RUNs not included) within the scope. TRAIN ELEMENTs shall be considered on per-train level.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="PlannedServiceDimensions_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of one or more PlannedServiceDimensions elements.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="PlannedServiceDimensions" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>LOGGABLE OBJECT designed for recording PLANNED SERVICE DIMENSIONS information.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ActualServiceIDimensions_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>A collection of one or more ActualServiceDimensions elements.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="ActualServiceDimensions" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>LOGGABLE OBJECT designed for recording ACTUAL SERVICE DIMENSIONS information.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 </xsd:schema>
