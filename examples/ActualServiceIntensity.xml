@@ -23,7 +23,6 @@
 								<netex:TimebandRef ref="Test:TimeBand:Month:2025-11"/>
 								<!-- Line -->
 								<!-- Direction -->
-
 								<MeanCapacityOverJourneyDistance>
 									<netex:FareClass>standardClass</netex:FareClass>
 									<netex:TotalCapacity>250</netex:TotalCapacity>
@@ -32,8 +31,6 @@
 									<netex:WheelchairPlaceCapacity>3</netex:WheelchairPlaceCapacity>
 									<Distance>124600</Distance>
 								</MeanCapacityOverJourneyDistance>
-
-
 								<LoadOverJourneyDistance>
 									<netex:FareClass>standardClass</netex:FareClass>
 									<netex:TotalCapacity>16</netex:TotalCapacity>
@@ -42,7 +39,6 @@
 									<netex:WheelchairPlaceCapacity>1</netex:WheelchairPlaceCapacity>
 									<Distance>124600</Distance>
 								</LoadOverJourneyDistance>
-
 								<TransportPerformance>
 									<netex:FareClass>standardClass</netex:FareClass>
 									<netex:TotalCapacity>2670</netex:TotalCapacity>
@@ -51,7 +47,6 @@
 									<netex:WheelchairPlaceCapacity>38</netex:WheelchairPlaceCapacity>
 									<Distance>124600</Distance>
 								</TransportPerformance>
-
 								<TransportPerformancePerVehicle>
 									<netex:FareClass>standardClass</netex:FareClass>
 									<netex:TotalCapacity>607</netex:TotalCapacity>
@@ -61,7 +56,6 @@
 									<Distance>62300</Distance>
 									<VehicleCount>2</VehicleCount>
 								</TransportPerformancePerVehicle>
-
 								<AverageCommercialSpeed>8.3</AverageCommercialSpeed>
 							</ActualServiceIntensity>
 						</indicators>
