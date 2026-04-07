@@ -19,10 +19,9 @@
 								<netex:OperatorRef ref="Test:Operator:OpraBus"/>
 								<netex:NetworkRef ref="Test:Network:Main"/>
 								<netex:VehicleMode>bus</netex:VehicleMode>
+								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
 								<netex:DayTypeRef ref="Test:DayType:Weekend"/>
 								<netex:TimebandRef ref="Test:TimeBand:Month:2025-11"/>
-								<!-- Line -->
-								<!-- Direction -->
 								<MeanCapacityOverJourneyDistance>
 									<netex:FareClass>standardClass</netex:FareClass>
 									<netex:TotalCapacity>250</netex:TotalCapacity>
