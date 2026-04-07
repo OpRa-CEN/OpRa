@@ -47,23 +47,23 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa PLANNED FRAME, containing/referring data for planned service.</xsd:documentation>
+		<xsd:documentation>OpRa PlannedFrame, containing/referring data for planned service.</xsd:documentation>
 	</xsd:annotation>
 	<!-- ======================================================================= -->
 	<xsd:simpleType name="PlannedFrameIdType">
 		<xsd:annotation>
-			<xsd:documentation>Type for identifier of an OpRa PLANNED FRAME.</xsd:documentation>
+			<xsd:documentation>Type for identifier of a PlannedFrame.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="netex:VersionFrameIdType"/>
 	</xsd:simpleType>
 	<xsd:element name="PlannedFrameRef" type="PlannedFrameRefStructure" substitutionGroup="netex:VersionFrameRef" abstract="false">
 		<xsd:annotation>
-			<xsd:documentation>Reference element to an OpRa PLANNED FRAME.</xsd:documentation>
+			<xsd:documentation>Reference element to an OpRa PlannedFrame.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="PlannedFrameRefStructure" abstract="false">
 		<xsd:annotation>
-			<xsd:documentation>Type for a reference to an OpRa PLANNED FRAME.</xsd:documentation>
+			<xsd:documentation>Type for a reference to an OpRa PlannedFrame.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:simpleContent>
 			<xsd:restriction base="netex:VersionFrameRefStructure">
@@ -100,7 +100,7 @@
 	</xsd:element>
 	<xsd:complexType name="OpRa_PlannedFrame_VersionFrameStructure" abstract="false">
 		<xsd:annotation>
-			<xsd:documentation>Type for an OpRa PLANNED SERVICE FRAME.</xsd:documentation>
+			<xsd:documentation>Type for a PlannedFrame.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="netex:Common_VersionFrameStructure">
@@ -112,7 +112,7 @@
 	</xsd:complexType>
 	<xsd:group name="PlannedFrameGroup">
 		<xsd:annotation>
-			<xsd:documentation>Elements for an OpRa PLANNED FRAME.</xsd:documentation>
+			<xsd:documentation>Elements for a PlannedFrame.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="NetexUrl" type="xsd:anyURI" minOccurs="0">
@@ -126,7 +126,7 @@
 	<!-- ======================================================================= -->
 	<xsd:group name="PlannedServiceInFrameGroup">
 		<xsd:annotation>
-			<xsd:documentation>OpRa related elements in the PLANNED FRAME.</xsd:documentation>
+			<xsd:documentation>OpRa related elements in the PlannedFrame.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="NetexPayload" type="netex:dataObjects_RelStructure" minOccurs="0">

@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_durationDistribution_support" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0">
-	<!-- NeTEX Imports-->
-	<xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
-	<!-- SIRI Imports-->
-	<xsd:import schemaLocation="../../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
-	<!-- OpRa Include-->
-	<xsd:include schemaLocation="opra_statistics_support.xsd"/>
-	<xsd:annotation>
-		<xsd:appinfo>
+<xsd:schema xmlns:siri="http://www.siri.org.uk/siri" xmlns="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_durationDistribution_support" targetNamespace="https://transmodel-cen.eu/opra/1.0" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- NeTEX Imports-->
+    <xsd:import schemaLocation="../../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex" />
+    <!-- SIRI Imports-->
+    <xsd:import schemaLocation="../../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri" />
+    <!-- OpRa Include-->
+    <xsd:include schemaLocation="opra_statistics_support.xsd" />
+    <xsd:annotation>
+        <xsd:appinfo>
 			<Metadata>
 				<Aggregation>main schema</Aggregation>
 				<Audience>e-service developers</Audience>
@@ -50,65 +50,75 @@ Rail transport, Roads and Road transport
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>OpRa: Elements for exchanging DURATION INTERVAL occurrences and distribution.</xsd:documentation>
-	</xsd:annotation>
-	<!-- ======================================================================= -->
-	<xsd:element name="DurationInterval" type="DurationIntervalStructure">
-		<xsd:annotation>
-			<xsd:documentation>Element for basic occurrence statistics of a DURATION INTERVAL.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:complexType name="DurationIntervalStructure">
-		<xsd:annotation>
-			<xsd:documentation>Type of a DURATION INTERVAL.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:group ref="DurationIntervalGroup"/>
-			<xsd:group ref="OccurrenceStatisticsGroup"/>
-		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:group name="DurationIntervalGroup">
-		<xsd:annotation>
-			<xsd:documentation>Representation of an interval bounded by DURATION values.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element name="StartOfInterval" type="siri:DurationType" minOccurs="0"/>
-			<xsd:element name="StartIncluded" type="xsd:boolean" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Signals if the start value is included in the interval (longer-than or longer-or-equal-than)</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="EndOfInterval" type="siri:DurationType" minOccurs="0"/>
-			<xsd:element name="EndIncluded" type="xsd:boolean" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Signals if the end is included in the interval (shorter-than or shorter-or-equal-than)</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:group>
-	<xsd:complexType name="DurationIntervals_RelStructure">
-		<xsd:annotation>
-			<xsd:documentation>Type of a collection of DURATION INTERVALs.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element ref="DurationInterval" maxOccurs="unbounded">
-				<xsd:annotation>
-					<xsd:documentation>Data for a DURATION INTERVAL.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:group name="DurationDistributionGroup">
-		<xsd:annotation>
-			<xsd:documentation>Representation of a domain split up to DURATION INTERVALS.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element name="intervals" type="DurationIntervals_RelStructure" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Collection of non-overlapping DURATION INTERVALs.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="Mean" type="siri:DurationType" minOccurs="0"/>
-		</xsd:sequence>
-	</xsd:group>
+        <xsd:documentation>OpRa: Elements for exchanging DURATION INTERVAL occurrences and distribution.</xsd:documentation>
+    </xsd:annotation>
+    <!-- ======================================================================= -->
+    <xsd:element name="DurationInterval" type="DurationIntervalStructure">
+        <xsd:annotation>
+            <xsd:documentation>Element for basic occurrence statistics of a DURATION INTERVAL.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="DurationIntervalStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type of a DURATION INTERVAL.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:group ref="DurationIntervalGroup" />
+            <xsd:group ref="OccurrenceStatisticsGroup" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:group name="DurationIntervalGroup">
+        <xsd:annotation>
+            <xsd:documentation>Representation of an interval bounded by DURATION values.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="StartIsNegative" type="xsd:boolean" minOccurs="0" default="false">
+                <xsd:annotation>
+                    <xsd:documentation>Signals if the start duration is in the negative domain.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="StartOfInterval" type="siri:DurationType" minOccurs="0" />
+            <xsd:element name="StartIncluded" type="xsd:boolean" minOccurs="0" default="true">
+                <xsd:annotation>
+                    <xsd:documentation>Signals if the start value is included in the interval (longer-than or longer-or-equal-than)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="EndIsNegative" type="xsd:boolean" minOccurs="0" default="false">
+                <xsd:annotation>
+                    <xsd:documentation>Signals if the end duration is in the negative domain.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="EndOfInterval" type="siri:DurationType" minOccurs="0" />
+            <xsd:element name="EndIncluded" type="xsd:boolean" minOccurs="0" default="false">
+                <xsd:annotation>
+                    <xsd:documentation>Signals if the end is included in the interval (shorter-than or shorter-or-equal-than)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:group>
+    <xsd:complexType name="DurationIntervals_RelStructure">
+        <xsd:annotation>
+            <xsd:documentation>Type of a collection of DURATION INTERVALs.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="DurationInterval" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>Data for a DURATION INTERVAL.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:group name="DurationDistributionGroup">
+        <xsd:annotation>
+            <xsd:documentation>Representation of a domain split up to DURATION INTERVALS.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="intervals" type="DurationIntervals_RelStructure" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Collection of non-overlapping DURATION INTERVALs.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Mean" type="siri:DurationType" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:group>
 </xsd:schema>
