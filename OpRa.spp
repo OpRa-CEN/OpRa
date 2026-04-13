@@ -769,6 +769,7 @@
 		<File FilePath="examples\ExpectedServiceIntensity.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\Placeholder.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\PlannedCapacity.xml" HomeFolder="Yes"/>
+		<File FilePath="examples\PlannedFleetDimensions.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\PlannedServiceDimensions.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\PlannedServiceIntensity.xml" HomeFolder="Yes"/>
 		<File FilePath="examples\RequestAllPassengerCounts.xml" HomeFolder="Yes"/>
@@ -779,10 +780,10 @@
 	<Folder FolderName="OpRa">
 		<Folder FolderName="OpRa_framework">
 			<Folder FolderName="OpRa_frames">
-				<File FilePath="xsd\opra_framework\opra_frames\opra_actualServiceFrame_version.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_frames\opra_actualFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_contextualIndicatorFrame_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_frames\opra_indicatorFrame_version.xsd" HomeFolder="Yes"/>
-				<File FilePath="xsd\opra_framework\opra_frames\opra_plannedServiceFrame_version.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_frames\opra_plannedFrame_version.xsd" HomeFolder="Yes"/>
 			</Folder>
 			<Folder FolderName="OpRa_genericFramework">
 				<File FilePath="xsd\opra_framework\opra_genericFramework\opra_GeneralLogEntry_version.xsd" HomeFolder="Yes"/>
@@ -793,8 +794,8 @@
 				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_delayClassification_version.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_durationDistribution_support.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_eventReference_support.xsd" HomeFolder="Yes"/>
+				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_filtering_support.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_passengerTravelControl_support.xsd" HomeFolder="Yes"/>
-				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_ptScope_support.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_statistics_support.xsd" HomeFolder="Yes"/>
 				<File FilePath="xsd\opra_framework\opra_reusableComponents\opra_vehicleOccupancy_version.xsd" HomeFolder="Yes"/>
 			</Folder>

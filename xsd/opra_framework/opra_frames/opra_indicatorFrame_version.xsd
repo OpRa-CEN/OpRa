@@ -18,6 +18,7 @@
 	<xsd:include schemaLocation="../../opra_indicators/opra_capacity_version.xsd"/>
 	<xsd:include schemaLocation="../../opra_indicators/opra_serviceIntensity_version.xsd"/>
 	<xsd:include schemaLocation="../../opra_indicators/opra_serviceDimensions_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_indicators/opra_fleetDimensions_version.xsd"/>
 	<!-- ======================================================================= -->
 	<xsd:annotation>
 		<xsd:appinfo>
