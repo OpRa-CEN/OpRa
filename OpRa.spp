@@ -809,7 +809,7 @@
 		<Folder FolderName="opra_service" ExtStr="xsd">
 			<File FilePath="xsd\opra_service\opra_all_services.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_payload_delivery.xsd" HomeFolder="Yes"/>
-			<File FilePath="xsd\opra_service\opra_service_actualService.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_actualFrame.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_cancelledDatedVehicleJourneys.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_capacity.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_contextualIndicators.xsd" HomeFolder="Yes"/>
@@ -818,7 +818,7 @@
 			<File FilePath="xsd\opra_service\opra_service_fleetDimensions.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_lateDatedVehicleJourneys.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_onboardDeviceBasedPassengerCounts.xsd" HomeFolder="Yes"/>
-			<File FilePath="xsd\opra_service\opra_service_plannedService.xsd" HomeFolder="Yes"/>
+			<File FilePath="xsd\opra_service\opra_service_plannedFrame.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_serviceDimensions.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_serviceIntensity.xsd" HomeFolder="Yes"/>
 			<File FilePath="xsd\opra_service\opra_service_ticketingBasedPassengerCounts.xsd" HomeFolder="Yes"/>
