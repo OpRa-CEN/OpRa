@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2026 (x64) (https://www.altova.com) by Gergely Nitsch (One Planet Engineering Ltd.) -->
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
 <xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_service_contextualIndicators">
 	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_imports.xsd"/>
@@ -52,12 +53,12 @@
 	</xsd:annotation>
 	<xsd:element name="ContextualIndicatorRequest" type="CtxIndicatorRequestStructure" substitutionGroup="OpraFunctionalRequest">
 		<xsd:annotation>
-			<xsd:documentation>A request element to get KPIs.</xsd:documentation>
+			<xsd:documentation>A request element to get CONTEXTUAL INDICATORs.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="CtxIndicatorRequestStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for the request element to get KPIs.</xsd:documentation>
+			<xsd:documentation>Type for the request element to get CONTEXTUAL INDICATORs.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="OpraFunctionalRequestStructure">
@@ -67,7 +68,7 @@
 	</xsd:complexType>
 	<xsd:group name="CtxIndicatorRequestGroup">
 		<xsd:annotation>
-			<xsd:documentation>References that extend filtering capabilities of requests for KPIs.</xsd:documentation>
+			<xsd:documentation>References that extend filtering capabilities of requests for CONTEXTUAL INDICATORs.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="IndicatorContextRequestGroup"/>
@@ -84,12 +85,12 @@
 	</xsd:group>
 	<xsd:element name="ContextualIndicatorDiscoveryRequest" type="CtxIndicatorDiscoveryRequestStructure" substitutionGroup="OpraDiscoveryRequest">
 		<xsd:annotation>
-			<xsd:documentation>A request element to get KPIs.</xsd:documentation>
+			<xsd:documentation>A request element to get CONTEXTUAL INDICATORs.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="CtxIndicatorDiscoveryRequestStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for the request element to get KPIs.</xsd:documentation>
+			<xsd:documentation>Type for the request element to get CONTEXTUAL INDICATORs.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="OpraDiscoveryRequestStructure">
