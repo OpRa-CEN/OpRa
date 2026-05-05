@@ -3,7 +3,7 @@
 # OpRa 
 
 # OpRa (Operational Raw Data) XML schema
-**(C) 2024-2024 OpRa, CEN**
+**(C) 2024-2026 OpRa, CEN**
 
 ## Schemas for:
 
@@ -17,7 +17,7 @@
 - OpRa (Operational Raw Data) complements the Transmodel series (NeTEx for static data, SIRI for dynamic data, OJP for trip description and journey planning) with an additional XML schema to provide a standardized format for exchanging historical data.
 
 
-### Folder structure 📁
+### Folder structure
 
 The individual XML files are organized hierarchically in folders, following the same structure as the uses case identified in the OpRa Technical Report. The architecture is: 
 
@@ -29,7 +29,7 @@ The individual XML files are organized hierarchically in folders, following the 
 - You can refer to the Transmodel UML Conceptual models for a detailed UML view of the schema packages.
 - These models are available in electronic format.
   
-## Getting started 🚀
+## Getting started
 
 ### Main root schemas
 
@@ -64,7 +64,7 @@ The schema is systematically divided into small modular files. Generally, for ea
 - **OpRa_xxxx_version.xsd**: Contains the element definitions.
 
 ----
-## Branches  🌿
+## Branches
 
 | Branch Name | Description                                             | Link                                            |
 | ----------- | ------------------------------------------------------- | ----------------------------------------------- |
@@ -77,7 +77,7 @@ The schema is systematically divided into small modular files. Generally, for ea
 | -------------- | ------------- | ---------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------------- |
 | 1.0            | Month 2024    | Initial productive version | [Code](https://github.com/OpRa-CEN/OpRa/releases/tag/v1.0) | [Release Notes](https://github.com/OpRa-CEN/OpRa/blob/v1.0/README.md) |
 
-## Full Version History 📚
+## Full Version History
 The comprehensive versions history is available in [change_log.md](https://github.com/ITxPT/NeTEx/blob/NeTEx/change_log.md)
 
 
