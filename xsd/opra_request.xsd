@@ -243,9 +243,9 @@
 			<xsd:element ref="OpraFunctionalDelivery" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:element name="OpraSubscriptionRequest" type="OpraSubscriptionRequestStructure" abstract="true">
+	<xsd:element name="OpraSubscriptionRequest" type="OpraSubscriptionRequestStructure">
 		<xsd:annotation>
-			<xsd:documentation>Abstract OpRa Subscription Request.</xsd:documentation>
+			<xsd:documentation>General OpRa Subscription Request that subscribes to PublicationDelivery responses.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="OpraSubscriptionRequestStructure">
