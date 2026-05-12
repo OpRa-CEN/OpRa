@@ -123,6 +123,13 @@
 			<xsd:documentation>Elements for an OpRa CONTEXTUAL INDICATOR FRAME.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
+			<xsd:element name="ContextualIndicatorFrameDefaults" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:group ref="CtxIndicatorFrameDefaultsGroup"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
 			<xsd:group ref="ContextualIndicatorsInFrameGroup"/>
 		</xsd:sequence>
 	</xsd:group>
@@ -136,4 +143,16 @@
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ======================================================================= -->
+	<xsd:group name="CtxIndicatorFrameDefaultsGroup">
+		<xsd:sequence>
+			<xsd:element name="DefaultScope">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:group ref="CalendarAwarePtScopeGroup"/>
+						<xsd:group ref="FleetScopeGroup"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
 </xsd:schema>

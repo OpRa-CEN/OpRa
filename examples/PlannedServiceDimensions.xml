@@ -6,37 +6,44 @@
 		<opraFunctionalDeliveries>
 			<OpraPayloadDelivery>
 				<siri:ResponseTimestamp>2025-12-17T09:30:47Z</siri:ResponseTimestamp>
-				<Description>Planned service dimensions example on the sample network.</Description>
+				<Description>PlannedServiceDimensions example on the sample network, grouped by journey patterns.</Description>
 				<dataObjects>
 					<IndicatorFrame>
-						<PreparednessLevel>Raw</PreparednessLevel>
+						<netex:FrameDefaults>
+							<netex:DefaultSystemOfUnits>SiKilometresAndMetres</netex:DefaultSystemOfUnits>
+						</netex:FrameDefaults>
 						<indicators>
-							<!-- Planned dimensions for line 10 on weekdays -->
 							<PlannedServiceDimensions>
 								<netex:LineRef ref="Test:Line:10"/>
-								<netex:DayTypeRef ref="Test:DayType:Weekdays"/>
-								<NumberOfStopPoints>18</NumberOfStopPoints>
-								<NumberOfLines>1</NumberOfLines>
-								<NumberOfRoutes>2</NumberOfRoutes>
-								<NumberOfJourneys>96</NumberOfJourneys>
-								<TotalVehicleJourneyDistance>1260</TotalVehicleJourneyDistance>
-								<TotalServiceJourneyDistance>1176</TotalServiceJourneyDistance>
-								<TotalTrainVehicleJourneyDistance>0</TotalTrainVehicleJourneyDistance>
-								<TotalTrainServiceJourneyDistance>0</TotalTrainServiceJourneyDistance>
-							</PlannedServiceDimensions>
-							<!-- Planned dimensions for a peak timeband within a journey pattern -->
-							<PlannedServiceDimensions>
 								<netex:JourneyPatternRef ref="Test:JP:10:T1-T3a"/>
-								<netex:TimebandRef ref="Test:TimeBand:6-9"/>
-								<netex:VehicleTypeRef ref="Test:VT:bus:regular"/>
-								<NumberOfStopPoints>9</NumberOfStopPoints>
-								<NumberOfLines>1</NumberOfLines>
-								<NumberOfRoutes>1</NumberOfRoutes>
-								<NumberOfJourneys>24</NumberOfJourneys>
-								<TotalVehicleJourneyDistance>315</TotalVehicleJourneyDistance>
-								<TotalServiceJourneyDistance>294</TotalServiceJourneyDistance>
-								<TotalTrainVehicleJourneyDistance>0</TotalTrainVehicleJourneyDistance>
-								<TotalTrainServiceJourneyDistance>0</TotalTrainServiceJourneyDistance>
+								<NumberOfStopPoints>6</NumberOfStopPoints>
+								<NumberOfJourneys>25</NumberOfJourneys>
+								<TotalLengthOfRoutes>6000</TotalLengthOfRoutes>
+								<TotalServiceJourneyDistance>150</TotalServiceJourneyDistance>
+							</PlannedServiceDimensions>
+							<PlannedServiceDimensions>
+								<netex:LineRef ref="Test:Line:10"/>
+								<netex:JourneyPatternRef ref="Test:JP:10:T3a-T1"/>
+								<NumberOfStopPoints>6</NumberOfStopPoints>
+								<NumberOfJourneys>25</NumberOfJourneys>
+								<TotalLengthOfRoutes>6200</TotalLengthOfRoutes>
+								<TotalServiceJourneyDistance>155</TotalServiceJourneyDistance>
+							</PlannedServiceDimensions>
+							<PlannedServiceDimensions>
+								<netex:LineRef ref="Test:Line:20"/>
+								<netex:JourneyPatternRef ref="Test:JP:20:T2-T3b"/>
+								<NumberOfStopPoints>6</NumberOfStopPoints>
+								<NumberOfJourneys>10</NumberOfJourneys>
+								<TotalLengthOfRoutes>5700</TotalLengthOfRoutes>
+								<TotalServiceJourneyDistance>57</TotalServiceJourneyDistance>
+							</PlannedServiceDimensions>
+							<PlannedServiceDimensions>
+								<netex:LineRef ref="Test:Line:20"/>
+								<netex:JourneyPatternRef ref="Test:JP:20:T3b-T2"/>
+								<NumberOfStopPoints>6</NumberOfStopPoints>
+								<NumberOfJourneys>10</NumberOfJourneys>
+								<TotalLengthOfRoutes>5800</TotalLengthOfRoutes>
+								<TotalServiceJourneyDistance>58</TotalServiceJourneyDistance>
 							</PlannedServiceDimensions>
 						</indicators>
 					</IndicatorFrame>

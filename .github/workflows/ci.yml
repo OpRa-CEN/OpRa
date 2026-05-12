@@ -12,9 +12,14 @@ jobs:
 
       - name: Check out repository code
         uses: actions/checkout@v4
-
+        with:
+            submodules: false
+            
       - name: Update git submodules
-        run: git submodule update --init --recursive
+        run: |
+          git fetch --prune
+          git submodule sync --recursive
+          git submodule update --init --recursive --force
 
       - name: Install xmllint and xsltproc
         run: |
@@ -26,7 +31,7 @@ jobs:
 
       - name: Validate OpRa XML examples
         run: ./.github/scripts/validate-examples.sh
-
+    
       - name: Commit changes
         uses: EndBug/add-and-commit@v9 # https://github.com/marketplace/actions/add-commit
         with:

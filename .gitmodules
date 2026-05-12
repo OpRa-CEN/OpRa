@@ -2,10 +2,13 @@
 	path = NeTEx
 	url = https://github.com/NeTEx-CEN/NeTEx
 	branch = v2.0
+	ignore = dirty
+[submodule "OJP"]
+	path = OJP
+	url = https://github.com/VDVde/OJP
+	ignore = dirty
 [submodule "SIRI"]
 	path = SIRI
 	url = https://github.com/Aurige/SIRI
 	branch = SIRI-for-OpRa
-[submodule "OJP"]
-	path = OJP
-	url = https://github.com/VDVde/OJP
+	ignore = dirty

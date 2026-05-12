@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created with Liquid Studio (https://www.liquid-technologies.com)-->
-<xsd:schema xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:siri="http://www.siri.org.uk/siri" xmlns:netex="http://www.netex.org.uk/netex" targetNamespace="https://transmodel-cen.eu/opra/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" id="opra_lateDatedVehicleJourney_version" version="1.0">
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="https://transmodel-cen.eu/opra/1.0" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://transmodel-cen.eu/opra/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="opra_lateDatedVehicleJourney_version">
 	<!-- SIRI Imports-->
-	<xsd:import schemaLocation="../opra_imports/opra_siri_imports.xsd" namespace="http://www.siri.org.uk/siri"/>
+	<xsd:import namespace="http://www.siri.org.uk/siri" schemaLocation="../opra_imports/opra_siri_imports.xsd"/>
 	<!-- NeTEX Imports-->
-	<xsd:import schemaLocation="../opra_imports/opra_netex_imports.xsd" namespace="http://www.netex.org.uk/netex"/>
+	<xsd:import namespace="http://www.netex.org.uk/netex" schemaLocation="../opra_imports/opra_netex_imports.xsd"/>
 	<!-- OpRa includes-->
 	<xsd:include schemaLocation="../opra_framework/opra_frames/opra_indicatorFrame_version.xsd"/>
 	<xsd:include schemaLocation="../opra_framework/opra_genericFramework/opra_GeneralLogEntry_version.xsd"/>
@@ -61,6 +61,11 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>Representation of a specific DELAY.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
+			<xsd:element name="IsEarly" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Signals if the time value represents being early instead of being late.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 			<xsd:element name="DelayDuration" type="siri:DurationType">
 				<xsd:annotation>
 					<xsd:documentation>The actual delay of the DATED VEHICLE JOURNEY.</xsd:documentation>
@@ -124,7 +129,7 @@ Rail transport, Roads and Road transport
 				<xsd:restriction base="LateDatedVehicleJourneyCount_VersionStructure">
 					<xsd:sequence>
 						<xsd:sequence>
-							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
+							<xsd:group ref="netex:EntityInVersionGroup" minOccurs="0"/>
 						</xsd:sequence>
 						<xsd:sequence>
 							<xsd:group ref="netex:DataManagedObjectGroup"/>
@@ -205,7 +210,7 @@ Rail transport, Roads and Road transport
 				<xsd:restriction base="LateDatedVehicleJourneyEntry_Structure">
 					<xsd:sequence>
 						<xsd:sequence>
-							<xsd:group minOccurs="0" ref="netex:EntityInVersionGroup"/>
+							<xsd:group ref="netex:EntityInVersionGroup" minOccurs="0"/>
 						</xsd:sequence>
 						<xsd:sequence>
 							<xsd:group ref="netex:DataManagedObjectGroup"/>
@@ -235,6 +240,7 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:group ref="CalendarAwarePtScopeGroup"/>
+			<xsd:group ref="FleetScopeGroup"/>
 			<xsd:group ref="LateDatedVehicleJourneyScopeGroup"/>
 			<xsd:group ref="DelayGroup"/>
 		</xsd:sequence>

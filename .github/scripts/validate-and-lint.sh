@@ -7,9 +7,23 @@
 # The -e flag causes the script to exit as soon as one command returns a non-zero exit code
 set -e
 
-# Update the submodules, usefull only when there is a submodul update (can be commented most of the time)
-echo "Syncronising submodules ..."
-git submodule update --init --recursive
+# Update the submodules, useful only when there is a submodule update (can be commented most of the time)
+echo "Synchronising submodules ..."
+# ==> Check .github/worlflow/ci.yml
+
+#git submodule deinit -f NeTEx
+#rm -rf .git/modules/NeTEx
+#rm -rf NeTEx
+#git submodule update --init --recursive
+
+
+# Sync submodule remote URLs (in case .gitmodules changed)  
+#cd SIRI
+#git fetch origin SIRI-for-OpRa
+#git checkout origin/SIRI-for-OpRa
+#cd ..
+#git add SIRI
+
 
 #-------------------------------------------------------
 

@@ -18,6 +18,7 @@
 	<xsd:include schemaLocation="../../opra_indicators/opra_capacity_version.xsd"/>
 	<xsd:include schemaLocation="../../opra_indicators/opra_serviceIntensity_version.xsd"/>
 	<xsd:include schemaLocation="../../opra_indicators/opra_serviceDimensions_version.xsd"/>
+	<xsd:include schemaLocation="../../opra_indicators/opra_fleetDimensions_version.xsd"/>
 	<!-- ======================================================================= -->
 	<xsd:annotation>
 		<xsd:appinfo>
@@ -167,7 +168,13 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>Elements for a OpRa INDICATOR FRAME.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="IndicatorFrameDefaults" type="IndicatorFrameDefaultsStructure" minOccurs="0"/>
+			<xsd:element name="IndicatorFrameDefaults" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:group ref="IndicatorFrameDefaultsGroup"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
 			<xsd:element ref="PreparednessLevel" minOccurs="0"/>
 			<xsd:group ref="IndicatorInFrameGroup"/>
 		</xsd:sequence>
@@ -182,15 +189,24 @@ Rail transport, Roads and Road transport
 			<xsd:element name="indicators" type="AbstractIndicators_RelStructure" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:group>
-	<!-- ======================================================================= -->
-	<xsd:complexType name="IndicatorFrameDefaultsStructure">
-		<xsd:sequence>
-			<xsd:group ref="IndicatorFrameDefaultsGroup"/>
-		</xsd:sequence>
-	</xsd:complexType>
 	<xsd:group name="IndicatorFrameDefaultsGroup">
 		<xsd:sequence>
-			<xsd:element name="DefaultCapacitySpecification" type="CapacitySpecificationStructure" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DefaultScope" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Default scope specification for contained indicators.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:group ref="CalendarAwarePtScopeGroup"/>
+						<xsd:group ref="FleetScopeGroup"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DefaultCapacitySpecification" type="CapacitySpecificationStructure" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Default capacity method and capacity values for indicators utilizing vehicle capacities.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
 </xsd:schema>
