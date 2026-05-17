@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Opra xmlns="https://transmodel-cen.eu/opra/1.0"
+    xmlns:netex="http://www.netex.org.uk/netex"
+    xmlns:siri="http://www.siri.org.uk/siri"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://transmodel-cen.eu/opra/1.0 ../xsd/opra.xsd">
+    
+    <ServiceDelivery>
+        <siri:ResponseTimestamp>2026-03-09T13:37:00Z</siri:ResponseTimestamp>
+        
+        <opraFunctionalDeliveries>
+            <PublicationDelivery version="1.0">
+                <siri:ResponseTimestamp>2026-03-09T13:37:00Z</siri:ResponseTimestamp>
+                <!-- Minimal request header, no duplication of planned data -->
+                <ActualServiceRequest>
+                    <siri:RequestTimestamp>2026-03-09T13:37:00Z</siri:RequestTimestamp>
+                    <siri:MessageIdentifier>VR-Observed-2026-01-04</siri:MessageIdentifier>
+                </ActualServiceRequest>
+                
+                <dataObjects>
+                    <!-- Setting up the DataSource of SIRI and where to find it -->
+                    <netex:CompositeFrame id="ENT:CompositeFrame:1">
+                        <netex:frames>
+                            <netex:ResourceFrame id="ENT:ResourceFrame:1">
+                                <netex:dataSources>
+                                    <netex:DataSource id="VR:DataSource:SIRI">
+                                        <netex:Url>www.SIRI_MESSAGE_DATABASE.com</netex:Url>
+                                    </netex:DataSource>
+                                </netex:dataSources>
+                            </netex:ResourceFrame>
+                        </netex:frames>
+                    </netex:CompositeFrame>
+                    <!-- (A) REFERANSE TIL PLAN (URL/ID), men uten å gjenskape plan -->
+                    <PlannedServiceFrame>
+                        <NetexUrl>NeTEx_VR_Example.xml</NetexUrl>
+                    </PlannedServiceFrame>
+                                        <!-- (B) OBSERVERT/EMPIRISK LAG (kun actual og avledede målinger) -->
+                    <!-- Referencing the DataSource and a identifier to look up the message used for this ActualServiceFrame -->
+                    <ActualServiceFrame dataSourceRef="VR:DataSource:SIRI" derivedFromObjectRef="b752f9ddddca90638137a3efe1fdcde34d0ec17fa017934135a274d7ad8d2a59">
+                        <NetexPayload>
+                            <netex:CompositeFrame id="ENT:CompositeFrame:Observed-2026-01-04">
+                                <netex:frames>
+                                    
+                                    <!-- 1) OBSERVERTE RUN/WAIT-TIMES (enkelt og samlet) -->
+                                    <netex:ServiceFrame id="ENT:ServiceFrame:Observed:VR:DatedServiceJourney:1_2026-01-04">
+                                        <netex:timeDemandTypes>
+                                            <netex:TimeDemandType id="ENT:TimeDemandType:Observed-2026-01-04" dataSourceRef="VR:DataSource:EmpiricalData">
+                                                <netex:Description>Observed (actual) run and dwell times derived from SIRI RecordedCalls for VR:DatedServiceJourney:1_2026-01-04</netex:Description>
+                                                
+                                                <!-- Observed RUN-TIMES (ActualDeparture(i) -> ActualArrival(i+1)) -->
+                                                <netex:runTimes>
+                                                    <netex:JourneyRunTime id="ENT:ObservedRun:1">
+                                                        <netex:TimingLinkRef ref="VR:TimingLink:1"/>
+                                                        <netex:RunTime>PT6M30S</netex:RunTime>
+                                                    </netex:JourneyRunTime>
+                                                    <netex:JourneyRunTime id="ENT:ObservedRun:2">
+                                                        <netex:TimingLinkRef ref="VR:TimingLink:2"/>
+                                                        <netex:RunTime>PT7M30S</netex:RunTime>
+                                                    </netex:JourneyRunTime>
+                                                    <netex:JourneyRunTime id="ENT:ObservedRun:3">
+                                                        <netex:TimingLinkRef ref="VR:TimingLink:3"/>
+                                                        <netex:RunTime>PT35M</netex:RunTime>
+                                                    </netex:JourneyRunTime>
+                                                    <netex:JourneyRunTime id="ENT:ObservedRun:4">
+                                                        <netex:TimingLinkRef ref="VR:TimingLink:4"/>
+                                                        <netex:RunTime>PT28M</netex:RunTime>
+                                                    </netex:JourneyRunTime>
+                                                    <netex:JourneyRunTime id="ENT:ObservedRun:5">
+                                                        <netex:TimingLinkRef ref="VR:TimingLink:5"/>
+                                                        <netex:RunTime>PT44M</netex:RunTime>
+                                                    </netex:JourneyRunTime>
+                                                    <netex:JourneyRunTime id="ENT:ObservedRun:6">
+                                                        <netex:TimingLinkRef ref="VR:TimingLink:6"/>
+                                                        <netex:RunTime>PT15M</netex:RunTime>
+                                                    </netex:JourneyRunTime>
+                                                    <netex:JourneyRunTime id="ENT:ObservedRun:7">
+                                                        <netex:TimingLinkRef ref="VR:TimingLink:7"/>
+                                                        <netex:RunTime>PT12M</netex:RunTime>
+                                                    </netex:JourneyRunTime>
+                                                    <netex:JourneyRunTime id="ENT:ObservedRun:8">
+                                                        <netex:TimingLinkRef ref="VR:TimingLink:8"/>
+                                                        <netex:RunTime>PT26M</netex:RunTime>
+                                                    </netex:JourneyRunTime>
+                                                    <netex:JourneyRunTime id="ENT:ObservedRun:9">
+                                                        <netex:TimingLinkRef ref="VR:TimingLink:9"/>
+                                                        <netex:RunTime>PT13M</netex:RunTime>
+                                                    </netex:JourneyRunTime>
+                                                    <netex:JourneyRunTime id="ENT:ObservedRun:10">
+                                                        <netex:TimingLinkRef ref="VR:TimingLink:10"/>
+                                                        <netex:RunTime>PT22M</netex:RunTime>
+                                                    </netex:JourneyRunTime>
+                                                    <netex:JourneyRunTime id="ENT:ObservedRun:11">
+                                                        <netex:TimingLinkRef ref="VR:TimingLink:11"/>
+                                                        <netex:RunTime>PT18M</netex:RunTime>
+                                                    </netex:JourneyRunTime>
+                                                    <netex:JourneyRunTime id="ENT:ObservedRun:12">
+                                                        <netex:TimingLinkRef ref="VR:TimingLink:12"/>
+                                                        <netex:RunTime>PT39M10S</netex:RunTime>
+                                                    </netex:JourneyRunTime>
+                                                </netex:runTimes>
+                                                
+                                                <!-- Observed WAIT-TIMES (ActualArrival -> ActualDeparture ved samme stopp) -->
+                                                <netex:waitTimes>
+                                                    <netex:JourneyWaitTime id="ENT:ObservedWait:001000010">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000010"/>
+                                                        <netex:WaitTime>PT1M30S</netex:WaitTime>
+                                                    </netex:JourneyWaitTime>
+                                                    <netex:JourneyWaitTime id="ENT:ObservedWait:001000018">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000018"/>
+                                                        <netex:WaitTime>PT2M</netex:WaitTime>
+                                                    </netex:JourneyWaitTime>
+                                                    <netex:JourneyWaitTime id="ENT:ObservedWait:001000100">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000100"/>
+                                                        <netex:WaitTime>PT2M</netex:WaitTime>
+                                                    </netex:JourneyWaitTime>
+                                                    <netex:JourneyWaitTime id="ENT:ObservedWait:001000480">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000480"/>
+                                                        <netex:WaitTime>PT4M</netex:WaitTime>
+                                                    </netex:JourneyWaitTime>
+                                                    <netex:JourneyWaitTime id="ENT:ObservedWait:001000495">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000495"/>
+                                                        <netex:WaitTime>PT2M</netex:WaitTime>
+                                                    </netex:JourneyWaitTime>
+                                                    <netex:JourneyWaitTime id="ENT:ObservedWait:001000499">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000499"/>
+                                                        <netex:WaitTime>PT1M</netex:WaitTime>
+                                                    </netex:JourneyWaitTime>
+                                                    <netex:JourneyWaitTime id="ENT:ObservedWait:001000603">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000603"/>
+                                                        <netex:WaitTime>PT3M</netex:WaitTime>
+                                                    </netex:JourneyWaitTime>
+                                                    <netex:JourneyWaitTime id="ENT:ObservedWait:001000507">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000507"/>
+                                                        <netex:WaitTime>PT1M</netex:WaitTime>
+                                                    </netex:JourneyWaitTime>
+                                                    <netex:JourneyWaitTime id="ENT:ObservedWait:001000510">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000510"/>
+                                                        <netex:WaitTime>PT2M</netex:WaitTime>
+                                                    </netex:JourneyWaitTime>
+                                                    <netex:JourneyWaitTime id="ENT:ObservedWait:001000966">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000966"/>
+                                                        <netex:WaitTime>PT1M</netex:WaitTime>
+                                                    </netex:JourneyWaitTime>
+                                                    <netex:JourneyWaitTime id="ENT:ObservedWait:001000453">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000453"/>
+                                                        <netex:WaitTime>PT1M</netex:WaitTime>
+                                                    </netex:JourneyWaitTime>
+                                                </netex:waitTimes>
+                                                
+                                            </netex:TimeDemandType>
+                                        </netex:timeDemandTypes>
+                                    </netex:ServiceFrame>
+                                    
+                                    <!-- 2) FAKTISK STOPPSEKVENS (datedCalls), kun actual tider -->
+                                    <netex:TimetableFrame id="ENT:TimetableFrame:Observed-2026-01-04" version="1">
+                                       
+                                        <netex:vehicleJourneys>
+                                            <netex:DatedVehicleJourney id="ENT:DatedVehicleJourney:Observed:VR:DatedServiceJourney:1_2026-01-04"
+                                                version="1"
+                                                derivedFromObjectRef="VR:DatedServiceJourney:1_2026-01-04">
+                                                <netex:datedCalls>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:1" order="1" version="1" derivedFromObjectRef="VR:Call:1-1">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001002326"/>
+                                                        <netex:Departure>
+                                                            <netex:Time>06:56:30</netex:Time>
+                                                        </netex:Departure>
+                                                    </netex:Call>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:2" order="2" version="1" derivedFromObjectRef="VR:Call:1-2">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000010"/>
+                                                        <netex:Arrival>
+                                                            <netex:Time>07:03:00</netex:Time>
+                                                            <netex:ForAlighting>false</netex:ForAlighting>
+                                                        </netex:Arrival>
+                                                        <netex:Departure>
+                                                            <netex:Time>07:04:30</netex:Time>
+                                                        </netex:Departure>
+                                                    </netex:Call>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:3" order="3" version="1" derivedFromObjectRef="VR:Call:1-3">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000018"/>
+                                                        <netex:Arrival><netex:Time>07:12:00</netex:Time></netex:Arrival>
+                                                        <netex:Departure><netex:Time>07:14:00</netex:Time></netex:Departure>
+                                                    </netex:Call>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:4" order="4" version="1" derivedFromObjectRef="VR:Call:1-4">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000100"/>
+                                                        <netex:Arrival><netex:Time>07:49:00</netex:Time></netex:Arrival>
+                                                        <netex:Departure><netex:Time>07:51:00</netex:Time></netex:Departure>
+                                                    </netex:Call>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:5" order="5" version="1" derivedFromObjectRef="VR:Call:1-5">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000480"/>
+                                                        <netex:Arrival><netex:Time>08:19:00</netex:Time></netex:Arrival>
+                                                        <netex:Departure><netex:Time>08:23:00</netex:Time></netex:Departure>
+                                                    </netex:Call>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:6" order="6" version="1" derivedFromObjectRef="VR:Call:1-6">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000495"/>
+                                                        <netex:Arrival><netex:Time>09:07:00</netex:Time></netex:Arrival>
+                                                        <netex:Departure><netex:Time>09:09:00</netex:Time></netex:Departure>
+                                                    </netex:Call>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:7" order="7" version="1" derivedFromObjectRef="VR:Call:1-7">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000499"/>
+                                                        <netex:Arrival><netex:Time>09:24:00</netex:Time></netex:Arrival>
+                                                        <netex:Departure><netex:Time>09:25:00</netex:Time></netex:Departure>
+                                                    </netex:Call>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:8" order="8" version="1" derivedFromObjectRef="VR:Call:1-8">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000603"/>
+                                                        <netex:Arrival><netex:Time>09:37:00</netex:Time></netex:Arrival>
+                                                        <netex:Departure><netex:Time>09:40:00</netex:Time></netex:Departure>
+                                                    </netex:Call>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:9" order="9" version="1" derivedFromObjectRef="VR:Call:1-9">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000507"/>
+                                                        <netex:Arrival><netex:Time>10:06:00</netex:Time></netex:Arrival>
+                                                        <netex:Departure><netex:Time>10:07:00</netex:Time></netex:Departure>
+                                                    </netex:Call>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:10" order="10" version="1" derivedFromObjectRef="VR:Call:1-10">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000510"/>
+                                                        <netex:Arrival><netex:Time>10:20:00</netex:Time></netex:Arrival>
+                                                        <netex:Departure><netex:Time>10:22:00</netex:Time></netex:Departure>
+                                                    </netex:Call>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:11" order="11" version="1" derivedFromObjectRef="VR:Call:1-11">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000966"/>
+                                                        <netex:Arrival><netex:Time>10:44:00</netex:Time></netex:Arrival>
+                                                        <netex:Departure><netex:Time>10:45:00</netex:Time></netex:Departure>
+                                                    </netex:Call>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:12" order="12" version="1" derivedFromObjectRef="VR:Call:1-12">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000453"/>
+                                                        <netex:Arrival><netex:Time>11:03:00</netex:Time></netex:Arrival>
+                                                        <netex:Departure><netex:Time>11:04:00</netex:Time></netex:Departure>
+                                                    </netex:Call>
+                                                    
+                                                    <netex:Call id="ENT:ObservedCall:13" order="13" version="1" derivedFromObjectRef="VR:Call:1-13">
+                                                        <netex:ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000460"/>
+                                                        <netex:Arrival><netex:Time>11:43:10</netex:Time></netex:Arrival>
+                                                    </netex:Call>
+                                                    
+                                                </netex:datedCalls>
+                                            </netex:DatedVehicleJourney>
+                                        </netex:vehicleJourneys>
+                                    
+                                    </netex:TimetableFrame>
+                                    
+                                </netex:frames>
+                            </netex:CompositeFrame>
+                        </NetexPayload>
+                    </ActualServiceFrame>
+                    
+                </dataObjects>
+            </PublicationDelivery>
+        </opraFunctionalDeliveries>
+    </ServiceDelivery>
+</Opra>
+
+

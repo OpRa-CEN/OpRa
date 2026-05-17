@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:siri="http://www.siri.org.uk/siri" version="1.0">
+    <PublicationTimestamp>2022-02-15T09:30:46.0Z</PublicationTimestamp>
+    <ParticipantRef>VR</ParticipantRef>
+    <dataObjects>
+        <CompositeFrame version="1" id="VR:CompositeFrame:SKDUPD_example_1_Classic_train">
+            <Name>Example of encoding Simple SKDUPD Classic Train example in NeTEx</Name>
+            <codespaces>
+                <Codespace id="vr">
+                    <Xmlns>vr</Xmlns>
+                    <XmlnsUrl>http://www.operator.fi/</XmlnsUrl>
+                    <Description>Operator's data</Description>
+                </Codespace>
+            </codespaces>
+            <!--- =======FRAME DEFAULTS======== -->
+            <FrameDefaults>
+                <DefaultLocale>
+                    <TimeZone>Europe/Helsinki</TimeZone>
+                    <DefaultLanguage>fi</DefaultLanguage>
+                </DefaultLocale>
+                <DefaultLocationSystem>4326</DefaultLocationSystem>
+            </FrameDefaults>
+            <frames>
+                <ResourceFrame version="1" id="VR:ResourceFrame:InterCity">
+                    <dataSources>
+                        <DataSource version="1" id="VR:DataSource:1">
+                            <keyList>
+                                <KeyValue>
+                                    <Key>RICS code</Key> <!-- Supplier -->
+                                    <Value>0010</Value>
+                                </KeyValue>
+                            </keyList>
+                            <Name>Valtionrautatiet</Name>
+                            <PrivateCode>0010</PrivateCode>
+                        </DataSource>
+                        <DataSource version="1" id="VR:DataSource:PlanningTool">
+                            <Description>Manually added informationg through planning tool</Description>
+                        </DataSource>
+                        <DataSource version="1" id="VR:DataSource:EmpiricalData">
+                            <Description>Empirical data provided via OpRa</Description>
+                        </DataSource>
+                    </dataSources>
+                </ResourceFrame>
+                <ServiceFrame version="1" id="VR:ServiceFrame:x">
+                    <lines>
+                        <Line version="1" id="VR:Line:InterCity">
+                            <Name>InterCity</Name>
+                            <TransportMode>rail</TransportMode>
+                            <PublicCode>InterCity</PublicCode>
+                            <AuthorityRef ref="VR:Authority:VR"/>
+                            <OperatorRef ref="VR:Operator:VR"/>
+                        </Line>
+                    </lines>
+                    <timingLinks>
+                        <TimingLink version="1" id="VR:TimingLink:1">
+                            <Distance>2800</Distance>
+                            <FromPointRef ref="VR:StopPointInJourneyPattern:1@001002326@X"/>
+                            <ToPointRef ref="VR:StopPointInJourneyPattern:1@001000010@X"/>
+                        </TimingLink>
+                        <TimingLink version="1" id="VR:TimingLink:2">
+                            <FromPointRef ref="VR:StopPointInJourneyPattern:1@001000010@X"/>
+                            <ToPointRef ref="VR:StopPointInJourneyPattern:1@001000018@X"/>
+                        </TimingLink>
+                        <TimingLink version="1" id="VR:TimingLink:3">
+                            <FromPointRef ref="VR:StopPointInJourneyPattern:1@001000018@X"/>
+                            <ToPointRef ref="VR:StopPointInJourneyPattern:1@001000100@X"/>
+                        </TimingLink>
+                        <TimingLink version="1" id="VR:TimingLink:4">
+                            <FromPointRef ref="VR:StopPointInJourneyPattern:1@001000100@X"/>
+                            <ToPointRef ref="VR:StopPointInJourneyPattern:1@001000480@X"/>
+                        </TimingLink>
+                        <TimingLink version="1" id="VR:TimingLink:5">
+                            <FromPointRef ref="VR:StopPointInJourneyPattern:1@001000480@X"/>
+                            <ToPointRef ref="VR:StopPointInJourneyPattern:1@001000495@X"/>
+                        </TimingLink>
+                        <TimingLink version="1" id="VR:TimingLink:6">
+                            <FromPointRef ref="VR:StopPointInJourneyPattern:1@001000495@X"/>
+                            <ToPointRef ref="VR:StopPointInJourneyPattern:1@001000499@X"/>
+                        </TimingLink>
+                        <TimingLink version="1" id="VR:TimingLink:7">
+                            <FromPointRef ref="VR:StopPointInJourneyPattern:1@001000499@X"/>
+                            <ToPointRef ref="VR:StopPointInJourneyPattern:1@001000603@X"/>
+                        </TimingLink>
+                        <TimingLink version="1" id="VR:TimingLink:8">
+                            <FromPointRef ref="VR:StopPointInJourneyPattern:1@001000603@X"/>
+                            <ToPointRef ref="VR:StopPointInJourneyPattern:1@001000507@X"/>
+                        </TimingLink>
+                        <TimingLink version="1" id="VR:TimingLink:9">
+                            <FromPointRef ref="VR:StopPointInJourneyPattern:1@001000507@X"/>
+                            <ToPointRef ref="VR:StopPointInJourneyPattern:1@001000510@X"/>
+                        </TimingLink>
+                        <TimingLink version="1" id="VR:TimingLink:10">
+                            <FromPointRef ref="VR:StopPointInJourneyPattern:1@001000510@X"/>
+                            <ToPointRef ref="VR:StopPointInJourneyPattern:1@001000966@X"/>
+                        </TimingLink>
+                        <TimingLink version="1" id="VR:TimingLink:11">
+                            <FromPointRef ref="VR:StopPointInJourneyPattern:1@001000966@X"/>
+                            <ToPointRef ref="VR:StopPointInJourneyPattern:1@001000453@X"/>
+                        </TimingLink>
+                        <TimingLink version="1" id="VR:TimingLink:12">
+                            <FromPointRef ref="VR:StopPointInJourneyPattern:1@001000453@X"/>
+                            <ToPointRef ref="VR:StopPointInJourneyPattern:1@001000460@X"/>
+                        </TimingLink>
+                    </timingLinks>
+                    <journeyPatterns>
+                        <JourneyPattern version="1" id="VR:JourneyPattern:X">
+                            <runTimes>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:1">
+                                    <TimingLinkRef ref="VR:TimingLink:1"/>
+                                    <RunTime>PT4M</RunTime> <!-- Calculated time between the locations in the TimingLink -->
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:2">
+                                    <TimingLinkRef ref="VR:TimingLink:2"/>
+                                    <RunTime>PT9M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:3">
+                                    <TimingLinkRef ref="VR:TimingLink:3"/>
+                                    <RunTime>PT35M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:4">
+                                    <TimingLinkRef ref="VR:TimingLink:4"/>
+                                    <RunTime>PT28M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:5">
+                                    <TimingLinkRef ref="VR:TimingLink:5"/>
+                                    <RunTime>PT44M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:6">
+                                    <TimingLinkRef ref="VR:TimingLink:6"/>
+                                    <RunTime>PT15M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:7">
+                                    <TimingLinkRef ref="VR:TimingLink:7"/>
+                                    <RunTime>PT12M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:8">
+                                    <TimingLinkRef ref="VR:TimingLink:8"/>
+                                    <RunTime>PT26M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:9">
+                                    <TimingLinkRef ref="VR:TimingLink:9"/>
+                                    <RunTime>PT13M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:10">
+                                    <TimingLinkRef ref="VR:TimingLink:10"/>
+                                    <RunTime>PT22M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:11">
+                                    <TimingLinkRef ref="VR:TimingLink:11"/>
+                                    <RunTime>PT18M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:12">
+                                    <TimingLinkRef ref="VR:TimingLink:12"/>
+                                    <RunTime>PT37M</RunTime>
+                                </JourneyPatternRunTime>
+                            </runTimes>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern order="1" version="0" id="VR:StopPointInJourneyPattern:1@001002326@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001002326"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:1"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <DestinationDisplayRef ref="VR:DestinationDisplay:JOENSUU"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="2" version="0" id="VR:StopPointInJourneyPattern:1@001000010@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000010"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:2"/>
+                                    <ForAlighting>false</ForAlighting>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="3" version="0" id="VR:StopPointInJourneyPattern:1@001000018@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000018"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:3"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="4" version="0" id="VR:StopPointInJourneyPattern:1@001000100@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000100"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:4"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="5" version="0" id="VR:StopPointInJourneyPattern:1@001000480@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000480"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:5"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="6" version="0" id="VR:StopPointInJourneyPattern:1@001000495@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000495"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:6"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="7" version="0" id="VR:StopPointInJourneyPattern:1@001000499@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000499"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:7"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="8" version="0" id="VR:StopPointInJourneyPattern:1@001000603@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000603"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:8"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="9" version="0" id="VR:StopPointInJourneyPattern:1@001000507@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000507"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:9"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="10" version="0" id="VR:StopPointInJourneyPattern:1@001000510@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000510"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:10"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="11" version="0" id="VR:StopPointInJourneyPattern:1@001000966@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000966"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:11"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="12" version="0" id="VR:StopPointInJourneyPattern:1@001000453@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000453"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:12"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="13" version="0" id="VR:StopPointInJourneyPattern:1@001000460@X">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000460"/>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </JourneyPattern>
+                        <JourneyPattern version="1" id="VR:JourneyPattern:Sunday">
+                            <runTimes>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:1_Sun">
+                                    <TimingLinkRef ref="VR:TimingLink:1"/>
+                                    <RunTime>PT4M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:2_Sun">
+                                    <TimingLinkRef ref="VR:TimingLink:2"/>
+                                    <RunTime>PT9M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:3_Sun">
+                                    <TimingLinkRef ref="VR:TimingLink:3"/>
+                                    <RunTime>PT35M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:4_Sun">
+                                    <TimingLinkRef ref="VR:TimingLink:4"/>
+                                    <RunTime>PT28M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime version="1" id="VR:JourneyPatternRunTime:5_Sun">
+                                    <TimingLinkRef ref="VR:TimingLink:5"/>
+                                    <RunTime>PT44M</RunTime>
+                                </JourneyPatternRunTime>
+                            </runTimes>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern order="1" version="0" id="VR:StopPointInJourneyPattern:1@001002326@Sun">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001002326"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:1"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <DestinationDisplayRef ref="VR:DestinationDisplay:JOENSUU"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="2" version="0" id="VR:StopPointInJourneyPattern:1@001000010@Sun">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000010"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:2"/>
+                                    <ForAlighting>false</ForAlighting>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="3" version="0" id="VR:StopPointInJourneyPattern:1@001000018@Sun">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000018"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:3"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="4" version="0" id="VR:StopPointInJourneyPattern:1@001000100@Sun">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000100"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:4"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern order="5" version="0" id="VR:StopPointInJourneyPattern:1@001000480@Sun">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000480"/>
+                                    <OnwardTimingLinkRef ref="VR:TimingLink:5"/>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </JourneyPattern>
+                    </journeyPatterns>
+                    <timeDemandTypes>
+                        <TimeDemandType version="1" id="VR:TimeDemandType:Human" dataSourceRef="VR:DataSource:PlanningTool">
+                            <Description>Manually added correction to the calculated time between stops</Description>
+                            <runTimes>
+                                <JourneyRunTime version="1" id="VR:JourneyRunTime:1">
+                                    <RunTime>PT1M</RunTime>
+                                </JourneyRunTime>
+                            </runTimes>
+                        </TimeDemandType>
+                        <TimeDemandType version="1" id="VR:TimeDemandType:QWRqdXN0bWVudFVzaW5nRW1waXJjYWxEYXRh" dataSourceRef="VR:DataSource:EmpiricalData">
+                            <Description>Manually added correction to the calculated time between stops</Description>
+                            <runTimes>
+                                <JourneyRunTime version="1" id="VR:JourneyRunTime:QWRqdXN0bWVudFVzaW5nRW1waXJjYWxEYXRh">
+                                    <RunTime>PT2M10S</RunTime>
+                                </JourneyRunTime>
+                            </runTimes>
+                        </TimeDemandType>
+                        <TimeDemandType version="1" id="VR:TimeDemandType:WaitTime_1M" dataSourceRef="VR:DataSource:PlanningTool">
+                            <Description>Planned waiting time of 1 minute</Description>
+                            <waitTimes>
+                                <JourneyWaitTime version="1" id="VR:JourneyWaitTime:1">
+                                    <WaitTime>PT1M</WaitTime>
+                                </JourneyWaitTime>
+                            </waitTimes>
+                        </TimeDemandType>
+                        <TimeDemandType version="1" id="VR:TimeDemandType:WaitTime_2M" dataSourceRef="VR:DataSource:PlanningTool">
+                            <Description>Planned waiting time of 2 minute</Description>
+                            <waitTimes>
+                                <JourneyWaitTime version="1" id="VR:JourneyWaitTime:2">
+                                    <WaitTime>PT2M</WaitTime>
+                                </JourneyWaitTime>
+                            </waitTimes>
+                        </TimeDemandType>
+                        <TimeDemandType version="1" id="VR:TimeDemandType:WaitTime_3M" dataSourceRef="VR:DataSource:PlanningTool">
+                            <Description>Planned waiting time of 3 minute</Description>
+                            <waitTimes>
+                                <JourneyWaitTime version="1" id="VR:JourneyWaitTime:3">
+                                    <WaitTime>PT3M</WaitTime>
+                                </JourneyWaitTime>
+                            </waitTimes>
+                        </TimeDemandType>
+                        <TimeDemandType version="1" id="VR:TimeDemandType:WaitTime_4M" dataSourceRef="VR:DataSource:PlanningTool">
+                            <Description>Planned waiting time of 4 minute</Description>
+                            <waitTimes>
+                                <JourneyWaitTime version="1" id="VR:JourneyWaitTime:4">
+                                    <WaitTime>PT4M</WaitTime>
+                                </JourneyWaitTime>
+                            </waitTimes>
+                        </TimeDemandType>
+                    </timeDemandTypes>
+                </ServiceFrame>
+                <TimetableFrame version="1" id="VR:TimetableFrame:SKDUPD_example_1_Classic_train">
+                    <Name>Uic Example of a very simple train timetable</Name>
+                    <VehicleModes>rail</VehicleModes>
+                    <vehicleJourneys>
+                        <ServiceJourney version="1" id="VR:ServiceJourney:1_Sun">
+                            <Name>Classic Train</Name>
+                            <PrivateCode>1</PrivateCode> <!-- Used instead of "production" TrainNumber -->
+                            <TransportMode>rail</TransportMode>
+                            <TransportSubmode>
+                                <RailSubmode>longDistance</RailSubmode>
+                            </TransportSubmode>
+                            <TypeOfServiceRef ref="VR:TypeOfService:HighSpeed"/>
+                            <DepartureTime>06:57:00</DepartureTime>
+                            <JourneyPatternRef ref="VR:JourneyPattern:Sunday"/>
+                            <PublicCode>1</PublicCode>
+                            <OperatorRef ref="VR:Operator:VR"/>
+                            <LineRef ref="VR:Line:InterCity"/>
+                            <calls>
+                                <Call version="1" id="VR:Call:1_SUN-1" order="1">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001002326"/>
+                                    <Departure>
+                                        <Time>06:57:00</Time>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1_SUN-2" order="2">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000010"/>
+                                    <Arrival>
+                                        <Time>07:02:00</Time>
+                                        <ForAlighting>false</ForAlighting>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:Human"/>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>07:03:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_1M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1_SUN-3" order="3">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000018"/>
+                                    <Arrival>
+                                        <Time>07:12:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>07:14:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_2M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1_SUN-4" order="4">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000100"/>
+                                    <Arrival>
+                                        <Time>07:49:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>07:51:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_2M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1_SUN-5" order="5">            
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000480"/>
+                                    <Arrival>
+                                        <Time>08:19:00</Time>
+                                    </Arrival>
+                                </Call>
+                            </calls>
+                        </ServiceJourney>
+                        <ServiceJourney version="1" id="VR:ServiceJourney:1" changed="2026-01-20T09:51:00">
+                            <Name>Classic Train</Name>
+                            <PrivateCode>1</PrivateCode> <!-- Used instead of "production" TrainNumber -->
+                            <TransportMode>rail</TransportMode>
+                            <TransportSubmode>
+                                <RailSubmode>longDistance</RailSubmode>
+                            </TransportSubmode>
+                            <TypeOfServiceRef ref="VR:TypeOfService:HighSpeed"/>
+                            <DepartureTime>06:57:00</DepartureTime>
+                            <JourneyPatternRef ref="VR:JourneyPattern:X"/>
+                            <PublicCode>1</PublicCode> <!-- Used instead of "advertised" TrainNumber -->
+                            <OperatorRef ref="VR:Operator:VR"/>
+                            <LineRef ref="VR:Line:InterCity"/>
+                            <parts>
+                                <JourneyPart version="1" id="1@001002326+001000460" order="1">
+                                    <MainPartRef version="1" ref="1@001002326+001000460"/>
+                                    <FromStopPointRef ref="VR:ScheduledStopPoint:001002326"/>
+                                    <ToStopPointRef ref="VR:ScheduledStopPoint:001000460"/>
+                                    <StartTime>06:57:00</StartTime> <!-- Redundant -->
+                                    <EndTime>11:43:10</EndTime>     <!-- Redundant -->
+                                    <facilities>
+                                        <ServiceFacilitySetRef ref="1@63"/>
+                                        <ServiceFacilitySetRef ref="1@S11"/>
+                                        <ServiceFacilitySetRef ref="1@S27"/>
+                                        <ServiceFacilitySetRef ref="1@F4"/>
+                                        <ServiceFacilitySetRef ref="1@F48"/>
+                                        <ServiceFacilitySetRef ref="1@F5"/>
+                                        <ServiceFacilitySetRef ref="1@F9"/>
+                                        <ServiceFacilitySetRef ref="1@R13"/>
+                                    </facilities>
+                                </JourneyPart>
+                            </parts>
+                            <calls>
+                                <Call version="1" id="VR:Call:1-1" order="1">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001002326"/>
+                                    <Departure>
+                                        <Time>06:57:00</Time>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-2" order="2">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000010"/>
+                                    <Arrival>
+                                        <Time>07:02:00</Time>
+                                        <ForAlighting>false</ForAlighting>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:Human"/>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>07:03:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_1M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-3" order="3">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000018"/>
+                                    <Arrival>
+                                        <Time>07:12:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>07:14:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_2M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-4" order="4">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000100"/>
+                                    <Arrival>
+                                        <Time>07:49:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>07:51:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_2M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-5" order="5">            
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000480"/>
+                                    <Arrival>
+                                        <Time>08:19:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>08:23:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_4M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-6" order="6">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000495"/>
+                                    <Arrival>
+                                        <Time>09:07:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>09:09:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_2M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-7" order="7">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000499"/>
+                                    <Arrival>
+                                        <Time>09:24:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>09:25:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_1M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-8" order="8">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000603"/>
+                                    <Arrival>
+                                        <Time>09:37:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>09:40:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_3M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-9" order="9">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000507"/>
+                                    <Arrival>
+                                        <Time>10:06:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>10:07:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_1M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-10" order="10">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000510"/>
+                                    <Arrival>
+                                        <Time>10:20:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>10:22:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_2M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-11" order="11">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000966"/>
+                                    <Arrival>
+                                        <Time>10:44:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>10:45:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_1M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-12" order="12">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000453"/>
+                                    <Arrival>
+                                        <Time>11:03:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>11:04:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_1M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-13" order="13">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000460"/>
+                                    <Arrival>
+                                        <Time>11:43:10</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:QWRqdXN0bWVudFVzaW5nRW1waXJjYWxEYXRh"/>
+                                    </Arrival>
+                                </Call>
+                            </calls>
+                            <facilities>
+                                <ServiceFacilitySetRef ref="1@reservation"/>
+                            </facilities>
+                        </ServiceJourney>
+                        <DatedServiceJourney version="1" id="VR:DatedServiceJourney:1_2026-01-04">
+                            <ServiceJourneyRef ref="VR:ServiceJourney:1_Sun"/>
+                            <OperatingDayRef ref="VR:OperatingDay:2026-01-04"/>
+                        </DatedServiceJourney>
+                        <DatedServiceJourney version="1" id="VR:DatedServiceJourney:1_2026-01-05">
+                            <Description>Date specific override that does not have the empirical timing</Description>
+                            <calls>
+                                <Call version="1" id="VR:Call:1-12_1_2026-01-25" derivedFromObjectRef="VR:Call:1-12">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000453"/>
+                                    <Arrival>
+                                        <Time>11:03:00</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>11:04:00</Time>
+                                        <TimeDemandTypeRef ref="VR:TimeDemandType:WaitTime_1M"/>
+                                    </Departure>
+                                </Call>
+                                <Call version="1" id="VR:Call:1-13_1_2026-01-25" derivedFromObjectRef="VR:Call:1-13">
+                                    <ScheduledStopPointRef ref="VR:ScheduledStopPoint:001000460"/>
+                                    <Arrival>
+                                        <Time>11:41:00</Time>
+                                    </Arrival>
+                                </Call>
+                            </calls>
+                            <ServiceJourneyRef ref="VR:ServiceJourney:1"/>
+                            <OperatingDayRef ref="VR:OperatingDay:2026-01-05"/>
+                        </DatedServiceJourney>
+                        <DatedServiceJourney version="1" id="VR:DatedServiceJourney:1_2026-01-06">
+                            <ServiceJourneyRef ref="VR:ServiceJourney:1"/>
+                            <OperatingDayRef ref="VR:OperatingDay:2026-01-06"/>
+                        </DatedServiceJourney>
+                        <DatedServiceJourney version="1" id="VR:DatedServiceJourney:1_2026-01-07">
+                            <ServiceJourneyRef ref="VR:ServiceJourney:1"/>
+                            <OperatingDayRef ref="VR:OperatingDay:2026-01-07"/>
+                        </DatedServiceJourney>
+                        <DatedServiceJourney version="1" id="VR:DatedServiceJourney:1_2026-01-08">
+                            <ServiceJourneyRef ref="VR:ServiceJourney:1"/>
+                            <OperatingDayRef ref="VR:OperatingDay:2026-01-08"/>
+                        </DatedServiceJourney>
+                        <DatedServiceJourney version="1" id="VR:DatedServiceJourney:1_2026-01-09">
+                            <ServiceJourneyRef ref="VR:ServiceJourney:1"/>
+                            <OperatingDayRef ref="VR:OperatingDay:2026-01-09"/>
+                        </DatedServiceJourney>
+                        <DatedServiceJourney version="1" id="VR:DatedServiceJourney:1_2026-01-10">
+                            <ServiceJourneyRef ref="VR:ServiceJourney:1"/>
+                            <OperatingDayRef ref="VR:OperatingDay:2026-01-10"/>
+                        </DatedServiceJourney>
+                        <DatedServiceJourney version="1" id="VR:DatedServiceJourney:1_2026-01-11">
+                            <ServiceJourneyRef ref="VR:ServiceJourney:1_Sun"/>
+                            <OperatingDayRef ref="VR:OperatingDay:2026-01-11"/>
+                        </DatedServiceJourney>
+                        <DatedServiceJourney version="1" id="VR:DatedServiceJourney:1_2026-01-18">
+                            <ServiceJourneyRef ref="VR:ServiceJourney:1_Sun"/>
+                            <OperatingDayRef ref="VR:OperatingDay:2026-01-18"/>
+                        </DatedServiceJourney>
+                        <DatedServiceJourney version="1" id="VR:DatedServiceJourney:1_2026-01-25">
+                            <ServiceJourneyRef ref="VR:ServiceJourney:1_Sun"/>
+                            <OperatingDayRef ref="VR:OperatingDay:2026-01-25"/>
+                        </DatedServiceJourney>
+                    </vehicleJourneys>
+                </TimetableFrame>
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>
