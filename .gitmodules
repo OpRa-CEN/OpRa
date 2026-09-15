@@ -9,6 +9,6 @@
 	ignore = dirty
 [submodule "SIRI"]
 	path = SIRI
-	url = https://github.com/TransmodelEcosystem/NeTEx
+	url = https://github.com/TransmodelEcosystem/SIRI
 	branch = v2.2
 	ignore = dirty
